@@ -34,7 +34,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-ceciliasg-membersonly-lgambh2rrdp.ws-eu110.gitpod.io', '.herokuapp.com']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-ceciliasg-membersonly-lgambh2rrdp.ws-eu110.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-ceciliasg-membersonly-lgambh2rrdp.ws-eu110.gitpod.io', "https://*.herokuapp.com"
+]
 
 
 # Application definition
