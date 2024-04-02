@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.views import generic
 from .models import Heading, Post
 
@@ -12,6 +13,5 @@ class PostList(generic.ListView):
 
 def home(request):
 
-    #return HttpResponse("Hello, City Guide1")
-    return render(request, 'content_management/post_list.html')
+    return redirect('post_list')
    

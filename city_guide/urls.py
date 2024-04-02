@@ -20,9 +20,12 @@ from core.views import main
 from content_management.views import home
 
 urlpatterns = [
-    path('', include('content_management.urls')),    
-    path('', home, name='home'),
+  
     path('admin/', admin.site.urls),
     path('core/', main, name='core'),
+    path('summernote/', include('django_summernote.urls')),
+    path('', include('content_management.urls')),    
+    #path('', home, name='home'),
+
    
 ]
