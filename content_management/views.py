@@ -1,9 +1,17 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from .models import Heading
+from django.views import generic
+from .models import Heading, Post
 
 
 # Create your views here.
-def index(request):
+class PostList(generic.ListView):
+    template_name = "content_management/post_list.html"
+    queryset = Post.objects.all()
+    context_object_name = 'posts'
+    model = Post    
 
-    return render(request, 'content_management/index.html')
+def home(request):
+
+    #return HttpResponse("Hello, City Guide1")
+    return render(request, 'content_management/post_list.html')
+   

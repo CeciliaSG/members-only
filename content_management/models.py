@@ -1,7 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
-from django.db import models
 
 class Heading(models.Model):
     name = models.CharField(max_length=100)
@@ -13,12 +13,13 @@ class Heading(models.Model):
         return self.name
 
 STATUS = ((0, "Draft"), (1, "Published"))
-     
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
     heading = models.ForeignKey(Heading, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=200, unique=True)
     content = models.TextField()
+    excerpt = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)        
+    updated_at = models.DateTimeField(auto_now=True)   
+    status = models.IntegerField(choices=STATUS, default=0)     
