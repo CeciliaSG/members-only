@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 #from django.http import HttpResponse
 from django.contrib.auth import login
 from .forms import UserProfileForm
+from django.contrib.auth.forms import UserCreationForm
+
 
 
 # Create your views here.
@@ -20,4 +22,4 @@ def register(request):
     else:
         user_form = UserCreationForm()
         profile_form = UserProfileForm()
-    return render(request, 'registration/register.html', {'user_form': user_form, 'profile_form': profile_form})
+    return render(request, 'core/registration.html', {'user_form': user_form, 'profile_form': profile_form})
