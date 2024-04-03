@@ -19,15 +19,18 @@ from django.urls import path, include
 from core.views import register
 from content_management.views import home
 
+
 urlpatterns = [
   
+    path('accounts/', include('django.contrib.auth.urls')), 
+    path("accounts/", include("allauth.urls")),  
     path('admin/', admin.site.urls),
     path('core/', register, name='registration'),
     path('summernote/', include('django_summernote.urls')),
-    path('', include('content_management.urls')),    
-    #path('', home, name='home'),
-
+    path('', include('content_management.urls')), 
    
 ]
+
+
 
     
