@@ -22,7 +22,7 @@ from content_management.views import home
 
 urlpatterns = [
   
-    path('accounts/', include('django.contrib.auth.urls')), 
+    #path('accounts/', include('django.contrib.auth.urls')), 
     path("accounts/", include("allauth.urls")),  
     path('admin/', admin.site.urls),
     path('core/', register, name='registration'),

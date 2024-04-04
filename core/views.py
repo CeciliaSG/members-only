@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import UserProfileForm
+from .forms import UserForm, UserProfileForm
 from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
 
@@ -36,7 +36,7 @@ def login(request):
             return redirect('home')
         else:
             messages.error(request, 'Invalid username or password.')
-    return render(request, 'registration/login.html')
+    return render(request, 'socialaccount/signup.html')
 
 def logout(request):
     logout(request)

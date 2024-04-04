@@ -1,8 +1,8 @@
-{% extends "openid/base.html" %}
+<!--{% extends "openid/base.html" %}
 
 {% load i18n %}
 
-{% block head_title %}OpenID Sign In{% endblock head_title %}
+{% block head_title %}OpenID Sign In{% endblock head_title %}-->
 
 {% block content %}
 
@@ -10,9 +10,9 @@
 
 
 <form id="openid_login_form" class="openid_login" method="post" action="{% url 'openid_login' %}">
-{% csrf_token %}
-{{form.as_p}}
-<button type="submit">Sign In</button>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Sign In</button>
 </form>
 
 {% endblock content %}
