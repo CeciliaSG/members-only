@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
+
 <body>
     <h1>Posts list</h1>
     {% for post in posts %}
@@ -9,5 +11,5 @@
     <p>{{post.excerpt}}</p>
     {% endfor %}
 </body>
-
+{% endif %}
 {% endblock %}
