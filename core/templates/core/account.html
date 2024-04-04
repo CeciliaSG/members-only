@@ -3,12 +3,13 @@
 {% block content %}
 
 <body>
-    <h2>Welcome, {{ request.user.username }}!</h2>
+    <h2>Welcome,
+        {{ request.user.first_name }} {{ request.user.last_name }}!</h2>
     <p>Email: {{ request.user.email }}</p>
     <!--{% if request.user%}-->
-    <p>City: {{ request.user.city }}</p>
-    <p>Neighbourhood: {{ request.core_userprofile.neighbourhood }}</p>
-    <p>Interests: {{ request.userprofile.interests }}</p>
+    <p>City: {{ request.user.userprofile.city }}</p>
+    <p>Neighbourhood: {{ request.user.userprofile.neighbourhood }}</p>
+    <p>Interests: {{ request.user.userprofile.interests }}</p>
 
     <!--{% else %}-->
     <p>No profile information available</p>

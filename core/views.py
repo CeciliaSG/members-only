@@ -23,7 +23,7 @@ def register(request):
             profile.save()
             messages.success(request, 'Yeah you are all signed up. Log in and have a look around.')
             auth_login(request, user)
-            return redirect('login')
+            return redirect('home')
     else:
         user_form = CustomUserForm()
         profile_form = UserProfileForm()
@@ -48,5 +48,4 @@ def logout(request):
 
 @login_required
 def account(request):
-    return render(request, 'core/account.html')  
-
+    return render(request, 'core/account.html')
