@@ -1,17 +1,20 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, logout
 from django.contrib.auth.decorators import login_required
-from .forms import UserForm, UserProfileForm
+from .forms import CustomUserForm, UserProfileForm
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login as auth_login
 from django.db import transaction
+from .models import UserProfile
+
 
 
 # Create your views here.
 @transaction.atomic
 def register(request):
     if request.method == 'POST':
-        user_form = UserCreationForm(request.POST)
+        user_form = CustomUserForm(request.POST)
         profile_form = UserProfileForm(request.POST)
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
@@ -19,10 +22,10 @@ def register(request):
             profile.user = user
             profile.save()
             messages.success(request, 'Yeah you are all signed up. Log in and have a look around.')
-            login(request, user)
+            auth_login(request, user)
             return redirect('login')
     else:
-        user_form = UserCreationForm()
+        user_form = CustomUserForm()
         profile_form = UserProfileForm()
     return render(request, 'core/registration.html', {'user_form': user_form, 'profile_form': profile_form})
 
@@ -45,5 +48,5 @@ def logout(request):
 
 @login_required
 def account(request):
-    return render(request, 'core/account.html')     
+    return render(request, 'core/account.html')  
 

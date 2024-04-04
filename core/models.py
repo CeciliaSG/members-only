@@ -26,6 +26,7 @@ class UserProfile(models.Model):
      ]
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    email = models.EmailField(max_length=255, unique=True)
     city = models.CharField(max_length=100, choices=CITY_CHOICES)
     neighbourhood = models.CharField(max_length=100, choices=NEIGHBOURHOOD_CHOICES)
     interests = models.CharField(max_length=100, choices=INTEREST_CHOICES)
