@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from core.views import register
+from core.views import register, account
 from content_management.views import home
 
 
@@ -27,6 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('core/', register, name='registration'),
     path('summernote/', include('django_summernote.urls')),
+    path('account/', account, name='account'),
     path('', include('content_management.urls'), name='content_management'), 
 ]
 
