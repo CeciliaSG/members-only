@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+    <h2>Welcome,<h3>{{ request.user.username }}</h3>
+
+        <h3>{{ request.user.email }}</h3>
+
+        <h2>You can edit you profile here:</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+            <button type="submit">Update</button>
+        </form>
+</body>
+
+{% endblock %}

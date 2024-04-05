@@ -7,6 +7,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login as auth_login
 from django.db import transaction
 from .models import UserProfile
+from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import UserChangeForm
+from django.forms import inlineformset_factory
 
 
 
@@ -44,8 +47,9 @@ def login(request):
 def logout(request):
     logout(request)
     return redirect('home')   
-
+         
 
 @login_required
-def account(request):
-    return render(request, 'core/account.html')
+def edit_user_profile(request):
+    return render(request, 'core/profile.html')
+

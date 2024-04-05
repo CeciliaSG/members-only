@@ -16,8 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from core.views import register, account
+from core.views import register, edit_user_profile
 from content_management.views import home
+#from .views import edit_user_profile
 
 
 urlpatterns = [
@@ -27,7 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('core/', register, name='registration'),
     path('summernote/', include('django_summernote.urls')),
-    path('account/', account, name='account'),
+    path('account/', edit_user_profile, name='profile'),
     path('', include('content_management.urls'), name='content_management'), 
 ]
 
