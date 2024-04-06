@@ -1,19 +1,25 @@
+Copy code
 {% extends 'base.html' %}
 
 {% block content %}
 
 <body>
-    <h2>Welcome,<h3>{{ request.user.username }}</h3>
+    <h2>Welcome, <h3>{{ request.user.username }}</h3>
+    </h2>
+    <h3>{{ request.user.email }}</h3>
 
-        <h3>{{ request.user.email }}</h3>
-
-        <h2>You can edit you profile here:</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ user_form.as_p }}
-            {{ profile_form.as_p }}
-            <button type="submit">Update</button>
-        </form>
+    {% if request.user.profile %}
+    <h2>You can edit your profile here:</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {{ profile_form.as_p }}
+        <button type="submit">Update</button>
+    </form>
+    {% else %}
+    <h2>You don't have a profile yet.</h2>
+    <p>Please create a profile to edit your details.</p>
+    {% endif %}
 </body>
 
 {% endblock %}

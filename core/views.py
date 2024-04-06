@@ -48,6 +48,12 @@ def logout(request):
 
 @login_required
 def edit_user_profile(request):
+    try:
+        profile_instance = request.user.userprofile
+    except UserProfile.DoesNotExist:
+        messages.warning(request, "You don't have a profile. Please create one.")
+        return redirect('registration')
+
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=request.user.userprofile)
         if form.is_valid():
