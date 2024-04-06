@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from core.views import register, edit_user_profile
-from content_management.views import home
+#from content_management.views import home
 #from .views import edit_user_profile
 
 

@@ -7,10 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login as auth_login
 from django.db import transaction
 from .models import UserProfile
-from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserChangeForm
-from django.forms import inlineformset_factory
-
+#from django.contrib.auth import get_user_model
 
 
 # Create your views here.
@@ -51,5 +48,17 @@ def logout(request):
 
 @login_required
 def edit_user_profile(request):
-    return render(request, 'core/profile.html')
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=request.user.userprofile)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')  
+    else:
+        form = UserProfileForm(instance=request.user.userprofile)
+    return render(request, 'core/profile.html', {'form': form})
 
+@login_required
+def view_saved_posts(request):
+    user_profile = request.user.userprofile
+    saved_posts = user_profile.get_saved_posts()
+    return render(request, 'core/saved_posts.html', {'saved_posts': saved_posts})
