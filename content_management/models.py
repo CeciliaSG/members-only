@@ -20,6 +20,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     content = models.TextField()
     excerpt = models.TextField(blank=True)
+    image = models.ImageField(upload_to='post_images/', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)   
     status = models.IntegerField(choices=STATUS, default=0)     
