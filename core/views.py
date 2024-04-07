@@ -51,7 +51,7 @@ def edit_user_profile(request):
     try:
         profile_instance = request.user.userprofile
     except UserProfile.DoesNotExist:
-        messages.warning(request, "You don't have a profile. Please create one.")
+        messages.warning(request, "You are a user but don't have a profile. Please create one by filling in the missing fields.")
         return redirect('registration')
 
     if request.method == 'POST':
@@ -62,9 +62,3 @@ def edit_user_profile(request):
     else:
         form = UserProfileForm(instance=request.user.userprofile)
     return render(request, 'core/profile.html', {'form': form})
-
-@login_required
-def view_saved_posts(request):
-    user_profile = request.user.userprofile
-    saved_posts = user_profile.get_saved_posts()
-    return render(request, 'core/saved_posts.html', {'saved_posts': saved_posts})

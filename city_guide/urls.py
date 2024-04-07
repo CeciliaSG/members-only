@@ -19,6 +19,7 @@ from django.urls import path, include
 from core.views import register, edit_user_profile
 #from content_management.views import home
 #from .views import edit_user_profile
+from content_management.views import like_post
 
 
 urlpatterns = [
@@ -30,8 +31,5 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('account/', edit_user_profile, name='profile'),
     path('', include('content_management.urls'), name='content_management'), 
+    path('like_post/', like_post, name='like_post'),
 ]
-
-
-
-    
