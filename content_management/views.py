@@ -28,23 +28,23 @@ def post_detail(request, slug):
         {"post": post},
     )
 
-def like_post(request):
-    if request.method == 'POST' and request.is_ajax():
-        user_id = request.POST.get('user_id')
-        post_id = request.POST.get('post_id')
+#def like_post(request, post_id):
+    #if request.method == 'POST' and request.is_ajax():
+        #user_id = request.POST.get('user_id')
+        #post_id = request.POST.get('post_id')
 
-        post = get_object_or_404(Post, id=post_id)
+        #post = get_object_or_404(Post, id=post_id)
 
-        is_liked = False
-        if post.likes.filter(id=user_id).exists():
-            post.likes.remove(request.user)
-            is_liked = False
-        else:
-            post.likes.add(request.user)
-            is_liked = True
+        #is_liked = False
+        #if post.likes.filter(id=user_id).exists():
+            #post.likes.remove(request.user)
+            #is_liked = False
+        #else:
+            #post.likes.add(request.user)
+            #is_liked = True
 
-        response_data = {
-            'is_liked': is_liked,
-            'likes_count': post.likes.count()
-        }
-        return JsonResponse(response_data)  
+        #response_data = {
+            #'is_liked': is_liked,
+            #'likes_count': post.likes.count()
+        #}
+        #return JsonResponse(response_data)  

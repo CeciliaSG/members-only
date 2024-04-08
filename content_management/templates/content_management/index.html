@@ -3,42 +3,31 @@
 {% if user.is_authenticated %}
 {% load static %}
 
-<!-- JQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<body>
-    <div class="container">
-        <div class="row">
-            {% for post in posts %}
-            <div class="col-md-4">
-                <div class="card">
-                    {% if post.image %}
-                    <img src="{{ post_images.url }}" class="card-img-top" alt="{{ post.title }}">
-                    {% endif %}
-                    <p>{{post.heading}}</p>
-                    <div class="card-body">
-                        <h5 class="card-title">{{ post.title }}</h5>
-                        <p class="card-text"></p>
-                        <h2><a href="{% url 'post_detail' slug=post.slug %}" {{ post.title }}
-                                class="excerpt">{{ post.excerpt }}</a></h2>
-                        <button class="heart-button" id="like-button" data-post-id="{{ post.id }}">Heart</button>
-                        <span class=button id="like-count">{{ post.likes.count }}</span>
-                    </div>
+<div class="container">
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-md-4">
+            <div class="card">
+                {% if post.image %}
+                <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.excerpt }}
+                        <a href="{% url 'post_detail' post.slug %}" class="post-link">...</a></p>
                 </div>
+                <div> <button type="submit"><i class="fas fa-heart"></i></button></div>
+
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
-</body>
+</div>
+{% else %}
+<p>Please log in to view posts.</p>
 {% endif %}
-<!-- JS -->
-
-<form id="csrf-form">
-    {% csrf_token %}
-</form>
-
-<script>
-    const csrfToken = $("#csrf-form input[name='csrfmiddlewaretoken']").val();
-</script>
-<script src="{% static 'js/like_post.js' %}"></script>
 {% endblock %}
+
+
+<!-- Script-->

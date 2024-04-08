@@ -1,0 +1,61 @@
+body {
+    background-color: black;
+}
+
+.card {
+    margin-top: 20px;
+    padding: 15px;
+    max-width: 350px;
+}
+
+
+.excerpt {
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+}
+
+.card {
+    border: none;
+    outline: none;
+    border-radius: 0;
+}
+
+.post-link {
+    text-decoration: none;
+    color: pink;
+}
+
+.bg-dark {
+    background-color: black;
+    font-size: ;
+    text-transform: uppercase;
+}
+
+.navbar-logo {
+    color: white;
+    font-size: larger;
+}
+
+
+.navbar-nav .nav-link {
+    color: black;
+}
+
+.btn {
+    color: white;
+    background-color: hotpink;
+    border-radius: 0;
+}
+
+.btn:hover {
+    background-color: pink;
+}
+
+.btn-search {
+    outline: hotpink;
+}
+
+.form-control-sm {
+    height: 30px;
+}
