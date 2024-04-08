@@ -1,33 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
-{% if user.is_authenticated %}
 {% load static %}
 
+<body>
+    <div class="container">
 
-<div class="container">
-    <div class="row">
-        {% for post in posts %}
-        <div class="col-md-4">
-            <div class="card">
-                {% if post.image %}
-                <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
-                {% endif %}
-                <div class="card-body">
-                    <h5 class="card-title">{{ post.title }}</h5>
-                    <p class="card-text">{{ post.excerpt }}
-                        <a href="{% url 'post_detail' post.slug %}" class="post-link">...</a></p>
+        <div class="row post-row">
+            <h1 class="parent-heading">The Latest</h1>
+            {% for post in posts %}
+            <div class="col-md-4 post-col">
+                <div class="card h-100">
+                    {% if post.image %}
+                    <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h2 class="post-heading">{{ post.heading }}</h2>
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.excerpt }}
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">...</a></p>
+                        {% else %}
+                        <span class="post-link" onclick="alert('Please log in to view this post.')">...</span>
+                        {% endif %}
+                        <div> <button type="submit"><i class="fas fa-heart"></i></button></div>
+                    </div>
                 </div>
-                <div> <button type="submit"><i class="fas fa-heart"></i></button></div>
-
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-</div>
-{% else %}
-<p>Please log in to view posts.</p>
-{% endif %}
-{% endblock %}
-
-
-<!-- Script-->
+    {% endblock %}
+</body>

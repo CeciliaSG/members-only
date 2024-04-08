@@ -1,35 +1,13 @@
 body {
+    background-color: whitesmoke;
+    min-height: 100vh;
+}
+
+/* Navbar styling */
+
+.navbar-dark {
+    height: 80px;
     background-color: black;
-}
-
-.card {
-    margin-top: 20px;
-    padding: 15px;
-    max-width: 350px;
-}
-
-
-.excerpt {
-    font-size: 14px;
-    text-decoration: none;
-    color: black;
-}
-
-.card {
-    border: none;
-    outline: none;
-    border-radius: 0;
-}
-
-.post-link {
-    text-decoration: none;
-    color: pink;
-}
-
-.bg-dark {
-    background-color: black;
-    font-size: ;
-    text-transform: uppercase;
 }
 
 .navbar-logo {
@@ -37,9 +15,23 @@ body {
     font-size: larger;
 }
 
-
 .navbar-nav .nav-link {
     color: black;
+}
+
+.navbar-dropdown {
+    margin-right: 20px;
+}
+
+.container {
+    margin-bottom: 20px;
+    margin-top: 15px;
+    min-height: 100vh;
+}
+
+.parent-heading {
+    padding-top: 20px;
+    font-size: 25px;
 }
 
 .btn {
@@ -58,4 +50,82 @@ body {
 
 .form-control-sm {
     height: 30px;
+}
+
+/*Post styling*/
+.post-col {
+    margin-top: 20px;
+}
+
+
+.post-heading {
+    font-size: 14px;
+}
+
+.post-title .post-content {
+    color: white;
+}
+
+.excerpt {
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+}
+
+.card {
+    border: none;
+    outline: none;
+    padding: 15px;
+    background-color: whitesmoke;
+}
+
+.card-body {
+    min-height: 344.8px;
+}
+
+.post-link {
+    text-decoration: none;
+    color: pink;
+}
+
+/*Footer styling */
+
+.bg-dark {
+    background-color: black;
+    text-transform: uppercase;
+}
+
+footer {
+    background-color: black;
+}
+
+.text-decoration-none {
+    color: white;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.footer-divider::before,
+.footer-divider::after {
+    content: '';
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid white;
+    padding: 10 10px;
+}
+
+/* Media queries */
+@media (max-width: 767px) {
+
+    .search_field {
+        display: none;
+    }
+
+    .container {
+        overflow: auto;
+    }
+}
+
+.card {
+    margin-left: 15px;
 }

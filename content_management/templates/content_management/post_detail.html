@@ -1,13 +1,11 @@
 {% extends "base.html" %}
-
 {% block content %}
-
 {% if user.is_authenticated %}
 
 <body>
     <div>
-        <h2>{{ post.heading }}</h2>
-        <h1>{{ post.title }}</h1>
+        <h2 class="post-heading">{{ post.heading }}</h2>
+        <h1 class="post-title">{{ post.title }}</h1>
     </div>
     <div class="post-content">
         {{ post.content | safe }}
