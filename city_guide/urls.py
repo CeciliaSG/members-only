@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from core.views import register, edit_user_profile
+from core.views import register, edit_user_profile, UpdateUserProfileView
 #from content_management.views import home
 #from .views import edit_user_profile
 
@@ -24,10 +24,18 @@ from core.views import register, edit_user_profile
 urlpatterns = [
   
     #path('accounts/', include('django.contrib.auth.urls')), 
+
+    #Django admin
+     path('admin/', admin.site.urls),
+
+    # Allauth url
     path("accounts/", include("allauth.urls")),  
-    path('admin/', admin.site.urls),
+   
+
+    # Custom Urls
     path('core/', register, name='registration'),
     path('summernote/', include('django_summernote.urls')),
     path('account/', edit_user_profile, name='profile'),
     path('', include('content_management.urls'), name='content_management'), 
+    path('update-profile/', UpdateUserProfileView.as_view(), name='update_profile'),
 ]

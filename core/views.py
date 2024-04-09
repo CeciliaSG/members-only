@@ -6,11 +6,17 @@ from .forms import CustomUserForm, UserProfileForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login as auth_login
 from django.db import transaction
+from django.views.generic import UpdateView
+from django.contrib.auth.models import User
+from django.urls import reverse_lazy
 from .models import UserProfile
 #from django.contrib.auth import get_user_model
+from .forms import UpdateUserProfile, UpdateUserForm
 
 
 # Create your views here.
+
+# Sign-up/register view
 @transaction.atomic
 def register(request):
     if request.method == 'POST':
@@ -29,6 +35,7 @@ def register(request):
         profile_form = UserProfileForm()
     return render(request, 'core/registration.html', {'user_form': user_form, 'profile_form': profile_form})
 
+# Login view
 def login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -41,11 +48,12 @@ def login(request):
             messages.error(request, 'Invalid username or password.')
     return render(request, 'socialaccount/signup.html')
 
+# Logout view
 def logout(request):
     logout(request)
     return redirect('home')   
          
-
+# Account view
 @login_required
 def edit_user_profile(request):
     try:
@@ -62,3 +70,34 @@ def edit_user_profile(request):
     else:
         form = UserProfileForm(instance=request.user.userprofile)
     return render(request, 'core/profile.html', {'form': form})
+
+# Update user profile view
+
+class UpdateUserProfileView(UpdateView):
+    model = UserProfile
+    template_name = 'profile.html'
+    success_url = reverse_lazy('profile')
+
+    def get_object(self, queryset=None):
+        print("UserProfile object:", self.request.user.userprofile)
+        return self.request.user.userprofile
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        messages.success(request, "You've successfully updated your profile")
+        print("Form initialized successfully")
+        return form
+
+
+    def post(self, request, *args, **kwargs):
+        profile_form = UpdateUserProfile(request.POST, instance=self.get_object())
+        user_form = UpdateUserForm(request.POST, instance=self.request.user)
+        if profile_form.is_valid() and user_form.is_valid():
+            profile_form.save()
+            user_form.save()
+            messages.success(request, "You've successfully updated your profile")
+            return redirect(self.success_url)
+        else:
+            print("Invalid forms:", profile_form.errors, user_form.errors)
+            return self.render_to_response(self.get_context_data(profile_form=profile_form, user_form=user_form))       
+        

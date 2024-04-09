@@ -1,6 +1,12 @@
+/* Global styles */
+
 body {
     background-color: white;
     min-height: 100vh;
+}
+
+.btn {
+    background-color: hotpink;
 }
 
 /* Navbar styling */
