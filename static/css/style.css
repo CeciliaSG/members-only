@@ -1,5 +1,5 @@
 body {
-    background-color: whitesmoke;
+    background-color: white;
     min-height: 100vh;
 }
 
@@ -26,7 +26,6 @@ body {
 .container {
     margin-bottom: 20px;
     margin-top: 15px;
-    min-height: 100vh;
 }
 
 .parent-heading {
@@ -50,6 +49,16 @@ body {
 
 .form-control-sm {
     height: 30px;
+}
+
+/*Page and section styling */
+
+.the-latest {
+    background-color: whitesmoke;
+}
+
+.events-perks {
+    background-color: white;
 }
 
 /*Post styling*/
@@ -97,6 +106,7 @@ body {
 
 footer {
     background-color: black;
+    max-height: 300px;
 }
 
 .text-decoration-none {
