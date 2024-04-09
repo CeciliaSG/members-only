@@ -14,6 +14,7 @@ from .models import UserProfile
 from .forms import UpdateUserProfile, UpdateUserForm
 
 
+
 # Create your views here.
 
 # Sign-up/register view
@@ -71,8 +72,6 @@ def edit_user_profile(request):
         form = UserProfileForm(instance=request.user.userprofile)
     return render(request, 'core/profile.html', {'form': form})
 
-# Update user profile view
-
 class UpdateUserProfileView(UpdateView):
     model = UserProfile
     template_name = 'profile.html'
@@ -84,10 +83,16 @@ class UpdateUserProfileView(UpdateView):
 
     def get_form(self, form_class=None):
         form = super().get_form(form_class)
-        messages.success(request, "You've successfully updated your profile")
+        messages.success(self.request, "You've successfully updated your profile")
         print("Form initialized successfully")
         return form
 
+    def get_context_data(self, **kwargs):
+                print("Context data:", context)
+                context = super().get_context_data(**kwargs)
+                context['update_user_form'] = UpdateUserForm(instance=self.request.user)
+                context['update_profile_form'] = UpdateUserProfile(instance=self.get_object())
+                return context
 
     def post(self, request, *args, **kwargs):
         profile_form = UpdateUserProfile(request.POST, instance=self.get_object())
