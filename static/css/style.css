@@ -5,8 +5,8 @@ body {
 
 /* Navbar styling */
 
-.navbar-dark {
-    height: 80px;
+.first-nav {
+    height: 200px;
     background-color: black;
 }
 
@@ -62,6 +62,7 @@ body {
 }
 
 /*Post styling*/
+
 .post-col {
     margin-top: 20px;
 }
@@ -101,7 +102,6 @@ body {
 
 .bg-dark {
     background-color: black;
-    text-transform: uppercase;
 }
 
 footer {
@@ -134,8 +134,8 @@ footer {
     .container {
         overflow: auto;
     }
-}
 
-.card {
-    margin-left: 15px;
+    .card {
+        margin-left: 15px;
+    }
 }

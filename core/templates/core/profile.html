@@ -1,24 +1,35 @@
 {% extends 'base.html' %}
-
 {% block content %}
+{% if user.is_authenticated %}
 
-<body>
-    <h2>Welcome, <h3>{{ request.user.username }}</h3>
-    </h2>
+<body class="body-profile">
+
+    <h1>Welcome</h1>
+    <h3>{{ request.user.username }}!</h3>
+
     <h3>{{ request.user.email }}</h3>
 
-    {{request.user.userprofile }}
-    <h2></h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ user_form.as_p }}
-        {{ profile_form.as_p }}
-        <a href="{% url 'registration' %}">You can edit your profile here: </a>
-    </form>
+    {% if user.userprofile %}
+    <h3>City: </h2>{{ user.userprofile.get_city_display }}
+        <h3>Neighbourhood: </h2>{{ user.userprofile.get_neighbourhood_display }}
+            <h3>Interests:</h2>
+                <ul>
+                    {% for interest in user.userprofile.interests %}
+                    <li>{{ interest }}</li>
+                    {% endfor %}
+                </ul>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ user_form.as_p }}
+                    {{ profile_form.as_p }}
+                    <a href="{% url 'registration' %}">You can edit your profile here: </a>
+                </form>
 
-    <h2>You don't have a profile yet.</h2>
-    <p>Please create a profile to edit your details.</p>
+                {% else %}
 
+                <h2>You don't have a profile yet.</h2>
+                <p>Please create a profile to edit your details.</p>
+                {% endif %}
 </body>
-
+{% endif %}
 {% endblock %}
