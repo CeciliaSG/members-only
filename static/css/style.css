@@ -67,6 +67,17 @@ body {
     background-color: white;
 }
 
+/* Styling user profile */
+.user-profile-welcome {
+    background-color: black;
+    color: white;
+}
+
+.user-profile {
+    background-color: whitesmoke;
+    color: black;
+}
+
 /*Post styling*/
 
 .post-col {

@@ -2,43 +2,46 @@
 {% block content %}
 {% if user.is_authenticated %}
 
-<body class="body-profile">
+<body class="d-flex flex-column h-100 main-bg body-user-profile">
+    <div class="container-fluid">
+        <div class="container user-profile-welcome">
+            <div class="row"></div>
+            <h1>Welcome</h1>
+            <h3>{{ request.user.username }}!</h3>
 
-    <h1>Welcome</h1>
-    <h3>{{ request.user.username }}!</h3>
+            <h3>{{ request.user.email }}</h3>
 
-    <h3>{{ request.user.email }}</h3>
+            {% if user.userprofile %}
 
-    {% if user.userprofile %}
+            <h3>City: </h2>{{ user.userprofile.get_city_display }}
+                <h3>Neighbourhood: </h2>{{ user.userprofile.get_neighbourhood_display }}
+                    <h3>Interests:</h2>
+                        <ul>
+                            {% for interest in user.userprofile.interests %}
+                            <li>{{ interest }}</li>
+                            {% endfor %}
+                        </ul>
+                        <div class="container user-profile">
+                            <form method="post">
+                                {% csrf_token %}
+                                {{ user_form_update.as_p }}
+                                {{ profile_form.as_p }}
+                                <button class="btn" type="submit">Update</button>
+                            </form>
+                            {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}
+                                    </li>
+                                    {% endfor %}
+                            </ul>
+                            {% endif %}
+                            {% else %}
 
-    <h3>City: </h2>{{ user.userprofile.get_city_display }}
-        <h3>Neighbourhood: </h2>{{ user.userprofile.get_neighbourhood_display }}
-            <h3>Interests:</h2>
-                <ul>
-                    {% for interest in user.userprofile.interests %}
-                    <li>{{ interest }}</li>
-                    {% endfor %}
-                </ul>
-
-
-                <form method="post">
-                    {% csrf_token %}
-                    {{ user_form_update.as_p }}
-                    {{ profile_form.as_p }}
-                    <button class="btn" type="submit">Update</button>
-                </form>
-                {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                        {% endfor %}
-                </ul>
-                {% endif %}
-                {% else %}
-
-                <h2>You don't have a profile yet.</h2>
-                <p>Please create a profile to edit your details.</p>
-                {% endif %}
+                            <h2>You don't have a profile yet.</h2>
+                            <p>Please create a profile to edit your details.</p>
+                            {% endif %}
+                        </div>
 </body>
 {% endif %}
 {% endblock %}
