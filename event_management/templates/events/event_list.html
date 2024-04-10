@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+
+<title>Event List</title>
+</head>
+
+<body>
+    <h1>Event List</h1>
+    <ul>
+        {% for event in events %}
+        <li>{{ event.title }}</li>
+        <li>{{ event.image }}</li>
+        <li>{{ event.description }}</li>
+        <li>{{ event.start_date }}</li>
+        <li>{{ event.end_date }}</li>
+
+        {% endfor %}
+    </ul>
+</body>
+
+{% endif %}
+{% endblock %}
