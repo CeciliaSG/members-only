@@ -82,38 +82,4 @@ def edit_user_profile(request):
         profile_form = UserProfileForm(instance=request.user.userprofile)
 
     return render(request, 'core/profile.html', {'user_form_update': user_form_update, 'profile_form': profile_form})
-
-class UpdateUserProfileView(UpdateView):
-    model = UserProfile
-    template_name = 'profile.html'
-    success_url = reverse_lazy('profile')
-
-    def get_object(self, queryset=None):
-        print("UserProfile object:", self.request.user.userprofile)
-        return self.request.user.userprofile
-
-    def get_form(self, form_class=None):
-        form = super().get_form(form_class)
-        messages.success(self.request, "You've successfully updated your profile")
-        print("Form initialized successfully")
-        return form
-
-    def get_context_data(self, **kwargs):
-                print("Context data:", context)
-                context = super().get_context_data(**kwargs)
-                context['update_user_form'] = UpdateUserForm(instance=self.request.user)
-                context['update_profile_form'] = UpdateUserProfile(instance=self.get_object())
-                return context
-
-    def post(self, request, *args, **kwargs):
-        profile_form = UpdateUserProfile(request.POST, instance=self.get_object())
-        user_form = UpdateUserForm(request.POST, instance=self.request.user)
-        if profile_form.is_valid() and user_form.is_valid():
-            profile_form.save()
-            user_form.save()
-            messages.success(request, "You've successfully updated your profile")
-            return redirect(self.success_url)
-        else:
-            print("Invalid forms:", profile_form.errors, user_form.errors)
-            return self.render_to_response(self.get_context_data(profile_form=profile_form, user_form=user_form))       
         
