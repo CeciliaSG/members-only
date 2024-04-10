@@ -58,19 +58,30 @@ def logout(request):
 @login_required
 def edit_user_profile(request):
     try:
+        user_instance = request.user
         profile_instance = request.user.userprofile
     except UserProfile.DoesNotExist:
         messages.warning(request, "You are a user but don't have a profile. Please create one by filling in the missing fields.")
         return redirect('registration')
 
+    user_form_update = UpdateUserForm(instance=request.user)
+    profile_form = UserProfileForm(instance=request.user.userprofile)
+   
+
     if request.method == 'POST':
-        form = UserProfileForm(request.POST, instance=request.user.userprofile)
-        if form.is_valid():
-            form.save()
-            return redirect('profile')  
+            user_form_update = UpdateUserForm(request.POST, instance=request.user)
+            profile_form = UserProfileForm(request.POST, instance=request.user.userprofile)
+
+    if user_form_update.is_valid() and profile_form.is_valid():
+            user_form_update.save()
+            profile_form.save()
+            messages.success(request, "You've successfully updated your profile")
+            return redirect('profile')
     else:
-        form = UserProfileForm(instance=request.user.userprofile)
-    return render(request, 'core/profile.html', {'form': form})
+        user_form_update = UpdateUserForm(instance=request.user)
+        profile_form = UserProfileForm(instance=request.user.userprofile)
+
+    return render(request, 'core/profile.html', {'user_form_update': user_form_update, 'profile_form': profile_form})
 
 class UpdateUserProfileView(UpdateView):
     model = UserProfile

@@ -23,8 +23,8 @@
 
                 <form method="post">
                     {% csrf_token %}
-                    {{ update_user_form.as_p }}
-                    {{ form.as_p }}
+                    {{ user_form_update.as_p }}
+                    {{ profile_form.as_p }}
                     <button class="btn" type="submit">Update</button>
                 </form>
                 {% if messages %}
