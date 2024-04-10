@@ -16,15 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from core.views import register, edit_user_profile
-#from event_management.views import event_list
-#from content_management.views import home
+from core.views import register
 
 
 
 urlpatterns = [
-  
-    #path('accounts/', include('django.contrib.auth.urls')), 
 
     #Django admin
      path('admin/', admin.site.urls),
@@ -37,7 +33,6 @@ urlpatterns = [
     path('', include('content_management.urls')),
     path('core/', register, name='registration'),
     path('summernote/', include('django_summernote.urls')),
-    path('account/', edit_user_profile, name='profile'),
     path('event_management/', include('event_management.urls')), 
-    #path('events/', event_list, name='event_list')
+    path('core/', include('core.urls')),
 ]
