@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = false
 
 ALLOWED_HOSTS = ['8000-ceciliasg-membersonly-vpjme6sjhrb.ws-eu110.gitpod.io', '.herokuapp.com']
 
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'content_management',
+    'event_management',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
