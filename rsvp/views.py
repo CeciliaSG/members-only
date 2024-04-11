@@ -1,7 +1,13 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from .models import Event, Rsvp
 from .forms import RsvpForm
+from .models import Rsvp
 from django.contrib.auth.decorators import login_required
+
+
+
+
 
 
 # Create your views here.
@@ -22,7 +28,7 @@ def rsvp_event(request, event_id):
             rsvp.response = form.cleaned_data['response']
             rsvp.num_guests = form.cleaned_data['num_guests']
             rsvp.save()
-            return redirect('rsvp_event_detail', event_id=event_id)
+            return redirect('event_detail', event_id=event_id)
     else:
         form = RsvpForm(initial={'event_id': event_id})
 

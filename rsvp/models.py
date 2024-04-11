@@ -20,4 +20,4 @@ class Rsvp(models.Model):
     ]    
 
     response = models.CharField(max_length=5, choices=response_choices)
-    num_guests = models.CharField(max_length=1, choices=guest_choices)
+    num_guests = models.CharField(max_length=10, choices=guest_choices)
