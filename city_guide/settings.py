@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'core',
     'content_management',
     'event_management',
-    'RSVP',
+    'rsvp',
     'django.contrib.sites',
     'allauth',
     'allauth.account',

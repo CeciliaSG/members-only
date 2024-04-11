@@ -22,12 +22,13 @@ def create_posts_for_events(modeladmin, request, queryset):
             end_date=event.end_date
         )
 
-class EventAdmin(admin.ModelAdmin):
-    list_display = ['title', 'heading', 'description', 'slug', 'excerpt', 'tag', 'status', 'start_date', 'end_date']
+class HeadingAdmin(admin.ModelAdmin):
+    list_display = ['name', 'created_at']
 
 class EventAdmin(admin.ModelAdmin):
     list_display = ['title', 'heading', 'description', 'slug', 'excerpt', 'tag', 'status', 'start_date', 'end_date']
-
+    prepopulated_fields = {'slug': ('title',)}
+    summernote_fields = ('content', 'excerpt',)
 
 # Register your models here.
 admin.site.register(Heading, HeadingAdmin)

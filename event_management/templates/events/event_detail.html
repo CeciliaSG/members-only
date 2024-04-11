@@ -1,9 +1,24 @@
-<title>Event Detail</title>
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
 
 <body>
-    <h1>{{ event.title }}</h1>
-    <p>{{ event.description }}</p>
-    <p>Date: {{ event.start_date }}</p>
-    <p>Location: {{ event.location }}</p>
-    <!-- Other event details -->
+    <div class="container-fluid events">
+        <div class="container">
+            <div class="row">
+                <h1 class="parent-heading">RSVP</h1>
+                <div class="container rsvp">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn">RSVP</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
+{% endblock %}

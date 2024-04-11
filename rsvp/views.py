@@ -3,7 +3,7 @@ from .models import Event
 from .forms import RSVPForm
 
 # Create your views here.
-def rsvp_event(request):
+def rsvp_event(request, event_id):
     if request.method == 'POST':
         form = RSVPForm(request.POST)
         if form.is_valid():
@@ -15,4 +15,6 @@ def rsvp_event(request):
                 event.rsvp_users.add(request.user)
             return redirect('event_detail', event_id=event_id)
     else:
-        return redirect('post_list')
+        form = RSVPForm(initial={'event_id': event_id})
+
+    return render(request, 'event_detail.html', {'form': form, 'event': event})

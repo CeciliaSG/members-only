@@ -4,7 +4,7 @@ from event_management.models import Event
 
 # Create your models here.
 
-class RSVP(models.Model):
+class Rsvp(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     response_choices = [

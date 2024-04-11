@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
 <body>
@@ -16,7 +15,7 @@
         {% csrf_token %}
         {{ user_form.as_p }}
         {{ profile_form.as_p }}
-        <button type="submit">Sign Up</button>
+        <button type="submit" class="btn">Sign Up</button>
     </form>
 </body>
 
