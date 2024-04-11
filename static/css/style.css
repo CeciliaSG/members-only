@@ -20,7 +20,6 @@ body {
 
 /* Navbar styling */
 
-
 .first-nav {
     height: 100px;
     background-color: black;
@@ -29,6 +28,16 @@ body {
 .navbar-logo {
     color: white;
     font-size: larger;
+}
+
+.navbar-logo:hover {
+    color: hotpink;
+    text-decoration: none;
+}
+
+.nav-link {
+    line-height: 5px;
+    padding-top: 20px;
 }
 
 .navbar-nav .nav-link {
@@ -68,12 +77,16 @@ body {
 
 .image-container {
     width: 100%;
-    height: auto;
-    background-image: url('{% static "images/restaurant_1_unsplash.jpg" %}');
-    background-size: cover;
-    background-position: center;
+    max-height: 300px;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 
 .the-latest {
     background-color: whitesmoke;
@@ -82,6 +95,13 @@ body {
 .events-perks {
     background-color: white;
 }
+
+.hr {
+    border: 25;
+    height: 15px;
+    background-color: black;
+}
+
 
 .event-details {
     padding: 2em;
@@ -159,6 +179,12 @@ footer {
     font-size: 14px;
     text-transform: capitalize;
 }
+
+.text-decoration-none:hover {
+    color: hotpink;
+}
+
+
 
 .footer-divider::before,
 .footer-divider::after {
