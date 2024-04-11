@@ -11,11 +11,11 @@
                 {% for event in events %}
                 <div class="col-md-4 post-col">
                     <div class="card h-100">
+                        <h6 class="event-heading">{{ event.heading }}</h6>
                         {% if post.image %}
                         <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
                         {% endif %}
                         <div class="card-body">
-                            <h2 class="event-heading">{{ event.heading }}</h2>
                             <h5 class="card-title">{{ event.title }}</h5>
                             <p class="card-text">{{ event.excerpt }}
                                 <p class="card-text">{{ event.start_date }}</p>
@@ -40,7 +40,7 @@
     <div class="container-fluid bg-white">
         <div class="container">
             <div class="row">
-                <h1 class="parent-heading">Events</h1>
+                <h1 class="parent-heading">Itineraries & Date Ideas</h1>
                 {% for post in posts %}
                 <div class="col-md-4 post-col">
                     <div class="card h-100">

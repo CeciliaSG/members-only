@@ -6,32 +6,40 @@
 <body>
     <div class="container-fluid events">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
 
-                <div>
-                    <div class="card h-100">
-                        {% if post.image %}
-                        <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.title }}">
+                <div class="card card-rsvp">
+                    {% if post.image %}
+                    <div class="image-container">
+                        <img src="{{ post_images.url }}" class="card-img-top" alt="{{ post.title }}">
                         {% endif %}
-                        <div>
-                            <h2 class="event-heading">{{ event.ID }}</h2>
-                            <h5 class="card-title">{{ event.title }}</h5>
-                            <p class="card-text">{{ event.description }}
-                                <p class="card-text">{{ event.start_date }}</p>
-                                <p class="card-text">{{ event.end_date }}</p>
-                                <h1 class="parent-heading">RSVP</h1>
-                                <div class="container rsvp">
-                                    <form method="post" action="{% url 'event_detail' event.id %}">
-                                        {% csrf_token %}
-                                        {{ form.as_p }}
-                                        <button type="submit" class="btn">RSVP</button>
-                                    </form>
+                    </div>
+                    <h5 class="event-heading">{{ event.heading }}</h5>
+                    <div class="event-details col-md-6">
+                        <h3 class="card-title">{{ event.title }}</h3>
+                        <p class="card-text-description">{{ event.description }}
+                            <p class="card-text">{{ event.start_date }}</p>
+                            <p class="card-text">{{ event.end_date }}</p>
+                            <h1 class="parent-heading">RSVP</h1>
+                            <div class="container rsvp">
+                                <form method="post" action="{% url 'event_detail' event.id %}">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <button type="submit" class="btn">RSVP</button>
+                                </form>
+                                <div class="message message-rsvp">
+                                    {% if messages %}
+                                    <ul class="messages">
+                                        {% for message in messages %}
+                                        <li>{{ message }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
                                 </div>
-
-                        </div>
+                            </div>
                     </div>
                 </div>
-
-
+            </div>
+        </div>
 </body>
 {% endblock %}

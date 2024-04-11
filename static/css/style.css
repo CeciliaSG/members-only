@@ -9,10 +9,20 @@ body {
     background-color: hotpink;
 }
 
+.messages {
+    list-style: none;
+    padding: 1em;
+}
+
+.btn:hover {
+    background-color: red;
+}
+
 /* Navbar styling */
 
+
 .first-nav {
-    height: 200px;
+    height: 100px;
     background-color: black;
 }
 
@@ -22,10 +32,6 @@ body {
 }
 
 .navbar-nav .nav-link {
-    color: black;
-}
-
-.nav-list-item {
     color: black;
 }
 
@@ -49,9 +55,6 @@ body {
     border-radius: 0;
 }
 
-.btn:hover {
-    background-color: pink;
-}
 
 .btn-search {
     outline: hotpink;
@@ -63,12 +66,25 @@ body {
 
 /*Page and section styling */
 
+.image-container {
+    width: 100%;
+    height: auto;
+    background-image: url('{% static "images/restaurant_1_unsplash.jpg" %}');
+    background-size: cover;
+    background-position: center;
+}
+
+
 .the-latest {
     background-color: whitesmoke;
 }
 
 .events-perks {
     background-color: white;
+}
+
+.event-details {
+    padding: 2em;
 }
 
 /* Styling user profile */
@@ -121,6 +137,10 @@ body {
 
 /*Footer styling */
 
+.hover:hover {
+    color: hotpink;
+}
+
 .bg-dark {
     background-color: black;
 }
@@ -128,6 +148,10 @@ body {
 footer {
     background-color: black;
     max-height: 300px;
+}
+
+.footer-row {
+    padding: 1em;
 }
 
 .text-decoration-none {

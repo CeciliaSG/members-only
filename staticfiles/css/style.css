@@ -1,0 +1,186 @@
+/* Global styles */
+
+body {
+    background-color: white;
+    min-height: 100vh;
+}
+
+.btn {
+    background-color: hotpink;
+}
+
+.messages {
+    list-style: none;
+    padding: 1em;
+}
+
+.btn:hover {
+    background-color: red;
+}
+
+/* Navbar styling */
+
+
+.first-nav {
+    height: 100px;
+    background-color: black;
+}
+
+.navbar-logo {
+    color: white;
+    font-size: larger;
+}
+
+.navbar-nav .nav-link {
+    color: black;
+}
+
+.navbar-dropdown {
+    margin-right: 20px;
+}
+
+.container {
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.parent-heading {
+    padding-top: 20px;
+    font-size: 25px;
+}
+
+.btn {
+    color: white;
+    background-color: hotpink;
+    border-radius: 0;
+}
+
+
+.btn-search {
+    outline: hotpink;
+}
+
+.form-control-sm {
+    height: 30px;
+}
+
+/*Page and section styling */
+
+.image-container {
+    width: 100%;
+    height: auto;
+    background-image: url('images/restaurant_1_unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.the-latest {
+    background-color: whitesmoke;
+}
+
+.events-perks {
+    background-color: white;
+}
+
+.event-details {
+    padding: 2em;
+}
+
+/* Styling user profile */
+.user-profile-welcome {
+    background-color: black;
+    color: white;
+}
+
+.user-profile {
+    background-color: whitesmoke;
+    color: black;
+}
+
+/*Post styling*/
+
+.post-col {
+    margin-top: 20px;
+}
+
+
+.post-heading {
+    font-size: 14px;
+}
+
+.post-title .post-content {
+    color: white;
+}
+
+.excerpt {
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+}
+
+.card {
+    border: none;
+    outline: none;
+    padding: 15px;
+    background-color: whitesmoke;
+}
+
+.card-body {
+    min-height: 344.8px;
+}
+
+.post-link {
+    text-decoration: none;
+    color: pink;
+}
+
+/*Footer styling */
+
+.hover:hover {
+    color: hotpink;
+}
+
+.bg-dark {
+    background-color: black;
+}
+
+footer {
+    background-color: black;
+    max-height: 300px;
+}
+
+.footer-row {
+    padding: 1em;
+}
+
+.text-decoration-none {
+    color: white;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.footer-divider::before,
+.footer-divider::after {
+    content: '';
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid white;
+    padding: 10 10px;
+}
+
+/* Media queries */
+@media (max-width: 767px) {
+
+    .search_field {
+        display: none;
+    }
+
+    .container {
+        overflow: auto;
+    }
+
+    .card {
+        margin-left: 15px;
+    }
+}
