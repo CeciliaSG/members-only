@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import Event, Heading
 from content_management.models import Post
+from django_summernote.admin import SummernoteModelAdmin
+
 
 class HeadingAdmin(admin.ModelAdmin):
     list_display = ['name', 'created_at']
@@ -24,14 +26,16 @@ def create_posts_for_events(modeladmin, request, queryset):
 
 class HeadingAdmin(admin.ModelAdmin):
     list_display = ['name', 'created_at']
+    summernote_fields = ('heading')
 
-class EventAdmin(admin.ModelAdmin):
+class EventAdmin(SummernoteModelAdmin):
     list_display = ['title', 'heading', 'description', 'slug', 'excerpt', 'tag', 'status', 'start_date', 'end_date']
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('content', 'excerpt',)
+    summernote_fields = ('title','description', 'excerpt',)
 
 # Register your models here.
 admin.site.register(Heading, HeadingAdmin)
 admin.site.register(Event, EventAdmin)
+
 
 
