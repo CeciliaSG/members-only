@@ -50,7 +50,7 @@
 <body class="d-flex flex-column h-100 main-bg">
 
     <!-- First Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark first-nav">
+    <nav class="navbar navbar-expand-lg navbar-dark  first-nav">
         <form id="searchForm" class="d-none d-lg-flex" action=method="GET">
             <input id="searchInput" class="form-control-sm" type="search" name="q" placeholder="Search"
                 aria-label="Search">
@@ -96,7 +96,7 @@
     </nav>
 
     <!-- Second Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg bg-white">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText2"
                 aria-controls="navbarText2" aria-expanded="false" aria-label="Toggle navigation">
@@ -105,21 +105,21 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarText2">
                 <ul class="navbar-nav">
                     <li class="nav-list-item">
-                        <a class="nav-link text-dark" href="#">Restaurants & Bars</a>
+                        <a class="nav-link" href="#">Restaurants & Bars</a>
                     </li>
                     <li class="nav-list-item">
-                        <a class="nav-link text-dark" href="#">Things to do</a>
+                        <a class="nav-link" href="#">Things to do</a>
                     <li class="nav-list-item">
-                        <a class="nav-link text-dark" href="{% url 'event_list' %}">Events</a>
+                        <a class="nav-link" href="{% url 'event_list' %}">Events</a>
                     </li>
                     <li class="nav-list-item">
-                        <a class="nav-link text-dark" href="#">Neighbourhoods</a>
+                        <a class="nav-link" href="#">Neighbourhoods</a>
                     </li>
                     <li class="nav-list-item">
-                        <a class="nav-link text-dark" href="#">What's On</a>
+                        <a class="nav-link" href="#">What's On</a>
                     </li>
                     <li class="nav-list-item">
-                        <a class="nav-link text-dark" href="#">Perks</a>
+                        <a class="nav-link" href="#">Perks</a>
                     </li>
                 </ul>
             </div>
@@ -136,7 +136,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 bg-dark">
+    <footer class="footer mt-auto py-3">
         <div class="container footer-divider">
             <div class="footer-row">
                 <div class="col-md-6 mb-3">

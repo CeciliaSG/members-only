@@ -9,7 +9,7 @@
             <div class="row">
                 <h1 class="parent-heading">RSVP</h1>
                 <div class="container rsvp">
-                    <form method="post">
+                    <form method="post" action="{% url 'event_detail' event.id %}">
                         {% csrf_token %}
                         {{ form.as_p }}
                         <button type="submit" class="btn">RSVP</button>

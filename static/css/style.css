@@ -25,6 +25,10 @@ body {
     color: black;
 }
 
+.nav-list-item {
+    color: black;
+}
+
 .navbar-dropdown {
     margin-right: 20px;
 }

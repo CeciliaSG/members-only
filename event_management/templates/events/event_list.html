@@ -22,7 +22,7 @@
                                 <p class="card-text">{{ event.end_date }}</p>
 
                                 {% if user.is_authenticated %}
-                                <a href="{% url 'event_detail' event.slug %}" class="post-link">...</a>
+                                <a href="{% url 'event_detail' event.id %}" class="post-link">...</a>
                             </p>
                             {% else %}
                             <span class="event-link" onclick="alert('Please log in to view this post.')">...</span>
