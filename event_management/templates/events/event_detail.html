@@ -6,40 +6,43 @@
 <body>
     <div class="container-fluid events">
         <div class="container">
-            <div class="row justify-content-center">
-
-                <div class="card card-rsvp">
-                    {% if post.image %}
-                    <div class="image-container">
-                        <img src="{{ post_images.url }}" class="card-img-top" alt="{{ post.title }}">
-                        {% endif %}
-                    </div>
-                    <h5 class="event-heading">{{ event.heading }}</h5>
-                    <div class="event-details col-md-6">
-                        <h3 class="card-title">{{ event.title }}</h3>
-                        <p class="card-text-description">{{ event.description }}
-                            <p class="card-text">{{ event.start_date }}</p>
-                            <p class="card-text">{{ event.end_date }}</p>
-                            <h1 class="parent-heading">RSVP</h1>
-                            <div class="container rsvp">
-                                <form method="post" action="{% url 'event_detail' event.id %}">
-                                    {% csrf_token %}
-                                    {{ form.as_p }}
-                                    <button type="submit" class="btn">RSVP</button>
-                                </form>
-                                <div class="message message-rsvp">
-                                    {% if messages %}
-                                    <ul class="messages">
-                                        {% for message in messages %}
-                                        <li>{{ message }}</li>
-                                        {% endfor %}
-                                    </ul>
-                                    {% endif %}
-                                </div>
-                            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="image-container d-flex justify-content-center align-items-center">
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-6 pr-lg-4">
+                    <h6 class="event-heading ">{{ event.heading }}</h6>
+                    <h3 class="event-title mt-3">{{ event.title }}</h3>
+                    <p class="event-text-description">{{ event.description }}</p>
+                    <p class="event-text">{{ event.start_date }}</p>
+                    <p class="event-text">{{ event.end_date }}</p>
+                    <h1 class="parent-heading">RSVP</h1>
+                    <div class="container rsvp">
+                        <form method="post" action="{% url 'event_detail' event.id %}">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn">RSVP</button>
+                        </form>
+                        <div class="message message-rsvp">
+                            {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 pl-lg-4 mt-5">
+                    <hr class="hr-thick">
+                    <p>Social media icons</p>
+                </div>
+            </div>
         </div>
+    </div>
 </body>
 {% endblock %}
