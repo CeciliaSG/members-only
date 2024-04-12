@@ -2,6 +2,7 @@
 {% load i18n %}
 {% load account socialaccount %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 
 {% block head_title %}{% trans "Sign In" %}{% endblock head_title %}
@@ -32,24 +33,30 @@
 {% else %}
 
 <div class="container-fluid">
-  <div class="container">
-    <div class="row text-center">
+  <div class="container ">
+    <div class="col-md-12">
+      <div class="row">
 
-      <p>{% blocktrans %}If you have not created an account yet, then please
-        <a href="{{% url 'registration' %}}">sign up</a> first.{% endblocktrans %}</p>
-      {% endif %}
-
-      <form class="login" method="POST" action="{% url 'account_login' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        <!--<p>{% blocktrans %}If you have not created an account yet, then please
+      <a href="{{% url 'registration' %}}">sign up</a> first.{% endblocktrans %}</p>
+    -->
         {% endif %}
-        <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-        <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-      </form>
+
+        <form class="login" method="POST" action="{% url 'account_login' %}">
+          {% csrf_token %}
+          {{ form.as_p }}
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+          <button class="primaryAction btn" type="submit">{% trans "Sign In" %}</button>
+        </form>
+
+        <div class="sign-up-link">
+          <a href="{% url 'registration' %}" class="form-links">SignUp</a>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-{% endblock content %}
+  {% endblock content %}

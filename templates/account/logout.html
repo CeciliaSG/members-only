@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load i18n %}
+{% load crispy_forms_tags %}
 
 {% block head_title %}{% trans "Sign Out" %}{% endblock head_title %}
 
@@ -11,7 +12,7 @@
     <div class="row justify-content-center">
       <div class="col-md-6 text-center">
 
-        <h1 class="text-center form-heading">{% trans "Sign Out" %}</h1>
+        <h1 class=" h2 text-center form-heading mt-5">{% trans "Sign Out" %}</h1>
 
         <p>{% trans 'Are you sure you want to sign out?' %}
           <h5>{{ request.user.username }}</h5>
@@ -23,7 +24,7 @@
           {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}
-          <button class="btn btn-primary" type="submit">{% trans 'Sign Out' %}</button>
+          <button class="btn" type="submit">{% trans 'Sign Out' %}</button>
         </form>
       </div>
       <div>
