@@ -10,7 +10,6 @@ from django.views.generic import UpdateView
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from .models import UserProfile
-#from django.contrib.auth import get_user_model
 from .forms import UpdateUserProfile, UpdateUserForm
 
 
@@ -18,7 +17,7 @@ from .forms import UpdateUserProfile, UpdateUserForm
 # Create your views here.
 
 # Sign-up/register view
-@transaction.atomic
+
 def register(request):
     if request.method == 'POST':
         user_form = CustomUserForm(request.POST)
@@ -30,7 +29,7 @@ def register(request):
             profile.save()
             messages.success(request, 'Yeah you are all signed up. Log in and have a look around.')
             auth_login(request, user)
-            return redirect('home')
+            return redirect('index')
     else:
         user_form = CustomUserForm()
         profile_form = UserProfileForm()

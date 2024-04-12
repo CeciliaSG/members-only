@@ -35,5 +35,5 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('event_management/', include('event_management.urls')), 
     path('core/', include('core.urls')),
-     path('rsvp/', include('rsvp.urls')),
+    path('rsvp/', include('rsvp.urls')),
 ]

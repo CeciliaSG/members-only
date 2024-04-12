@@ -135,6 +135,15 @@ body {
     color: pink;
 }
 
+/* Form styling */
+.sign-up {
+    font-size: 1.5rem;
+}
+
+.form {
+    font-size: 10px;
+}
+
 /*Footer styling */
 
 .hover:hover {
