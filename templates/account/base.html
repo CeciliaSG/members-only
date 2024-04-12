@@ -1,17 +1,9 @@
+{% extends "account/base.html" %}
+{% load crispy_forms_tags %}
 {% load i18n %}
-<!DOCTYPE html>
-<html>
 
-<head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block head_title %}{% endblock head_title %}</title>
-  {% block extra_head %}
-  {% endblock extra_head %}
-</head>
 
 <body>
-  {% block body %}
 
   {% if messages %}
   <div>
@@ -23,7 +15,7 @@
     </ul>
   </div>
   {% endif %}
-
+  {% block content %}
   <div>
     <strong>{% trans "Menu:" %}</strong>
     <ul>
@@ -36,11 +28,16 @@
       {% endif %}
     </ul>
   </div>
-  {% block content %}
-  {% endblock content %}
-  {% endblock body %}
+
   {% block extra_body %}
   {% endblock extra_body %}
 </body>
+{% endblock %}
 
-</html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block head_title %}{% endblock head_title %}</title>
+  {% block extra_head %}
+  {% endblock extra_head %}
+</head>
