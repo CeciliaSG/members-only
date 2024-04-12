@@ -4,7 +4,10 @@
 
 
 <body>
-    <div class="container-fluid events">
+    <div class="events">
+        <div class=" full-width-container image-container-list-top mt-2">
+            <img src="{% static 'images/restaurant_1_unsplash.jpg' %}" alt="Restaurant Image" class="w-100">
+        </div>
         <div class="container">
             <div class="row post-row">
                 <h1 class="parent-heading">Events</h1>
@@ -12,10 +15,8 @@
                 <div class="col-md-4 post-col">
                     <div class="card h-100">
                         <h6 class="event-heading">{{ event.heading }}</h6>
-                        {% if post.image %}
-                        <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
-                        {% endif %}
                         <div class="card-body">
+                            <p>{{ event.image}}</p>
                             <h5 class="card-title">{{ event.title }}</h5>
                             <p class="card-text">{{ event.excerpt }}
                                 <p class="card-text">{{ event.start_date }}</p>
@@ -39,7 +40,7 @@
 
     <div class="container-fluid bg-white">
         <div class="container">
-            <div class="row">
+            <div class="row post-row">
                 <h1 class="parent-heading">Itineraries & Date Ideas</h1>
                 {% for post in posts %}
                 <div class="col-md-4 post-col">
@@ -64,4 +65,5 @@
             </div>
         </div>
     </div>
-    {% endblock %}
+</body>
+{% endblock %}
