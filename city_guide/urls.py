@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from core.views import register
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 
@@ -31,9 +33,8 @@ urlpatterns = [
 
     # Custom Urls
     path('', include('content_management.urls')),
-    path('core/', register, name='registration'),
     path('summernote/', include('django_summernote.urls')),
     path('event_management/', include('event_management.urls')), 
     path('core/', include('core.urls')),
     path('rsvp/', include('rsvp.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

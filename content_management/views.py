@@ -12,6 +12,7 @@ class PostListView(generic.ListView):
     context_object_name = 'posts'
     model = Post    
 
+
 def post_detail(request, slug):
 
     """
@@ -39,6 +40,7 @@ def tag_filter(request, tag):
     }
 
     return render(request, 'content_management/restaurants_bars.html', context)
+
 
 def post_tag_detail(request, tag):
 
