@@ -14,15 +14,16 @@
                 {% for event in events %}
                 <div class="col-md-4 post-col">
                     <div class="card h-100">
-                        <h6 class="event-heading">{{ event.heading }}</h6>
                         {% if event.image %}
-                        <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.title }}">
+                        <div class="card-image-container">
+                            <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.title }}">
+                        </div>
                         {% endif %}
+                        <h2 class=" h5 event-heading">{{ event.heading }}</h2>
                         <div class="card-body">
                             <h5 class="card-title">{{ event.title }}</h5>
                             <p class="card-text">{{ event.excerpt }}
-                                <p class="card-text">{{ event.start_date }}</p>
-                                <p class="card-text">{{ event.end_date }}</p>
+                                <p class="card-date">{{ event.start_date }} - {{ event.end_date }}</p>
 
                                 {% if user.is_authenticated %}
                                 <a href="{% url 'event_detail' event.id %}" class="post-link">...</a>
@@ -48,7 +49,9 @@
                 <div class="col-md-4 post-col">
                     <div class="card h-100">
                         {% if event.image %}
-                        <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.title }}">
+                        <div class="card-image-container">
+                            <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.title }}">
+                        </div>
                         {% endif %}
                         <div class="card-body">
                             <h2 class="post-heading">{{ post.heading }}</h2>
