@@ -12,6 +12,21 @@ class PostListView(generic.ListView):
     context_object_name = 'posts'
     model = Post    
 
+    def get_queryset(self):
+        return Post.objects.filter(status=1)
+
+
+def post_list_view(request, Post):
+    posts = Post.objects.filter(status=1)
+    post = get_object_or_404(Post, tag=tag)
+
+    return render(
+        request,
+        "content_management/post_detail.html",
+        {"post": post},
+    )
+
+       
 
 def post_detail(request, slug):
 

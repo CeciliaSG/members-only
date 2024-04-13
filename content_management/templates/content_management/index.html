@@ -13,7 +13,7 @@
             <div class="col-md-4 post-col">
                 <div class="card h-100">
                     {% if post.image %}
-                    <img src="{{ post_image.url }}" class="card-img-top" alt="{{ post.title }}">
+                    <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
                     {% endif %}
                     <div class="card-body">
                         <h2 class="post-heading">{{ post.heading }}</h2>
@@ -40,7 +40,7 @@
             <div class="col-md-4 post-col">
                 <div class="card h-100">
                     {% if post.image %}
-                    <img src="{{ post_images.image.url }}" class="card-img-top" alt="{{ post.title }}">
+                    <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
                     {% endif %}
                     <p class="card-image">{{ post.image }}
                         <div class="card-body">
