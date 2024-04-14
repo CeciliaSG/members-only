@@ -2,7 +2,14 @@
 
 * {
     margin: 0;
+    font-family: "Playfair Display",
+        serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
 }
+
+
 
 body {
     background-color: white;
@@ -52,7 +59,9 @@ body {
     margin-right: 20px;
 }
 
-.account-dropdown .container {
+.account-dropdown {}
+
+.container {
     margin-bottom: 20px;
     margin-top: 15px;
 }
@@ -78,7 +87,12 @@ body {
 }
 
 
-/* Post/event-list stylong*/
+/* Post/event-list styling*/
+
+.post-heading,
+.event-heading {
+    font-family: poppins;
+}
 
 .card-image-container {
     width: 100%;
@@ -96,15 +110,51 @@ body {
     height: 100%;
     object-fit: cover;
     margin: 0;
+    border-radius: 0;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-actions a {
+    margin-right: 10px;
+}
+
+.post-actions a {
+    margin-right: 10px;
+}
+
+.fa-heart {
+    color: red;
+}
+
+.like-post {
+    font-size: 10px;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: hotpink;
+    text-decoration: none;
 }
 
 /*Page and section styling */
+
+.the-latest {
+    background-color: white;
+}
 
 .image-container {
     width: 100%;
     max-height: 300px;
     overflow: hidden;
     margin-bottom: 20px;
+    ;
 }
 
 .image-container img {
@@ -131,7 +181,7 @@ body {
 }
 
 .events-perks {
-    background-color: white;
+    background-color: whitesmoke;
 }
 
 .hr {
@@ -181,10 +231,11 @@ body {
 .card {
     border: none;
     outline: none;
-    background-color: whitesmoke;
+    background-color: transparent;
     width: 100%;
     height: 100%;
     overflow: hidden;
+    border-radius: 0;
 }
 
 .card-title {
@@ -238,7 +289,6 @@ footer {
 .text-decoration-none:hover {
     color: hotpink;
 }
-
 
 
 .footer-divider::before,
