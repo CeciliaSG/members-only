@@ -57,12 +57,13 @@
                             <h2 class="post-heading">{{ post.heading }}</h2>
                             <h5 class="card-title">{{ post.title }}</h5>
                             <p class="card-text">{{ post.excerpt }}
+                                <div> <button type="submit"><i class="fas fa-heart"></i></button></div>
                                 {% if user.is_authenticated %}
                                 <a href="{% url 'event_detail' event.slug %}" class="post-link">...</a></p>
                             {% else %}
                             <span class="post-link" onclick="alert('Please log in to view this post.')">...</span>
                             {% endif %}
-                            <div> <button type="submit"><i class="fas fa-heart"></i></button></div>
+
                         </div>
                     </div>
                 </div>

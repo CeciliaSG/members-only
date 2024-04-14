@@ -26,7 +26,11 @@
                         {% else %}
                         <span class="post-link" onclick="alert('Please log in to view this post.')">...</span>
                         {% endif %}
-                        <div> <button type="submit"><i class="fas fa-heart"></i></button></div>
+                        <div> <button type="submit"><a href="{% url 'like_post' post.id %}"><i
+                                        class="fas fa-heart"></i></button></div>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'save_post' post.id %}">Save Post</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

@@ -1,8 +1,11 @@
 from django.views import generic
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
-from .models import Post
+from .models import Post, SavedPost, LikedPost
+from django.contrib import messages
+from django.http import HttpResponse
 
 
 # Create your views here.
@@ -26,7 +29,6 @@ def post_list_view(request, Post):
         {"post": post},
     )
 
-       
 
 def post_detail(request, slug):
 
@@ -60,10 +62,9 @@ def tag_filter(request, tag):
 def post_tag_detail(request, tag):
 
     """
-    Filter for status and tag and display on post_detail template
+    Filter for status and tag and display on post_detail template.
     """
     posts = Post.objects.filter(tag=tag, status=1)
-
     post = posts.first()
 
     return render(
@@ -72,5 +73,27 @@ def post_tag_detail(request, tag):
         {"post": post, "tag": tag},
     )
 
+@login_required
+def save_post(request, post_id):
 
+    """
+    Save the post to the database.
+    """
+    post = Post.objects.get(id=post_id)
+    saved_post = SavedPost(user=request.user, post=post)
+    saved_post.save()
+
+    return HttpResponse("Post saved successfully!")
+
+@login_required
+def like_post(request, post_id):
+
+    """
+    like the post and save to the database.
+    """
+    post = Post.objects.get(id=post_id)
+    liked_post = SavedPost(user=request.user, post=post)
+    liked_post.save()
+
+    return HttpResponse("Liked saved successfully!")    
  
