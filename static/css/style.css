@@ -1,14 +1,25 @@
 /* Global styles */
 
+
+:root {
+    --primary-color: black;
+    --secondary-color: white;
+    --button-green: #2A7221;
+    --dark-green: #1E441E;
+    --hover-green: #119822;
+    --background-color: whitesmoke;
+
+
+}
+
 * {
     margin: 0;
     font-family: "Playfair Display",
         serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: ;
     font-style: normal;
 }
-
 
 
 body {
@@ -17,7 +28,7 @@ body {
 }
 
 .btn {
-    background-color: hotpink;
+    background-color: #2A7221;
 }
 
 .messages {
@@ -26,7 +37,7 @@ body {
 }
 
 .btn:hover {
-    background-color: red;
+    background-color: #119822;
 }
 
 /* Navbar styling */
@@ -53,6 +64,7 @@ body {
 
 .navbar-nav .nav-link {
     color: black;
+    font-family: poppins;
 }
 
 .navbar-dropdown {
@@ -73,13 +85,8 @@ body {
 
 .btn {
     color: white;
-    background-color: hotpink;
+    background-color: #2A7221;
     border-radius: 0;
-}
-
-
-.btn-search {
-    outline: hotpink;
 }
 
 .form-control-sm {
@@ -127,7 +134,7 @@ body {
 }
 
 .fa-heart {
-    color: red;
+    color: #1E441E;
 }
 
 .like-post {
@@ -139,7 +146,7 @@ a {
 }
 
 a:hover {
-    color: hotpink;
+    color: #119822;
     text-decoration: none;
 }
 
@@ -222,10 +229,10 @@ a:hover {
     color: white;
 }
 
-.excerpt {
-    font-size: 14px;
+.card--text {
+    font-size: 16px;
     text-decoration: none;
-    color: black;
+    color: gray;
 }
 
 .card {
@@ -252,13 +259,14 @@ a:hover {
 }
 
 .card .card-body p {
-    font-size: 14px;
+    font-size: 18px;
     padding: 0;
+    color: gray;
 }
 
 .post-link {
     text-decoration: none;
-    color: pink;
+    color: #119822;
 }
 
 /*Footer styling */
