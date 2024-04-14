@@ -77,8 +77,12 @@ def post_tag_detail(request, tag):
 def save_post(request, post_id):
 
     """
-    Save the post to the database.
+    Checks if the post is already saved, if not save the post to the database.
     """
+
+    if request.user.saved_posts.filter(id=post_id).exists():
+         return HttpResponse("The post has already been saved!")    
+
     post = Post.objects.get(id=post_id)
     saved_post = SavedPost(user=request.user, post=post)
     saved_post.save()
@@ -89,11 +93,14 @@ def save_post(request, post_id):
 def like_post(request, post_id):
 
     """
-    like the post and save to the database.
+    Check if the post has already been like, if not save like to the database.
     """
+    if request.user.liked_posts.filter(id=post_id).exists():
+         return HttpResponse("The post has already been liked!")   
+
     post = Post.objects.get(id=post_id)
-    liked_post = SavedPost(user=request.user, post=post)
+    liked_post = LikedPost(user=request.user, post=post)
     liked_post.save()
 
-    return HttpResponse("Liked saved successfully!")    
+    return HttpResponse("You liked the post!")    
  
