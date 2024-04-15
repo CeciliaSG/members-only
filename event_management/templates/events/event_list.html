@@ -24,12 +24,13 @@
                             <h2 class=" h5 event-heading">{{ event.heading }}</h2>
                             <h5 class="card-title">{{ event.title }}</h5>
                             <p class="card-text">{{ event.excerpt }}
-                                <p class="card-date">{{ event.start_date }} - {{ event.end_date }}</p>
                                 {% if user.is_authenticated %}
                                 <a href="{% url 'event_detail' event.id %}" class="post-link">...</a>
                             </p>
+                            <p class="card-date">{{ event.start_date }} - {{ event.end_date }}</p>
+
                             {% else %}
-                            <span class="event-link" onclick="alert('Please log in to view this post.')">...</span>
+                            <span class="event-link" onclick="alert('Please log in to view this post.')"></span>
                             {% endif %}
                             {% if user.is_authenticated %}
                             <div class="post-actions"><a href="{% url 'like_post' event.id %}" class="like-post"><i
@@ -46,35 +47,42 @@
     </div>
 
 
-    <div class="container-fluid bg-white">
-        <div class="container">
-            <div class="row post-row">
-                <h1 class="parent-heading">Itineraries & Date Ideas</h1>
-                {% for event in posts %}
-                <div class="col-md-4 post-col">
-                    <div class="card h-100">
-                        {% if event.image %}
-                        <div class="card-image-container">
-                            <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.title }}">
-                        </div>
-                        {% endif %}
-                        <div class="card-body">
-                            <h2 class="post-heading">{{ post.heading }}</h2>
-                            <h5 class="card-title">{{ post.title }}</h5>
-                            <p class="card-text">{{ post.excerpt }}
-                                <div> <button type="submit"><i class="fas fa-heart"></i></button></div>
-                                {% if user.is_authenticated %}
-                                <a href="{% url 'event_detail' event.slug %}" class="post-link">...</a></p>
-                            {% else %}
-                            <span class="post-link" onclick="alert('Please log in to view this post.')">...</span>
-                            {% endif %}
+    <div class="container">
+        <div class="row post-row">
+            <h1 class="parent-heading">Itineraries & Date ideas</h1>
+            {% for event in events %}
+            <div class="col-md-4 post-col">
+                <div class="card h-100">
+                    {% if event.image %}
+                    <div class="card-image-container">
+                        <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.title }}">
+                    </div>
+                    {% endif %}
 
-                        </div>
+                    <div class="card-body">
+                        <h2 class=" h5 event-heading">{{ event.heading }}</h2>
+                        <h5 class="card-title">{{ event.title }}</h5>
+                        <p class="card-text">{{ event.excerpt }}
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'event_detail' event.id %}" class="post-link">...</a>
+                        </p>
+                        <p class="card-date">{{ event.start_date }} - {{ event.end_date }}</p>
+
+                        {% else %}
+                        <span class="event-link" onclick="alert('Please log in to view this post.')"></span>
+                        {% endif %}
+                        {% if user.is_authenticated %}
+                        <div class="post-actions"><a href="{% url 'like_post' event.id %}" class="like-post"><i
+                                    class="fa-solid fa-heart"></i>
+                                <a href="{% url 'save_post' event.id %}" class="save-post"><i
+                                        class="fa-solid fa-bookmark"></i></a></div>
+                        {% endif %}
                     </div>
                 </div>
-                {% endfor %}
             </div>
+            {% endfor %}
         </div>
+    </div>
     </div>
 </body>
 {% endblock %}

@@ -160,6 +160,10 @@ a:hover {
     text-decoration: none;
 }
 
+.read-more {
+    font-size: 18px;
+}
+
 /*Page and section styling */
 
 .the-latest {

@@ -25,9 +25,9 @@
                         <h5 class="card-title">{{ post.title }}</h5>
                         <p class="card-text">{{ post.excerpt }}
                             {% if user.is_authenticated %}
-                            <a href="{% url 'post_detail' post.tag %}" class="post-link">...</a></p>
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">...</a></p>
                         {% else %}
-                        <span class="post-link" onclick="alert('Please log in to view this post.')">...</span>
+                        <span class="post-link read-more" onclick="alert('Please log in to view this post.')">...</span>
                         {% endif %}
                         {% if user.is_authenticated %}
                         <div class="post-actions"><a href="{% url 'like_post' post.id %}" class="like-post"><i
