@@ -6,70 +6,71 @@
 <body>
     <div class="events">
         <div class=" full-width-container image-container-list-top mt-2">
-            <img src="{% static 'images/restaurant_1_unsplash.jpg' %}" alt="Restaurant Image" class="w-100">
-        </div>
-        <div class="container">
-            <div class="row post-row">
-                <h1 class="parent-heading">Events</h1>
-                {% for event in events %}
-                <div class="col-md-4 post-col">
-                    <div class="card h-100">
-                        {% if event.image %}
-                        <div class="card-image-container">
-                            <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.title }}">
-                        </div>
-                        {% endif %}
-                        <h2 class=" h5 event-heading">{{ event.heading }}</h2>
-                        <div class="card-body">
-                            <h5 class="card-title">{{ event.title }}</h5>
-                            <p class="card-text">{{ event.excerpt }}
-                                <p class="card-date">{{ event.start_date }} - {{ event.end_date }}</p>
-
-                                {% if user.is_authenticated %}
-                                <a href="{% url 'event_detail' event.id %}" class="post-link">...</a>
-                            </p>
-                            {% else %}
-                            <span class="event-link" onclick="alert('Please log in to view this post.')">...</span>
+            <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.title }}">
+            <!--<img src="{% static 'images/restaurant_1_unsplash.jpg' %}" alt="Restaurant Image" class="w-100">
+        </div> -->
+            <div class="container">
+                <div class="row post-row">
+                    <h1 class="parent-heading">Events</h1>
+                    {% for event in events %}
+                    <div class="col-md-4 post-col">
+                        <div class="card h-100">
+                            {% if event.image %}
+                            <div class="card-image-container">
+                                <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.title }}">
+                            </div>
                             {% endif %}
-                            <div> <button type="submit"><i class="fas fa-heart"></i></button></div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
+                            <h2 class=" h5 event-heading">{{ event.heading }}</h2>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ event.title }}</h5>
+                                <p class="card-text">{{ event.excerpt }}
+                                    <p class="card-date">{{ event.start_date }} - {{ event.end_date }}</p>
 
-
-    <div class="container-fluid bg-white">
-        <div class="container">
-            <div class="row post-row">
-                <h1 class="parent-heading">Itineraries & Date Ideas</h1>
-                {% for event in posts %}
-                <div class="col-md-4 post-col">
-                    <div class="card h-100">
-                        {% if event.image %}
-                        <div class="card-image-container">
-                            <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.title }}">
-                        </div>
-                        {% endif %}
-                        <div class="card-body">
-                            <h2 class="post-heading">{{ post.heading }}</h2>
-                            <h5 class="card-title">{{ post.title }}</h5>
-                            <p class="card-text">{{ post.excerpt }}
+                                    {% if user.is_authenticated %}
+                                    <a href="{% url 'event_detail' event.id %}" class="post-link">...</a>
+                                </p>
+                                {% else %}
+                                <span class="event-link" onclick="alert('Please log in to view this post.')">...</span>
+                                {% endif %}
                                 <div> <button type="submit"><i class="fas fa-heart"></i></button></div>
-                                {% if user.is_authenticated %}
-                                <a href="{% url 'event_detail' event.slug %}" class="post-link">...</a></p>
-                            {% else %}
-                            <span class="post-link" onclick="alert('Please log in to view this post.')">...</span>
-                            {% endif %}
-
+                            </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
         </div>
-    </div>
+
+
+        <div class="container-fluid bg-white">
+            <div class="container">
+                <div class="row post-row">
+                    <h1 class="parent-heading">Itineraries & Date Ideas</h1>
+                    {% for event in posts %}
+                    <div class="col-md-4 post-col">
+                        <div class="card h-100">
+                            {% if event.image %}
+                            <div class="card-image-container">
+                                <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.title }}">
+                            </div>
+                            {% endif %}
+                            <div class="card-body">
+                                <h2 class="post-heading">{{ post.heading }}</h2>
+                                <h5 class="card-title">{{ post.title }}</h5>
+                                <p class="card-text">{{ post.excerpt }}
+                                    <div> <button type="submit"><i class="fas fa-heart"></i></button></div>
+                                    {% if user.is_authenticated %}
+                                    <a href="{% url 'event_detail' event.slug %}" class="post-link">...</a></p>
+                                {% else %}
+                                <span class="post-link" onclick="alert('Please log in to view this post.')">...</span>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
 </body>
 {% endblock %}

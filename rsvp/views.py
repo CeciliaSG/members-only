@@ -9,13 +9,10 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 @login_required
-def rsvp_event(request, even_id):
-    print("Request method:", request.method)  
-    print("Event ID:", event_id)  
-
-    event = Event.objects.get(pk=event_id)
-
 def rsvp_event(request, event_id):
+    """
+    Lets users RSVP for events.
+    """
     event = Event.objects.get(pk=event_id)
     rsvp, created = Rsvp.objects.get_or_create(user=request.user, event=event)
 

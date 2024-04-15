@@ -50,6 +50,7 @@ def login(request):
     return render(request, 'socialaccount/signup.html')
 
 # Logout view
+@login_required
 def logout(request):
     logout(request)
     return redirect('home')   
@@ -57,6 +58,12 @@ def logout(request):
 # Account view
 @login_required
 def edit_user_profile(request):
+
+    """
+    Get userformupdate and profileform, prepopulates the forms, 
+    saves edited form to db. 
+    Get and display the users displayed posts.
+    """
     try:
         user_instance = request.user
         profile_instance = request.user.userprofile

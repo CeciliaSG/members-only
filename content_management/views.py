@@ -20,6 +20,9 @@ class PostListView(generic.ListView):
 
 
 def post_list_view(request, Post):
+    """
+    Get post and display on post_detail.html
+    """
     posts = Post.objects.filter(status=1)
     post = get_object_or_404(Post, tag=tag)
 
@@ -33,7 +36,8 @@ def post_list_view(request, Post):
 def post_detail(request, slug):
 
     """
-    Filter for status and slug and display on post_detail template
+    Filter for status and slug,
+     and display on post_detail template.
     """
     posts = Post.objects.filter(status=1)
     post = get_object_or_404(Post, slug=slug)
@@ -48,7 +52,7 @@ def post_detail(request, slug):
 def tag_filter(request, tag):
 
     """
-    Filter for tag and display on template
+    Filter for tag and display on template.
     """
     posts = Post.objects.filter(tag=tag, status=1)
     context = {
@@ -62,7 +66,7 @@ def tag_filter(request, tag):
 def post_tag_detail(request, tag):
 
     """
-    Filter for status and tag and display on post_detail template.
+    Filter for status and tag, and display on post_detail template.
     """
     posts = Post.objects.filter(tag=tag, status=1)
     post = posts.first()
@@ -81,7 +85,7 @@ def save_post(request, post_id):
     """
 
     if request.user.saved_posts.filter(id=post_id).exists():
-         return HttpResponse("The post has already been saved!")    
+         return HttpResponse("You've already saved this post!")    
 
     post = Post.objects.get(id=post_id)
     saved_post = SavedPost(user=request.user, post=post)
@@ -93,13 +97,20 @@ def save_post(request, post_id):
 def like_post(request, post_id):
 
     """
-    Check if the post has already been liked, if not save like to the database.
+    Check if the post has already been liked, 
+    delete like if already liked, 
+    if not save like to the database.
     """
-    if request.user.liked_posts.filter(id=post_id).exists():
-        return HttpResponse("The post has already been liked!")   
 
-    post = Post.objects.get(id=post_id)
-    liked_post = LikedPost(user=request.user, post=post)
-    liked_post.save()
+    try:
+        liked_post = LikedPost.objects.get(user=request.user, post_id=post_id)
+        liked_post.delete()
+        return HttpResponse("You unliked the post!")
+
+    except LikedPost.DoesNotExist:
+  
+        post = Post.objects.get(id=post_id)
+        liked_post = LikedPost(user=request.user, post=post)
+        liked_post.save()
 
     return HttpResponse("You liked the post!")    
