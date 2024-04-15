@@ -8,8 +8,6 @@
     --dark-green: #1E441E;
     --hover-green: #119822;
     --background-color: whitesmoke;
-
-
 }
 
 * {
@@ -47,6 +45,12 @@ body {
     background-color: black;
 }
 
+.first-nav .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .navbar-logo {
     color: white;
     font-size: larger;
@@ -71,8 +75,6 @@ body {
     margin-right: 20px;
 }
 
-.account-dropdown {}
-
 .container {
     margin-bottom: 20px;
     margin-top: 15px;
@@ -80,6 +82,7 @@ body {
 
 .parent-heading {
     padding-top: 20px;
+    font-size: 25px;
 }
 
 .btn {
@@ -90,6 +93,10 @@ body {
 
 .form-control-sm {
     height: 30px;
+}
+
+.search-form {
+    flex: 1;
 }
 
 
