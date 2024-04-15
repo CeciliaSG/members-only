@@ -10,7 +10,7 @@
     --background-color: whitesmoke;
 }
 
-* {
+** {
     margin: 0;
     font-family: "Playfair Display",
         serif;
@@ -38,17 +38,37 @@ body {
     background-color: #119822;
 }
 
+.container {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
 /* Navbar styling */
+
+/*
+.navbar-nav .show>.nav-link {
+    color: #fff;
+    margin-right: 90px;
+    position: left;
+}
+*/
+
 
 .first-nav {
     height: 90px;
     background-color: black;
 }
 
+
 .first-nav .container-fluid {
-    display: flex;
+    /*display: flex;
     justify-content: space-between;
-    /*align-items: center;*/
+    align-items: center;*/
 }
 
 .logo {
@@ -136,10 +156,6 @@ img {
 .post-actions {
     display: flex;
     justify-content: space-between;
-}
-
-.post-actions a {
-    margin-right: 10px;
 }
 
 .post-actions a {
@@ -247,7 +263,7 @@ a:hover {
     color: white;
 }
 
-.card--text {
+.card-text {
     font-size: 16px;
     text-decoration: none;
     color: gray;
@@ -268,7 +284,9 @@ a:hover {
 }
 
 .card-body {
-    padding: 10px;
+    padding-top: 10px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .card .card-body {
@@ -335,9 +353,5 @@ footer {
 
     .container {
         overflow: auto;
-    }
-
-    .card {
-        margin-left: 15px;
     }
 }
