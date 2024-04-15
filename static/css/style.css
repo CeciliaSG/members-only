@@ -80,7 +80,6 @@ body {
 
 .parent-heading {
     padding-top: 20px;
-    font-size: 25px;
 }
 
 .btn {
@@ -99,6 +98,9 @@ body {
 .post-heading,
 .event-heading {
     font-family: poppins;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 2px;
 }
 
 .card-image-container {
@@ -137,8 +139,9 @@ body {
     color: #1E441E;
 }
 
-.like-post {
-    font-size: 10px;
+.like-post,
+.save-post {
+    font-size: 14px;
 }
 
 a {

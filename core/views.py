@@ -10,6 +10,7 @@ from django.views.generic import UpdateView
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from .models import UserProfile
+from content_management.models import SavedPost
 from .forms import UpdateUserProfile, UpdateUserForm
 
 
@@ -66,6 +67,7 @@ def edit_user_profile(request):
     user_form_update = UpdateUserForm(instance=request.user)
     profile_form = UserProfileForm(instance=request.user.userprofile)
    
+    saved_posts = SavedPost.objects.filter(user=request.user)
 
     if request.method == 'POST':
             user_form_update = UpdateUserForm(request.POST, instance=request.user)
@@ -80,5 +82,5 @@ def edit_user_profile(request):
         user_form_update = UpdateUserForm(instance=request.user)
         profile_form = UserProfileForm(instance=request.user.userprofile)
 
-    return render(request, 'core/profile.html', {'user_form_update': user_form_update, 'profile_form': profile_form})
+    return render(request, 'core/profile.html', {'user_form_update': user_form_update, 'profile_form': profile_form, 'saved_posts': saved_posts})
         

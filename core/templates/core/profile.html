@@ -53,6 +53,15 @@
                         </div>
                     </div>
                     <div class="col-md-6 mt-5">
+                        <h3 class=" h4 saved_posts">Your saved posts</h3>
+                        {% for saved_post in saved_posts %}
+                        <div>
+                            <h4 class="h6">{{ saved_post.post.title }}</h4>
+                            <a href="{% url 'post_detail' saved_post.post.slug %}">View Post</a>
+                        </div>
+                        {% empty %}
+                        <p>No saved posts.</p>
+                        {% endfor %}
                         <div class="update_delete ml-5 mt-5"> <a href="{% url 'account_email' %}" class="mb-3">To change
                                 your
                                 email

@@ -12,6 +12,8 @@ urlpatterns = [
     path('post_tag_detail/<str:tag>/', views.post_tag_detail, name='post_tag_detail'),
     path('save_post/<int:post_id>/', views.save_post, name='save_post'),
     path('like_post/<int:post_id>/', views.like_post, name='like_post'),
+   
+    #path('users_saved_posts/', views.users_saved_posts, name='saved_posts'),
 
     #path('tag_filter/<str:tag>/<path:template>/', views.tag_filter, name='tag_filter'),
     #path('tag_filter/<str:tag>/', views.tag_filter, name='tag_filter'),

@@ -27,9 +27,10 @@
                         <span class="post-link" onclick="alert('Please log in to view this post.')">...</span>
                         {% endif %}
                         {% if user.is_authenticated %}
-                        <div class="post-actions"><a href="{% url 'like_post' post.id %}"><i
+                        <div class="post-actions"><a href="{% url 'like_post' post.id %}" class="like-post"><i
                                     class="fa-solid fa-heart"></i>
-                                <a href="{% url 'save_post' post.id %}" class="like-post">Save Post</a></div>
+                                <a href="{% url 'save_post' post.id %}" class="save-post"><i
+                                        class="fa-solid fa-bookmark"></i></a></div>
                         {% endif %}
                     </div>
                 </div>

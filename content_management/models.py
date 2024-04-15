@@ -32,6 +32,9 @@ class SavedPost(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.post.title
+
 class LikedPost(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='liked_posts')
     post = models.ForeignKey(Post, on_delete=models.CASCADE)

@@ -96,11 +96,10 @@ def like_post(request, post_id):
     Check if the post has already been liked, if not save like to the database.
     """
     if request.user.liked_posts.filter(id=post_id).exists():
-         return HttpResponse("The post has already been liked!")   
+        return HttpResponse("The post has already been liked!")   
 
     post = Post.objects.get(id=post_id)
     liked_post = LikedPost(user=request.user, post=post)
     liked_post.save()
 
     return HttpResponse("You liked the post!")    
- 
