@@ -41,7 +41,7 @@ body {
 /* Navbar styling */
 
 .first-nav {
-    height: 100px;
+    height: 90px;
     background-color: black;
 }
 
@@ -53,7 +53,7 @@ body {
 
 .logo {
     position: absolute;
-    top: 31px;
+    top: 21px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 999;
