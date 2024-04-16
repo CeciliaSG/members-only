@@ -10,7 +10,7 @@
     --background-color: whitesmoke;
 }
 
-** {
+* {
     margin: 0;
     font-family: "Playfair Display",
         serif;
@@ -49,14 +49,6 @@ body {
 }
 
 /* Navbar styling */
-
-/*
-.navbar-nav .show>.nav-link {
-    color: #fff;
-    margin-right: 90px;
-    position: left;
-}
-*/
 
 
 .first-nav {
