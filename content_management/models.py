@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from event_management.models import Event
+from cloudinary.models import CloudinaryField
+
 
 # Create your models here.
 
@@ -22,6 +24,7 @@ class Post(models.Model):
     content = models.TextField()
     excerpt = models.TextField(blank=True)
     tag = models.CharField(max_length=50, null=True)
+    featured_image = CloudinaryField('image', null=True, blank=True)
     image = models.ImageField(upload_to='post_images/', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)   

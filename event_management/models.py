@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -16,7 +17,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Event(models.Model):
     title = models.CharField(max_length=100)
     heading = models.ForeignKey(Heading, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='post_images/', null=True, blank=True)
+    featured_image = CloudinaryField('image', null=True, blank=True)
     description = models.TextField()
     slug = models.SlugField(max_length=200, unique=True)
     excerpt = models.TextField(blank=True)
