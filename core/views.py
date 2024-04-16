@@ -90,4 +90,3 @@ def edit_user_profile(request):
         profile_form = UserProfileForm(instance=request.user.userprofile)
 
     return render(request, 'core/profile.html', {'user_form_update': user_form_update, 'profile_form': profile_form, 'saved_posts': saved_posts})
-        
