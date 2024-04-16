@@ -6,9 +6,11 @@ from .models import UserProfile
 
 class CustomUserForm(UserCreationForm):
     email = forms.EmailField(required=True)
+    confirm_email = forms.EmailField(required=True, label="Confirm Email")
     first_name = forms.CharField(max_length=30)
     last_name = forms.CharField(max_length=30)
     username = forms.CharField(max_length=30)
+    confirm_username = forms.CharField(required=True, label="Confirm Username")
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'email', 'username')

@@ -9,7 +9,7 @@
 
 {% block content %}
 
-<h1 class="text-center form-heading">{% trans "Sign In" %}</h1>
+<h1 class=" h2 text-center form-heading mt-4">{% trans "Sign In" %}</h1>
 
 {% get_providers as socialaccount_providers %}
 
@@ -32,16 +32,15 @@
 
 {% else %}
 
-<div class="container-fluid">
-  <div class="container ">
-    <div class="col-md-12">
-      <div class="row">
+<div class="container-fluid d-flex justify-content-center">
+  <div class="container d-flex justify-content-center">
+    <div class="row d-flex justify-content-center">
 
-        <!--<p>{% blocktrans %}If you have not created an account yet, then please
+      <!--<p>{% blocktrans %}If you have not created an account yet, then please
       <a href="{{% url 'registration' %}}">sign up</a> first.{% endblocktrans %}</p>
     -->
-        {% endif %}
-
+      {% endif %}
+      <div class="mt-2 mb-4">
         <form class="login" method="POST" action="{% url 'account_login' %}">
           {% csrf_token %}
           {{ form.as_p }}
@@ -51,12 +50,13 @@
           <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
           <button class="primaryAction btn" type="submit">{% trans "Sign In" %}</button>
         </form>
+      </div>
 
-        <div class="sign-up-link">
-          <a href="{% url 'registration' %}" class="form-links">SignUp</a>
-        </div>
+      <div class="sign-up-link">
+        <a href="{% url 'registration' %}" class="form-links">Not a member yet, sign up here</a>
       </div>
     </div>
   </div>
+</div>
 
-  {% endblock content %}
+{% endblock content %}

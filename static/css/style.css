@@ -115,6 +115,11 @@ img {
     flex: 1;
 }
 
+.form-links {
+    text-decoration: underline;
+    font-size: 12px;
+}
+
 
 /* Post/event-list styling*/
 

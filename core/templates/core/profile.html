@@ -6,71 +6,56 @@
 <body class="d-flex flex-column h-100 main-bg body-user-profile">
     <div class="container-fluid">
         <div class="container mx-auto">
-            <div class="col-md-12">
-                <div class="row">
-                    <h1 class=" h2 form-heading mt-5">Welcome</h1>
-
-                    <h2 class=" h5">{{ request.user.username }}!</h2>
-                    <div class="col-md-6">
-
-
-                        {% if user.userprofile %}
-                        <h5>{{ request.user.email }}</h5>
-                        <!--
-                        <h5>City: </h5>{{ user.userprofile.get_city_display }}
-                        <h5>Neighbourhood: </h5>{{ user.userprofile.get_neighbourhood_display }}
-                        <h5>Interests:</h5>
-                        <ul>
-                            {% for interest in user.userprofile.interests %}
-                            <li>{{ interest }}</li>
-                            {% endfor %}
-                        </ul>
-                    -->
-
-                        <div class="form mt-4">
-                            <div class="container user-profile mb-5">
-                                <form method="post" class="mb-5 pt-4 pb-4">
-                                    {% csrf_token %}
-                                    {{ user_form_update | crispy }}
-                                    {{ profile_form | crispy }}
-                                    <button class="btn mb-2" id="update-profile-btn" type="submit">Update</button>
-                                </form>
-                                {% if messages %}
-                                <ul class="messages">
-                                    {% for message in messages %}
-                                    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>
-                                        {{ message }}
-                                        </li>
-                                        {% endfor %}
-                                </ul>
-                                {% endif %}
-                                {% else %}
-
-                                <h2>You don't have a profile yet.</h2>
-                                <p>Please create a profile to edit your details.</p>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mt-5">
-                        <h3 class=" h4 saved_posts">Your saved posts</h3>
-                        {% for saved_post in saved_posts %}
-                        <div>
-                            <h4 class="h6">{{ saved_post.post.title }}</h4>
-                            <a href="{% url 'post_detail' saved_post.post.slug %}">View Post</a>
-                        </div>
-                        {% empty %}
-                        <p>No saved posts.</p>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="h2 form-heading mt-5">Welcome</h1>
+                    <h2 class="h5">{{ request.user.username }}!</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    {% if user.userprofile %}
+                    <h5>{{ request.user.email }}</h5>
+                    <!--
+                    <h5>City: </h5>{{ user.userprofile.get_city_display }}
+                    <h5>Neighbourhood: </h5>{{ user.userprofile.get_neighbourhood_display }}
+                    <h5>Interests:</h5>
+                    <ul>
+                        {% for interest in user.userprofile.interests %}
+                        <li>{{ interest }}</li>
                         {% endfor %}
-                        <div class="update_delete ml-5 mt-5"> <a href="{% url 'account_email' %}" class="mb-3">To change
-                                your
-                                email
-                                please follow
-                                this link</a><br>
-                            <a href="{%url 'account_change_password' %}" class="mb-3">To change your password
-                                please follow this link</a>
+                    </ul>
+                -->
+                    <div class="form mt-4">
+                        <div class="container user-profile mb-5">
+                            <form method="post" class="mb-5 pt-4 pb-4">
+                                {% csrf_token %}
+                                {{ user_form_update | crispy }}
+                                {{ profile_form | crispy }}
+                                <button class="btn mb-2" id="update-profile-btn" type="submit">Update</button>
+                            </form>
                         </div>
                     </div>
+                    {% else %}
+                    <h2>You don't have a profile yet.</h2>
+                    <p>Please create a profile to edit your details.</p>
+                    {% endif %}
+                </div>
+                <div class="col-md-3 mt-5">
+                    <h3 class="h5 saved_posts">Your saved posts</h3>
+                    {% for saved_post in saved_posts %}
+                    <div>
+                        <h4 class="h6">{{ saved_post.post.title }}</h4>
+                        <a href="{% url 'post_detail' saved_post.post.slug %}">View Post</a>
+                    </div>
+                    {% empty %}
+                    <p>No saved posts.</p>
+                    {% endfor %}
+                </div>
+                <div class="col-md-3 mt-5">
+                    <a href="{% url 'account_change_password' %}" class=" form-links">To change your password please
+                        follow
+                        this link</a>
                 </div>
             </div>
         </div>
