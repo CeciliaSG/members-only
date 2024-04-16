@@ -107,6 +107,15 @@ img {
     border-radius: 0;
 }
 
+.btn-like {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+}
+
 .form-control-sm {
     height: 30px;
 }

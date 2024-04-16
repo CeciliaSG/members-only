@@ -27,9 +27,11 @@
                             {% else %}
                             <span class="post-link" onclick="alert('Please log in to view this post.')">...</span>
                             {% endif %}
+
                             {% if user.is_authenticated %}
-                            <div class="post-actions"><a href="{% url 'like_post' post.id %}" class="like-post"><i
-                                        class="fa-solid fa-heart"></i>
+                            <div class="post-actions"><a href="{% url 'like_post' post.id %}" class="like-post"><button
+                                        class="btn btn-post" data-post-id="{{ post.id }}"><i
+                                            class="fa-solid fa-heart"></i></button>
                                     <a href="{% url 'save_post' post.id %}" class="save-post"><i
                                             class="fa-solid fa-bookmark"></i></a></div>
                             {% endif %}

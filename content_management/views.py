@@ -37,7 +37,7 @@ def post_detail(request, slug):
 
     """
     Filter for status and slug,
-     and display on post_detail template.
+    and display on post_detail template.
     """
     posts = Post.objects.filter(status=1)
     post = get_object_or_404(Post, slug=slug)
@@ -81,15 +81,19 @@ def post_tag_detail(request, tag):
 def save_post(request, post_id):
 
     """
-    Checks if the post is already saved, if not save the post to the database.
+    Checks if the post is already saved, 
+    un-save if saved, if not saved save to the database.
     """
+    try:
+        saved_post = SavedPost.objects.get(user=request.user, post_id=post_id)
+        saved_post.delete()
+        return HttpResponse("You've already saved this post!")
 
-    if request.user.saved_posts.filter(id=post_id).exists():
-         return HttpResponse("You've already saved this post!")    
-
-    post = Post.objects.get(id=post_id)
-    saved_post = SavedPost(user=request.user, post=post)
-    saved_post.save()
+    except SavedPost.DoesNotExist:
+  
+        post = Post.objects.get(id=post_id)
+        saved_post = SavedPost(user=request.user, post=post)
+        saved_post.save()    
 
     return HttpResponse("Post saved successfully!")
 
@@ -102,10 +106,13 @@ def like_post(request, post_id):
     if not save like to the database.
     """
 
+    post = get_object_or_404(Post, id=post_id)
+
+
     try:
         liked_post = LikedPost.objects.get(user=request.user, post_id=post_id)
         liked_post.delete()
-        return HttpResponse("You unliked the post!")
+        return JsonResponse({'message': "You unliked the post!"})
 
     except LikedPost.DoesNotExist:
   
@@ -113,4 +120,6 @@ def like_post(request, post_id):
         liked_post = LikedPost(user=request.user, post=post)
         liked_post.save()
 
-    return HttpResponse("You liked the post!")    
+    
+        return JsonResponse({'message': "You liked the post!"})
+
