@@ -41,6 +41,10 @@ class UpdateUserProfile(forms.ModelForm):
         
 
 class UpdateUserForm(forms.ModelForm):
+    email = forms.EmailField(required=True)
+    confirm_email = forms.EmailField(required=True, label="Confirm Email")
+    confirm_username = forms.CharField(required=True, label="Confirm Username")
+
     class Meta:
         model = User
         fields = ['email', 'username']
