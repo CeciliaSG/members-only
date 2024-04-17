@@ -101,20 +101,6 @@ img {
     font-size: 25px;
 }
 
-.btn {
-    color: white;
-    background-color: #2A7221;
-    border-radius: 0;
-}
-
-.btn-like {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    color: inherit;
-    font: inherit;
-}
 
 .form-control-sm {
     height: 30px;
@@ -159,6 +145,25 @@ img {
     border-radius: 0;
 }
 
+
+
+/* Button and link styling */
+.btn {
+    color: white;
+    background-color: #2A7221;
+    border-radius: 0;
+}
+
+.btn-like,
+.btn-save {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+}
+
 .post-actions {
     display: flex;
     justify-content: space-between;
@@ -170,6 +175,10 @@ img {
 
 .fa-heart {
     color: #1E441E;
+}
+
+.fa-solid:hover {
+    background-color: #119822;
 }
 
 .like-post,
@@ -186,9 +195,11 @@ a:hover {
     text-decoration: none;
 }
 
+
 .read-more {
     font-size: 18px;
 }
+
 
 /*Page and section styling */
 
@@ -221,10 +232,6 @@ a:hover {
     width: 100%;
     height: auto;
     object-fit: cover;
-}
-
-.the-latest {
-    background-color: whitesmoke;
 }
 
 .events-perks {
@@ -306,10 +313,7 @@ a:hover {
     color: gray;
 }
 
-.post-link {
-    text-decoration: none;
-    color: #119822;
-}
+
 
 /*Footer styling */
 

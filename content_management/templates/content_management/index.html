@@ -6,42 +6,50 @@
     <div class="full-width-container image-container-list-top the-latest mt-2">
         <img src="{% static 'images/restaurant_1_unsplash.jpg' %}" alt="Restaurant Image" class="w-100">
     </div>
-    <div class="container-fluid d-flex justify-content-center">
-        <div class="container d-flex justify-content-center align-items-center">
+
+    <div class="container-fluid d-flex justify-content-center events-perks">
+        <div class="container">
             <div class="row post-row">
                 <h1 class="parent-heading mt-4">The Latest</h1>
                 {% for post in posts %}
                 <div class="col-md-4 post-col">
-                    <div class="card h-100">
-                        {% if post.featured_image.url %}
-                        <div class="card-image-container">
-                            <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
-                        </div>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                        {% else %}
+                        <span class="post-link" onclick="alert('Please log in to view this post.')">...</span>
                         {% endif %}
-                        <div class="card-body">
-                            <h2 class="post-heading">{{ post.heading }}</h2>
-                            <h5 class="card-title">{{ post.title }}</h5>
-                            <p class="card-text">{{ post.excerpt }}
-                                {% if user.is_authenticated %}
-                                <a href="{% url 'post_detail' post.slug %}" class="post-link">...</a></p>
-                            {% else %}
-                            <span class="post-link" onclick="alert('Please log in to view this post.')">...</span>
+                        <div class="card h-100">
+                            {% if post.featured_image.url %}
+                            <div class="card-image-container">
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                            </div>
                             {% endif %}
+                            <div class="card-body">
+                                <h2 class="post-heading">{{ post.heading }}</h2>
+                                <h5 class="card-title">{{ post.title }}</h5>
+                                <p class="card-text">{{ post.excerpt }}</p></a>
 
-                            {% if user.is_authenticated %}
-                            <div class="post-actions"><a href="{% url 'like_post' post.id %}" class="like-post"><button
-                                        class="btn btn-post" data-post-id="{{ post.id }}"><i
-                                            class="fa-solid fa-heart"></i></button>
-                                    <a href="{% url 'save_post' post.id %}" class="save-post"><i
-                                            class="fa-solid fa-bookmark"></i></a></div>
-                            {% endif %}
-                        </div>
-                    </div>
+                    {% if user.is_authenticated %}
+                    <div class="post-actions"><button class="btn-post btn-like" data-post-id="{{ post.id }}"><a
+                                href="{% url 'like_post' post.id %}" class="like-post"><i
+                                    class="fa-solid fa-heart"></i></a></button>
+
+                        <button class="btn-post btn-save-post" data-post-id="{{ post.id }}"><a
+                                href="{% url 'save_post' post.id %}" class="save-post"><i
+                                    class="fa-solid fa-bookmark"></i></a></button></div>
+                    {% endif %}
                 </div>
-                {% endfor %}
             </div>
         </div>
+        {% endfor %}
     </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
 
     <div class="container-fluid d-flex justify-content-center events-perks">
         <div class="container d-flex justify-content-center align-items-center">

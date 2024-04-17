@@ -87,7 +87,7 @@ def save_post(request, post_id):
     try:
         saved_post = SavedPost.objects.get(user=request.user, post_id=post_id)
         saved_post.delete()
-        return HttpResponse("You've already saved this post!")
+        return JsonResponse("You've already saved this post!")
 
     except SavedPost.DoesNotExist:
   
@@ -95,7 +95,7 @@ def save_post(request, post_id):
         saved_post = SavedPost(user=request.user, post=post)
         saved_post.save()    
 
-    return HttpResponse("Post saved successfully!")
+    return JsonResponse("Post saved successfully!")
 
 @login_required
 def like_post(request, post_id):
@@ -108,7 +108,6 @@ def like_post(request, post_id):
 
     post = get_object_or_404(Post, id=post_id)
 
-
     try:
         liked_post = LikedPost.objects.get(user=request.user, post_id=post_id)
         liked_post.delete()
@@ -119,7 +118,6 @@ def like_post(request, post_id):
         post = Post.objects.get(id=post_id)
         liked_post = LikedPost(user=request.user, post=post)
         liked_post.save()
-
     
         return JsonResponse({'message': "You liked the post!"})
 
