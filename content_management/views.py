@@ -84,10 +84,13 @@ def save_post(request, post_id):
     Checks if the post is already saved, 
     un-save if saved, if not saved save to the database.
     """
+
+    post = get_object_or_404(Post, id=post_id)
+
     try:
         saved_post = SavedPost.objects.get(user=request.user, post_id=post_id)
         saved_post.delete()
-        return JsonResponse("You've already saved this post!")
+        return JsonResponse({'message': "You already saved this post. It is now unsaved!"})
 
     except SavedPost.DoesNotExist:
   
@@ -95,7 +98,7 @@ def save_post(request, post_id):
         saved_post = SavedPost(user=request.user, post=post)
         saved_post.save()    
 
-    return JsonResponse("Post saved successfully!")
+    return JsonResponse({'message': "Post saved successfully!"})
 
 @login_required
 def like_post(request, post_id):

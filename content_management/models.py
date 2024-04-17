@@ -25,7 +25,6 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     tag = models.CharField(max_length=50, null=True)
     featured_image = CloudinaryField('image', null=True, blank=True)
-    image = models.ImageField(upload_to='post_images/', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)   
     status = models.IntegerField(choices=STATUS, default=0)     
@@ -37,6 +36,9 @@ class SavedPost(models.Model):
 
     def __str__(self):
         return self.post.title
+
+    class Meta:
+        unique_together = ('user', 'post')
 
 class LikedPost(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='liked_posts')
