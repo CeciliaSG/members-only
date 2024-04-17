@@ -15,7 +15,7 @@ for (let i = 0; i < likeButton.length; i++) {
                 alert(response.message);
             },
             error: function (xhr, status, error) {
-                alert('An error occurred! ');
+                alert('An error occurred!');
             }
         });
     });
@@ -32,7 +32,7 @@ for (let i = 0; i < saveButton.length; i++) {
                 alert(response.message);
             },
             error: function (xhr, status, error) {
-                alert('An error occurred! ');
+                alert('An error occurred!');
             }
         });
     });
