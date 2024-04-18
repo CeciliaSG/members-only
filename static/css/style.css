@@ -57,12 +57,6 @@ body {
 }
 
 
-.first-nav .container-fluid {
-    /*display: flex;
-    justify-content: space-between;
-    align-items: center;*/
-}
-
 .logo {
     position: absolute;
     top: 21px;
@@ -80,6 +74,7 @@ img {
 .nav-link {
     line-height: 5px;
     padding-top: 20px;
+    color: black;
 }
 
 .navbar-nav .nav-link {
@@ -88,7 +83,20 @@ img {
 }
 
 .navbar-dropdown {
-    margin-right: 20px;
+    background-color: black;
+}
+
+.dropdown-menu {
+    border-radius: 0;
+    outline: none;
+    background-color: black;
+    color: white;
+    width: fit-content;
+}
+
+.dropdown-item {
+    background-color: black;
+    color: white;
 }
 
 .container {
@@ -126,6 +134,13 @@ img {
     letter-spacing: 2px;
 }
 
+.post-link {
+    font-size: 0.9em;
+    text-decoration: underline;
+    font-weight: bold;
+    color: #1E441E;
+}
+
 .card-image-container {
     width: 100%;
     height: 0;
@@ -155,7 +170,7 @@ img {
 }
 
 .btn-like,
-.btn-save {
+.btn-save-post {
     background: none;
     border: none;
     padding: 0;
@@ -164,7 +179,8 @@ img {
     font: inherit;
 }
 
-.post-actions {
+.post-actions,
+.post-symbols {
     display: flex;
     justify-content: space-between;
 }
@@ -173,13 +189,17 @@ img {
     margin-right: 10px;
 }
 
-.fa-heart {
+.fa-heart,
+.fa-bookmark {
     color: #1E441E;
+    margin: 1px;
 }
 
-.fa-solid:hover {
-    background-color: #119822;
+.fa-heart:hover,
+.fa-bookmark:hover {
+    color: #119822;
 }
+
 
 .like-post,
 .save-post {
@@ -189,6 +209,7 @@ img {
 a {
     color: black;
 }
+
 
 a:hover {
     color: #119822;

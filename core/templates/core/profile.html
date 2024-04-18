@@ -7,16 +7,21 @@
     <div class="container-fluid">
         <div class="container mx-auto">
             <div class="row">
-                <div class="col-md-12">
-                    <h1 class="h2 form-heading mt-5">Welcome</h1>
-                    <h2 class="h5">{{ request.user.username }}!</h2>
+                <div class="text-wrap col-md-12">
+                    <h1 class="h4 form-heading mt-5">Welcome {{ request.user.first_name }}
+                        {{ request.user.last_name }}</h1>
+                    <p>Username: {{ request.user.username }}!</p>
+                    <p>
+                        If you would like to update your profile you can do so below,<br>
+                        including changing your email and username.
+                    </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-5">
                     {% if user.userprofile %}
-                    <h5>{{ request.user.email }}</h5>
-                    <!--
+                    <!--<h5>{{ request.user.email }}</h5>
+                   
                     <h5>City: </h5>{{ user.userprofile.get_city_display }}
                     <h5>Neighbourhood: </h5>{{ user.userprofile.get_neighbourhood_display }}
                     <h5>Interests:</h5>
@@ -27,13 +32,19 @@
                     </ul>
                 -->
                     <div class="form mt-4">
-                        <div class="container user-profile mb-5">
-                            <form method="post" class="mb-5 pt-4 pb-4">
+                        <div class="container user-profile">
+                            <form method="post" class="pt-4 pb-4">
                                 {% csrf_token %}
                                 {{ user_form_update | crispy }}
                                 {{ profile_form | crispy }}
-                                <button class="btn mb-2" id="update-profile-btn" type="submit">Update</button>
+                                <button class="btn pb-2" id="update-profile-btn" type="submit">Update</button>
                             </form>
+                        </div>
+                        <div class="mb-2">
+                            <a href="{% url 'account_change_password' %}" class=" form-links">To change your password
+                                please
+                                follow
+                                this link</a>
                         </div>
                     </div>
                     {% else %}
@@ -45,18 +56,18 @@
                     <h3 class="h5 saved_posts">Your saved posts</h3>
                     {% for saved_post in saved_posts %}
                     <div>
-                        <h4 class="h6">{{ saved_post.post.title }}</h4>
-                        <a href="{% url 'post_detail' saved_post.post.slug %}">View Post</a>
+                        <ul class="list-unstyled">
+                            <li><a class="text-decoration-underline post-link"
+                                    href="{% url 'post_detail' saved_post.post.slug %}">{{ saved_post.post.title }}</a>
+                                <p> {{ saved_post.post.excerpt }}</p>
+                            </li>
+                        </ul>
                     </div>
                     {% empty %}
                     <p>No saved posts.</p>
                     {% endfor %}
                 </div>
-                <div class="col-md-3 mt-5">
-                    <a href="{% url 'account_change_password' %}" class=" form-links">To change your password please
-                        follow
-                        this link</a>
-                </div>
+
             </div>
         </div>
     </div>

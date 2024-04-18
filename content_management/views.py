@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
-from .models import Post, SavedPost, LikedPost
+from .models import Post, SavedPost, LikedPost, Heading
 from django.contrib import messages
 from django.http import HttpResponse
 
@@ -19,18 +19,7 @@ class PostListView(generic.ListView):
         return Post.objects.filter(status=1)
 
 
-def post_list_view(request, Post):
-    """
-    Get post and display on post_detail.html
-    """
-    posts = Post.objects.filter(status=1)
-    post = get_object_or_404(Post, tag=tag)
 
-    return render(
-        request,
-        "content_management/post_detail.html",
-        {"post": post},
-    )
 
 
 def post_detail(request, slug):
@@ -48,6 +37,24 @@ def post_detail(request, slug):
         {"post": post},
     )
 
+class PostListByHeadingView(generic.ListView):
+    template_name = "content_management/index.html"
+    context_object_name = 'posts'
+    model = Post
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        heading_id = self.kwargs.get('heading_id')
+        parent_heading_name = self.kwargs.get('parent_heading_name')
+
+        context['heading'] = Heading.objects.filter(id=heading_id)
+        context['parent_heading'] = Heading.objects.filter(name=parent_heading_name)
+        
+        return context
+
+    def get_queryset(self):
+        heading_id = self.kwargs.get('heading_id')
+        return Post.objects.filter(heading__id=heading_id, status=1)
 
 def tag_filter(request, tag):
 
