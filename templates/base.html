@@ -117,7 +117,7 @@
                             Bars</a>
                     </li>
                     <li class="nav-list-item">
-                        <a class="nav-link" href="#">Things to do</a>
+                        <a class="nav-link" href="{% url 'things_to_do' tag='things_to_do' %}">Things to do</a>
                     <li class="nav-list-item">
                         <a class="nav-link" href="{% url 'event_list' %}">Events</a>
                     </li>
@@ -136,7 +136,7 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="flex-shrink-0 main-bg" style="margin: 0;">
+    <main class="flex-shrink-0" style="margin: 0;">
         <div class="content" style="margin: 0;">
             {% block content %}
             {% endblock %}
@@ -145,7 +145,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer navbar justify-content-center">
+    <footer class="footer navbar footer-fixed-bottom justify-content-center">
         <div class="container footer-container footer-divider justify-content-center">
             <ul class="list-unstyled list-footer mt-3 mb-3 d-flex flex-wrap justify-content-between">
                 <li class="footer-link-item"><a href="#" class="text-decoration-none">About</a></li>

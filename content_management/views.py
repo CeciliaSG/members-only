@@ -8,7 +8,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 
 
-# Create your views here.
+# Create your views here
 class PostListView(generic.ListView):
     template_name = "content_management/index.html"
     posts = Post.objects.filter(status=1)
@@ -17,9 +17,6 @@ class PostListView(generic.ListView):
 
     def get_queryset(self):
         return Post.objects.filter(status=1)
-
-
-
 
 
 def post_detail(request, slug):
@@ -56,7 +53,8 @@ class PostListByHeadingView(generic.ListView):
         heading_id = self.kwargs.get('heading_id')
         return Post.objects.filter(heading__id=heading_id, status=1)
 
-def tag_filter(request, tag):
+
+def tag_filter(request, template_name, tag):
 
     """
     Filter for tag and display on template.
@@ -67,7 +65,16 @@ def tag_filter(request, tag):
         'posts': posts
     }
 
-    return render(request, 'content_management/restaurants_bars.html', context)
+    return render(request, template_name, context)
+
+def restaurants_bars_view(request, tag):
+    template_name = 'content_management/restaurants_bars.html'
+    return tag_filter(request, template_name, tag)
+
+def things_to_do_view(request, tag):
+    template_name = 'content_management/things_to_do.html'
+    return tag_filter(request, template_name, tag)    
+
 
 
 def post_tag_detail(request, tag):
@@ -130,4 +137,3 @@ def like_post(request, post_id):
         liked_post.save()
     
         return JsonResponse({'message': "You liked the post!"})
-

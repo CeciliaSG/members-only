@@ -14,15 +14,15 @@
     margin: 0;
     font-family: "Playfair Display",
         serif;
-    font-optical-sizing: auto;
-    font-weight: ;
-    font-style: normal;
 }
+
 
 
 body {
     background-color: white;
     min-height: 100vh;
+    height: 100%;
+    flex-direction: column;
 }
 
 .btn {
@@ -347,9 +347,11 @@ a:hover {
 }
 
 footer {
+    width: 100%;
     background-color: black;
     font-size: 1em;
     color: white;
+    max-height: auto;
 }
 
 .some-row {
