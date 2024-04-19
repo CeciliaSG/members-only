@@ -224,12 +224,12 @@ a:hover {
 
 /*Page and section styling */
 
-.the-latest {
+.bg-white {
     background-color: white;
 }
 
-.events-perks {
-    background-color: white;
+.bg-whitesmoke {
+    background-color: whitesmoke;
 }
 
 .image-container {
@@ -259,9 +259,6 @@ a:hover {
     object-fit: cover;
 }
 
-.events-perks {
-    background-color: whitesmoke;
-}
 
 .hr {
     border: 25;
