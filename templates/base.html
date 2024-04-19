@@ -58,9 +58,10 @@
                 <a class="navbar-logo me-auto" href="{% url 'post_list' %}">
                     <span class="logo"><img src="static/images/SpottedJournal_Logo3.png" alt="Logo"></span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText1"
-                    aria-controls="navbarText1" aria-expanded="false" aria-label="Toggle navigation">
-                    <span><i class="fa-solid fa-bars"></i></span>
+                <button class="navbar-toggler account-btn" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarText1" aria-controls="navbarText1" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span><i class="fa-regular fa-user"></i></span>
                 </button>
                 <div class="container-fluid dropdown justify-content-end pr-5 " style="z-index: 1000;" id="navbarText1">
                     <ul class="navbar-nav">
@@ -144,32 +145,22 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 d-flex justify-content-center">
-        <div class="container footer-divider">
-            <div class="footer-row">
-                <div class="col-md-6 mb-3">
-                    <div class="row footer-row">
-                        <div class="col-md-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#" class="text-decoration-none">About</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#" class="text-decoration-none">Become a member</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#" class="text-decoration-none">Parternships</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#" class="text-decoration-none">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
+    <footer class="footer navbar justify-content-center">
+        <div class="container footer-container footer-divider justify-content-center">
+            <ul class="list-unstyled list-footer mt-3 mb-3 d-flex flex-wrap justify-content-between">
+                <li class="footer-link-item"><a href="#" class="text-decoration-none">About</a></li>
+                <li class="footer-link-item"><a href="#" class="text-decoration-none">Become a member</a></li>
+                <li class="footer-link-item"><a href="#" class="text-decoration-none">Parternships</a></li>
+                <li class="footer-link-item"><a href="#" class="text-decoration-none">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="container d-flex justify-content-center">
+            <div class="row some-row flex-row footer-row-2">
+                <div class="col-md-3">
+                    <p>Some</p>
+                </div>
+                <div class="col-md-3">
+                    <p class="copyright">© Spotted Media AB 2024</p>
                 </div>
             </div>
         </div>

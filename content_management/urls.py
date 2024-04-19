@@ -3,6 +3,7 @@ from .views import post_detail, tag_filter, PostListView, save_post, like_post, 
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 
 
 urlpatterns = [
@@ -13,5 +14,4 @@ urlpatterns = [
     path('save_post/<int:post_id>/', views.save_post, name='save_post'),
     path('like_post/<int:post_id>/', views.like_post, name='like_post'),
     path('heading/<str:heading_name>/', PostListByHeadingView.as_view(), name='post_list_by_heading'),
-  
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

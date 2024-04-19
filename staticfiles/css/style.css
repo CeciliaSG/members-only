@@ -69,7 +69,6 @@ body {
     left: 50%;
     transform: translateX(-50%);
     z-index: 999;
-
 }
 
 .btn-dropdown {
@@ -96,11 +95,6 @@ img {
     font-family: poppins;
 }
 
-.dropdown-menu {
-    border-radius: 0;
-    outline: none;
-}
-
 .container {
     margin-bottom: 20px;
     margin-top: 15px;
@@ -110,7 +104,6 @@ img {
     padding-top: 20px;
     font-size: 25px;
 }
-
 
 .form-control-sm {
     height: 30px;
@@ -204,7 +197,6 @@ a:hover {
     color: #119822;
     text-decoration: none;
 }
-
 
 .read-more {
     font-size: 18px;
