@@ -15,7 +15,7 @@ class Heading(models.Model):
     def __str__(self):
         return self.name
 
-STATUS = ((0, "Draft"), (1, "Published"))
+STATUS = ((0, "Draft"), (1, "Published"), (2, 'Archived'),)
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
@@ -27,7 +27,7 @@ class Post(models.Model):
     featured_image = CloudinaryField('image', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)   
-    status = models.IntegerField(choices=STATUS, default=0)     
+    status = models.SmallIntegerField(choices=STATUS, default=0)
 
 class SavedPost(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='saved_posts')

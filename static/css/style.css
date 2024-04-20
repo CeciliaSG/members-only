@@ -50,12 +50,16 @@ body {
 
 /* Navbar styling */
 
-
 .first-nav {
     height: 90px;
     background-color: black;
 }
 
+.searchForm {
+    border: none;
+    outline: none;
+    border-radius: 0;
+}
 
 .logo {
     position: absolute;
@@ -63,7 +67,6 @@ body {
     left: 50%;
     transform: translateX(-50%);
     z-index: 999;
-
 }
 
 img {
@@ -358,7 +361,7 @@ footer {
 .some-row,
 .text-decoration-none {
     color: white;
-    font-size: 12px;
+    font-size: 14px;
     text-transform: capitalize;
 }
 
