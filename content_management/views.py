@@ -76,7 +76,7 @@ def things_to_do_view(request, tag):
     return tag_filter(request, template_name, tag)    
 
 def neighbourhoods_list_view(request):
-    posts_with_neighbourhoods = Post.objects.exclude(neighbourhood__isnull=True)
+    posts_with_neighbourhoods = Post.objects.exclude(neighbourhood__isnull=True).exclude(neighbourhood__isnull=True).exclude(neighbourhood='')
         
     context = {
         'posts': posts_with_neighbourhoods

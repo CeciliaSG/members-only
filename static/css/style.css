@@ -129,6 +129,10 @@ img {
 
 /* Post/event-list styling*/
 
+.parent-heading {
+    font-weight: bold;
+}
+
 .post-heading,
 .event-heading,
 .post-neighbourhood {

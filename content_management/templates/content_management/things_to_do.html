@@ -3,10 +3,10 @@
 {% load static %}
 
 <body>
-    <div class="container-fluid d-flex justify-content-center the-latest">
+    <div class="container-fluid d-flex justify-content-center bg-white the-latest">
         <div class="container">
             <div class="row post-row">
-                <h1 class="parent-heading mt-4">Things To Do</h1>
+                <h1 class="parent-heading mt-4">Things to do in Stockholm</h1>
                 {% for post in posts %}
                 <div class="col-md-4 post-col">
                     {% if user.is_authenticated %}
@@ -22,7 +22,10 @@
                                 </div>
                                 {% endif %}
                                 <div class="card-body">
-                                    <h2 class="post-heading">{{ post.heading }}</h2>
+                                    <div class="d-flex">
+                                        <h2 class="post-heading">{{ post.heading }} |&nbsp;</h2>
+                                        <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
+                                    </div>
                                     <h5 class="card-title">{{ post.title }}</h5>
                                     <p class="card-text">{{ post.excerpt }}</p></a>
                     </span>
@@ -51,5 +54,5 @@
     </div>
     </div>
     </div>
-    {% endblock %}
 </body>
+{% endblock %}
