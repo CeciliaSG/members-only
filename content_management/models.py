@@ -28,6 +28,11 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)   
     status = models.SmallIntegerField(choices=STATUS, default=0)
+    neighbourhood = models.CharField(max_length=100, blank=True)
+
+
+    def __str__(self):
+        return self.title
 
 class SavedPost(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='saved_posts')

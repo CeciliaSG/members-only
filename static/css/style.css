@@ -130,11 +130,16 @@ img {
 /* Post/event-list styling*/
 
 .post-heading,
-.event-heading {
+.event-heading,
+.post-neighbourhood {
     font-family: poppins;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 2px;
+}
+
+.post-neighbourhood {
+    font-weight: 200;
 }
 
 .saved-post-link {
