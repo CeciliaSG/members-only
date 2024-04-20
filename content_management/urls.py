@@ -15,8 +15,8 @@ urlpatterns = [
     path('save_post/<int:post_id>/', views.save_post, name='save_post'),
     path('like_post/<int:post_id>/', views.like_post, name='like_post'),
     path('heading/<str:heading_name>/', PostListByHeadingView.as_view(), name='post_list_by_heading'),
-    path('tag_filter/<str:tag>/', views.restaurants_bars_view, name='restaurants_bars'),
-    path('tag_filter/<str:tag>/', views.things_to_do_view, name='things_to_do'),
+    path('tag_filter/restaurants_bars/<str:tag>/', views.restaurants_bars_view, name='restaurants_bars'),
+    path('tag_filter/things_to_do/<str:tag>/', views.things_to_do_view, name='things_to_do'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

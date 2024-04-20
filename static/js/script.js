@@ -5,13 +5,22 @@ if (updateProfileBtn) {
     });
 }
 let likeButton = document.getElementsByClassName('btn-like');
+
 for (let i = 0; i < likeButton.length; i++) {
     likeButton[i].addEventListener('click', function (event) {
         event.preventDefault();
         let postId = this.getAttribute('data-post-id');
+        let button = this;
+
+        //let button = this;
+        //button.style.backgroundColor = 'green';
+
         $.ajax({
             url: '/like_post/' + postId + '/',
             success: function (response) {
+                button.classList.add('liked');
+                let icon = button.querySelector('i');
+                icon.style.color = 'red';
                 alert(response.message);
             },
             error: function (xhr, status, error) {

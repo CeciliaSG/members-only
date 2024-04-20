@@ -110,24 +110,31 @@
                 aria-controls="navbarText2" aria-expanded="false" aria-label="Toggle navigation">
                 <span><i class="fa-solid fa-bars"></i></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarText2">
+            <div class="collapse navbar-collapse justify-content-center pt-3" id="navbarText2">
                 <ul class="navbar-nav align-items-center">
-                    <li class="nav-list-item">
+                    <li
+                        class="nav-list-item {% if request.path == '/tag_filter/restaurants_bars/restaurants_bars/' %}active{% endif %}">
                         <a class="nav-link" href="{% url 'restaurants_bars' tag='restaurants_bars' %}">Restaurants &
                             Bars</a>
                     </li>
-                    <li class="nav-list-item">
+                    <li class="nav-list-item
+                        {% if request.path == '/tag_filter/things_to_do/things_to_do/' %}active{% endif %}">
                         <a class="nav-link" href="{% url 'things_to_do' tag='things_to_do' %}">Things to do</a>
-                    <li class="nav-list-item">
-                        <a class="nav-link" href="{% url 'event_list' %}">Events</a>
                     </li>
-                    <li class="nav-list-item">
+                    <li class="nav-list-item
+                        {% if request.path == '/event_management/events/' %}active{% endif %}"> <a class="nav-link"
+                            href="{% url 'event_list' %}">Events</a>
+                    </li>
+                    <li class="nav-list-item
+                        {% if request.path == '/neighbourhoods/' %}active{% endif %}">
                         <a class="nav-link" href="{% url 'neighbourhoods' %}">Neighbourhoods</a>
                     </li>
-                    <li class="nav-list-item">
+                    <li class="nav-list-item
+                        {% if request.path == '/whats_on/' %}active{% endif %}">
                         <a class="nav-link" href="#">What's On</a>
                     </li>
-                    <li class="nav-list-item">
+                    <li class="nav-list-item
+                        {% if request.path == '/perks/' %}active{% endif %}">
                         <a class="nav-link" href="#">Perks</a>
                     </li>
                 </ul>

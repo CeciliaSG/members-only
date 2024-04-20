@@ -76,13 +76,22 @@ img {
 
 .nav-link {
     line-height: 5px;
-    padding-top: 20px;
     color: black;
 }
 
 .navbar-nav .nav-link {
     color: black;
     font-family: poppins;
+}
+
+.nav-link:hover {
+    color: #119822;
+}
+
+.nav-list-item.active {
+    background-color: #2A9D8F;
+    color: black;
+    padding: 0;
 }
 
 .navbar-dropdown {
@@ -131,6 +140,7 @@ img {
 
 .parent-heading {
     font-weight: bold;
+    padding-bottom: 15px;
 }
 
 .post-heading,
