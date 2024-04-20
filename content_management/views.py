@@ -57,7 +57,7 @@ class PostListByHeadingView(generic.ListView):
 def tag_filter(request, template_name, tag):
 
     """
-    Filter for tag and display on template.
+    Filter for tag and display on templates.
     """
     posts = Post.objects.filter(tag=tag, status=1)
     context = {
@@ -74,6 +74,19 @@ def restaurants_bars_view(request, tag):
 def things_to_do_view(request, tag):
     template_name = 'content_management/things_to_do.html'
     return tag_filter(request, template_name, tag)    
+
+def neighbourhoods_list_view(request):
+    posts_with_neighbourhoods = Post.objects.exclude(neighbourhood__isnull=True)
+        
+    context = {
+        'posts': posts_with_neighbourhoods
+    }
+
+    template_name = 'content_management/neighbourhoods.html'
+    return render(request, template_name, context)
+    
+
+
 
 
 
