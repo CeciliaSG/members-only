@@ -90,8 +90,11 @@ img {
 
 .nav-list-item.active {
     background-color: #2A9D8F;
-    color: black;
     padding: 0;
+}
+
+.nav-list-item.active .nav-link:hover {
+    color: black;
 }
 
 .navbar-dropdown {

@@ -4,6 +4,8 @@ if (updateProfileBtn) {
         this.style.backgroundColor = "red";
     });
 }
+
+
 let likeButton = document.getElementsByClassName('btn-like');
 for (let i = 0; i < likeButton.length; i++) {
     likeButton[i].addEventListener('click', function (event) {
