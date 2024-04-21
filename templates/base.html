@@ -50,20 +50,21 @@
     <div class="nav-one">
         <nav class="navbar navbar-expand-lg navbar-dark first-nav pt-4">
             <form id="searchForm" class="d-none d-lg-flex search" action=method="GET">
-                <input id="searchInput" class="form-control-sm" type="search" name="<i class=" fa-solid
-                    fa-magnifying-glass"></i>" placeholder="Search"
-                aria-label="Search">
+                <input id="searchInput" class="form-control-sm" type="search" placeholder="Search" aria-label="Search">
             </form>
 
             <div class="container-fluid d-flex justify-content-center align-items-center">
                 <a class="navbar-logo me-auto" href="{% url 'post_list' %}">
-                    <span class="logo"><img src="static/images/SpottedJournal_Logo3.png" alt="Logo"></span>
+                    <span class="logo"><img src="static/images/SpottedJournal_Logo3.webp" alt="Logo"></span>
                 </a>
+                {% if user.is_authenticated %}
                 <button class="navbar-toggler account-btn" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarText1" aria-controls="navbarText1" aria-expanded="false"
                     aria-label="Toggle navigation">
+
                     <span><i class="fa-regular fa-user"></i></span>
                 </button>
+                {% endif %}
                 <div class="container-fluid dropdown justify-content-end pr-5 " style="z-index: 1000;" id="navbarText1">
                     <ul class="navbar-nav">
                         {% if user.is_authenticated %}
@@ -80,6 +81,8 @@
                                         <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
                                         <li><a class="dropdown-item" href="{% url 'account_change_password' %}">Change
                                                 password</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'account_email' %}">Change
+                                                email</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -87,21 +90,29 @@
                     </ul>
                 </div>
 
-                <!--<li><a class="dropdown-item" href="{% url 'account_email' %}">Change email</a></li>-->
+
                 {% else %}
-                <li class="nav-item dropdown account-dropdown">
-                    <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                        href="{% url 'registration' %}">SignUp</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                        href="{% url 'account_login' %}">Login</a>
-                </li>
-                {% endif %}
-                </ul>
+                <div class="container-fluid justify-content-start">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText1"
+                        aria-controls="navbarText1" aria-expanded="false" aria-label="Toggle navigation">
+                        <span><i class="fa-solid fa-bars"></i></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center pt-3" id="navbarText1">
+                        <ul class="navbar-nav align-items-center">
+                            <li class="nav-list-item dropdown account-dropdown">
+                                <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
+                                    aria-current="page" href="{% url 'registration' %}">SignUp</a>
+                            </li>
+                            <li class="nav-list-item">
+                                <a class="nav-link {% if request.path == login_url %}active{% endif %}"
+                                    aria-current="page" href="{% url 'account_login' %}">Login</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
             </div>
-    </div>
-    </nav>
+        </nav>
     </div>
 
     <!-- Second Navbar -->

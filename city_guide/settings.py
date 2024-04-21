@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['8000-ceciliasg-membersonly-vpjme6sjhrb.ws-eu110.gitpod.io', '.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-ceciliasg-membersonly-lgambh2rrdp.ws-eu110.gitpod.io', "https://*.herokuapp.com", "https://*.gitpod.io"
@@ -55,12 +55,22 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     'crispy_forms',
     'crispy_bootstrap5',
     'django_summernote',
     'cloudinary',
 ]
 
+SOCIALACCOUNT_PROVIDERS = {
+   "google": {
+       "SCOPE": [
+           "profile",
+           "email"
+       ],
+       "AUTH_PARAMS": {"access_type": "online"}
+   }
+}
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
@@ -138,6 +148,13 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'ceciliasgleisner@gmail.com'
+EMAIL_HOST_PASSWORD = 'CtSG710271!!?'
+EMAIL_PORT = 587
 
 
 
