@@ -7,31 +7,29 @@
 
 {% block content %}
 
-<body>
 
-  <div class="container-fluid d-flex justify-content-center align-items-center bg-whitesmoke mt-2">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-6 text-center">
 
-          <h1 class="h3 text-center form-heading mt-5">{% trans "Sign Out" %}</h1>
 
-          <p>{% trans 'Are you sure you want to sign out?' %}
-            <h5>{{ request.user.username }}</h5>
-            <h6>{{ request.user.email }}</h6>
-          </p>
+<div class="container-fluid d-flex justify-content-center bg-whitesmoke">
+  <div class="row  mt-5 mb-5">
+    <div class="col-md-12 text-center">
 
-          <form class="mb-2" method="post" action="{% url 'account_logout' %}">
-            {% csrf_token %}
-            {% if redirect_field_value %}
-            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-            {% endif %}
-            <button class="btn mb-4" type="submit">{% trans 'Sign Out' %}</button>
-          </form>
-        </div>
-        <div>
-        </div>
-      </div>
-</body>
+      <h1 class="h3 text-center form-heading mt-5 mb-3">{% trans "Sign Out" %}</h1>
 
-{% endblock content %}
+      <p>{% trans 'Are you sure you want to sign out?' %}
+        <h5>{{ request.user.username }}</h5>
+        <h6>{{ request.user.email }}</h6>
+      </p>
+
+      <form class="mb-2" method="post" action="{% url 'account_logout' %}">
+        {% csrf_token %}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button class="btn mb-4" type="submit">{% trans 'Sign Out' %}</button>
+      </form>
+    </div>
+    <div>
+    </div>
+
+    {% endblock content %}

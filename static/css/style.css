@@ -17,11 +17,12 @@
 }
 
 
-
+html,
 body {
     background-color: white;
-    min-height: 100vh;
     height: 100%;
+    min-height: 100vh;
+    display: flex;
     flex-direction: column;
 }
 
@@ -36,6 +37,7 @@ body {
 
 .btn:hover {
     background-color: #119822;
+    color: black;
 }
 
 .container {
@@ -122,6 +124,8 @@ img {
 .parent-heading {
     padding-top: 20px;
     font-size: 25px;
+    font-weight: bold;
+    padding-bottom: 15px;
 }
 
 
@@ -141,11 +145,6 @@ img {
 
 /* Post/event-list styling*/
 
-.parent-heading {
-    font-weight: bold;
-    padding-bottom: 15px;
-}
-
 .post-heading,
 .event-heading,
 .post-neighbourhood {
@@ -157,13 +156,6 @@ img {
 
 .post-neighbourhood {
     font-weight: 200;
-}
-
-.saved-post-link {
-    font-size: 0.9em;
-    text-decoration: underline;
-    font-weight: bold;
-    color: #1E441E;
 }
 
 .card-image-container {
@@ -214,6 +206,13 @@ img {
     margin-right: 10px;
 }
 
+.saved-post-link {
+    font-size: 0.9em;
+    text-decoration: underline;
+    font-weight: bold;
+    color: #1E441E;
+}
+
 .fa-heart,
 .fa-bookmark {
     color: #1E441E;
@@ -234,7 +233,6 @@ img {
 a {
     color: black;
 }
-
 
 a:hover {
     color: #119822;
