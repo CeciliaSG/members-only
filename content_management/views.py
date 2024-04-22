@@ -87,9 +87,6 @@ def neighbourhoods_list_view(request):
     
 
 
-
-
-
 def post_tag_detail(request, tag):
 
     """
@@ -103,6 +100,7 @@ def post_tag_detail(request, tag):
         "content_management/post_detail.html",
         {"post": post, "tag": tag},
     )
+
 
 @login_required
 def save_post(request, post_id):
@@ -126,6 +124,7 @@ def save_post(request, post_id):
         saved_post.save()    
 
     return JsonResponse({'message': "Post saved successfully!"})
+    
 
 @login_required
 def like_post(request, post_id):
@@ -146,7 +145,10 @@ def like_post(request, post_id):
     except LikedPost.DoesNotExist:
   
         post = Post.objects.get(id=post_id)
-        liked_post = LikedPost(user=request.user, post=post)
+        #liked_post = LikedPost(user=request.user, post=post)
+        liked_post = LikedPost(user=request.user, post=post, button_color='red')
+
         liked_post.save()
+
     
         return JsonResponse({'message': "You liked the post!"})
