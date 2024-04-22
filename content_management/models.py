@@ -30,6 +30,9 @@ class Post(models.Model):
     status = models.SmallIntegerField(choices=STATUS, default=0)
     neighbourhood = models.CharField(max_length=100, blank=True)
 
+    class Meta:
+        ordering = ["-created_at"]
+
 
     def __str__(self):
         return self.title

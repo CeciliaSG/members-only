@@ -14,7 +14,7 @@ class PostAdmin(SummernoteModelAdmin):
 class HeadingAdmin(SummernoteModelAdmin):
     list_display = ('name', 'parent_heading', 'created_at')
     search_fields = ['name']
-    summernote_fields = ('name',)
+    #summernote_fields = ('name',)
 
 
 # Register your models here.
