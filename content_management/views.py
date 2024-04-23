@@ -6,6 +6,8 @@ from django.shortcuts import redirect
 from .models import Post, SavedPost, LikedPost, Heading
 from django.contrib import messages
 from django.http import HttpResponse
+from django.db.models import Q
+
 
 
 # Create your views here
@@ -54,26 +56,47 @@ class PostListByHeadingView(generic.ListView):
         return Post.objects.filter(heading__id=heading_id, status=1)
 
 
-def tag_filter(request, template_name, tag):
+def tag_filter(request, template_name, tags):
 
     """
-    Filter for tag and display on templates.
+    Filter for tags and display on templates.
     """
-    posts = Post.objects.filter(tag=tag, status=1)
+
+    print("Tags:", tags) 
+
+    query = Q()
+    for tag in tags:
+        query = Q(tag__in=tags, status=1)
+
+    print("Query:", query)   
+
+    posts = Post.objects.filter(query)
     context = {
-        'tag': tag,
+        'tags': tags,
         'posts': posts
     }
 
+    print("Context:", context)
+
     return render(request, template_name, context)
 
-def restaurants_bars_view(request, tag):
+def restaurants_bars_view(request, tags):
+    print("Tags from URL:", tags)
+    tag_list = tags.split(',')
+    print(tag_list)
     template_name = 'content_management/restaurants_bars.html'
-    return tag_filter(request, template_name, tag)
+  
+    return tag_filter(request, template_name, tag_list)
 
-def things_to_do_view(request, tag):
+def things_to_do_view(request, tags):
+    tag_list = tags.split(',')
     template_name = 'content_management/things_to_do.html'
-    return tag_filter(request, template_name, tag)    
+    return tag_filter(request, template_name, tag_list) 
+
+def whats_on_view(request, tag):
+    template_name = 'content_management/whats_on.html'
+    return tag_filter(request, template_name, tag)   
+
 
 def neighbourhoods_list_view(request):
     posts_with_neighbourhoods = Post.objects.exclude(neighbourhood__isnull=True).exclude(neighbourhood__isnull=True).exclude(neighbourhood='')
@@ -145,10 +168,7 @@ def like_post(request, post_id):
     except LikedPost.DoesNotExist:
   
         post = Post.objects.get(id=post_id)
-        #liked_post = LikedPost(user=request.user, post=post)
         liked_post = LikedPost(user=request.user, post=post, button_color='red')
-
         liked_post.save()
 
-    
         return JsonResponse({'message': "You liked the post!"})

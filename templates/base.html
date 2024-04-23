@@ -126,12 +126,14 @@
                 <ul class="navbar-nav align-items-center">
                     <li
                         class="nav-list-item {% if request.path == '/tag_filter/restaurants_bars/restaurants_bars/' %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'restaurants_bars' tag='restaurants_bars' %}">Restaurants &
-                            Bars</a>
+                        <a class="nav-link"
+                            href="{% url 'restaurants_bars' tags='restaurants_bars,whats_on,things_to_do' %}">Restaurants
+                            & Bars</a>
                     </li>
                     <li class="nav-list-item
-                        {% if request.path == '/tag_filter/things_to_do/things_to_do/' %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'things_to_do' tag='things_to_do' %}">Things to do</a>
+                        {% if request.path == '/tag_filter/things_to_do/things_to_do/' %}active{% endif %}"> <a
+                            class="nav-link" href="{% url 'things_to_do' tags='things_to_do, whats_on' %}">Things to
+                            do</a>
                     </li>
                     <li class="nav-list-item
                         {% if request.path == '/event_management/events/' %}active{% endif %}"> <a class="nav-link"
@@ -143,7 +145,7 @@
                     </li>
                     <li class="nav-list-item
                         {% if request.path == '/whats_on/' %}active{% endif %}">
-                        <a class="nav-link" href="#">What's On</a>
+                        <a class="nav-link" href="{% url 'whats_on' tag='whats_on' %}">What's On</a>
                     </li>
                     <li class="nav-list-item
                         {% if request.path == '/perks/' %}active{% endif %}">
