@@ -207,9 +207,9 @@ img {
 
 .saved-post-link {
     font-size: 0.9em;
-    text-decoration: underline;
     font-weight: bold;
     color: #1E441E;
+    text-decoration: none;
 }
 
 .fa-heart,
@@ -310,6 +310,12 @@ a:hover {
     color: black;
 }
 
+.saved-post-excerpt {
+    font-size: 0.7em;
+    color: gray;
+}
+
+
 /*Post styling*/
 
 .post-col {
@@ -361,7 +367,6 @@ a:hover {
     padding: 0;
     color: gray;
 }
-
 
 
 /*Footer styling */

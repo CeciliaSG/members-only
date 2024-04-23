@@ -41,14 +41,18 @@
                     <p>Please <a href="{% url 'account_signup' %}">create a profile</a> to edit your details.</p>
                     {% endif %}
                 </div>
+                <div class="col-md-1"></div>
                 <div class="col-md-3 mt-5">
-                    <h3 class="h5 saved_posts">Your saved posts</h3>
+                    <hr class="section-divider">
+                    <h3 class="h5 saved_posts mb-3">Your saved posts</h3>
                     {% for saved_post in saved_posts %}
+
                     <div>
                         <ul class="list-unstyled">
-                            <li><a class="text-decoration-underline saved-post-link"
-                                    href="{% url 'post_detail' saved_post.post.slug %}">{{ saved_post.post.title }}</a>
-                                <p> {{ saved_post.post.excerpt }}</p>
+                            <li><a class="saved-post-link"
+                                    href="{% url 'post_detail' saved_post.post.slug %}">{{ saved_post.post.title|truncatewords:5 }}
+                                    <p class="saved-post-excerpt">
+                                        {{ saved_post.post.excerpt|truncatewords:10 }}</p></a>
                             </li>
                         </ul>
                     </div>
