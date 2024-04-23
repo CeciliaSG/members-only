@@ -11,7 +11,11 @@
     <div class="container-fluid d-flex justify-content-center bg-white the-latest">
         <div class="container">
             <div class="row post-row">
-                <h1 class="parent-heading mt-4">Restaurants</h1>
+                <h1 class="parent-heading mt-4">Restaurants & Bars in Stockholm</h1>
+                <div>
+                    <hr class="section-divider">
+                </div>
+                <h2 class="h4 section-heading mt-4">Restaurants</h2>
                 {% for post in posts %}
                 <div class="col-md-4 post-col">
                     {% if user.is_authenticated %}
@@ -32,7 +36,7 @@
                                         <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                                     </div>
                                     <h5 class="card-title">{{ post.title }}</h5>
-                                    <p class="card-text">{{ post.excerpt|safe }}</p></a>
+                                    <p class="card-text">{{ post.excerpt|safe|truncatewords:10 }}</p></a>
                     </span>
 
                     {% if user.is_authenticated %}
@@ -63,7 +67,7 @@
     <div class="container-fluid d-flex justify-content-center bg-whitesmoke events-perks">
         <div class="container">
             <div class="row post-row">
-                <h1 class="parent-heading mt-4">Bars</h1>
+                <h2 class="h4 section-heading mt-4">Bars</h2>
                 {% for post in posts %}
                 {% if post.heading.name == 'Bars' or post.heading.name == 'Perks' %}
                 <div class="col-md-4 post-col">
@@ -82,7 +86,7 @@
                                 <div class="card-body">
                                     <h2 class="post-heading">{{ post.heading }}</h2>
                                     <h5 class="card-title">{{ post.title }}</h5>
-                                    <p class="card-text">{{ post.excerpt }}</p></a>
+                                    <p class="card-text">{{ post.excerpt|safe|truncatewords:10  }}</p></a>
                     </span>
 
                     {% if user.is_authenticated %}

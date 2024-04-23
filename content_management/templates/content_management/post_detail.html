@@ -10,22 +10,20 @@
                 <div class="image-container d-flex justify-content-center align-items-center">
                     <img src="{{ post.featured_image.url }}" alt="Restaurant Image">
                 </div>
-                <div class="row">
+                <div class="row d-flex justify-content-center align-items-center">
                     <div class="col-md-12">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="row">
-                        <div class="col-md-6 pr-lg-4">
-                            <h2 class="post-heading">{{ post.heading }}</h2>
-                            <h1 class="post-title">{{ post.title }}</h1>
-                            <div class="post-content">
-                                {{ post.content | safe }}
+                        <div class="row mx-1">
+                            <div class="col-md-6 pr-lg-4">
+                                <h2 class="post-heading">{{ post.heading }}</h2>
+                                <h1 class="post-title">{{ post.title }}</h1>
+                                <div class="post-content">
+                                    {{ post.content | safe }}
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 pl-lg-4 mt-5">
-                            <hr class="hr-thick">
-                            <p>Social media icons</p>
+                            <div class="col-md-6 pl-lg-4 mt-5">
+                                <hr class="hr-thick">
+                                <p>Social media icons</p>
+                            </div>
                         </div>
                     </div>
                 </div>
