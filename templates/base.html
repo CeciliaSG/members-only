@@ -132,7 +132,7 @@
                     </li>
                     <li class="nav-list-item
                         {% if request.path == '/tag_filter/things_to_do/things_to_do/' %}active{% endif %}"> <a
-                            class="nav-link" href="{% url 'things_to_do' tags='things_to_do, whats_on' %}">Things to
+                            class="nav-link" href="{% url 'things_to_do' tags='things_to_do,whats_on' %}">Things to
                             do</a>
                     </li>
                     <li class="nav-list-item
@@ -145,11 +145,11 @@
                     </li>
                     <li class="nav-list-item
                         {% if request.path == '/whats_on/' %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'whats_on' tag='whats_on' %}">What's On</a>
+                        <a class="nav-link" href="{% url 'whats_on' tags='whats_on' %}">What's On</a>
                     </li>
                     <li class="nav-list-item
                         {% if request.path == '/perks/' %}active{% endif %}">
-                        <a class="nav-link" href="#">Perks</a>
+                        <a class="nav-link" href="{% url 'perks' tags='whats_on, restaurants, bars' %}">Perks</a>
                     </li>
                 </ul>
             </div>

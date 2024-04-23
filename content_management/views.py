@@ -62,8 +62,6 @@ def tag_filter(request, template_name, tags):
     Filter for tags and display on templates.
     """
 
-    print("Tags:", tags) 
-
     query = Q()
     for tag in tags:
         query = Q(tag__in=tags, status=1)
@@ -76,16 +74,11 @@ def tag_filter(request, template_name, tags):
         'posts': posts
     }
 
-    print("Context:", context)
-
     return render(request, template_name, context)
 
 def restaurants_bars_view(request, tags):
-    print("Tags from URL:", tags)
     tag_list = tags.split(',')
-    print(tag_list)
     template_name = 'content_management/restaurants_bars.html'
-  
     return tag_filter(request, template_name, tag_list)
 
 def things_to_do_view(request, tags):
@@ -93,9 +86,15 @@ def things_to_do_view(request, tags):
     template_name = 'content_management/things_to_do.html'
     return tag_filter(request, template_name, tag_list) 
 
-def whats_on_view(request, tag):
+def whats_on_view(request, tags):
+    tag_list = tags.split(',')
     template_name = 'content_management/whats_on.html'
-    return tag_filter(request, template_name, tag)   
+    return tag_filter(request, template_name, tag_list)   
+
+def perks_view(request, tags):
+    tag_list = tags.split(',')
+    template_name = 'content_management/perks.html'
+    return tag_filter(request, template_name, tag_list)       
 
 
 def neighbourhoods_list_view(request):

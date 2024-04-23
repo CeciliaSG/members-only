@@ -17,6 +17,8 @@ urlpatterns = [
     path('heading/<str:heading_name>/', PostListByHeadingView.as_view(), name='post_list_by_heading'),
     path('tag_filter/restaurants_bars/<str:tags>/', views.restaurants_bars_view, name='restaurants_bars'),
     path('tag_filter/things_to_do/<str:tags>/', views.things_to_do_view, name='things_to_do'),
-      path('tag_filter/whats_on/<str:tag>/', views.whats_on_view, name='whats_on'),
+    path('tag_filter/whats_on/<str:tags>/', views.whats_on_view, name='whats_on'),
+    path('tag_filter/perks/<str:tags>/', views.perks_view, name='perks'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
