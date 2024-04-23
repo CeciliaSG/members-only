@@ -64,7 +64,7 @@
                         <div class="card-body">
                             <h2 class=" h5 event-heading">{{ event.heading }}</h2>
                             <h5 class="card-title">{{ event.title }}</h5>
-                            <p class="card-text">{{ event.excerpt }}
+                            <p class="card-text">{{ event.excerpt|safe|truncatewords:10 }}
                                 {% if user.is_authenticated %}
                                 <a href="{% url 'event_detail' event.id %}" class="post-link">...</a>
                             </p>

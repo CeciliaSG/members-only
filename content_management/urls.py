@@ -19,6 +19,5 @@ urlpatterns = [
     path('tag_filter/things_to_do/<str:tags>/', views.things_to_do_view, name='things_to_do'),
     path('tag_filter/whats_on/<str:tags>/', views.whats_on_view, name='whats_on'),
     path('tag_filter/perks/<str:tags>/', views.perks_view, name='perks'),
-
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

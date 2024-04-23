@@ -98,7 +98,7 @@ def perks_view(request, tags):
 
 
 def neighbourhoods_list_view(request):
-    posts_with_neighbourhoods = Post.objects.exclude(neighbourhood__isnull=True).exclude(neighbourhood__isnull=True).exclude(neighbourhood='')
+    posts_with_neighbourhoods = Post.objects.exclude(neighbourhood__isnull=True).exclude(neighbourhood='')
         
     context = {
         'posts': posts_with_neighbourhoods

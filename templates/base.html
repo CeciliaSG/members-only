@@ -127,12 +127,13 @@
                     <li
                         class="nav-list-item {% if request.path == '/tag_filter/restaurants_bars/restaurants_bars/' %}active{% endif %}">
                         <a class="nav-link"
-                            href="{% url 'restaurants_bars' tags='restaurants_bars,whats_on,things_to_do' %}">Restaurants
+                            href="{% url 'restaurants_bars' tags='restaurants_bars,whats_on,things_to_do,perks' %}">Restaurants
                             & Bars</a>
                     </li>
                     <li class="nav-list-item
                         {% if request.path == '/tag_filter/things_to_do/things_to_do/' %}active{% endif %}"> <a
-                            class="nav-link" href="{% url 'things_to_do' tags='things_to_do,whats_on' %}">Things to
+                            class="nav-link" href="{% url 'things_to_do' tags='things_to_do,whats_on,perks' %}">Things
+                            to
                             do</a>
                     </li>
                     <li class="nav-list-item
@@ -149,7 +150,7 @@
                     </li>
                     <li class="nav-list-item
                         {% if request.path == '/perks/' %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'perks' tags='whats_on, restaurants, bars' %}">Perks</a>
+                        <a class="nav-link" href="{% url 'perks' tags='perks,whats_on, restaurants, bars' %}">Perks</a>
                     </li>
                 </ul>
             </div>

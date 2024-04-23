@@ -3,31 +3,61 @@
 {% load static %}
 
 <body>
-    <div class="container">
+    <div class="full-width-container image-container-list-top the-latest">
+        <img src="{% static 'images/restaurant_1_unsplash.jpg' %}" alt="Restaurant Image" class="w-100">
+    </div>
 
-        <div class="row post-row">
-            <h1 class="parent-heading">The Latest</h1>
-            {% for post in posts %}
-            <div class="col-md-4 post-col">
-                <div class="card h-100">
-                    {% if post.image %}
-                    <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
-                    {% endif %}
-                    <div class="card-body">
-                        <h2 class="post-heading">{{ post.heading }}</h2>
-                        <h5 class="card-title">{{ post.title }}</h5>
-                        <p class="card-text">{{ post.excerpt }}
-                            {% if user.is_authenticated %}
-                            <a href="{% url 'post_detail' post.slug %}" class="post-link">...</a></p>
+    <div class="container-fluid d-flex justify-content-center bg-white the-latest">
+        <div class="container">
+            <div class="row post-row">
+                <h1 class="parent-heading mt-4">Members Perks</h1>
+                <div>
+                    <hr class="section-divider">
+                </div>
+                {% for post in posts %}
+                <div class="col-md-4 post-col">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
                         {% else %}
-                        <span class="post-link" onclick="alert('Please log in to view this post.')">...</span>
-                        {% endif %}
-                        <div> <button type="submit"><i class="fas fa-heart"></i></button></div>
+                        <span class="post-link" onclick="alert('Please log in to view this post.')">
+                            {% endif %}
+                            <div class="card h-100">
+                                {% if post.featured_image.url %}
+                                <div class="card-image-container">
+                                    <img class="card-img-top" src=" {{ post.featured_image.url }}"
+                                        alt="{{ post.title }}">
+                                </div>
+                                {% endif %}
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <h2 class="post-heading">{{ post.heading }} |&nbsp;</h2>
+                                        <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
+                                    </div>
+                                    <h5 class="card-title">{{ post.title }}</h5>
+                                    <p class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</p></a>
+                    </span>
+
+                    {% if user.is_authenticated %}
+                    <div class="post-actions"><button class="btn-post btn-like" data-post-id="{{ post.id }}"><a
+                                href="{% url 'like_post' post.id %}" class="like-post"><i
+                                    class="fa-solid fa-heart"></i></a></button>
+
+                        <button class="btn-post btn-save-post" data-post-id="{{ post.id }}"><a
+                                href="{% url 'save_post' post.id %}" class="save-post"><i
+                                    class="fa-solid fa-bookmark"></i></a></button></div>
+                    {% else %}
+                    <div class="post-symbols">
+                        <i class="fa-solid fa-heart"></i></a>
+                        <i class="fa-solid fa-bookmark"></i></a>
                     </div>
+                    {% endif %}
                 </div>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
-    {% endblock %}
+    </div>
+    </div>
+    </div>
 </body>
+{% endblock %}
