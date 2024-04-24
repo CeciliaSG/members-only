@@ -3,6 +3,19 @@
 {% load static %}
 
 <body>
+
+    <!--<div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <h2>Welcome to Spotted Media!</h2>
+            <p>Please log in (or become a member if you are not one yet) to access all features.</p>
+
+            <a class="link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                href="{% url 'registration' %}">SignUp</a>
+            <a class="link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                href="{% url 'account_login' %}">Login</a>
+        </div>
+    </div>-->
+
     <div class="full-width-container image-container-list-top the-latest">
         <img src="{% static 'images/restaurant_1_unsplash.jpg' %}" alt="Restaurant Image" class="w-100">
     </div>

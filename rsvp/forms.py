@@ -9,4 +9,4 @@ class RsvpForm(forms.Form):
     num_guests = forms.ChoiceField(choices=[
         ('0', '0'), ('1', '1'), ('2', '2'), ('3', '3'), 
         ('4', '4'), ('5', '5'), ('6', '6') ], required=True,
-    label="Number of guests:")
+    label="Number of guests: ")
