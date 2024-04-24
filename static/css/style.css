@@ -205,6 +205,10 @@ img {
     margin-right: 10px;
 }
 
+.post-link {
+    margin-bottom: 0;
+}
+
 .saved-post-link {
     font-size: 0.9em;
     font-weight: bold;
@@ -345,6 +349,7 @@ a:hover {
     height: 100%;
     overflow: hidden;
     border-radius: 0;
+    margin-bottom: 10px;
 }
 
 .card-title {
@@ -352,9 +357,7 @@ a:hover {
 }
 
 .card-body {
-    padding-top: 10px;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 10px 0 0 0;
 }
 
 .card .card-body {
