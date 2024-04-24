@@ -9,13 +9,12 @@ for (let i = 0; i < likeButton.length; i++) {
         $.ajax({
             url: '/like_post/' + postId + '/',
             success: function (response) {
-                console.log(response);
-                if (response.message === "You unliked the post!") {
-                    button.classList.remove('liked');
-                    icon.style.color = '';
-                } else {
+                if (response.message === "You liked the post!") {
                     button.classList.add('liked');
                     icon.style.color = 'red';
+                } else {
+                    button.classList.remove('liked');
+                    icon.style.color = '';
                 }
                 alert(response.message);
             },

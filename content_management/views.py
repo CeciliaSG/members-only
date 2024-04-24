@@ -37,6 +37,9 @@ def post_detail(request, slug):
     )
 
 class PostListByHeadingView(generic.ListView):
+    """
+    Filter for headings and parent-headings and display on templates.
+    """
     template_name = "content_management/index.html"
     context_object_name = 'posts'
     model = Post
@@ -59,7 +62,7 @@ class PostListByHeadingView(generic.ListView):
 def tag_filter(request, template_name, tags):
 
     """
-    Filter for tags and display on templates.
+    Filter for multiple tags and display on templates.
     """
 
     query = Q()
@@ -108,7 +111,6 @@ def neighbourhoods_list_view(request):
     return render(request, template_name, context)
     
 
-
 def post_tag_detail(request, tag):
 
     """
@@ -154,20 +156,23 @@ def like_post(request, post_id):
     """
     Check if the post has already been liked, 
     delete like if already liked, 
-    if not save like to the database.
+    if not save like and like-colour to the database.
     """
 
     post = get_object_or_404(Post, id=post_id)
 
     try:
-        liked_post = LikedPost.objects.get(user=request.user, post_id=post_id)
+        liked_post = LikedPost.objects.get(user=request.user, post=post)
         liked_post.delete()
-        return JsonResponse({'message': "You unliked the post!"})
+        message = "You unliked the post!"
 
     except LikedPost.DoesNotExist:
   
-        post = Post.objects.get(id=post_id)
         liked_post = LikedPost(user=request.user, post=post, button_color='red')
         liked_post.save()
+        message = "You liked the post!"
 
-        return JsonResponse({'message': "You liked the post!"})
+    #return JsonResponse({'message': "You liked the post!"})
+
+      
+    return JsonResponse({'message': message, 'color': 'red'})

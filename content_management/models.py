@@ -33,7 +33,6 @@ class Post(models.Model):
     class Meta:
         ordering = ["-created_at"]
 
-
     def __str__(self):
         return self.title
 
@@ -54,4 +53,7 @@ class LikedPost(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     button_color = models.CharField(max_length=30, blank=True, null=True)
+
+    class Meta:
+        unique_together = ('user', 'post')
 
