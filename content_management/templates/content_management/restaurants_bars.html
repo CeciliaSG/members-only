@@ -21,24 +21,20 @@
                     {% if user.is_authenticated %}
                     <a href="{% url 'post_detail' post.slug %}" class="post-link">
                         {% else %}
-                        <span class="post-link" onclick="alert('Please log in to view this post.')">
+                        {% endif %}
+                        <div class="card h-100">
+                            {% if post.featured_image.url %}
+                            <div class="card-image-container">
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                            </div>
                             {% endif %}
-                            <div class="card h-100">
-                                {% if post.featured_image.url %}
-                                <div class="card-image-container">
-                                    <img class="card-img-top" src=" {{ post.featured_image.url }}"
-                                        alt="{{ post.title }}">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <h2 class="post-heading">{{ post.heading }} |&nbsp;</h2>
+                                    <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                                 </div>
-                                {% endif %}
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <h2 class="post-heading">{{ post.heading }} |&nbsp;</h2>
-                                        <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
-                                    </div>
-                                    <h5 class="card-title">{{ post.title }}</h5>
-                                    <p class="card-text">{{ post.excerpt|safe|truncatewords:10  }}</p></a>
-                    </span>
-
+                                <h5 class="card-title">{{ post.title }}</h5>
+                                <p class="card-text">{{ post.excerpt|safe|truncatewords:10  }}</p></a>
                     {% if user.is_authenticated %}
                     <div class="post-actions"><button class="btn-post btn-like" data-post-id="{{ post.id }}"><a
                                 href="{% url 'like_post' post.id %}" class="like-post"><i
@@ -74,20 +70,17 @@
                 <div class="col-md-4 post-col">
                     {% if user.is_authenticated %}
                     <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                        {% else %}
-                        <div class="post-link" onclick="alert('Please log in to view this post.')">
+                        {% endif %}
+                        <div class="card h-100">
+                            {% if post.featured_image.url %}
+                            <div class="card-image-container">
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                            </div>
                             {% endif %}
-                            <div class="card h-100">
-                                {% if post.featured_image.url %}
-                                <div class="card-image-container">
-                                    <img class="card-img-top" src=" {{ post.featured_image.url }}"
-                                        alt="{{ post.title }}">
-                                </div>
-                                {% endif %}
-                                <div class="card-body">
-                                    <h2 class="post-heading">{{ post.heading }}</h2>
-                                    <h5 class="card-title">{{ post.title }}</h5>
-                                    <p class="card-text">{{ post.excerpt|safe|truncatewords:10  }}</p></a>
+                            <div class="card-body">
+                                <h2 class="post-heading">{{ post.heading }}</h2>
+                                <h5 class="card-title">{{ post.title }}</h5>
+                                <p class="card-text">{{ post.excerpt|safe|truncatewords:10  }}</p></a>
 
                     {% if user.is_authenticated %}
                     <div class="post-actions"><button class="btn-post btn-like" data-post-id="{{ post.id }}"><a
