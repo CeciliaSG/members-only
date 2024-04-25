@@ -17,12 +17,13 @@
 }
 
 html,
-body {
+.body {
     background-color: white;
     height: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    padding-bottom: 30px;
 }
 
 .btn {
@@ -174,6 +175,7 @@ img {
     object-fit: cover;
     margin: 0;
     border-radius: 0;
+    padding-bottom: 13px;
 }
 
 
@@ -292,8 +294,9 @@ a:hover {
 }
 
 .some-icons-row {
-    justify-content: space-between;
+    justify-content: space-around;
 }
+
 
 .hr {
     border: 25;
@@ -306,28 +309,7 @@ a:hover {
     padding: 2em;
 }
 
-.overlay {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.overlay-content {
-    text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.5);
-    z-index: 1001;
-    pointer-events: none;
-}
 
 /* Styling user profile */
 
@@ -401,6 +383,7 @@ a:hover {
 }
 
 
+
 /*Footer styling */
 
 .hover:hover {
@@ -413,6 +396,7 @@ footer {
     font-size: 1em;
     color: white;
     max-height: auto;
+    position: fixed;
 }
 
 .some-row {

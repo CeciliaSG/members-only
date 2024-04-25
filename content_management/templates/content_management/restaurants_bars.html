@@ -2,7 +2,7 @@
 {% block content %}
 {% load static %}
 
-<body>
+<div class="body">
 
     <div class="full-width-container image-container-list-top the-latest mt-2">
         <img src="{% static 'images/restaurant_1_unsplash.jpg' %}" alt="Restaurant Image" class="w-100">
@@ -20,7 +20,6 @@
                 <div class="col-md-4 post-col">
                     {% if user.is_authenticated %}
                     <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                        {% else %}
                         {% endif %}
                         <div class="card h-100">
                             {% if post.featured_image.url %}
@@ -34,31 +33,32 @@
                                     <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                                 </div>
                                 <h5 class="card-title">{{ post.title }}</h5>
-                                <p class="card-text">{{ post.excerpt|safe|truncatewords:10  }}</p></a>
-                    {% if user.is_authenticated %}
-                    <div class="post-actions"><button class="btn-post btn-like" data-post-id="{{ post.id }}"><a
-                                href="{% url 'like_post' post.id %}" class="like-post"><i
-                                    class="fa-solid fa-heart"></i></a></button>
+                                <p class="card-text">{{ post.excerpt|safe|truncatewords:10 }}</p>
+                            </div>
+                            {% if user.is_authenticated %}
+                            <div class="post-actions">
+                                <button class="btn-post btn-like" data-post-id="{{ post.id }}"><a
+                                        href="{% url 'like_post' post.id %}" class="like-post"><i
+                                            class="fa-solid fa-heart"></i></a></button>
 
-                        <button class="btn-post btn-save-post" data-post-id="{{ post.id }}"><a
-                                href="{% url 'save_post' post.id %}" class="save-post"><i
-                                    class="fa-solid fa-bookmark"></i></a></button></div>
-                    {% else %}
-                    <div class="post-symbols">
-                        <i class="fa-solid fa-heart"></i></a>
-                        <i class="fa-solid fa-bookmark"></i></a>
-                    </div>
-
+                                <button class="btn-post btn-save-post" data-post-id="{{ post.id }}"><a
+                                        href="{% url 'save_post' post.id %}" class="save-post"><i
+                                            class="fa-solid fa-bookmark"></i></a></button>
+                            </div>
+                            {% else %}
+                            <div class="post-symbols">
+                                <i class="fa-solid fa-heart"></i>
+                                <i class="fa-solid fa-bookmark"></i>
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% if user.is_authenticated %}
+                    </a>
                     {% endif %}
                 </div>
+                {% endfor %}
             </div>
         </div>
-        {% endfor %}
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
     </div>
 
     <div class="container-fluid d-flex justify-content-center bg-whitesmoke events-perks">
@@ -80,35 +80,33 @@
                             <div class="card-body">
                                 <h2 class="post-heading">{{ post.heading }}</h2>
                                 <h5 class="card-title">{{ post.title }}</h5>
-                                <p class="card-text">{{ post.excerpt|safe|truncatewords:10  }}</p></a>
+                                <p class="card-text">{{ post.excerpt|safe|truncatewords:10 }}</p>
+                            </div>
+                            {% if user.is_authenticated %}
+                            <div class="post-actions">
+                                <button class="btn-post btn-like" data-post-id="{{ post.id }}"><a
+                                        href="{% url 'like_post' post.id %}" class="like-post"><i
+                                            class="fa-solid fa-heart"></i></a></button>
 
-                    {% if user.is_authenticated %}
-                    <div class="post-actions"><button class="btn-post btn-like" data-post-id="{{ post.id }}"><a
-                                href="{% url 'like_post' post.id %}" class="like-post"><i
-                                    class="fa-solid fa-heart"></i></a></button>
-
-                        <button class="btn-post btn-save-post" data-post-id="{{ post.id }}"><a
-                                href="{% url 'save_post' post.id %}" class="save-post"><i
-                                    class="fa-solid fa-bookmark"></i></a></button></div>
-                    {% else %}
-                    <div class="post-symbols">
-                        <i class="fa-solid fa-heart"></i>
-                        <i class="fa-solid fa-bookmark"></i>
-                    </div>
+                                <button class="btn-post btn-save-post" data-post-id="{{ post.id }}"><a
+                                        href="{% url 'save_post' post.id %}" class="save-post"><i
+                                            class="fa-solid fa-bookmark"></i></a></button>
+                            </div>
+                            {% else %}
+                            <div class="post-symbols">
+                                <i class="fa-solid fa-heart"></i>
+                                <i class="fa-solid fa-bookmark"></i>
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% if user.is_authenticated %}
+                    </a>
                     {% endif %}
-
                 </div>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
-        {% endif %}
-        {% endfor %}
     </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-
-</body>
+</div>
 {% endblock %}
