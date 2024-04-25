@@ -15,7 +15,7 @@ class Heading(models.Model):
 STATUS = ((0, "Draft"), (1, "Published"))     
 
 class Event(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=500)
     heading = models.ForeignKey(Heading, on_delete=models.CASCADE)
     featured_image = CloudinaryField('image', null=True, blank=True)
     description = models.TextField()

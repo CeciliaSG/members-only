@@ -24,10 +24,10 @@
                                 </div>
                                 {% endif %}
                                 <div class="card-body">
-                                    <h2 class="post-heading">{{ event.heading }} |&nbsp;</h2>
+                                    <h2 class="event-heading">{{ event.heading }} |&nbsp;</h2>
                                     <h2 class="post-neighbourhood">{{ event.neighbourhood }}</h2>
                                     <h5 class="card-title">{{ event.title }}</h5>
-                                    <p class="card-text">{{ event.excerpt|safe|truncatewords:10 }}
+                                    <p class="card-excerpt">{{ event.excerpt|safe|truncatewords:10 }}
                                     </p>
 
                                     <div>

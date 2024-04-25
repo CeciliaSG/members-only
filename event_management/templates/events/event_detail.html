@@ -16,7 +16,7 @@
                             <div class="col-md-6 pl-lg-4 pr-lg-4">
                                 <h6 class="event-heading">{{ event.heading }}</h6>
                                 <h1 class="post-title mt-3">{{ event.title }}</h1>
-                                <p class="event-text-description">{{ event.description }}</p>
+                                <p class="event-text-description">{{ event.description|safe }}</p>
                                 <p class="card-date mt-4">{{ event.start_date }} - {{ event.end_date }}</p>
                                 <h4 class="parent-heading">RSVP to the event</h4>
                                 <div class="container rsvp">

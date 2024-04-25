@@ -29,9 +29,9 @@ class HeadingAdmin(admin.ModelAdmin):
     summernote_fields = ('heading')
 
 class EventAdmin(SummernoteModelAdmin):
-    list_display = ['title', 'heading', 'description', 'slug', 'excerpt', 'tag', 'status', 'start_date', 'end_date']
+    list_display = ['title','heading', 'excerpt', 'tag', 'status', 'start_date', 'end_date']
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('title','description', 'excerpt',)
+    summernote_fields = ('description',)
 
 # Register your models here.
 admin.site.register(Heading, HeadingAdmin)
