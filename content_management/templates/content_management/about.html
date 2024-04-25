@@ -3,7 +3,7 @@
 {% load static %}
 {% if user.is_authenticated %}
 
-<body>
+<div class="body">
     <div class="container-fluid d-flex justify-content-center">
         <div class="container">
             <div class="row">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-</body>
+        </div>
 
-{% endif %}
-{% endblock %}
+        {% endif %}
+        {% endblock %}

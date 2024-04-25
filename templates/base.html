@@ -62,8 +62,6 @@
                         aria-label="Toggle navigation">
                         <span><i class="fa-regular fa-user"></i></span>
                     </button>
-
-
                     {% endif %}
                     <div class="container-fluid dropdown justify-content-end drop-down-right" style="z-index: 1000;">
                         {% if user.is_authenticated %}
@@ -158,7 +156,7 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="flex-shrink-0" style="margin: 0;">
+    <main style="margin: 0;">
         <div class="content" style="margin: 0;">
             {% block content %}
             {% endblock %}

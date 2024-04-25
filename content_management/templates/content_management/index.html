@@ -4,10 +4,8 @@
 
 <div class="body">
 
-
-
     <div class="full-width-container image-container-list-top the-latest">
-        <img src="{% static 'images/restaurant_1_unsplash.jpg' %}" alt="Restaurant Image" class="w-100">
+        <img src="{% static 'images/restaurant_1_unsplash.webp' %}" alt="Restaurant Image" class="w-100">
     </div>
 
     <div class="container-fluid d-flex justify-content-center bg-white the-latest">
@@ -31,16 +29,17 @@
                                     <h2 class="post-heading">{{ post.heading }} |&nbsp;</h2>
                                     <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                                 </div>
-                                <h5 class="card-title">{{ post.title }}</h5>
+                                <h2 class=" h5 card-title">{{ post.title }}</h2>
                                 <p class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</p>
                             </div> </a>
                     {% if user.is_authenticated %}
                     <div class="post-actions">
-                        <button class="btn-post btn-like" data-post-id="{{ post.id }}">
+                        <button class="btn-post btn-like" data-post-id="{{ post.id }}" aria-label="button like post">
                             <a href="{% url 'like_post' post.id %}" class="like-post"><i
                                     class="fa-solid fa-heart"></i></a>
                         </button>
-                        <button class="btn-post btn-save-post" data-post-id="{{ post.id }}">
+                        <button class="btn-post btn-save-post" data-post-id="{{ post.id }}"
+                            aria-label="button save post">
                             <a href="{% url 'save_post' post.id %}" class="save-post"><i
                                     class="fa-solid fa-bookmark"></i></a>
                         </button>
@@ -77,17 +76,20 @@
                         </div>
                         {% endif %}
                         <div class="card-body">
-                            <h2 class="post-heading">{{ post.heading }}</h2>
-                            <h5 class="card-title">{{ post.title }}</h5>
+                            <div class="d-flex">
+                                <h2 class="post-heading">{{ post.heading }} |&nbsp;</h2>
+                                <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
+                            </div>
+                            <h2 class=" h5 card-title">{{ post.title }}</h2>
                             <p class="card-text">{{ post.excerpt|safe|truncatewords:10 }}</p>
                         </div></a>
                 {% if user.is_authenticated %}
                 <div class="post-actions">
-                    <button class="btn-post btn-like" data-post-id="{{ post.id }}"><a
+                    <button class="btn-post btn-like" data-post-id="{{ post.id }}" aria-label="button like post"><a
                             href="{% url 'like_post' post.id %}" class="like-post"><i
                                 class="fa-solid fa-heart"></i></a></button>
 
-                    <button class="btn-post btn-save-post" data-post-id="{{ post.id }}"><a
+                    <button class="btn-post btn-save-post" data-post-id="{{ post.id }}" aria-label="button save post"><a
                             href="{% url 'save_post' post.id %}" class="save-post"><i
                                 class="fa-solid fa-bookmark"></i></a></button>
                 </div>
