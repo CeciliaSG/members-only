@@ -15,6 +15,18 @@ class CustomUserForm(UserCreationForm):
         model = User
         fields = ('first_name', 'last_name', 'email', 'username')
 
+    def clean(self):
+        cleaned_data = super().clean()
+        email = cleaned_data.get("email")
+        confirm_email = cleaned_data.get("confirm_email")
+        if email and confirm_email and email != confirm_email:
+            raise forms.ValidationError("Emails do not match.")
+
+        username = cleaned_data.get("username")
+        confirm_username = cleaned_data.get("confirm_username")
+        if username and confirm_username and username != confirm_username:
+            raise forms.ValidationError("Usernames do not match.")
+
 class UserProfileForm(forms.ModelForm):  
     interests = forms.MultipleChoiceField(choices=UserProfile.INTEREST_CHOICES, required=False, widget=forms.CheckboxSelectMultiple)
       
@@ -50,3 +62,16 @@ class UpdateUserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['email', 'username']
+
+    def clean(self):
+        cleaned_data = super().clean()
+        email = cleaned_data.get("email")
+        confirm_email = cleaned_data.get("confirm_email")
+        if email and confirm_email and email != confirm_email:
+            self.add_error('confirm_email', "Emails do not match.")
+
+        username = cleaned_data.get("username")
+        confirm_username = cleaned_data.get("confirm_username")
+        if username and confirm_username and username != confirm_username:
+            self.add_error('confirm_username', "Usernames do not match.")
+

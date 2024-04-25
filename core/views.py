@@ -35,6 +35,7 @@ def register(request):
         user_form = CustomUserForm()
         profile_form = UserProfileForm()
     return render(request, 'core/registration.html', {'user_form': user_form, 'profile_form': profile_form})
+    
 
 # Login view
 def login(request):
@@ -49,11 +50,13 @@ def login(request):
             messages.error(request, 'Invalid username or password.')
     return render(request, 'socialaccount/signup.html')
 
+
 # Logout view
 @login_required
 def logout(request):
     logout(request)
-    return redirect('home')   
+    return redirect('home')  
+
          
 # Account view
 @login_required
@@ -83,10 +86,9 @@ def edit_user_profile(request):
     if user_form_update.is_valid() and profile_form.is_valid():
             user_form_update.save()
             profile_form.save()
-            messages.success(request, "You've successfully updated your profile")
+            messages.success(request, "You've successfully updated your profile", extra_tags='profile_update')
             return redirect('profile')
-    else:
-        user_form_update = UpdateUserForm(instance=request.user)
-        profile_form = UserProfileForm(instance=request.user.userprofile)
 
-    return render(request, 'core/profile.html', {'user_form_update': user_form_update, 'profile_form': profile_form, 'saved_posts': saved_posts})
+    profile_messages = [message for message in messages.get_messages(request) if 'profile_update' in message.tags]
+
+    return render(request, 'core/profile.html', {'user_form_update': user_form_update, 'profile_form': profile_form, 'saved_posts': saved_posts, 'profile_messages': profile_messages})
