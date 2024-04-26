@@ -75,3 +75,8 @@ class UpdateUserForm(forms.ModelForm):
         if username and confirm_username and username != confirm_username:
             self.add_error('confirm_username', "Usernames do not match.")
 
+
+class DeleteAccountForm(forms.Form):
+        confirm_delete = forms.BooleanField(required=True, label='Confirm Account Deletion')
+
+

@@ -122,16 +122,14 @@
             </button>
             <div class="collapse navbar-collapse justify-content-center pt-3" id="navbarText2">
                 <ul class="navbar-nav align-items-center">
-                    <li
-                        class="nav-list-item {% if request.path == '/tag_filter/restaurants_bars/restaurants_bars/' %}active{% endif %}">
+
+                    <li class="nav-list-item {% if '/restaurants_bars/' in request.path %}active{% endif %}">
                         <a class="nav-link"
                             href="{% url 'restaurants_bars' tags='restaurants_bars,whats_on,things_to_do,perks' %}">Restaurants
                             & Bars</a>
                     </li>
-                    <li class="nav-list-item
-                        {% if request.path == '/tag_filter/things_to_do/things_to_do/' %}active{% endif %}"> <a
-                            class="nav-link" href="{% url 'things_to_do' tags='things_to_do,whats_on,perks' %}">Things
-                            to
+                    <li class="nav-list-item {% if '/things_to_do/' in request.path %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'things_to_do' tags='things_to_do,whats_on,perks' %}">Things to
                             do</a>
                     </li>
                     <li class="nav-list-item
@@ -142,12 +140,10 @@
                         {% if request.path == '/neighbourhoods/' %}active{% endif %}">
                         <a class="nav-link" href="{% url 'neighbourhoods' %}">Neighbourhoods</a>
                     </li>
-                    <li class="nav-list-item
-                        {% if request.path == '/whats_on/' %}active{% endif %}">
+                    <li class="nav-list-item {% if '/whats_on/' in request.path %}active{% endif %}">
                         <a class="nav-link" href="{% url 'whats_on' tags='whats_on' %}">What's On</a>
                     </li>
-                    <li class="nav-list-item
-                        {% if request.path == '/perks/' %}active{% endif %}">
+                    <li class="nav-list-item {% if '/perks/' in request.path %}active{% endif %}">
                         <a class="nav-link" href="{% url 'perks' tags='perks,whats_on, restaurants, bars' %}">Perks</a>
                     </li>
                 </ul>
@@ -166,22 +162,23 @@
     <!-- Footer -->
     <footer class="footer navbar footer-fixed-bottom justify-content-center mt-auto">
         <div class="container footer-container footer-divider justify-content-center">
-            <ul class="list-unstyled list-footer mt-3 mb-3 d-flex flex-wrap">
+            <ul class="list-unstyled footer-list mt-3 mb-3 d-flex flex-wrap">
                 <li class="footer-link-item"><a href="#" class="text-decoration-none">About</a></li>
                 <li class="footer-link-item"><a href="#" class="text-decoration-none">Become a member</a></li>
                 <li class="footer-link-item"><a href="#" class="text-decoration-none">Parternships</a></li>
             </ul>
         </div>
-        <div class="container footer-container justify-content-center">
+        <div class="container footer-container">
             <div class="col-md-12">
                 <div class="row some-row footer-row-2">
-                    <div class="col-md-6 d-flex justify-content-end some-icons-row">
+                    <div class=" d-flex justify-content-center some-icons-row">
                         <p><i class="fa-brands fa-facebook some-footer some-icons"></i></p>
                         <p><i class="fa-brands fa-instagram some-footer some-icons"></i></p>
                         <p><i class="fa-brands fa-pinterest some-footer some-icons"></i></p>
-                    </div>
-                    <div class="col-md-6 justify-content-center">
-                        <p class="copyright">© Spotted Media 2024</p>
+
+                        <div class="copyright-section">
+                            <p class="copyright">© Spotted Media 2024</p>
+                        </div>
                     </div>
                 </div>
             </div>

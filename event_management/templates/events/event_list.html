@@ -16,13 +16,13 @@
                     <div class="col-md-4 post-col">
                         {% if user.is_authenticated %}
                         <a href="{% url 'event_detail' event.id %}" class="post-link">
+                            {% endif %}
                             <div class="card h-100">
                                 {% if event.featured_image.url %}
                                 <div class="card-image-container">
                                     <img class="card-img-top" src="{{ event.featured_image.url }}"
                                         alt="{{ event.title }}">
                                 </div>
-                                {% endif %}
                                 <div class="card-body">
                                     <h2 class="event-heading">{{ event.heading }} |&nbsp;</h2>
                                     <h2 class="post-neighbourhood">{{ event.neighbourhood }}</h2>
@@ -55,12 +55,12 @@
             <div class="col-md-4 post-col">
                 {% if user.is_authenticated %}
                 <a href="{% url 'event_detail' event.id %}" class="post-link">
+                    {% endif %}
                     <div class="card h-100">
                         {% if event.featured_image.url %}
                         <div class="card-image-container">
                             <img class="card-img-top" src="{{ event.featured_image.url }}" alt="{{ event.title }}">
                         </div>
-                        {% endif %}
                         <div class="card-body">
                             <h2 class="event-heading">{{ event.heading }} |&nbsp;</h2>
                             <h2 class="post-neighbourhood">{{ event.neighbourhood }}</h2>

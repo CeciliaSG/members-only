@@ -122,7 +122,12 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - Instructions on how to implement form validation on the Sign Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
 - The icons used in the project were taken from [Font Awesome](https://fontawesome.com/)
 
-- [Overlay](https://www.w3schools.com/howto/howto_css_overlay.asp)
+- Let user delete their accoutn:
+[StackOverflow](https://stackoverflow.com/questions/54864355/django-user-account-delete-and-then-return-redirect-and-render)
+(https://stackoverflow.com/questions/65510305/django-how-to-enable-users-to-delete-their-account)
+(https://stackoverflow.com/questions/38047408/how-to-allow-user-to-delete-account-in-django-allauth)
+- Overlay for frontpage:
+ [Overlay](https://www.w3schools.com/howto/howto_css_overlay.asp)
 
 ### Media
 
