@@ -36,6 +36,7 @@ def post_detail(request, slug):
         {"post": post},
     )
 
+
 class PostListByHeadingView(generic.ListView):
     """
     Filter for headings and parent-headings and display on templates.
@@ -66,10 +67,9 @@ def tag_filter(request, template_name, tags):
     """
 
     query = Q()
-    for tag in tags:
-        query = Q(tag__in=tags, status=1)
 
-    print("Query:", query)   
+    for tag in tags:
+        query |= Q(tag=tag, status=1)
 
     posts = Post.objects.filter(query)
     context = {
@@ -78,6 +78,7 @@ def tag_filter(request, template_name, tags):
     }
 
     return render(request, template_name, context)
+
 
 def restaurants_bars_view(request, tags):
     tag_list = tags.split(',')

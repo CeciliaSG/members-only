@@ -8,10 +8,14 @@
         <div class="full-width-container image-container-list-top the-latest">
             <img src="{% static 'images/restaurant_1_unsplash.webp' %}" alt="Restaurant Image" class="w-100">
         </div>
-        <div class="container-fluid d-flex justify-content-center events-perks bg-white">
+        <div class="container-fluid d-flex justify-content-center bg-white the-latest">
             <div class="container">
                 <div class="row post-row">
-                    <h1 class="parent-heading">Events in Stockholm</h1>
+                    <h1 class="parent-heading mt-4">Events in Stockholm</h1>
+                    <div>
+                        <hr class="section-divider">
+                    </div>
+                    <h2 class="h4 section-heading mt-4">Things to do</h2>
                     {% for event in events %}
                     <div class="col-md-4 post-col">
                         {% if user.is_authenticated %}

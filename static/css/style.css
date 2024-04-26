@@ -223,9 +223,6 @@ body,
     margin-right: 10px;
 }
 
-.post-link {
-    margin-bottom: 20px;
-}
 
 .saved-post-link {
     font-size: 0.9em;
@@ -450,6 +447,15 @@ footer {
 /* Media queries */
 
 @media screen and (max-width: 768px) {
+
+    .post-heading {
+        margin-bottom: 15px;
+    }
+
+    .post-link a {
+        margin-bottom: 0;
+    }
+
     .search_field {
         display: none;
     }
@@ -494,10 +500,16 @@ footer {
         flex-direction: column;
     }
 
-
 }
 
+
 @media screen and (min-width: 768px) {
+
+    .post-link {
+        margin-bottom: 10px;
+    }
+
+    /* Footer styling */
     .footer-link-item {
         margin-right: 30px;
     }
@@ -514,7 +526,12 @@ footer {
 }
 
 
-@media (max-width: 960px) {
+@media (min-width: 960px) {
+
+    .post-link {
+        margin-bottom: 0px;
+    }
+
     .mobile-dropdown {
         background-color: black;
         max-width: 90px;
