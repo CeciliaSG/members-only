@@ -301,7 +301,7 @@ a:hover {
 }
 
 .some-icons-row {
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 
@@ -494,6 +494,11 @@ footer {
 
     .some-footer {
         margin-left: 10px;
+    }
+
+    .some-icons {
+        font-size: 25px;
+        margin-right: 20px;
     }
 
 }

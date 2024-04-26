@@ -32,81 +32,85 @@
                                     <h2 class="post-heading">{{ post.heading }} |&nbsp;</h2>
                                     <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                                 </div>
-                                <h5 class="card-title">{{ post.title }}</h5>
+                                <h2 class="h5 card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt|safe|truncatewords:10 }}</p>
-                            </div>
-                            {% if user.is_authenticated %}
-                            <div class="post-actions">
-                                <button class="btn-post btn-like" data-post-id="{{ post.id }}"
-                                    aria-label="button like post"><a href="{% url 'like_post' post.id %}"
-                                        class="like-post"><i class="fa-solid fa-heart"></i></a></button>
+                            </div></a>
+                    {% if user.is_authenticated %}
+                    <div class="post-actions">
+                        <button class="btn-post btn-like" data-post-id="{{ post.id }}" aria-label="button like post"><a
+                                href="{% url 'like_post' post.id %}" class="like-post"><i
+                                    class="fa-solid fa-heart"></i></a></button>
 
-                                <button class="btn-post btn-save-post" data-post-id="{{ post.id }}"
-                                    aria-label="button save post"><a href="{% url 'save_post' post.id %}"
-                                        class="save-post"><i class="fa-solid fa-bookmark"></i></a></button>
-                            </div>
-                            {% else %}
-                            <div class="post-symbols">
-                                <i class="fa-solid fa-heart"></i>
-                                <i class="fa-solid fa-bookmark"></i>
-                            </div>
-                            {% endif %}
-                        </div>
-                        {% if user.is_authenticated %}
-                    </a>
+                        <button class="btn-post btn-save-post" data-post-id="{{ post.id }}"
+                            aria-label="button save post"><a href="{% url 'save_post' post.id %}" class="save-post"><i
+                                    class="fa-solid fa-bookmark"></i></a></button>
+                    </div>
+                    {% else %}
+                    <div class="post-symbols">
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-bookmark"></i>
+                    </div>
                     {% endif %}
                 </div>
-                {% endfor %}
+                {% if user.is_authenticated %}
+
+                {% endif %}
             </div>
+            {% endfor %}
         </div>
     </div>
+</div>
+</div>
 
-    <div class="container-fluid d-flex justify-content-center bg-whitesmoke events-perks">
-        <div class="container">
-            <div class="row post-row">
-                <h2 class="h4 section-heading mt-4">Bars</h2>
-                {% for post in posts %}
-                {% if post.heading.name == 'Bars' or post.heading.name == 'Perks' %}
-                <div class="col-md-4 post-col">
-                    {% if user.is_authenticated %}
-                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                        {% endif %}
-                        <div class="card h-100">
-                            {% if post.featured_image.url %}
-                            <div class="card-image-container">
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
-                            </div>
-                            {% endif %}
-                            <div class="card-body">
-                                <h2 class="post-heading">{{ post.heading }}</h2>
-                                <h5 class="card-title">{{ post.title }}</h5>
-                                <p class="card-text">{{ post.excerpt|safe|truncatewords:10 }}</p>
-                            </div>
-                            {% if user.is_authenticated %}
-                            <div class="post-actions">
-                                <button class="btn-post btn-like" data-post-id="{{ post.id }}"
-                                    aria-label="button like post"><a href="{% url 'like_post' post.id %}"
-                                        class="like-post"><i class="fa-solid fa-heart"></i></a></button>
-
-                                <button class="btn-post btn-save-post" data-post-id="{{ post.id }}"
-                                    aria-label="button save post"><a href="{% url 'save_post' post.id %}"
-                                        class="save-post"><i class="fa-solid fa-bookmark"></i></a></button>
-                            </div>
-                            {% else %}
-                            <div class="post-symbols">
-                                <i class="fa-solid fa-heart"></i>
-                                <i class="fa-solid fa-bookmark"></i>
-                            </div>
-                            {% endif %}
-                        </div>
-                        {% if user.is_authenticated %}
-                    </a>
+<div class="container-fluid d-flex justify-content-center bg-whitesmoke events-perks">
+    <div class="container">
+        <div class="row post-row">
+            <h2 class="h4 section-heading mt-4">Bars</h2>
+            {% for post in posts %}
+            {% if post.heading.name == 'Bars' or post.heading.name == 'Perks' %}
+            <div class="col-md-4 post-col">
+                {% if user.is_authenticated %}
+                <a href="{% url 'post_detail' post.slug %}" class="post-link">
                     {% endif %}
+                    <div class="card h-100">
+                        {% if post.featured_image.url %}
+                        <div class="card-image-container">
+                            <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                        </div>
+                        {% endif %}
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <h2 class="post-heading">{{ post.heading }} |&nbsp;</h2>
+                                <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
+                            </div>
+                            <h2 class="h5 card-title">{{ post.title }}</h2>
+                            <p class="card-text">{{ post.excerpt|safe|truncatewords:10 }}</p>
+                        </div></a>
+                {% if user.is_authenticated %}
+                <div class="post-actions">
+                    <button class="btn-post btn-like" data-post-id="{{ post.id }}" aria-label="button like post"><a
+                            href="{% url 'like_post' post.id %}" class="like-post"><i
+                                class="fa-solid fa-heart"></i></a></button>
+
+                    <button class="btn-post btn-save-post" data-post-id="{{ post.id }}" aria-label="button save post"><a
+                            href="{% url 'save_post' post.id %}" class="save-post"><i
+                                class="fa-solid fa-bookmark"></i></a></button>
+                </div>
+                {% else %}
+                <div class="post-symbols">
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-bookmark"></i>
                 </div>
                 {% endif %}
-                {% endfor %}
             </div>
+            {% if user.is_authenticated %}
+
+            {% endif %}
         </div>
+        {% endif %}
+        {% endfor %}
     </div>
+</div>
+</div>
 </div>
 {% endblock %}

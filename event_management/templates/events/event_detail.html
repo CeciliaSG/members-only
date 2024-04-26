@@ -3,7 +3,7 @@
 {% load static %}
 
 
-<body>
+<div class="body">
     <div class="container-fluid d-flex justify-content-center">
         <div class="container">
             <div class="row">
@@ -11,21 +11,29 @@
                     <img src="{{ event.featured_image.url }}" alt="Event Image">
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-6 pl-lg-4 pr-lg-4">
-                                <h6 class="event-heading">{{ event.heading }}</h6>
-                                <h1 class="event-title mt-3">{{ event.title }}</h1>
-                                <p class="event-text-description">{{ event.description|safe }}</p>
-                                <p class="card-date mt-4">{{ event.start_date }} - {{ event.end_date }}</p>
-                                <h4 class="parent-heading">RSVP to the event</h4>
+                    <div class="col-md-6">
+                        <div class="post-content text-left pr-lg-4">
+                            <h1 class=" h6 event-heading">{{ event.heading }}</h1>
+                            <h1 class="event-title mt-3">{{ event.title }}</h1>
+                            <p class="event-text-description">{{ event.description|safe }}</p>
+                            <p class="card-date mt-4"><strong>{{ event.start_date }} -
+                                    {{ event.end_date }}</strong></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-left ml-lg-3 pl-lg-5 mt-5">
+                            <hr class="hr-thick mt-5">
+                            <div class="pl-2">
+                                <h2 class="h4 parent-heading">RSVP to the event</h2>
                                 <div class="container rsvp">
                                     <form method="post" action="{% url 'event_detail' event.id %}">
                                         {% csrf_token %}
                                         {{ form.as_p }}
-                                        <button type="submit" class="btn">RSVP</button>
+                                        <button type="submit" class="btn"
+                                            aria-label="submit rsvp to event">RSVP</button>
                                     </form>
-                                    <div class="message message-rsvp">
+                                    <div class="text-left
+                                    message message-rsvp">
                                         {% if messages %}
                                         <ul class="messages">
                                             {% for message in messages %}
@@ -35,10 +43,7 @@
                                         {% endif %}
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 pl-lg-4 mt-5">
-                                <hr class="hr-thick">
-                                <div class="d-flex justify-content-center some-icons-row">
+                                <div class="d-flex text-left some-icons-event-detail mt-5">
                                     <p><i class="fa-brands fa-facebook some-footer some-icons"></i></p>
                                     <p><i class="fa-brands fa-instagram some-footer some-icons"></i></p>
                                     <p><i class="fa-brands fa-pinterest some-footer some-icons"></i></p>
@@ -46,5 +51,8 @@
                             </div>
                         </div>
                     </div>
-</body>
-{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

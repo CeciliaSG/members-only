@@ -122,7 +122,17 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - Instructions on how to implement form validation on the Sign Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
 - The icons used in the project were taken from [Font Awesome](https://fontawesome.com/)
 
-- Let user delete their accoutn:
+
+-  Creating a like function:
+[StackOverflow](https://stackoverflow.com/search?q=creating+a+like+function+in+Django)
+-- Liking/unliking posts without refreshing the page
+[StackOverflow](https://stackoverflow.com/questions/63081738/like-unlike-a-post-without-refreshing-the-page)
+
+- Using Ajax with Django:
+[StackOverflow](https://stackoverflow.com/questions/20306981/how-do-i-integrate-ajax-with-django-applications/20307569#20307569)
+- Prevent default event:
+[StackOverflow](https://stackoverflow.com/questions/7056669/how-to-prevent-default-event-handling-in-an-onclick-method)
+- Let user delete their account:
 [StackOverflow](https://stackoverflow.com/questions/54864355/django-user-account-delete-and-then-return-redirect-and-render)
 (https://stackoverflow.com/questions/65510305/django-how-to-enable-users-to-delete-their-account)
 (https://stackoverflow.com/questions/38047408/how-to-allow-user-to-delete-account-in-django-allauth)
