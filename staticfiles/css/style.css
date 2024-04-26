@@ -16,14 +16,15 @@
         serif;
 }
 
-
 html,
-body {
+body,
+.body {
     background-color: white;
     height: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    padding-bottom: 30px;
 }
 
 .btn {
@@ -71,9 +72,10 @@ body {
     z-index: 999;
 }
 
-img {
+.logo-img {
     width: auto;
-    height: 90px;
+    height: 110px;
+    padding-bottom: 20px;
 }
 
 .nav-link {
@@ -97,6 +99,11 @@ img {
 
 .nav-list-item.active .nav-link:hover {
     color: black;
+}
+
+.navbar-toggler {
+    font-size: 24px;
+    padding: 8px 10px;
 }
 
 .navbar-dropdown {
@@ -175,6 +182,10 @@ img {
     object-fit: cover;
     margin: 0;
     border-radius: 0;
+    padding-bottom: 13px;
+    max-width: 400px;
+    max-height: 400px;
+    object-fit: cover;
 }
 
 
@@ -184,6 +195,12 @@ img {
     color: white;
     background-color: #2A7221;
     border-radius: 0;
+    outline: none;
+}
+
+.btn:active {
+    border-radius: 0;
+    outline: none;
 }
 
 .btn-like,
@@ -206,11 +223,15 @@ img {
     margin-right: 10px;
 }
 
+.post-link {
+    margin-bottom: 20px;
+}
+
 .saved-post-link {
     font-size: 0.9em;
-    text-decoration: underline;
     font-weight: bold;
     color: #1E441E;
+    text-decoration: none;
 }
 
 .fa-heart,
@@ -240,10 +261,6 @@ a:hover {
 }
 
 
-.read-more {
-    font-size: 18px;
-}
-
 
 /*Page and section styling */
 
@@ -255,12 +272,17 @@ a:hover {
     background-color: whitesmoke;
 }
 
+.section-divider {
+    border-top: 0.5px solid #333;
+
+}
+
+
 .image-container {
     width: 100%;
     max-height: 300px;
     overflow: hidden;
     margin-bottom: 20px;
-    ;
 }
 
 .image-container img {
@@ -283,6 +305,16 @@ a:hover {
 }
 
 
+.some-icons {
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.some-icons-row {
+    justify-content: space-between;
+}
+
+
 .hr {
     border: 25;
     height: 15px;
@@ -293,6 +325,8 @@ a:hover {
 .event-details {
     padding: 2em;
 }
+
+
 
 /* Styling user profile */
 
@@ -305,6 +339,12 @@ a:hover {
     background-color: whitesmoke;
     color: black;
 }
+
+.saved-post-excerpt {
+    font-size: 0.7em;
+    color: gray;
+}
+
 
 /*Post styling*/
 
@@ -321,10 +361,12 @@ a:hover {
     color: white;
 }
 
-.card-text {
+.card-excerpt {
     font-size: 16px;
     text-decoration: none;
     color: gray;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .card {
@@ -335,6 +377,7 @@ a:hover {
     height: 100%;
     overflow: hidden;
     border-radius: 0;
+    margin-bottom: 10px;
 }
 
 .card-title {
@@ -342,9 +385,7 @@ a:hover {
 }
 
 .card-body {
-    padding-top: 10px;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0;
 }
 
 .card .card-body {
@@ -372,6 +413,7 @@ footer {
     font-size: 1em;
     color: white;
     max-height: auto;
+    position: fixed;
 }
 
 .some-row {
@@ -389,10 +431,6 @@ footer {
     color: var(--hover-green);
 }
 
-.footer-link-item {
-    margin: 30px;
-}
-
 .footer-divider::before,
 .footer-divider::after {
     content: '';
@@ -402,9 +440,16 @@ footer {
     padding: 15 15px;
 }
 
-/* Media queries */
-@media (max-width: 767px) {
+.some-icons-row,
+.col-md-6 {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
 
+/* Media queries */
+
+@media screen and (max-width: 768px) {
     .search_field {
         display: none;
     }
@@ -419,11 +464,63 @@ footer {
         left: 50%;
         transform: translateX(-50%);
         z-index: 999;
-
     }
 
-    img {
+    .logo-img {
         width: auto;
-        height: 40px;
+        height: 70px;
+    }
+
+    .first-nav {
+        max-height: 300px;
+        background-color: black;
+    }
+
+    .footer .footer-list,
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-link-item {
+        margin-right: 0;
+    }
+
+    .some-footer {
+        margin-left: 0;
+    }
+
+    .footer-row-2 {
+        flex-direction: column;
+    }
+
+
+}
+
+@media screen and (min-width: 768px) {
+    .footer-link-item {
+        margin-right: 30px;
+    }
+
+    .some-footer {
+        margin-left: 10px;
+    }
+
+    .some-icons {
+        font-size: 25px;
+        margin-right: 20px;
+    }
+
+}
+
+
+@media (max-width: 960px) {
+    .mobile-dropdown {
+        background-color: black;
+        max-width: 90px;
+    }
+
+    .drop-down-right {
+        padding-right: 0;
     }
 }

@@ -1,11 +1,3 @@
-let updateProfileBtn = document.getElementById('update-profile-btn');
-if (updateProfileBtn) {
-    updateProfileBtn.addEventListener('click', function () {
-        this.style.backgroundColor = "red";
-    });
-}
-
-
 let likeButton = document.getElementsByClassName('btn-like');
 for (let i = 0; i < likeButton.length; i++) {
     likeButton[i].addEventListener('click', function (event) {
@@ -17,12 +9,12 @@ for (let i = 0; i < likeButton.length; i++) {
         $.ajax({
             url: '/like_post/' + postId + '/',
             success: function (response) {
-                if (response.message === "You unliked the post!") {
-                    button.classList.remove('liked');
-                    icon.style.color = '';
-                } else {
+                if (response.message === "You liked the post!") {
                     button.classList.add('liked');
                     icon.style.color = 'red';
+                } else {
+                    button.classList.remove('liked');
+                    icon.style.color = '';
                 }
                 alert(response.message);
             },
