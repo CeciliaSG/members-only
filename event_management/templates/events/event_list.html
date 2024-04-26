@@ -26,16 +26,16 @@
                                 <div class="card-body">
                                     <h2 class="event-heading">{{ event.heading }} |&nbsp;</h2>
                                     <h2 class="post-neighbourhood">{{ event.neighbourhood }}</h2>
-                                    <h5 class="card-title">{{ event.title }}</h5>
+                                    <h3 class=" h5 card-title">{{ event.title }}</h3>
                                     <p class="card-excerpt">{{ event.excerpt|safe|truncatewords:10 }}
                                     </p>
                                     <div>
                                         <p class="card-date mt-4">{{ event.start_date }} - {{ event.end_date }}</p>
                                     </div>
                         </a>
-                        <div class="post-actions"><a href="{% url 'like_post' event.id %}" class="like-post"><i
-                                    class="fa-solid fa-heart"></i>
-                                <a href="{% url 'save_post' event.id %}" class="save-post"><i
+                        <div class="post-actions"><a href="{% url 'like_post' event.id %}" class="like-post"
+                                aria-label="like-post"><i class="fa-solid fa-heart"></i>
+                                <a href="{% url 'save_post' event.id %}" class="save-post" aria-label="save-post"><i
                                         class="fa-solid fa-bookmark"></i></a></div>
                         {% endif %}
                     </div>

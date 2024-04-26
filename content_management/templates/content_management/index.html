@@ -15,7 +15,8 @@
                 {% for post in posts %}
                 <div class="col-md-4 post-col">
                     {% if user.is_authenticated %}
-                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link"
+                        aria-label=" Click link to read full post">
 
                         {% endif %}
                         <div class="card h-100">
@@ -35,13 +36,13 @@
                     {% if user.is_authenticated %}
                     <div class="post-actions">
                         <button class="btn-post btn-like" data-post-id="{{ post.id }}" aria-label="button like post">
-                            <a href="{% url 'like_post' post.id %}" class="like-post"><i
-                                    class="fa-solid fa-heart"></i></a>
+                            <a href="{% url 'like_post' post.id %}" aria-label="Click the icon to like the post"
+                                class="like-post"><i class="fa-solid fa-heart"></i></a>
                         </button>
                         <button class="btn-post btn-save-post" data-post-id="{{ post.id }}"
                             aria-label="button save post">
-                            <a href="{% url 'save_post' post.id %}" class="save-post"><i
-                                    class="fa-solid fa-bookmark"></i></a>
+                            <a href="{% url 'save_post' post.id %}" aria-label="Click the icon to bookmark the post"
+                                class="save-post"><i class="fa-solid fa-bookmark"></i></a>
                         </button>
                     </div>
                     {% else %}
@@ -86,12 +87,12 @@
                 {% if user.is_authenticated %}
                 <div class="post-actions">
                     <button class="btn-post btn-like" data-post-id="{{ post.id }}" aria-label="button like post"><a
-                            href="{% url 'like_post' post.id %}" class="like-post"><i
-                                class="fa-solid fa-heart"></i></a></button>
+                            href="{% url 'like_post' post.id %}" class="like-post" aria-label="Click the icon to
+                            like the post"><i class="fa-solid fa-heart"></i></a></button>
 
                     <button class="btn-post btn-save-post" data-post-id="{{ post.id }}" aria-label="button save post"><a
-                            href="{% url 'save_post' post.id %}" class="save-post"><i
-                                class="fa-solid fa-bookmark"></i></a></button>
+                            href="{% url 'save_post' post.id %}" class="save-post" aria-label="Click the icon to
+                            bookmark the post"><i class="fa-solid fa-bookmark"></i></a></button>
                 </div>
                 {% else %}
                 <div class="post-symbols">
