@@ -4,11 +4,11 @@
 
 <div class="body">
 
-    <div class="full-width-container image-container-list-top the-latest">
+    <div class="full-width-container image-container-list-top">
         <img src="{% static 'images/restaurant_1_unsplash.webp' %}" alt="Restaurant Image" class="w-100">
     </div>
 
-    <div class="container-fluid d-flex justify-content-center bg-white the-latest">
+    <div class="container-fluid d-flex justify-content-center bg-white">
         <div class="container">
             <div class="row post-row">
                 <h1 class="parent-heading mt-4">Restaurants & Bars in Stockholm</h1>
@@ -33,7 +33,7 @@
                                     <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                                 </div>
                                 <h2 class="h5 card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt|safe|truncatewords:10 }}</p>
+                                <article class="card-text">{{ post.excerpt|safe|truncatewords:10 }}</article>
                             </div></a>
                     {% if user.is_authenticated %}
                     <div class="post-actions">
@@ -62,7 +62,7 @@
 </div>
 </div>
 
-<div class="container-fluid d-flex justify-content-center bg-whitesmoke events-perks">
+<div class="container-fluid d-flex justify-content-center bg-whitesmoke">
     <div class="container">
         <div class="row post-row">
             <h2 class="h4 section-heading mt-4">Bars</h2>
@@ -84,7 +84,7 @@
                                 <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                             </div>
                             <h2 class="h5 card-title">{{ post.title }}</h2>
-                            <p class="card-text">{{ post.excerpt|safe|truncatewords:10 }}</p>
+                            <article class="card-text">{{ post.excerpt|safe|truncatewords:10 }}</article>
                         </div></a>
                 {% if user.is_authenticated %}
                 <div class="post-actions">

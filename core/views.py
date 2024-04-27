@@ -1,17 +1,16 @@
-from django.contrib import messages
-from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth.decorators import login_required
-from .forms import CustomUserForm, UserProfileForm, DeleteAccountForm
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login as auth_login
-from django.db import transaction
-from django.views.generic import UpdateView
 from django.contrib.auth.models import User
+from django.contrib.auth import login as auth_login
+from django.contrib import messages
+from django.db import transaction
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.views.generic import UpdateView
+from .forms import CustomUserForm, UserProfileForm, DeleteAccountForm, UpdateUserProfile, UpdateUserForm
 from .models import UserProfile
 from content_management.models import SavedPost
-from .forms import UpdateUserProfile, UpdateUserForm
 
 
 

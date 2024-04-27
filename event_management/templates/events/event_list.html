@@ -5,10 +5,10 @@
 
 <div class="body">
     <div class="events">
-        <div class="full-width-container image-container-list-top the-latest">
+        <div class="full-width-container image-container-list-top">
             <img src="{% static 'images/restaurant_1_unsplash.webp' %}" alt="Restaurant Image" class="w-100">
         </div>
-        <div class="container-fluid d-flex justify-content-center bg-white the-latest">
+        <div class="container-fluid d-flex justify-content-center bg-white">
             <div class="container">
                 <div class="row post-row">
                     <h1 class="parent-heading mt-4">Events in Stockholm</h1>
@@ -31,10 +31,11 @@
                                     <h2 class="event-heading">{{ event.heading }} |&nbsp;</h2>
                                     <h2 class="post-neighbourhood">{{ event.neighbourhood }}</h2>
                                     <h3 class=" h5 card-title">{{ event.title }}</h3>
-                                    <p class="card-excerpt">{{ event.excerpt|safe|truncatewords:10 }}
-                                    </p>
+                                    <article class="card-excerpt">{{ event.excerpt|safe|truncatewords:10 }}
+                                    </article>
                                     <div>
-                                        <p class="card-date mt-4">{{ event.start_date }} - {{ event.end_date }}</p>
+                                        <article class="card-date mt-4">{{ event.start_date }} - {{ event.end_date }}
+                                        </article>
                                     </div>
                         </a>
                         <div class="post-actions"><a href="{% url 'like_post' event.id %}" class="like-post"
@@ -69,10 +70,10 @@
                             <h2 class="event-heading">{{ event.heading }} |&nbsp;</h2>
                             <h2 class="post-neighbourhood">{{ event.neighbourhood }}</h2>
                             <h5 class="card-title">{{ event.title }}</h5>
-                            <p class="card-excerpt">{{ event.excerpt|safe|truncatewords:10 }}
-                            </p>
+                            <article class="card-excerpt">{{ event.excerpt|safe|truncatewords:10 }}
+                            </article>
                             <div>
-                                <p class="card-date mt-4">{{ event.start_date }} - {{ event.end_date }}</p>
+                                <article class="card-date mt-4">{{ event.start_date }} - {{ event.end_date }}</article>
                             </div>
                 </a>
                 <div class="post-actions"><a href="{% url 'like_post' event.id %}" class="like-post"><i

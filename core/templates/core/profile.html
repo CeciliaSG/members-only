@@ -46,7 +46,8 @@
                     </div>
                     {% else %}
                     <h2>You don't have a profile yet.</h2>
-                    <p>Please <a href="{% url 'account_signup' %}">create a profile</a> to edit your details.</p>
+                    <article>Please <a href="{% url 'account_signup' %}">create a profile</a> to edit your details.
+                    </article>
                     {% endif %}
                 </div>
                 <div class="col-md-1"></div>
@@ -59,8 +60,8 @@
                         <ul class="list-unstyled">
                             <li><a class="saved-post-link"
                                     href="{% url 'post_detail' saved_post.post.slug %}">{{ saved_post.post.title|truncatewords:5 }}
-                                    <p class="saved-post-excerpt">
-                                        {{ saved_post.post.excerpt|truncatewords:10 }}</p></a>
+                                    <article class="saved-post-excerpt">
+                                        {{ saved_post.post.excerpt|truncatewords:10 }}</article></a>
                             </li>
                         </ul>
                     </div>

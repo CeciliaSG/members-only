@@ -3,7 +3,7 @@
 {% load static %}
 
 <body>
-    <div class="full-width-container image-container-list-top the-latest">
+    <div class="full-width-container image-container-list-top">
         <img src="{% static 'images/restaurant_1_unsplash.webp' %}" alt="Restaurant Image" class="w-100">
     </div>
 
@@ -33,7 +33,7 @@
                                     <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                                 </div>
                                 <h5 class="card-title">{{ post.title }}</h5>
-                                <p class="card-text">{{ post.excerpt|safe|truncatewords:10}}</p></a>
+                                <article class="card-text">{{ post.excerpt|safe|truncatewords:10}}</article></a>
 
                     {% if user.is_authenticated %}
                     <div class="post-actions"><button class="btn-post btn-like" data-post-id="{{ post.id }}"><a
@@ -60,7 +60,7 @@
     </div>
     </div>
 
-    <div class="container-fluid d-flex justify-content-center bg-white the-latest">
+    <div class="container-fluid d-flex justify-content-center bg-white">
         <div class="container">
             <div class="row post-row">
                 <h2 class="h4 section-heading mt-4">What's On</h2>
@@ -82,7 +82,7 @@
                                     <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                                 </div>
                                 <h5 class="card-title">{{ post.title }}</h5>
-                                <p class="card-text">{{ post.excerpt|safe|truncatewords:10}}</p></a>
+                                <article class="card-text">{{ post.excerpt|safe|truncatewords:10}}</article></a>
 
                     {% if user.is_authenticated %}
                     <div class="post-actions"><button class="btn-post btn-like" data-post-id="{{ post.id }}"

@@ -1,12 +1,10 @@
-from django.views import generic
-from django.http import JsonResponse
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404
-from django.shortcuts import redirect
-from .models import Post, SavedPost, LikedPost, Heading
-from django.contrib import messages
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.db.models import Q
+from django.shortcuts import render, redirect, get_object_or_404
+from django.views import generic
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from .models import Post, SavedPost, LikedPost, Heading
 
 
 
@@ -84,21 +82,25 @@ def restaurants_bars_view(request, tags):
     tag_list = tags.split(',')
     template_name = 'content_management/restaurants_bars.html'
     return tag_filter(request, template_name, tag_list)
+    
 
 def things_to_do_view(request, tags):
     tag_list = tags.split(',')
     template_name = 'content_management/things_to_do.html'
     return tag_filter(request, template_name, tag_list) 
 
+
 def whats_on_view(request, tags):
     tag_list = tags.split(',')
     template_name = 'content_management/whats_on.html'
-    return tag_filter(request, template_name, tag_list)   
+    return tag_filter(request, template_name, tag_list) 
+     
 
 def perks_view(request, tags):
     tag_list = tags.split(',')
     template_name = 'content_management/perks.html'
     return tag_filter(request, template_name, tag_list)       
+
 
 
 def neighbourhoods_list_view(request):

@@ -31,7 +31,7 @@
                                     <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                                 </div>
                                 <h2 class=" h5 card-title">{{ post.title }}</h2>
-                                <p class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</p>
+                                <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article>
                             </div> </a>
                     {% if user.is_authenticated %}
                     <div class="post-actions">
@@ -82,7 +82,7 @@
                                 <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                             </div>
                             <h2 class="h5 card-title">{{ post.title }}</h2>
-                            <p class="card-text">{{ post.excerpt|safe|truncatewords:10 }}</p>
+                            <article class="card-text">{{ post.excerpt|safe|truncatewords:10 }}</article>
                         </div></a>
                 {% if user.is_authenticated %}
                 <div class="post-actions">
