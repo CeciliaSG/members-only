@@ -118,7 +118,7 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 
 ### Content 
 
-- The content for the posts and pages were gnerated with the help of AI.
+- The content for the posts and pages were generated with the help of AI.
 - Instructions on how to implement form validation on the Sign Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
 - The icons used in the project were taken from [Font Awesome](https://fontawesome.com/)
 
@@ -138,6 +138,9 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 (https://stackoverflow.com/questions/38047408/how-to-allow-user-to-delete-account-in-django-allauth)
 - Overlay for frontpage:
  [Overlay](https://www.w3schools.com/howto/howto_css_overlay.asp)
+
+ - Setting up email allAuth:
+ [https://florianbgt.com/](https://florianbgt.com/posts/django_allauth_email_login)
 
 ### Media
 
