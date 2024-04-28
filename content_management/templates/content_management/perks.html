@@ -2,16 +2,16 @@
 {% block content %}
 {% load static %}
 
-<div class="body">
+<div class="body perks-page">
     <div class="full-width-container image-container-list-top the-latest">
         <img src="{% static 'images/restaurant_1_unsplash.webp' %}" alt="Restaurant Image" class="w-100">
     </div>
 
-    <div class="container-fluid d-flex justify-content-center bg-white the-latest">
+    <section class="container-fluid d-flex justify-content-center bg-white the-latest">
         <div class="container">
             <div class="row post-row">
                 <h1 class="parent-heading mt-4">Members Perks</h1>
-                <div>
+                <div class="divider">
                     <hr class="section-divider">
                 </div>
                 {% for post in posts %}
@@ -32,9 +32,10 @@
                                     <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                                 </div>
                                 <h5 class="card-title">{{ post.title }}</h5>
-                                <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article></a>
+                                <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article>
 
-                    {% if user.is_authenticated %}
+                                {% if user.is_authenticated %}
+                    </a>
                     <div class="post-actions"><button class="btn-post btn-like" data-post-id="{{ post.id }}"
                             aria-label="button like post"><a href="{% url 'like_post' post.id %}" class="like-post"><i
                                     class="fa-solid fa-heart"></i></a></button>
@@ -52,9 +53,9 @@
             </div>
         </div>
         {% endfor %}
-    </div>
 </div>
 </div>
 </div>
+</section>
 </div>
 {% endblock %}

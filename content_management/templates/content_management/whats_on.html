@@ -2,16 +2,16 @@
 {% block content %}
 {% load static %}
 
-<body>
+<div class="body whats-on-page">
     <div class="full-width-container image-container-list-top">
         <img src="{% static 'images/restaurant_1_unsplash.webp' %}" alt="Restaurant Image" class="w-100">
     </div>
 
-    <div class="container-fluid d-flex justify-content-center bg-white">
+    <section class="container-fluid d-flex justify-content-center bg-white">
         <div class="container">
             <div class="row post-row">
                 <h1 class="parent-heading mt-4">What's On</h1>
-                <div>
+                <div class="divider">
                     <hr class="section-divider">
                 </div>
                 <h2 class="h4 section-heading mt-4">Things to do</h2>
@@ -44,17 +44,15 @@
                         <i class="fa-solid fa-heart"></i>
                         <i class="fa-solid fa-bookmark"></i>
                     </div>
-
                     {% endif %}
                 </div>
             </div>
         </div>
         {% endfor %}
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-
-    {% endblock %}
-</body>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+{% endblock %}

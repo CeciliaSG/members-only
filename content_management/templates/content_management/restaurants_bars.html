@@ -8,11 +8,11 @@
         <img src="{% static 'images/restaurant_1_unsplash.webp' %}" alt="Restaurant Image" class="w-100">
     </div>
 
-    <div class="container-fluid d-flex justify-content-center bg-white">
+    <section class="container-fluid d-flex justify-content-center bg-white">
         <div class="container">
             <div class="row post-row">
                 <h1 class="parent-heading mt-4">Restaurants & Bars in Stockholm</h1>
-                <div>
+                <div class="divider">
                     <hr class="section-divider">
                 </div>
                 <h2 class="h4 section-heading mt-4">Restaurants</h2>
@@ -33,9 +33,10 @@
                                     <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                                 </div>
                                 <h2 class="h5 card-title">{{ post.title }}</h2>
-                                <article class="card-text">{{ post.excerpt|safe|truncatewords:10 }}</article>
-                            </div></a>
-                    {% if user.is_authenticated %}
+                                <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article>
+                            </div>
+                            {% if user.is_authenticated %}
+                    </a>
                     <div class="post-actions">
                         <button class="btn-post btn-like" data-post-id="{{ post.id }}" aria-label="button like post"><a
                                 href="{% url 'like_post' post.id %}" class="like-post"><i
@@ -58,11 +59,11 @@
             </div>
             {% endfor %}
         </div>
-    </div>
 </div>
 </div>
+</section>
 
-<div class="container-fluid d-flex justify-content-center bg-whitesmoke">
+<section class="container-fluid d-flex justify-content-center bg-whitesmoke">
     <div class="container">
         <div class="row post-row">
             <h2 class="h4 section-heading mt-4">Bars</h2>
@@ -84,9 +85,10 @@
                                 <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                             </div>
                             <h2 class="h5 card-title">{{ post.title }}</h2>
-                            <article class="card-text">{{ post.excerpt|safe|truncatewords:10 }}</article>
-                        </div></a>
-                {% if user.is_authenticated %}
+                            <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article>
+                        </div>
+                        {% if user.is_authenticated %}
+                </a>
                 <div class="post-actions">
                     <button class="btn-post btn-like" data-post-id="{{ post.id }}" aria-label="button like post"><a
                             href="{% url 'like_post' post.id %}" class="like-post"><i
@@ -110,7 +112,7 @@
         {% endif %}
         {% endfor %}
     </div>
-</div>
-</div>
+    </div>
+</section>
 </div>
 {% endblock %}

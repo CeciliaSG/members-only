@@ -2,15 +2,16 @@
 {% block content %}
 {% load static %}
 
-<div class="body">
+<div class="body neigbourhoods-page">
     <div class="full-width-container image-container-list-top">
         <img src="{% static 'images/restaurant_1_unsplash.webp' %}" alt="Restaurant Image" class="w-100">
     </div>
-    <div class="container-fluid d-flex justify-content-center bg-whitesmoke">
+
+    <section class="container-fluid d-flex justify-content-center bg-whitesmoke">
         <div class="container">
             <div class="row post-row">
                 <h1 class="parent-heading mt-4">Guides to Stockholm's Neighbourhoods</h1>
-                <div>
+                <div class="divider">
                     <hr class="section-divider">
                 </div>
                 <h2 class="h4 section-hading mt-4">The Old Town</h2>
@@ -33,10 +34,11 @@
                                     <h2 class="post-heading">{{ post.heading }} |&nbsp;</h2>
                                     <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                                 </div>
-                                <h5 class="card-title">{{ post.title }}</h5>
-                                <article class="card-text">{{ post.excerpt|safe|truncatewords:10 }}</article></a>
+                                <h3 class="h5 card-title">{{ post.title }}</h3>
+                                <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article>
 
-                    {% if user.is_authenticated %}
+                                {% if user.is_authenticated %}
+                    </a>
                     <div class="post-actions"><button class="btn-post btn-like" data-post-id="{{ post.id }}"
                             aria-label="button like post"><a href="{% url 'like_post' post.id %}" class="like-post"><i
                                     class="fa-solid fa-heart"></i></a></button>
@@ -56,13 +58,13 @@
         </div>
         {% endif %}
         {% endfor %}
-    </div>
 </div>
 </div>
 </div>
 </div>
+</section>
 
-<div class="container-fluid d-flex justify-content-center bg-white">
+<section class="container-fluid d-flex justify-content-center bg-white">
     <div class="container">
         <div class="row post-row">
             <h2 class=" h4 section-hading mt-4">Vasastan</h2>
@@ -84,33 +86,34 @@
                                 <h2 class="post-heading">{{ post.heading }} |&nbsp;</h2>
                                 <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                             </div>
-                            <h5 class="card-title">{{ post.title }}</h5>
-                            <article class="card-text">{{ post.excerpt|safe|truncatewords:10 }}</article></a>
+                            <h3 class="h5 card-title">{{ post.title }}</h3>
+                            <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article>
 
-                {% if user.is_authenticated %}
+                            {% if user.is_authenticated %}
+                </a>
                 <div class="post-actions"><button class="btn-post btn-like" data-post-id="{{ post.id }}"
-                        aria-label="button like post"><a href="{% url 'like_post' post.id %}" class="like-post"><i
-                                class="fa-solid fa-heart"></i></a></button>
+                        aria-label="button like post"><a href="{% url 'like_post' post.id %}" class="like-post"
+                            aria-label="Click the icon to like the post"><i class="fa-solid fa-heart"></i></a></button>
 
                     <button class="btn-post btn-save-post" data-post-id="{{ post.id }}" aria-label="button save post"><a
-                            href="{% url 'save_post' post.id %}" class="save-post"><i
-                                class="fa-solid fa-bookmark"></i></a></button></div>
+                            href="{% url 'save_post' post.id %}" class="save-post" aria-label="Click the icon to save
+                            the post"><i class="fa-solid fa-bookmark"></i></a></button></div>
                 {% else %}
                 <div class="post-symbols">
                     <i class="fa-solid fa-heart"></i>
                     <i class="fa-solid fa-bookmark"></i>
                 </div>
-
                 {% endif %}
             </div>
         </div>
     </div>
     {% endif %}
     {% endfor %}
-</div>
-</div>
-</div>
-</div>
-</div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+</section>
 </div>
 {% endblock %}
