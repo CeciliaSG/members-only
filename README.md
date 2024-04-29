@@ -41,6 +41,14 @@
 
     -   Page Wireframe - [View](https://github.com/)
 
+*   ### ERDS
+
+    -   ERD - [View](https://github.com/)
+
+    -   ERD - [View](https://github.com/)
+
+    -   ERD - [View](https://github.com/)
+
 
 ## Technologies Used
 
@@ -203,7 +211,24 @@ In this section, you should go over the different parts of your project, and des
 
 - Another feature idea
 
-## Testing 
+### Testing 
+
+
+## Unit testing 
+
+# Testing Forms
+
+- SignUpForm
+
+- UpdateUserProfileForm
+
+- UserProfileForm
+
+- UpdateUserForm
+
+- DeleteAccountForm
+
+
 
 	| Syntax | Description |
 | ----------- | ----------- |

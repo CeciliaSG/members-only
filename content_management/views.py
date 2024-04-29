@@ -7,13 +7,12 @@ from django.contrib.auth.decorators import login_required
 from .models import Post, SavedPost, LikedPost, Heading
 
 
-
 # Create your views here
 class PostListView(generic.ListView):
     template_name = "content_management/index.html"
     posts = Post.objects.filter(status=1)
     context_object_name = 'posts'
-    model = Post    
+    model = Post
 
     def get_queryset(self):
         return Post.objects.filter(status=1)
@@ -49,8 +48,9 @@ class PostListByHeadingView(generic.ListView):
         parent_heading_name = self.kwargs.get('parent_heading_name')
 
         context['heading'] = Heading.objects.filter(id=heading_id)
-        context['parent_heading'] = Heading.objects.filter(name=parent_heading_name)
-        
+        context['parent_heading'] = Heading.objects.filter(
+            name=parent_heading_name)
+
         return context
 
     def get_queryset(self):
@@ -82,37 +82,37 @@ def restaurants_bars_view(request, tags):
     tag_list = tags.split(',')
     template_name = 'content_management/restaurants_bars.html'
     return tag_filter(request, template_name, tag_list)
-    
+
 
 def things_to_do_view(request, tags):
     tag_list = tags.split(',')
     template_name = 'content_management/things_to_do.html'
-    return tag_filter(request, template_name, tag_list) 
+    return tag_filter(request, template_name, tag_list)
 
 
 def whats_on_view(request, tags):
     tag_list = tags.split(',')
     template_name = 'content_management/whats_on.html'
-    return tag_filter(request, template_name, tag_list) 
-     
+    return tag_filter(request, template_name, tag_list)
+
 
 def perks_view(request, tags):
     tag_list = tags.split(',')
     template_name = 'content_management/perks.html'
-    return tag_filter(request, template_name, tag_list)       
-
+    return tag_filter(request, template_name, tag_list)
 
 
 def neighbourhoods_list_view(request):
-    posts_with_neighbourhoods = Post.objects.exclude(neighbourhood__isnull=True).exclude(neighbourhood='')
-        
+    posts_with_neighbourhoods = Post.objects.exclude(
+        neighbourhood__isnull=True).exclude(neighbourhood='')
+
     context = {
         'posts': posts_with_neighbourhoods
     }
 
     template_name = 'content_management/neighbourhoods.html'
     return render(request, template_name, context)
-    
+
 
 def post_tag_detail(request, tag):
 
@@ -133,7 +133,7 @@ def post_tag_detail(request, tag):
 def save_post(request, post_id):
 
     """
-    Checks if the post is already saved, 
+    Checks if the post is already saved,
     un-save if saved, if not saved save to the database.
     """
 
@@ -142,23 +142,24 @@ def save_post(request, post_id):
     try:
         saved_post = SavedPost.objects.get(user=request.user, post_id=post_id)
         saved_post.delete()
-        return JsonResponse({'message': "You already saved this post. It is now unsaved!"})
+        return JsonResponse({
+            'message': "You already saved this post. It is now unsaved!"})
 
     except SavedPost.DoesNotExist:
-  
+
         post = Post.objects.get(id=post_id)
         saved_post = SavedPost(user=request.user, post=post)
-        saved_post.save()    
+        saved_post.save()
 
     return JsonResponse({'message': "Post saved successfully!"})
-    
+
 
 @login_required
 def like_post(request, post_id):
 
     """
-    Check if the post has already been liked, 
-    delete like if already liked, 
+    Check if the post has already been liked,
+    delete like if already liked,
     if not save like and like-colour to the database.
     """
 
@@ -170,12 +171,11 @@ def like_post(request, post_id):
         message = "You unliked the post!"
 
     except LikedPost.DoesNotExist:
-  
-        liked_post = LikedPost(user=request.user, post=post, button_color='red')
+
+        liked_post = LikedPost(
+            user=request.user, post=post, button_color='red')
         liked_post.save()
         message = "You liked the post!"
 
-    #return JsonResponse({'message': "You liked the post!"})
-
-      
-    return JsonResponse({'message': message, 'color': 'red'})
+        return JsonResponse({'message': message, 'color': 'red'})
+        
