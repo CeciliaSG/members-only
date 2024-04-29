@@ -22,7 +22,7 @@ class Event(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     excerpt = models.TextField(blank=True)
     tag = models.CharField(max_length=50)
-    status = models.IntegerField(choices=STATUS, default=0) 
+    status = models.SmallIntegerField(choices=STATUS, default=0) 
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
 

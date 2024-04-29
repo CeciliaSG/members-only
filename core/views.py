@@ -7,6 +7,8 @@ from django.contrib import messages
 from django.db import transaction
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from allauth.account.forms import LoginForm
+from allauth.account.utils import complete_signup
 from django.views.generic import UpdateView
 from .forms import CustomUserForm, UserProfileForm, DeleteAccountForm, UpdateUserProfile, UpdateUserForm
 from .models import UserProfile
@@ -37,7 +39,7 @@ def register(request):
     
 
 # Login view
-def login(request):
+def custom_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -46,9 +48,12 @@ def login(request):
             login(request, user)
             return redirect('home')
         else:
-            messages.error(request, 'Invalid username or password.')
-    return render(request, 'socialaccount/signup.html')
+            messages.error(request, 'Invalid username or password.', extra_tags='profile_login')
+            profile_messages = [message for message in messages.get_messages(request) if 'profile_login' in message.tags]
 
+    return render(request, 'accounts/login.html')
+
+   
 
 # Logout view
 @login_required

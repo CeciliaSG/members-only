@@ -123,6 +123,8 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - The icons used in the project were taken from [Font Awesome](https://fontawesome.com/)
 
 
+- How to extend the Django user model:
+[https://simpleisbetterthancomplex.com](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)
 -  Creating a like function:
 [StackOverflow](https://stackoverflow.com/search?q=creating+a+like+function+in+Django)
 -- Liking/unliking posts without refreshing the page

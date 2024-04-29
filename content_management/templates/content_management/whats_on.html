@@ -30,8 +30,9 @@
                             <div class="card-body">
                                 <h2 class="post-heading">{{ post.heading }}</h2>
                                 <h5 class="card-title">{{ post.title }}</h5>
-                                <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article></a>
-                    {% if user.is_authenticated %}
+                                <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article>
+                                {% if user.is_authenticated %}
+                    </a>
                     <div class="post-actions"><button class="btn-post btn-like" data-post-id="{{ post.id }}"
                             aria-label="button like post"><a href="{% url 'like_post' post.id %}" class="like-post"><i
                                     class="fa-solid fa-heart"></i></a></button>

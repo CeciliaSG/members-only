@@ -4,38 +4,35 @@
 {% if user.is_authenticated %}
 
 
-<div class="body page-delete-account bg-whitesmoke">
 
+<section class="container-fluid d-flex justify-content-center bg-white delete-account-page">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-left">
+                <h1 class="h2 form-heading mt-5">Delete Account</h1>
+                <div class="text-wrap">
+                    <h2 class="h5 form-heading mt-3">We are sorry you want to leave us <strong>
+                            {{ request.user.first_name }}
+                            {{ request.user.last_name }}.</strong></h2>
+                    <p>
+                        To delete your account and close your membership, just check the box below and click the
+                        button. It will delete your
+                        account and any information associated with it.</p>
+                    <br>
+                    <h3 class="h5">We hope to see you back here in the future!</h3>
 
-    <section class="container-fluid d-flex justify-content-center">
-        <div class="container mt-5">
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-left">
-                    <h1 class="h2 form-heading mt-5">Delete Account</h1>
-                    <div class="text-wrap">
-                        <h2 class="h5 form-heading mt-3">We are sorry you want to leave us <strong>
-                                {{ request.user.first_name }}
-                                {{ request.user.last_name }}.</strong></h2>
-                        <p>
-                            To delete your account and close your membership, just check the box below and click the
-                            button. It will delete your
-                            account and any information associated with it.</p>
-                        <br>
-                        <h3 class="h5">We hope to see you back here in the future!</h3>
-
-                    </div>
-                    <div class="mt-4 mb-4">
-                        <form method="post">
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                            <button class=" btn btn-delete-account" type="submit"
-                                aria-label="submit button delete account">Delete
-                                Account</button>
-                        </form>
-                    </div>
+                </div>
+                <div class="mt-4 mb-4">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button class=" btn btn-delete-account" type="submit"
+                            aria-label="submit button delete account">Delete
+                            Account</button>
+                    </form>
                 </div>
             </div>
-    </section>
-</div>
+        </div>
+</section>
 {% endif %}
 {% endblock %}

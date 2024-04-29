@@ -31,8 +31,6 @@ class UserProfile(models.Model):
     city = models.CharField(max_length=100, choices=CITY_CHOICES)
     neighbourhood = models.CharField(max_length=100, choices=NEIGHBOURHOOD_CHOICES)
     interests = ArrayField(models.CharField(max_length=100, choices=INTEREST_CHOICES), blank=True)
-    button_color = models.CharField(max_length=30, blank=True, null=True)
-
 
 
 def __str__(self):
