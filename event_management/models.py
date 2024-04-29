@@ -25,11 +25,6 @@ class Event(models.Model):
     status = models.SmallIntegerField(choices=STATUS, default=0) 
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ["-created_at"]
 
     def __str__(self):
         return self.title

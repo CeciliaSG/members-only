@@ -26,29 +26,35 @@
                                 <div class="card-image-container">
                                     <img class="card-img-top" src="{{ event.featured_image.url }}"
                                         alt="{{ event.title }}">
+                                    {% endif %}
                                 </div>
                                 <div class="card-body">
                                     <h2 class="event-heading">{{ event.heading }} |&nbsp;</h2>
                                     <h2 class="post-neighbourhood">{{ event.neighbourhood }}</h2>
                                     <h3 class=" h5 card-title">{{ event.title }}</h3>
-                                    <article class="card-excerpt">{{ event.excerpt|safe|truncatewords:10 }}
-                                    </article>
+                                    <article class="card-excerpt">{{ event.excerpt|safe|truncatewords:10 }}</article>
                                     <div>
                                         <article class="card-date mt-4">{{ event.start_date }} - {{ event.end_date }}
                                         </article>
                                     </div>
+                                </div>
+                                {% if user.is_authenticated %}
                         </a>
-                        <div class="post-actions"><a href="{% url 'like_post' event.id %}" class="like-post"
-                                aria-label="like-post"><i class="fa-solid fa-heart"></i>
-                                <a href="{% url 'save_post' event.id %}" class="save-post" aria-label="save-post"><i
-                                        class="fa-solid fa-bookmark"></i></a></div>
+                        <div class="post-actions">
+                            <a href="{% url 'like_post' event.id %}" class="like-post" aria-label="like-post"><i
+                                    class="fa-solid fa-heart"></i></a>
+                            <a href="{% url 'save_post' event.id %}" class="save-post" aria-label="save-post"><i
+                                    class="fa-solid fa-bookmark"></i></a>
+                        </div>
+
                         {% endif %}
                     </div>
+                    </a>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
     </div>
-</div>
+    </section>
 </div>
 </div>
 
@@ -66,6 +72,7 @@
                         <div class="card-image-container">
                             <img class="card-img-top" src="{{ event.featured_image.url }}" alt="{{ event.title }}">
                         </div>
+                        {% endif %}
                         <div class="card-body">
                             <h2 class="event-heading">{{ event.heading }} |&nbsp;</h2>
                             <h2 class="post-neighbourhood">{{ event.neighbourhood }}</h2>
@@ -80,7 +87,7 @@
                             class="fa-solid fa-heart"></i>
                         <a href="{% url 'save_post' event.id %}" class="save-post"><i
                                 class="fa-solid fa-bookmark"></i></a></div>
-                {% endif %}
+
             </div>
         </div>
     </div>
