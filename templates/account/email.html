@@ -6,7 +6,7 @@
 {% block head_title %}{% trans "Email Addresses" %}{% endblock head_title %}
 
 {% block content %}
-<section class="d-flex justify-content-center mt-5">
+<section class="d-flex justify-content-center m-5">
   <div class="row justify-content-center">
     <div class="col-md-12">
       <h1 class="h3 form-heading">{% trans "Email Addresses" %}</h1>
@@ -37,11 +37,11 @@
           {% endfor %}
 
           <div class="buttonHolder">
-            <button class="secondaryAction btn" type="submit" name="action_primary"
+            <button class="secondaryAction btn mt-3" type="submit" name="action_primary"
               class="btn">{% trans 'Make Primary' %}</button>
-            <button class="secondaryAction btn" type="submit"
+            <button class="secondaryAction btn mt-3" type="submit"
               name="action_send">{% trans 'Re-send Verification' %}</button>
-            <button class="primaryAction btn" type="submit" name="action_remove">{% trans 'Remove' %}</button>
+            <button class="primaryAction btn mt-3" type="submit" name="action_remove">{% trans 'Remove' %}</button>
           </div>
 
         </fieldset>

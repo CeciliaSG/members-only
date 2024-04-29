@@ -3,10 +3,16 @@
 {% load static %}
 
 <div class="body index-page">
-
+    {% if user.is_authenticated %}
     <div class="full-width-container image-container-list-top the-latest">
         <img src="{% static 'images/restaurant_1_unsplash.webp' %}" alt="Restaurant Image">
     </div>
+    {% else %}
+    <div class="container-fluid the-latest-non-logged-in">
+        <p>Info about the site for non-members</p>
+    </div>
+    {% endif %}
+
 
     <section class="container-fluid d-flex justify-content-center bg-white the-latest">
         <div class="container">

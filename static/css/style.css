@@ -66,6 +66,11 @@ body,
     background-color: black;
 }
 
+
+.dropdown-account {
+    position: relative;
+}
+
 .searchForm {
     border: none;
     outline: none;
@@ -299,15 +304,41 @@ a:hover {
     margin-bottom: 0;
 }
 
-
 .image-container-list-top img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center bottom;
-
 }
 
+.the-latest-non-logged-in {
+    height: 300px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+.overlay {
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.overlay p {
+    font-size: 24px;
+}
+*/
 
 .some-icons {
     font-size: 25px;
@@ -455,6 +486,12 @@ footer {
 
 @media screen and (max-width: 768px) {
 
+    .parent-heading {
+        padding-top: 0;
+        padding-bottom: 10px;
+        margin-top: 0;
+    }
+
     .post-heading {
         margin-bottom: 15px;
     }
@@ -481,7 +518,7 @@ footer {
 
     .logo-img {
         width: auto;
-        height: 70px;
+        height: 60px;
     }
 
     .first-nav {
@@ -507,6 +544,20 @@ footer {
         flex-direction: column;
     }
 
+    .the-latest-non-logged-in {
+        height: 200px;
+        width: 100%;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    .first-nav {
+        color: #333;
+    }
 }
 
 
@@ -532,7 +583,6 @@ footer {
 
 }
 
-
 @media (min-width: 960px) {
 
     .post-link {
@@ -547,4 +597,16 @@ footer {
     .drop-down-right {
         padding-right: 0;
     }
+
+    .mobile-dropdown-login {
+        margin-right: 20px;
+    }
+
+    .account-dropdown {
+        padding-right: 40px;
+        margin-right: 40px;
+        margin-bottom: 0;
+    }
+
+
 }

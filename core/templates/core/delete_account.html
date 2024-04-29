@@ -5,11 +5,11 @@
 
 
 
-<section class="container-fluid d-flex justify-content-center bg-white delete-account-page">
-    <div class="container mt-5">
+<section class="container-fluid d-flex justify-content-center bg-white delete-account-page ml-3 mr-3">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 text-left">
-                <h1 class="h2 form-heading mt-5">Delete Account</h1>
+                <h1 class="h2 form-heading mt-4">Delete Account</h1>
                 <div class="text-wrap">
                     <h2 class="h5 form-heading mt-3">We are sorry you want to leave us <strong>
                             {{ request.user.first_name }}
@@ -22,7 +22,7 @@
                     <h3 class="h5">We hope to see you back here in the future!</h3>
 
                 </div>
-                <div class="mt-4 mb-4">
+                <div class="mt-4">
                     <form method="post">
                         {% csrf_token %}
                         {{ form.as_p }}
