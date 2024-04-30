@@ -24,7 +24,7 @@ body,
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-bottom: 30px;
+
 }
 
 .btn {
@@ -41,12 +41,20 @@ body,
     color: black;
 }
 
+
 .container {
-    margin-left: 0;
-    margin-right: 0;
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
 
 .container-fluid {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 20px;
+
+}
+
+.drop-down-right {
     margin: 0;
     padding: 0;
 }
@@ -54,8 +62,14 @@ body,
 /* Navbar styling */
 
 .first-nav {
-    height: 90px;
+    /*max-height: 300px;*/
     background-color: black;
+    color: #333;
+}
+
+
+.dropdown-account {
+    position: relative;
 }
 
 .searchForm {
@@ -75,7 +89,7 @@ body,
 .logo-img {
     width: auto;
     height: 90px;
-    padding-bottom: 10px;
+    padding-bottom: 12px;
 }
 
 .nav-link {
@@ -121,11 +135,6 @@ body,
 .dropdown-item {
     background-color: black;
     color: white;
-}
-
-.container {
-    margin-bottom: 20px;
-    margin-top: 15px;
 }
 
 .parent-heading {
@@ -274,7 +283,6 @@ a:hover {
 
 }
 
-
 .image-container {
     width: 100%;
     max-height: 300px;
@@ -297,8 +305,19 @@ a:hover {
 
 .image-container-list-top img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
+    object-position: center bottom;
+}
+
+.info-non-logged-in-users {
+    height: 300px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -374,7 +393,7 @@ a:hover {
     height: 100%;
     overflow: hidden;
     border-radius: 0;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .card-title {
@@ -448,6 +467,20 @@ footer {
 
 @media screen and (max-width: 768px) {
 
+    .first-nav {
+        height: auto;
+    }
+
+    .dropdown {
+        padding-top: 4px;
+    }
+
+    .parent-heading {
+        padding-top: 0;
+        padding-bottom: 10px;
+        margin-top: 0;
+    }
+
     .post-heading {
         margin-bottom: 15px;
     }
@@ -464,6 +497,13 @@ footer {
         overflow: auto;
     }
 
+    .logo-container {
+        max-height: 90px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+
+    }
+
     .logo {
         position: absolute;
         top: 21px;
@@ -474,13 +514,9 @@ footer {
 
     .logo-img {
         width: auto;
-        height: 70px;
+        height: 60px;
     }
 
-    .first-nav {
-        max-height: 300px;
-        background-color: black;
-    }
 
     .footer .footer-list,
     .footer-container {
@@ -500,8 +536,32 @@ footer {
         flex-direction: column;
     }
 
-}
+    .info-non-logged-in-users {
+        height: auto;
+        width: 100%;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-size: 90%;
+    }
 
+    .mobile-dropdown-login {
+        position: relative;
+        z-index: 9999;
+    }
+
+    .info-button {
+        font-size: 90%;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+}
 
 @media screen and (min-width: 768px) {
 
@@ -525,7 +585,6 @@ footer {
 
 }
 
-
 @media (min-width: 960px) {
 
     .post-link {
@@ -540,4 +599,16 @@ footer {
     .drop-down-right {
         padding-right: 0;
     }
+
+    .mobile-dropdown-login {
+        margin-right: 20px;
+    }
+
+    .account-dropdown {
+        padding-right: 40px;
+        margin-right: 40px;
+        margin-bottom: 0;
+    }
+
+
 }

@@ -6,6 +6,7 @@ for (let i = 0; i < likeButton.length; i++) {
         let button = this;
         let icon = button.querySelector('i');
 
+
         $.ajax({
             url: '/like_post/' + postId + '/',
             success: function (response) {
