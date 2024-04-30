@@ -24,18 +24,30 @@ def register(request):
         user_form = CustomUserForm(request.POST)
         profile_form = UserProfileForm(request.POST)
         if user_form.is_valid() and profile_form.is_valid():
-            user = user_form.save()
-            profile = profile_form.save(commit=False)
-            profile.user = user
-            profile.save()
-            messages.success(request, 'Yeah you are all signed up. Log in and have a look around.')
-            auth_login(request, user)
-            return redirect('post_list')
+            email = user_form.cleaned_data.get('email')
+            username = user_form.cleaned_data.get('username')
+
+            if User.objects.filter(email=email).exists():
+                user_form.add_error('email', 'This email is already registered. Please use a different one.')
+
+            elif User.objects.filter(username=username).exists():
+                user_form.add_error('username', 'This username is already taken. Please choose a different one.')
+
+            else:
+                user = user_form.save()
+                profile = profile_form.save(commit=False)
+                profile.user = user
+                profile.save()
+                messages.success(request, 'Yeah you are all signed up. Log in and have a look around.')
+                auth_login(request, user)
+                return redirect('post_list')
+        else:
+            messages.error(request, 'Please correct the errors below.')
     else:
         user_form = CustomUserForm()
         profile_form = UserProfileForm()
     return render(request, 'core/registration.html', {'user_form': user_form, 'profile_form': profile_form})
-    
+
 
 # Login view
 def custom_login(request):
@@ -52,7 +64,6 @@ def custom_login(request):
 
     return render(request, 'accounts/login.html')
 
-   
 
 # Logout view
 @login_required
