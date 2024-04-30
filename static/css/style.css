@@ -312,7 +312,7 @@ a:hover {
     object-position: center bottom;
 }
 
-.the-latest-non-logged-in {
+.info-non-logged-in {
     height: 300px;
     width: 100%;
     background-color: black;
@@ -554,9 +554,18 @@ footer {
         z-index: 9999;
     }
 
+    .info-non-logged-in {
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-size: 90%;
+    }
+
+    .info-button {
+        size: 80%;
+        margin-bottom: 20px;
+    }
 
 }
-
 
 @media screen and (min-width: 768px) {
 

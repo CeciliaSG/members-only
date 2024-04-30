@@ -8,8 +8,23 @@
         <img src="{% static 'images/restaurant_1_unsplash.webp' %}" alt="Restaurant Image">
     </div>
     {% else %}
-    <div class="container-fluid the-latest-non-logged-in">
-        <p>Info about the site for non-members</p>
+    <div class="container-fluid d-flex info-non-logged-in align-items-center">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1 class="h3 info-header text-sm-center text-sm-left">Enjoy the best of Stockholm.</h1>
+                        <p>
+                            City guide. Events & more.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <button class=" info-button btn mt-3">Try Spotted for free</button>
+                        <p> or learn more here (link)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     {% endif %}
 
