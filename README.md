@@ -270,16 +270,18 @@ In this section, you should go over the different parts of your project, and des
 
 | Form | Description | Testing |
 | ----------- | ----------- |  ----------- |
-| SignUpForm <br> (inludes user and profile forms)|  |  |
+| SignUpForm <br> (inludes user and profile forms)| The user can fill in the form, chosing a username and password and then clicking the signup button. | User info. and details are saved to the database.  |
 | | |   |
 |  | | |
+
+| Form | Description | Testing  |
+| ----------- | ----------- |  ----------- |
+| SignIn Form| The user can fill in their email and password to sign in. <br> There is also an option to click remember me. | When the user fills in their login info correctly <br> and clicks the button <br> they are logged in and authorised access the whole site. |
+
 
 | Form| Description | Testing  |
 | ----------- | ----------- |  ----------- |
 | UpdateUserProfileForm | The user can update their profile <br> by chaning and confirming <br> email and user name | The user can also change <br> their neighbourhood and interest choices. <br> The mebership is only available in Stockholm, <br>otherwise they would also be able to choose another city.  |
-| | |   |
-|  | | |
-
 
 | Form | Description | Testing |
 | ----------- | ----------- | ----------- |
@@ -299,11 +301,17 @@ In this section, you should go over the different parts of your project, and des
 
 | Form | Description |   |
 | ----------- | ----------- |  ----------- |
-| DeleteAccountForm|  |  |
-| | |   |
-|  | | |
+| DeleteAccountForm | Here the user can delte their account. <br> Confirming by checking the box <br> and clicking delete account. | The user, user info and any profile information <br> related to the user is deleted. |
+
 
 ## Testing other Features
+
+### Logout
+|  | Description |   |
+| ----------- | ----------- |  ----------- |
+| Signout|  |  |
+| Signout button | |   |
+|  | | |
 
 ### Buttons ### (not part of any form)
 
@@ -313,12 +321,15 @@ In this section, you should go over the different parts of your project, and des
 | Save-button | icon/button for saving and unsaving posts | Saves or unsaves the post to the profile and returns a Json response  |
 | Save-button | icon/button for saving and unsaving posts | Saves or unsaves the post to the profile and returns a Json response  |
 
+
 ### Navbar & dropdowns
 | Syntax | Description |
 | ----------- | ----------- |
 | First navbar| icon/button for liking and unliking posts | likes or unlikes the post when clicked and returns a Json response |
-| Second navbar| icon/button for saving and unsaving posts | Saves or unsaves the post to the profile and returns a Json response  |
-| Dropdowns | icon/button for saving and unsaving posts | Saves or unsaves the post to the profile and returns a Json response  |
+| Second navbar|  | Saves or unsaves the post to the profile and returns a Json response  |
+| Dropdowns |  | Saves or unsaves the post to the profile and returns a Json response  |
+
+
 
 
 ## Lighthouse

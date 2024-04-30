@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
 from django.contrib.auth import login as auth_login
 from django.contrib import messages
 from django.db import transaction
@@ -104,6 +105,7 @@ def delete_account(request):
         form = DeleteAccountForm(request.POST) 
         if form.is_valid() and form.cleaned_data['confirm_delete']:
             request.user.delete()
+            message = 'Your account has been deleted.'
             return redirect('post_list')
     else:
         form = DeleteAccountForm()

@@ -11,8 +11,8 @@ class CustomUserForm(UserCreationForm):
     last_name = forms.CharField(max_length=30)
     username = forms.CharField(max_length=30)
     confirm_username = forms.CharField(required=True, label="Confirm Username")
-    password = forms.CharField(label="Password", widget=forms.PasswordInput)
-    confirm_password = forms.CharField(label="Confirm Password", widget=forms.PasswordInput)
+    #password = forms.CharField(label="Password", widget=forms.PasswordInput)
+    #confirm_password = forms.CharField(label="Confirm Password", widget=forms.PasswordInput)
 
     class Meta:
         model = User
