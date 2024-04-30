@@ -166,16 +166,15 @@ def like_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
 
     try:
-        liked_post = LikedPost.objects.get(user=request.user, post=post)
+        liked_post = LikedPost.objects.get(user=request.user, post=post, post_id=post_id)
         liked_post.delete()
         message = "You unliked the post!"
 
     except LikedPost.DoesNotExist:
 
-        liked_post = LikedPost(
-            user=request.user, post=post, button_color='red')
+        liked_post = LikedPost(user=request.user, post=post)
         liked_post.save()
         message = "You liked the post!"
 
-        return JsonResponse({'message': message, 'color': 'red'})
+    return JsonResponse({'message': message, 'color': 'red'})
         

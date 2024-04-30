@@ -14,8 +14,6 @@ from .forms import CustomUserForm, UserProfileForm, DeleteAccountForm, UpdateUse
 from .models import UserProfile
 from content_management.models import SavedPost
 
-
-
 # Create your views here.
 
 # Sign-up/register view
@@ -58,6 +56,9 @@ def custom_login(request):
 # Logout view
 @login_required
 def logout(request):
+    """
+     Logs the uer i an gives them authorisation to read everything on the site.
+    """
     logout(request)
     return redirect('home')  
 

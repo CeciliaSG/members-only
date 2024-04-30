@@ -30,7 +30,7 @@
 
     <section class="container-fluid d-flex justify-content-center bg-white the-latest">
         <div class="container">
-            <h1 class="parent-heading mt-4">The Latest</h1>
+            <h2 class="h1 parent-heading mt-4">The Latest</h2>
             <div class="row post-row">
                 {% for post in posts %}
                 <div class="col-md-4 post-col">
@@ -79,7 +79,7 @@
 
 <section class="container-fluid d-flex justify-content-center bg-whitesmoke ">
     <div class="container">
-        <h1 class="parent-heading mt-4">What's On & Perks</h1>
+        <h2 class="h1 parent-heading mt-4">What's On & Perks</h2>
         <div class="row post-row">
             {% for post in posts %}
             {% if post.heading.name == "What's on" or post.heading.name == 'Perks' %}
@@ -103,7 +103,6 @@
                 </a>
             </div>
             {% if user.is_authenticated %}
-
             <div class="post-actions">
                 <button class="btn-post btn-like" data-post-id="{{ post.id }}" aria-label="button like post"><a
                         href="{% url 'like_post' post.id %}" class="like-post" aria-label="Click the icon to
