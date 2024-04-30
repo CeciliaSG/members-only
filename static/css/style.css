@@ -44,13 +44,14 @@ body,
 
 .container {
     margin-top: 15px;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
 }
+
 
 .container-fluid {
     margin: 0;
     padding: 0;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px;*/
 
 }
 
@@ -62,21 +63,21 @@ body,
 /* Navbar styling */
 
 .first-nav {
-    /*max-height: 300px;*/
     background-color: black;
     color: #333;
+    /*height: auto;*/
 }
-
 
 .dropdown-account {
     position: relative;
 }
 
+/*
 .searchForm {
     border: none;
     outline: none;
     border-radius: 0;
-}
+} */
 
 .logo {
     position: absolute;
@@ -88,8 +89,13 @@ body,
 
 .logo-img {
     width: auto;
-    height: 90px;
-    padding-bottom: 12px;
+    height: 60px;
+}
+
+.logo-container {
+    max-height: 90px;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .nav-link {
@@ -124,6 +130,11 @@ body,
     background-color: black;
 }
 
+.mobile-dropdown-login {
+    position: relative;
+    z-index: 9999;
+}
+
 .dropdown-menu {
     border-radius: 0;
     outline: none;
@@ -144,14 +155,14 @@ body,
     padding-bottom: 15px;
 }
 
-
 .form-control-sm {
     height: 30px;
 }
 
+/*
 .search-form {
     flex: 1;
-}
+} */
 
 .form-links {
     text-decoration: underline;
@@ -222,6 +233,12 @@ body,
     font: inherit;
 }
 
+.info-button {
+    font-size: 90%;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
 .post-actions,
 .post-symbols {
     display: flex;
@@ -283,6 +300,10 @@ a:hover {
 
 }
 
+.container-post-row {
+    padding-bottom: 20px;
+}
+
 .image-container {
     width: 100%;
     max-height: 300px;
@@ -310,14 +331,19 @@ a:hover {
     object-position: center bottom;
 }
 
+
 .info-non-logged-in-users {
-    height: 300px;
+    height: auto;
     width: 100%;
     background-color: black;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-size: 90%;
 }
 
 
@@ -325,6 +351,7 @@ a:hover {
     font-size: 25px;
     margin-right: 20px;
 }
+
 
 .some-icons-row {
     justify-content: space-between;
@@ -341,7 +368,6 @@ a:hover {
 .event-details {
     padding: 2em;
 }
-
 
 
 /* Styling user profile */
@@ -463,13 +489,14 @@ footer {
     text-align: center;
 }
 
+.dropdown {
+    padding-top: 4px;
+}
+
+
 /* Media queries */
 
 @media screen and (max-width: 768px) {
-
-    .first-nav {
-        height: auto;
-    }
 
     .dropdown {
         padding-top: 4px;
@@ -501,22 +528,7 @@ footer {
         max-height: 90px;
         padding-bottom: 0;
         margin-bottom: 0;
-
     }
-
-    .logo {
-        position: absolute;
-        top: 21px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 999;
-    }
-
-    .logo-img {
-        width: auto;
-        height: 60px;
-    }
-
 
     .footer .footer-list,
     .footer-container {
@@ -536,37 +548,53 @@ footer {
         flex-direction: column;
     }
 
-    .info-non-logged-in-users {
-        height: auto;
-        width: 100%;
-        background-color: black;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 0;
-        padding-bottom: 15px;
-        padding-top: 15px;
-        font-size: 90%;
-    }
-
     .mobile-dropdown-login {
         position: relative;
         z-index: 9999;
-    }
-
-    .info-button {
-        font-size: 90%;
-        font-weight: bold;
-        margin-bottom: 20px;
     }
 
 }
 
 @media screen and (min-width: 768px) {
 
+    .navbar-toggler-login {
+        margin-right: 40px;
+        margin-top: 15px;
+    }
+
+    .mobile-dropdown-login {
+        font-size: 20px;
+    }
+
+    .second-navbar {
+        margin-left: 30px;
+    }
+
     .post-link {
         margin-bottom: 10px;
+    }
+
+    .info-non-logged-in-users {
+        height: 300px;
+        width: 100%;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo-img {
+        width: auto;
+        height: 90px;
+        padding-bottom: 12px;
+    }
+
+    .logo-container {
+        max-height: 200px;
+        padding-bottom: 5px;
+
+        /* margin-bottom: 17px;*/
     }
 
     /* Footer styling */
@@ -587,6 +615,12 @@ footer {
 
 @media (min-width: 960px) {
 
+    .info-button {
+        font-size: 100%;
+        font-weight: lighter;
+        margin-bottom: 0px;
+    }
+
     .post-link {
         margin-bottom: 0px;
     }
@@ -602,12 +636,17 @@ footer {
 
     .mobile-dropdown-login {
         margin-right: 20px;
+        margin-bottom: 15px;
     }
 
     .account-dropdown {
         padding-right: 40px;
         margin-right: 40px;
         margin-bottom: 0;
+    }
+
+    .mobile-dropdown-login {
+        font-size: 14px;
     }
 
 

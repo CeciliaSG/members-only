@@ -270,9 +270,7 @@ In this section, you should go over the different parts of your project, and des
 
 | Form | Description | Testing |
 | ----------- | ----------- |  ----------- |
-| SignUpForm <br> (inludes user and profile forms)| The user can fill in the form, chosing a username and password and then clicking the signup button. | User info. and details are saved to the database.  |
-| | |   |
-|  | | |
+| SignUpForm <br> (inludes user and profile forms)| The user can fill in the form, chosing a username and password and then clicking the signup button. | User info. and details are saved to the database. | Both the email and usermail needs to be unique<br> and trying  to use the same email and user mail <br> and email will return the form with an error message. |
 
 | Form | Description | Testing  |
 | ----------- | ----------- |  ----------- |
@@ -281,7 +279,7 @@ In this section, you should go over the different parts of your project, and des
 
 | Form| Description | Testing  | Comment | Result |
 | ----------- | ----------- |  ----------- | ----------- | ----------- |
-| UpdateUserProfileForm | The user can update their profile <br> by chaning and confirming <br> email and user name | The user can also change <br> their neighbourhood and interest choices. <br> The membership is only available in Stockholm, <br>otherwise they would also be able to choose another city. The email, username and passwords ahve to match oterwise the form want sign the uer up but will return the form to correct the errors, that are marked. |
+| UpdateUserProfileForm | The user can update their profile <br> by chaning and confirming <br> email and user name | The user can also change <br> their neighbourhood and interest choices. <br> The membership is only available in Stockholm, <br>otherwise they would also be able to choose another city. <br> The email, username and passwords have to match <br> otherwise the form want sign the user up but will return the <br> form to correct the errors, that are marked. | OK |
 
 | Form | Description | Testing |
 | ----------- | ----------- | ----------- |
