@@ -62,8 +62,9 @@ body,
 /* Navbar styling */
 
 .first-nav {
-    height: 90px;
+    /*max-height: 300px;*/
     background-color: black;
+    color: #333;
 }
 
 
@@ -88,7 +89,7 @@ body,
 .logo-img {
     width: auto;
     height: 90px;
-    padding-bottom: 0;
+    padding-bottom: 12px;
 }
 
 .nav-link {
@@ -321,24 +322,6 @@ a:hover {
     align-items: center;
 }
 
-/*
-.overlay {
-    position: absolute;
-    top: 200px;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
-.overlay p {
-    font-size: 24px;
-}
-*/
 
 .some-icons {
     font-size: 25px;
@@ -486,6 +469,10 @@ footer {
 
 @media screen and (max-width: 768px) {
 
+    .first-nav {
+        height: auto;
+    }
+
     .parent-heading {
         padding-top: 0;
         padding-bottom: 10px;
@@ -508,6 +495,11 @@ footer {
         overflow: auto;
     }
 
+    .logo-container {
+        max-height: 100px;
+
+    }
+
     .logo {
         position: absolute;
         top: 21px;
@@ -521,10 +513,6 @@ footer {
         height: 60px;
     }
 
-    .first-nav {
-        max-height: 300px;
-        background-color: black;
-    }
 
     .footer .footer-list,
     .footer-container {
@@ -555,9 +543,12 @@ footer {
         margin-bottom: 0;
     }
 
-    .first-nav {
-        color: #333;
+    .mobile-dropdown-login {
+        position: relative;
+        z-index: 9999;
     }
+
+
 }
 
 

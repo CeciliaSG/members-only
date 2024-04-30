@@ -46,13 +46,13 @@
     <!-- First Navbar -->
 
     <div class="nav-one">
-        <nav class="navbar navbar-expand-lg navbar-dark first-nav pt-4" style="z-index: 1000;">
+        <nav class="navbar navbar-expand-lg navbar-dark first-nav pt-4">
 
             <!-- <form id="searchForm" class="d-none d-lg-flex search" action=method="GET">
                 <input id="searchInput" class="form-control-sm" type="search" placeholder="Search" aria-label="Search">
             </form>-->
 
-            <div class="container-fluid d-flex justify-content-center align-items-center">
+            <div class="container-fluid d-flex justify-content-center align-items-center logo-container mb-2">
                 <a class="navbar-logo me-auto" href="{% url 'post_list' %}">
                     <span class="logo"><img src="{% static 'images/SpottedJournal_Logo3.webp' %}" class="logo-img"
                             alt="Logo"></span>
@@ -96,21 +96,21 @@
             </div>
     </div>
     {% else %}
-    <button class="navbar-toggler navbar-toggler-login" type="button" data-bs-toggle="collapse"
+    <button class="navbar-toggler navbar-toggler-login ml-3" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarText3 " aria-controls="navbarText3" aria-expanded="false" aria-label="Toggle navigation">
         <span><i class="fa-solid fa-bars"></i></span>
     </button>
-    <ul class="navbar-nav collapse navbar-collapse mobile-dropdown-login" id="navbarText3" style="z-index: 1000;">
-        <li class=" nav-list-item dropdown">
-            <a class="nav-link {% if request.path == signup_url %}active" aria-current="page {% endif %}"
-                href="{% url 'registration' %}">SignUp</a>
-        </li>
+    <ul class="navbar-nav collapse navbar-collapse mobile-dropdown-login" id="navbarText3">
         <li class="nav-list-item dropdown">
             <a class="nav-link {% if request.path == login_url %}active" aria-current="page {% endif %}"
                 href="{% url 'account_login' %}">Login</a>
         </li>
-        {% endif %}
+        <li class=" nav-list-item dropdown">
+            <a class="nav-link {% if request.path == signup_url %}active" aria-current="page {% endif %}"
+                href="{% url 'registration' %}">SignUp</a>
+        </li>
     </ul>
+    {% endif %}
     </div>
     </div>
     </div>
