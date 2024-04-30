@@ -312,7 +312,7 @@ a:hover {
     object-position: center bottom;
 }
 
-.info-non-logged-in {
+.info-non-logged-in-users {
     height: 300px;
     width: 100%;
     background-color: black;
@@ -538,8 +538,8 @@ footer {
         flex-direction: column;
     }
 
-    .the-latest-non-logged-in {
-        height: 200px;
+    .info-non-logged-in-users {
+        height: auto;
         width: 100%;
         background-color: black;
         color: white;
@@ -547,6 +547,9 @@ footer {
         justify-content: center;
         align-items: center;
         margin-bottom: 0;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-size: 90%;
     }
 
     .mobile-dropdown-login {
@@ -554,14 +557,9 @@ footer {
         z-index: 9999;
     }
 
-    .info-non-logged-in {
-        padding-bottom: 15px;
-        padding-top: 15px;
-        font-size: 90%;
-    }
-
     .info-button {
-        size: 80%;
+        font-size: 90%;
+        font-weight: bold;
         margin-bottom: 20px;
     }
 
