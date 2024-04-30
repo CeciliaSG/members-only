@@ -268,23 +268,40 @@ In this section, you should go over the different parts of your project, and des
 
 ### Testing Forms
 
-- UpdateUserProfileForm
-
-- UserProfileForm
-
-- UpdateUserForm
-
-- DeleteAccountForm
-
-| Syntax | Description |   |
+| Form | Description | Testing |
 | ----------- | ----------- |  ----------- |
-| SignUpForm|  |  |
+| SignUpForm <br> (inludes user and profile forms)|  |  |
 | | |   |
 |  | | |
 
-| Syntax | Description | Testing |
+| Form| Description | Testing  |
+| ----------- | ----------- |  ----------- |
+| UpdateUserProfileForm | The user can update their profile <br> by chaning and confirming <br> email and user name | The user can also change <br> their neighbourhood and interest choices. <br> The mebership is only available in Stockholm, <br>otherwise they would also be able to choose another city.  |
+| | |   |
+|  | | |
+
+
+| Form | Description | Testing |
 | ----------- | ----------- | ----------- |
-| RSVP-form| the user can chose yes or no  <br> and the number of guests <br> and then click the RSVP button | The user can change thir response  <br> by changing their answer and number of guests  <br> and submit again | The users response gets sent  <br> to the database and appears in the admin panel|
+| RSVP-form| The user can chose yes or no  <br> and the number of guests <br> and then click the RSVP button | The user can change thir response  <br> by changing their answer and number of guests  <br> and submit again | The users response gets sent  <br> to the database and appears in the admin panel|
+
+| Form | Description |   |
+| ----------- | ----------- |  ----------- |
+| Change email|  |  |
+| | |   |
+|  | | |
+
+| Form | Description |   |
+| ----------- | ----------- |  ----------- |
+| Change password|  |  |
+| | |   |
+|  | | |
+
+| Form | Description |   |
+| ----------- | ----------- |  ----------- |
+| DeleteAccountForm|  |  |
+| | |   |
+|  | | |
 
 ## Testing other Features
 

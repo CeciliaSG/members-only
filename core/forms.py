@@ -5,12 +5,12 @@ from .models import UserProfile
 
 
 class CustomUserForm(UserCreationForm):
-    email = forms.EmailField(required=True, widget=forms.PasswordInput)
-    confirm_email = forms.EmailField(required=True, label="Confirm Email", widget=forms.PasswordInput)
+    email = forms.EmailField(required=True)
+    confirm_email = forms.EmailField(required=True, label="Confirm Email")
     first_name = forms.CharField(max_length=30)
     last_name = forms.CharField(max_length=30)
-    username = forms.CharField(max_length=30, widget=forms.PasswordInput)
-    confirm_username = forms.CharField(required=True, label="Confirm Username", widget=forms.PasswordInput)
+    username = forms.CharField(max_length=30)
+    confirm_username = forms.CharField(required=True, label="Confirm Username")
     password = forms.CharField(label="Password", widget=forms.PasswordInput)
     confirm_password = forms.CharField(label="Confirm Password", widget=forms.PasswordInput)
 
@@ -58,9 +58,9 @@ class UpdateUserProfile(forms.ModelForm):
         
 
 class UpdateUserForm(forms.ModelForm):
-    email = forms.EmailField(required=True, widget=forms.PasswordInput)
-    confirm_email = forms.EmailField(required=True, label="Confirm Email", widget=forms.PasswordInput)
-    confirm_username = forms.CharField(required=True, label="Confirm Username", widget=forms.PasswordInput)
+    email = forms.EmailField(required=True)
+    confirm_email = forms.EmailField(required=True, label="Confirm Email")
+    confirm_username = forms.CharField(required=True, label="Confirm Username")
 
     class Meta:
         model = User
