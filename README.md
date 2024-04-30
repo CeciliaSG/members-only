@@ -279,9 +279,9 @@ In this section, you should go over the different parts of your project, and des
 | SignIn Form| The user can fill in their email and password to sign in. <br> There is also an option to click remember me. | When the user fills in their login info correctly <br> and clicks the button <br> they are logged in and authorised access the whole site. |
 
 
-| Form| Description | Testing  |
-| ----------- | ----------- |  ----------- |
-| UpdateUserProfileForm | The user can update their profile <br> by chaning and confirming <br> email and user name | The user can also change <br> their neighbourhood and interest choices. <br> The mebership is only available in Stockholm, <br>otherwise they would also be able to choose another city.  |
+| Form| Description | Testing  | Comment | Result |
+| ----------- | ----------- |  ----------- | ----------- | ----------- |
+| UpdateUserProfileForm | The user can update their profile <br> by chaning and confirming <br> email and user name | The user can also change <br> their neighbourhood and interest choices. <br> The membership is only available in Stockholm, <br>otherwise they would also be able to choose another city. The email, username and passwords ahve to match oterwise the form want sign the uer up but will return the form to correct the errors, that are marked. |
 
 | Form | Description | Testing |
 | ----------- | ----------- | ----------- |
@@ -315,19 +315,19 @@ In this section, you should go over the different parts of your project, and des
 
 ### Buttons ### (not part of any form)
 
-| Syntax | Description |
-| ----------- | ----------- |
-| Like-button | icon/button for liking and unliking posts | likes or unlikes the post when clicked and returns a Json response |
-| Save-button | icon/button for saving and unsaving posts | Saves or unsaves the post to the profile and returns a Json response  |
-| Save-button | icon/button for saving and unsaving posts | Saves or unsaves the post to the profile and returns a Json response  |
+| Feature| Description | Testing | Comment | Result|
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| Like-button | Icon/button for liking and unliking posts | Likes or unlikes the post <br> when clicked and returns a Json response  <br>in the form of an alert | Saves the instance of the post-like to the database | OK |
+| Save-button | Icon/button for saving and unsaving posts | Saves or unsaves the post <br> to the profile and returns a Json response <br> in the form of an alert  | Saves the instance of the post to the database | OK |
+
 
 
 ### Navbar & dropdowns
-| Syntax | Description |
-| ----------- | ----------- |
-| First navbar| icon/button for liking and unliking posts | likes or unlikes the post when clicked and returns a Json response |
-| Second navbar|  | Saves or unsaves the post to the profile and returns a Json response  |
-| Dropdowns |  | Saves or unsaves the post to the profile and returns a Json response  |
+| Feature | Description | Testing | Comment | Result|
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| First navbar| Links to all signup and profile <br> related functions and pages  | All page links were tested and worked | OK |
+| Second navbar| Links to all content pages | All page links were tested and worked.  | OK |
+| Dropdowns | A above but for small screens |   | OK |
 
 
 
