@@ -208,6 +208,9 @@ body,
     object-fit: cover;
 }
 
+.post-symbols {
+    margin-bottom: 15px;
+}
 
 
 /* Button and link styling */
@@ -394,7 +397,6 @@ a:hover {
     margin-top: 20px;
 }
 
-
 .post-heading {
     font-size: 14px;
 }
@@ -419,7 +421,7 @@ a:hover {
     height: 100%;
     overflow: hidden;
     border-radius: 0;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .card-title {
@@ -592,7 +594,7 @@ footer {
 
     .logo-container {
         max-height: 200px;
-        padding-bottom: 5px;
+        padding-bottom: 1px;
 
         /* margin-bottom: 17px;*/
     }

@@ -6,12 +6,17 @@
 <div class="body">
     <div class="events">
         <div class="full-width-container image-container-list-top">
-            <img src="{% static 'images/restaurant_1_unsplash.webp' %}" alt="Restaurant Image" class="w-100">
+            <img src="{% static 'images/pablo-heimplatz-ZODcBkEohk8-unsplash 2.webp' %}" alt="Restaurant Image"
+                class="w-100">
         </div>
 
         <section class="container-fluid d-flex justify-content-center bg-white the-latest">
             <div class="container">
                 <h1 class="parent-heading mt-4">Events in Stockholm</h1>
+                <div class="divider">
+                    <hr class="section-divider">
+                </div>
+                <h2 class="h4 section-heading mt-4">Festivals</h2>
                 <div class="row post-row">
                     {% for event in events %}
                     <div class="col-md-4 post-col">
@@ -45,8 +50,8 @@
 
 <section class="container-fluid d-flex justify-content-center bg-white the-latest">
     <div class="container">
-        <h1 class="parent-heading mt-4">Itineraries & Date ideas</h1>
-        <div class="row post-row">
+        <h2 class="h4 section-heading mt-4">Things to do</h2>
+        <div class="row post-row pb-4">
             {% for event in events %}
             <div class="col-md-4 post-col">
                 {% if user.is_authenticated %}
