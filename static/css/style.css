@@ -473,6 +473,10 @@ footer {
         height: auto;
     }
 
+    .dropdown {
+        padding-top: 4px;
+    }
+
     .parent-heading {
         padding-top: 0;
         padding-bottom: 10px;
@@ -496,7 +500,9 @@ footer {
     }
 
     .logo-container {
-        max-height: 100px;
+        max-height: 90px;
+        padding-bottom: 0;
+        margin-bottom: 0;
 
     }
 

@@ -70,7 +70,7 @@
                         {% if user.is_authenticated %}
 
                         <ul class="navbar-nav collapse navbar-collapse justify-content-end account-dropdown"
-                            id="navbarText1">
+                            id="navbarText1" style="z-index: 9999;">
                             <li class="nav-item nav-item-account dropdown">
                                 <a class="nav-link dropdown-toggle btn-dropdown nav-link-account"
                                     id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
@@ -102,8 +102,8 @@
     </button>
     <ul class="navbar-nav collapse navbar-collapse mobile-dropdown-login" id="navbarText3">
         <li class="nav-list-item dropdown">
-            <a class="nav-link {% if request.path == login_url %}active" aria-current="page {% endif %}"
-                href="{% url 'account_login' %}">Login</a>
+            <a class="nav-link nav-link-dropdown {% if request.path == login_url %}active"
+                aria-current="page {% endif %}" href="{% url 'account_login' %}">Login</a>
         </li>
         <li class=" nav-list-item dropdown">
             <a class="nav-link {% if request.path == signup_url %}active" aria-current="page {% endif %}"
