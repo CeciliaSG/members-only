@@ -1,29 +1,61 @@
 <h1 align="center">Spotted City Guide Membership Club</h1>
 
-[View the live project here.](https://codeinstitute.net)
+[View the live project here.](https://)
 
-<h2 align="center"><img src="https://i.ibb.co/TYvTXz1/Example-CI.png"></h2>
+<h2 align="center"><img src="https://"></h2>
 
 ## User Experience (UX)
 
--   ### User stories
+ ### User stories
 
-    -   #### First Time Visitor Goals
+ ### Testing User Stories from User Experience (UX) Section
 
-        1. As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the organisation.
-        2. As a First Time Visitor, I want to be able to easily navigate throughout the site to find content.
-        3. As a First Time Visitor, I want to look for testimonials to understand what their users think of them and see if they are trusted. I also want to locate their social media links to see their followings on social media to determine how trusted and known they are.
+#### First Time Visitor Goals
 
-    -   #### Returning Visitor Goals
+    1. As a First Time Visitor (non-logged-in), I want to easily understand the main purpose of the site and learn more about the benefits.
 
-        1. As a Returning Visitor, I want to find information about coding challenges.
-        2. As a Returning Visitor, I want to find the best way to get in contact with the organisation with any questions I may have.
-        3. As a Returning Visitor, I want to find community links.
+        1. Upon entering the site, users are greeted with a clean and easily readable navigation bar and a section briefly explaining what the site is about and the possibility of trying a membership for for free by clicking the button, or follow a link to read more.
+        2. A non logged-in user can have a look around, see the posts with the excerpts, click the nav-links to the other pages, but not click the post links. The non-logged in user has the option to sign-up or read more about the membership.
+        3. There is also a seperate navbar for logging in and signing up. This navbar dropsdown on smaller screens.
 
-    -   #### Frequent User Goals
-        1. As a Frequent User, I want to check to see if there are any newly added challenges or hackathons.
-        2. As a Frequent User, I want to check to see if there are any new blog posts.
-        3. As a Frequent User, I want to sign up to the Newsletter so that I am emailed any major updates and/or changes to the website or organisation.
+    2. As a First Time Visitor and returning visitor (logge-in), I want to be able to easily be able to navigate throughout the site to find content and administrating my account.
+
+        1. The site has been designed to be fluid and has a content navbar at the top of every page, to never to entrap the user. At the top of each page there is a clean navigation bar with links to each content page, the links are cleary and simly described so uers know whre it will take them.
+        2. On the Contact Us Page, after a form response is submitted, the page refreshes and the user is brought to the top of the page where the navigation bar is.
+        3. As a logged in user I can access the first navbar, a dropdown here I can access my profile (where I also find my saved post). Via this dropdown-navbar I can also access the pages for changing my email, password, logout and deleting my account.
+
+   
+-   #### Returning Visitor Goals
+
+    1. As a Returning Visitor I want to see what new posts and events have been added to the site.
+        1. These can be found in the first section on the index-page in the section The Latest.
+        2. The Latest section is clearly visible on the first page.
+
+    2. As a First time and Returning Visitor, I want to find out more about which events are coming-up and I want to be able to RSVP to the event.
+
+        1. The events link is crealy visible in the navbar.
+        2. On the event-detail page the uer can read more about the event and when and where it is taking place.
+        3. The event-detail page also includes a simåle form to let the uer RSVP.
+
+    3. As a Returning Visitor, I want to find the Facebook Group link so that I can join and interact with others in the community.
+        1. The Facebook Page can be found at the footer of every page and will open a new tab for the user and more information can be found on the Facebook page.
+        2. Alternatively, the user can scroll to the bottom of the Home page to find the Facebook Group redirect card and can easily join by clicking the "Join Now!" button which like any external link, will open in a new tab to ensure they can get back to the website easily.
+        3. If the user is on the "Our Favourites" page they will also be greeted with a call to action button to invite the user to the Facebook group. The user is incentivized as they are told there is a weekly favourite product posted in the group.
+
+-   #### Frequent User Goals
+
+    1. As a Frequent User, I want to check to see if there are any newly added challenges or hackathons.
+
+        1. The user would already be comfortable with the website layout and can easily click the banner message.
+
+    2. As a Frequent User, I want to check to see if there are any new blog posts.
+
+        1. The user would already be comfortable with the website layout and can easily click the blog link
+
+    3. As a Frequent User, I want to sign up to the Newsletter so that I am emailed any major updates and/or changes to the website or organisation.
+        1. At the bottom of every page their is a footer which content is consistent throughout all pages.
+        2. To the right hand side of the footer the user can see "Subscribe to our Newsletter" and are prompted to Enter their email address.
+        3. There is a "Submit" button to the right hand side of the input field which is located close to the field and can easily be distinguished.
 
 -   ### Design
     -   #### Colour Scheme
@@ -35,19 +67,37 @@
 
 *   ### Wireframes
 
-    -   Home Page Wireframe - [View](https://github.com/)
-
-    -   Mobile Wireframe - [View](https://github.com/)
-
-    -   Page Wireframe - [View](https://github.com/)
+    -   Page Wireframe - [View](resources_readme/1.jpg)
+                       - [View](resources_readme/2.jpg)
+                       - [View](resources_readme/3.jpg)
 
 *   ### ERDS
 
-    -   ERD - [View](https://github.com/)
+#### ERD Post model
+| FK | Heading | Heading Model|
+| ----------- | ----------- | ----------- |
+| | title | charfield |
+| | image |img  |
+| | description | text  |
+| | slug | slugfield |
+| | excerpt | text  |
+| | tag| charfield  |
+| | status | small Integerfield |
+| | start date |  |
+| | end date|  |
 
-    -   ERD - [View](https://github.com/)
-
-    -   ERD - [View](https://github.com/)
+#### ERD Event model
+| FK | Heading | Heading Model|
+| ----------- | ----------- | ----------- |
+| | title | charfield |
+| | image |img  |
+| | description | text  |
+| | slug | slugfield |
+| | excerpt | text  |
+| | tag| charfield  |
+| | status | small Integerfield |
+| | start date |  |
+| | end date|  |
 
 
 ## Technologies Used
@@ -58,7 +108,7 @@
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 -   [Bootstrap]
 -   [Django]
--    [Javascript]
+-   [Javascript]
 
 
 ### Frameworks, Libraries & Programs Used
@@ -169,7 +219,7 @@ In this section, you should go over the different parts of your project, and des
 
 - __The Profile Page__
 
-  - 
+  - This page allows users to see their personal info. and profile choices, as wella s their saved posts.
 
 ![Profile](https://)
 
@@ -211,14 +261,12 @@ In this section, you should go over the different parts of your project, and des
 
 - Another feature idea
 
-### Testing 
+# Testing 
 
 
 ## Unit testing 
 
-# Testing Forms
-
-- SignUpForm
+### Testing Forms
 
 - UpdateUserProfileForm
 
@@ -228,14 +276,35 @@ In this section, you should go over the different parts of your project, and des
 
 - DeleteAccountForm
 
+| Syntax | Description |   |
+| ----------- | ----------- |  ----------- |
+| SignUpForm|  |  |
+| | |   |
+|  | | |
 
+| Syntax | Description | Testing |
+| ----------- | ----------- | ----------- |
+| RSVP-form| the user can chose yes or no  <br> and the number of guests <br> and then click the RSVP button | The user can change thir response  <br> by changing their answer and number of guests  <br> and submit again | The users response gets sent  <br> to the database and appears in the admin panel|
 
-	| Syntax | Description |
+## Testing other Features
+
+### Buttons ### (not part of any form)
+
+| Syntax | Description |
 | ----------- | ----------- |
-| Header | Title |
-| Paragraph | Text |
+| Like-button | icon/button for liking and unliking posts | likes or unlikes the post when clicked and returns a Json response |
+| Save-button | icon/button for saving and unsaving posts | Saves or unsaves the post to the profile and returns a Json response  |
+| Save-button | icon/button for saving and unsaving posts | Saves or unsaves the post to the profile and returns a Json response  |
 
-- Lighthouse
+### Navbar & dropdowns
+| Syntax | Description |
+| ----------- | ----------- |
+| First navbar| icon/button for liking and unliking posts | likes or unlikes the post when clicked and returns a Json response |
+| Second navbar| icon/button for saving and unsaving posts | Saves or unsaves the post to the profile and returns a Json response  |
+| Dropdowns | icon/button for saving and unsaving posts | Saves or unsaves the post to the profile and returns a Json response  |
+
+
+## Lighthouse
 
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your project’s features and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
@@ -244,55 +313,6 @@ In addition, you should mention in this section how your project looks and works
 You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
 
 If this section grows too long, you may want to split it off into a separate file and link to it from here.
-
-### Testing User Stories from User Experience (UX) Section
-
--   #### First Time Visitor Goals
-
-    1. As a First Time Visitor (non-logged-in), I want to easily understand the main purpose of the site and learn more about the benefits.
-
-        1. Upon entering the site, users are greeted with a clean and easily readable navigation bar and a section briefly explaining what the site is about and the possibility of trying a membership for for free by clicking the button, or follow a link to read more.
-        2. A non logged-in user can have a look around, see the posts with the excerpts, click the nav-links to the other pages, but not click the post links. The non-logged in user has the option to sign-up or read more about the membership.
-        3. There is also a seperate navbar for logging in and signing up. This navbar dropsdown on smaller screens.
-
-    2. As a First Time Visitor and returning visitor (logge-in), I want to be able to easily be able to navigate throughout the site to find content and administrating my account.
-
-        1. The site has been designed to be fluid and has a content navbar at the top of every page, to never to entrap the user. At the top of each page there is a clean navigation bar with links to each content page, the links are cleary and simly described so uers know whre it will take them.
-        2. On the Contact Us Page, after a form response is submitted, the page refreshes and the user is brought to the top of the page where the navigation bar is.
-        3. As a logged in user I can access the first navbar, a dropdown here I can access my profile (where I also find my saved post). Via this dropdown-navbar I can also access the pages for changing my email, password, logout and deleting my account.
-
-   
--   #### Returning Visitor Goals
-
-    1. As a Returning Visitor I want to see what new posts and events have been added to the site.
-        1. These can be found in the first section on the index-page in the section The Latest.
-        2. The Latest section is clearly visible on the first page.
-
-    2. As a First time and Returning Visitor, I want to find out more about which events are coming-up and I want to be able to RSVP to the event.
-
-        1. The events link is crealy visible in the navbar.
-        2. On the event-detail page the uer can read more about the event and when and where it is taking place.
-        3. The event-detail page also includes a simåle form to let the uer RSVP.
-
-    3. As a Returning Visitor, I want to find the Facebook Group link so that I can join and interact with others in the community.
-        1. The Facebook Page can be found at the footer of every page and will open a new tab for the user and more information can be found on the Facebook page.
-        2. Alternatively, the user can scroll to the bottom of the Home page to find the Facebook Group redirect card and can easily join by clicking the "Join Now!" button which like any external link, will open in a new tab to ensure they can get back to the website easily.
-        3. If the user is on the "Our Favourites" page they will also be greeted with a call to action button to invite the user to the Facebook group. The user is incentivized as they are told there is a weekly favourite product posted in the group.
-
--   #### Frequent User Goals
-
-    1. As a Frequent User, I want to check to see if there are any newly added challenges or hackathons.
-
-        1. The user would already be comfortable with the website layout and can easily click the banner message.
-
-    2. As a Frequent User, I want to check to see if there are any new blog posts.
-
-        1. The user would already be comfortable with the website layout and can easily click the blog link
-
-    3. As a Frequent User, I want to sign up to the Newsletter so that I am emailed any major updates and/or changes to the website or organisation.
-        1. At the bottom of every page their is a footer which content is consistent throughout all pages.
-        2. To the right hand side of the footer the user can see "Subscribe to our Newsletter" and are prompted to Enter their email address.
-        3. There is a "Submit" button to the right hand side of the input field which is located close to the field and can easily be distinguished.
 
 ### Further Testing
 
@@ -306,6 +326,7 @@ If this section grows too long, you may want to split it off into a separate fil
   - No errors were returned when passing through the official [W3C validator]()
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator]()
+- CI Python Linter [(https://pep8ci.herokuapp.com/)]()
 
 
 ### Unfixed Bugs
@@ -332,7 +353,6 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 ### Content 
 
 - The content for the posts and pages were generated with the help of AI.
-- Instructions on how to implement form validation on the Sign Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
 - The icons used in the project were taken from [Font Awesome](https://fontawesome.com/)
 
 
@@ -359,9 +379,9 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 
 ### Media
 
-- The logo was created by my husband.
+- The logo and favicon was created by my husband.
 
-- The images for posts, events and pages were downloaded from free iamges on [Unsplash](https://unsplash.com/)
+- The images for posts, events and pages were downloaded from free imgaes on [Unsplash](https://unsplash.com/)
 
 ## Other General Project Advice
 
