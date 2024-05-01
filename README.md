@@ -8,6 +8,8 @@
 
  ### User stories
 
+ - Kanban Board
+
  ### Testing User Stories from User Experience (UX) Section
 
 #### First Time Visitor Goals
@@ -60,10 +62,12 @@
 -   ### Design
     -   #### Colour Scheme
         -   The three main colours used are black, white and green.
+
     -   #### Typography
-        -   The Montserrat font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate.
+        -   The Playfair Display font is the main font, together with Poppins used throughout the whole website with Serif and Sans Serif as the fallback fonts in case for any reason the font isn't being imported into the site correctly. 
+
     -   #### Imagery
-        -   Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
+        -   Imagery is important. The large, top image is designed to be striking and catch the user's attention. The post and events images are choosen to give the site a vibrant, fun and energetic feeling.
 
 *   ### Wireframes
 
@@ -71,20 +75,21 @@
                        - [View](resources_readme/2.jpg)
                        - [View](resources_readme/3.jpg)
 
-*   ### ERDS
+*   ### ERDS for models
 
 #### ERD Post model
 | FK | Heading | Heading Model|
 | ----------- | ----------- | ----------- |
 | | title | charfield |
-| | image |img  |
-| | description | text  |
+| | image |CloudinaryField |
+| | Content | textField  |
 | | slug | slugfield |
-| | excerpt | text  |
+| | excerpt | textField  |
 | | tag| charfield  |
 | | status | small Integerfield |
 | | start date |  |
 | | end date|  |
+| | Neighbourhood| TextField  |
 
 #### ERD Event model
 | FK | Heading | Heading Model|
@@ -98,6 +103,50 @@
 | | status | small Integerfield |
 | | start date |  |
 | | end date|  |
+
+#### ERD Saved Post Model
+| FK | Post| Post Model|
+| ----------- | ----------- | ----------- |
+| | title | charfield |
+| | image |img  |
+| | description | text  |
+| | slug | slugfield |
+| | excerpt | text  |
+| | tag| charfield  |
+| | status | small Integerfield |
+| | start date |  |
+| | end date|  |
+
+#### ERD Liked Post Model
+| FK | Post | Post Model|
+| ----------- | ----------- | ----------- |
+| | title | charfield |
+| | image |img  |
+| | description | text  |
+| | slug | slugfield |
+| | excerpt | text  |
+| | tag| charfield  |
+| | status | small Integerfield |
+| | start date |  |
+| | end date|  |
+
+#### ERD RSVP Model
+| FK | Event | Event Model|
+| ----------- | ----------- | ----------- |
+| FK | User| User Model|
+| | Response  |CharField |
+| | num_guests |Charfield |
+
+
+#### ERD UserProfile Model
+| FK | User | User Model| OntoOneField |
+| ----------- | ----------- | ----------- | ----------- |
+| | Neighbourhood | CharField |
+| | Interests |ArrayField |
+| | City | Charfield  |
+
+
+
 
 
 ## Technologies Used
@@ -143,9 +192,9 @@
 # Spotted members city guide
 
 An insider membership guide to Stockholm.
-In this section, you will include one or two paragraphs providing an overview of your project. Essentially, this part is your sales pitch. At this stage, you should have a name for your project so use it! Don’t introduce the project as a Portfolio project for the diploma. In this section, describe what the project hopes to accomplish, who it is intended to target and how it will be useful to the target audience. 
+This is a memberships site with the purpose of prividing members - people living in Stockholm - with a comprehensive guide of everything going on in the city as well as some perks for members making it good value for money. The site intends to includs everything from bars and restaurants, to things tod do, events, musical festivals etc.
 
-For example; Love Running is a site that hopes to help keep people motivated to meet up for runs on a regular basis in Dublin, Ireland. The site will be targeted toward runners who are looking for a way to socialise and keep themselves fit. Love Running will be useful for runners to see exactly when and where they should be to join the running club. 
+
 
 ![Responsice Mockup](https://github.com/lucyrush/readme-template/blob/master/media/love_running_mockup.png)
 
@@ -154,8 +203,6 @@ For example; Love Running is a site that hopes to help keep people motivated to 
 -   Responsive on all device sizes
 
 -   Interactive elements
-
-In this section, you should go over the different parts of your project, and describe each in a sentence or so. You will need to explain what value each of the features provides for the user, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
 ### Existing Features
 
@@ -191,7 +238,7 @@ In this section, you should go over the different parts of your project, and des
 
 - __Neighbourhoods Page__
 
-  - The Neighbourhoods page displays by bneighbourhood, to make it easier for uers to find what is going on around where they live or work.
+  - The Neighbourhoods page displays by neighbourhood, to make it easier for users to find what is going on around where they live or work.
 
 ![Neighbourhoods](https://)
 
@@ -204,7 +251,7 @@ In this section, you should go over the different parts of your project, and des
 - __The Footer__ 
 
   - The footer section includes links to the relevant social media sites for Spotted. The links will open to a new tab to allow easy navigation for the user. 
-  - the footer also inclued lnks to About (contactinfo), Become a member and
+  - the footer also inclued links to About (inkl. contactinfo), Become a member and
  Partnerships pages.  
 
 ![Footer](https://)
@@ -219,50 +266,49 @@ In this section, you should go over the different parts of your project, and des
 
 - __The Profile Page__
 
-  - This page allows users to see their personal info. and profile choices, as wella s their saved posts.
+  - This page allows users to see their personal info. and profile choices, as well as their saved posts.
 
 ![Profile](https://)
 
 - __The Login Page__
 
-  - 
+  - Registered users can login.
 
 ![Log In](https://)
 
 - __The Logout Page__
 
-  - 
+  - Users can logout
 
 ![Logout](https://)
 
 
-
 - __The Change Email__
 
-  - 
+  - Registered users can change/update their email.
 
 ![Change email](https://)
 
 - __The Change Password__
 
-  - 
+  - Registered users can change their password.
 
 ![Change password](https://)
 
 
 - __The Delete Account Page__
 
-  - 
+  - Registered users/members can delete their account and all associated information.
 
 ![Delete](https://)
 
 
 ### Features Left to Implement
 
-- Another feature idea
+- Navigation directly between posts without having to back out to the post_list
+- Navigation directly between events without having to back out to the event_list
 
 # Testing 
-
 
 ## Unit testing 
 
@@ -357,14 +403,31 @@ Cloudinary
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub) 
+## Creating the Heroku app, deploying to Heroku
 
-- The site was deployed to GitHub pages. The steps to deploy are as follows: 
-  - In the GitHub repository, navigate to the Settings tab 
-  - From the source section drop-down menu, select the Master Branch
-  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
+Steps to follow for deployment to Heroku:
 
-The live link can be found here - https://code-institute-org.github.io/love-running-2.0/index.html 
+### In GitHub.
+1. Navigate to the repository for the project. 
+
+### In Heroku
+
+1.	Go to Heroku, create account, if you don't have one, and log in.
+2.	Go to the dashboard and click New after which you click Create new app
+3.	Choose name and region. Click Create app
+4.	Go to Settings, under the "Config Vars" set your Key/Value Pairs.
+    You must then create a _Config Var_ called `PORT`. Set this to `8000`
+    If you have credentials, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+    When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+    1. `heroku/python`
+    2. `heroku/nodejs`
+
+5.	In the Buildpacks section, add buildpacks. Note order in which you add buildpacks: Python first and nodejs.
+6.	No go to Deployment. In deployment method click on "GitHub"(for repository)
+7.	The connect to GitHub, find your repository and click  connect.
+8.	Under connect to GitHub-section, you can either chose automatic deploys with Enable Automatic Deploys or Manual Deploy, to deploy manually.
+    
+    **Now you can view the deployed app.**
 
 
 ## Credits 

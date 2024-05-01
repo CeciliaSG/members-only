@@ -97,7 +97,7 @@ body,
 
 .navbar-nav .nav-link {
     color: black;
-    font-family: poppins;
+    font-family: poppins, sans-serif;
 }
 
 .nav-link:hover {
@@ -164,7 +164,7 @@ body,
 .post-heading,
 .event-heading,
 .post-neighbourhood {
-    font-family: poppins;
+    font-family: poppins, sans-serif;
     text-transform: uppercase;
     font-size: 14px;
     letter-spacing: 2px;
