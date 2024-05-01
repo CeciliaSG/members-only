@@ -65,10 +65,10 @@
                         <span><i class="fa-regular fa-user"></i></span>
                     </button>
 
-                    <ul class="navbar-nav collapse navbar-collapse justify-content-end account-dropdown"
+                    <ul class="navbar-nav collapse navbar-collapse justify-content-end account-dropdown ml-5"
                         id="navbarText1" style="z-index: 9999;">
                         <li class="nav-item nav-item-account dropdown">
-                            <a class="nav-link dropdown-toggle btn-dropdown nav-link-account"
+                            <a class="nav-link dropdown-toggle btn-dropdown nav-link-account ml-5 mt-3"
                                 id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Account
@@ -97,7 +97,8 @@
                 aria-label="Toggle navigation">
                 <span><i class="fa-solid fa-bars"></i></span>
             </button>
-            <ul class="navbar-nav collapse navbar-collapse mobile-dropdown-login justify-content-end" id="navbarText3">
+            <ul class="navbar-nav collapse navbar-collapse mobile-dropdown-login justify-content-end ml-5"
+                id="navbarText3">
                 <li class="nav-list-item dropdown">
                     <a class="nav-link nav-link-dropdown {% if request.path == login_url %}active"
                         aria-current="page{% endif %}" href="{% url 'account_login' %}">Login</a>

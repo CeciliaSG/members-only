@@ -20,6 +20,24 @@ from content_management.models import SavedPost
 # Sign-up/register view
 @transaction.atomic
 def register(request):
+    """
+    Display the signup form :model:`UserProfile and User Model`.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`UserProfile and UserCreation Model`.
+    
+    ``CustomUserForm and UpdateuserProfileForm ``
+        An instance of :forms:``
+
+    **Template:**
+
+    :template:`core/registration.html`
+    """
+
+
+
     if request.method == 'POST':
         user_form = CustomUserForm(request.POST)
         profile_form = UserProfileForm(request.POST)

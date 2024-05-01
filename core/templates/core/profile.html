@@ -5,9 +5,9 @@
 
 <div class=" body d-flex flex-column h-100 main-bg body-user-profile">
     <div class="container-fluid">
-        <div class="container mx-auto">
+        <div class="container mx-auto mb-5">
             <div class="row">
-                <div class="text-wrap col-md-12">
+                <div class="text-wrap col-md-12 ml-2">
                     <h1 class="h4 form-heading mt-5">Welcome {{ request.user.first_name }}
                         {{ request.user.last_name }}</h1>
                     <p>Username: {{ request.user.username }}!</p>
@@ -37,7 +37,7 @@
                         </div>
                         {% endfor %}
                         {% endif %}
-                        <div class="mb-2">
+                        <div class="mb-2 mt-3 ml-3">
                             <a href="{% url 'account_change_password' %}" class=" form-links">To change your password
                                 please
                                 follow

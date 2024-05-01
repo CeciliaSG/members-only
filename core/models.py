@@ -7,6 +7,10 @@ from django.contrib.postgres.fields import ArrayField
 
 class UserProfile(models.Model):
 
+    """
+    Saves a single user profile for a user related to :model:`User`.
+    """
+
     CITY_CHOICES = [
         ('stockholm', 'Stockholm'),
      ]
@@ -37,10 +41,13 @@ def __str__(self):
         return self.user.username
 
 def edit_user_profile(request):
+    """
+    Updates a single user profile for a user related to :models:`UserProfile`.
+    """
+    
     if request.method == 'POST':
-        if request.method == 'POST':
-            form = UserProfileForm(request.POST, instance=request.user.userprofile)
-            if form.is_valid():
+        form = UserProfileForm(request.POST, instance=request.user.userprofile)
+        if form.is_valid():
                 form.save()
                 return redirect('profile')
     else:

@@ -5,14 +5,17 @@ from .models import UserProfile
 
 
 class CustomUserForm(UserCreationForm):
+
+    """
+    Form class for users to register/create an account.
+    """
+
     email = forms.EmailField(required=True)
     confirm_email = forms.EmailField(required=True, label="Confirm Email")
     first_name = forms.CharField(max_length=30)
     last_name = forms.CharField(max_length=30)
     username = forms.CharField(max_length=30)
     confirm_username = forms.CharField(required=True, label="Confirm Username")
-    #password = forms.CharField(label="Password", widget=forms.PasswordInput)
-    #confirm_password = forms.CharField(label="Confirm Password", widget=forms.PasswordInput)
 
     class Meta:
         model = User
@@ -39,6 +42,9 @@ class UserProfileForm(forms.ModelForm):
     
 # Update user form
 class UpdateUserProfile(forms.ModelForm):
+    """
+    Form class for users to update their profile information.
+    """
 
     city = forms.CharField(max_length=100)
     neighbourhood = forms.CharField(max_length=100)
@@ -58,6 +64,11 @@ class UpdateUserProfile(forms.ModelForm):
         
 
 class UpdateUserForm(forms.ModelForm):
+
+    """
+    Form class for users to update their account information.
+    """
+
     email = forms.EmailField(required=True)
     confirm_email = forms.EmailField(required=True, label="Confirm Email")
     confirm_username = forms.CharField(required=True, label="Confirm Username")
@@ -80,6 +91,10 @@ class UpdateUserForm(forms.ModelForm):
 
 
 class DeleteAccountForm(forms.Form):
+        """
+        Form class for users to delete their account and all associated information
+        """
+
         confirm_delete = forms.BooleanField(required=True, label='Confirm Account Deletion')
 
 

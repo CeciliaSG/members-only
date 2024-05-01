@@ -5,6 +5,9 @@ from event_management.models import Event
 # Create your models here.
 
 class Rsvp(models.Model):
+    """
+    Saves a single RSVP for an event post/entry related to :models:`User and Event`.
+    """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     response_choices = [

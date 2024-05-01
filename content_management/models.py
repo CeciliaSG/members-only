@@ -22,6 +22,10 @@ STATUS = ((0, "Draft"), (1, "Published"), (2, 'Archived'),)
 
 
 class Post(models.Model):
+    """
+    Stores a single post entry related to :model:`Heading`.
+    """
+
     title = models.CharField(max_length=255)
     heading = models.ForeignKey(Heading, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=200, unique=True)
@@ -42,6 +46,11 @@ class Post(models.Model):
 
 
 class SavedPost(models.Model):
+
+    """
+    Saves a single post entry related to :models:`User and Post`.
+    """
+
     user = models.ForeignKey(User, on_delete=models.CASCADE,
         related_name='saved_posts')
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
@@ -55,6 +64,10 @@ class SavedPost(models.Model):
 
 
 class LikedPost(models.Model):
+
+    """
+    Saves a single like for a post entry related to :models:`User and Post`.
+    """
     user = models.ForeignKey(User, on_delete=models.CASCADE,
         related_name='liked_posts')
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
