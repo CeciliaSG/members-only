@@ -7,7 +7,6 @@
         <img src="{% static 'images/louis-hansel-yLUvnCFI500-unsplash.webp' %}" alt="Restaurant Image" class="w-100">
     </div>
 
-
     <section class="container-fluid d-flex justify-content-center bg-white container-post-row">
         <div class="container">
             <h1 class="parent-heading mt-4">
@@ -84,8 +83,7 @@
                                 <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                             </div>
                             <h2 class="h5 card-title">{{ post.title }}</h2>
-                            <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article>
-                </a>
+                            <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article></a>
             </div>
             {% if user.is_authenticated %}
             <div class="post-actions">
