@@ -24,9 +24,6 @@
                         </form>
                         <p> or learn more here (link)</p>
 
-
-
-
                     </div>
                 </div>
             </div>
@@ -56,8 +53,7 @@
                                     <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                                 </div>
                                 <h2 class="h5 card-title">{{ post.title }}</h2>
-                                <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article>
-                    </a>
+                                <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article></a>
                 </div>
                 {% if user.is_authenticated %}
                 <div class="post-actions">
@@ -105,9 +101,7 @@
                                 <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                             </div>
                             <h2 class="h5 card-title">{{ post.title }}</h2>
-                            <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article>
-                </a>
-            </div>
+                            <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article></a></div>
             {% if user.is_authenticated %}
             <div class="post-actions">
                 <button class="btn-post btn-like" data-post-id="{{ post.id }}" aria-label="button like post"><a

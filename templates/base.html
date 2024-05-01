@@ -138,7 +138,7 @@
                             do</a>
                     </li>
                     <li class="nav-list-item
-                        {% if request.path == '/event_management/events/' %}active" aria-current="page{% endif %}"> <a
+                        {% if request.path == '/event_management/events/' %}active" aria-current="page{% endif %}"><a
                             class="nav-link" href="{% url 'event_list' %}">Events</a>
                     </li>
                     <li class="nav-list-item
@@ -182,17 +182,13 @@
                         <p><i class="fa-brands fa-facebook some-footer some-icons"></i></p>
                         <p><i class="fa-brands fa-instagram some-footer some-icons"></i></p>
                         <p><i class="fa-brands fa-pinterest some-footer some-icons"></i></p>
-
                         <div class="copyright-section">
                             <p class="copyright">{% block copyright %}© Spotted Media
                                 2024{% endblock copyright %}</p>
-
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
     </footer>
 
     <!-- Bootstrap JS script -->
