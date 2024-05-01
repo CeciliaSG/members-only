@@ -1,34 +1,72 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-{% if user.is_authenticated %}
 
-<div class="body">
-    <div class="container-fluid d-flex justify-content-center">
+<div class="body about-page">
+    <div class="container-fluid d-flex justify-content-center mt-4 mb-4">
         <div class="container">
             <div class="row">
-                <div class="image-container d-flex justify-content-center align-items-center">
-                    <img src="{{ post.featured_image.url }}" alt="Restaurant Image">
+                <div class="col-md-6 pr-lg-4 text-left">
+                    <h1 class="h2">About Spotted Stockholm</h1>
+                    <p class="about-text">
+                        In the dynamic year of 2022, amid Stockholm's vibrant streets, Spotted emerged as
+                        the ultimate guide to the city's hidden gems. As the world witnessed significant <br>events,
+                        from cultural milestones to technological breakthroughs, we quietly set out to redefine <br>how
+                        Stockholmers <br>explore their
+                        city.
+
+                        Since our inception, Spotted has been synonymous with curated content and insider
+                        recommendations, earning the trust of
+                        Stockholm's diverse population. With a monthly audience of over half a million urban
+                        adventurers and culture enthusiasts, we've become the go-to source for discovering Stockholm's
+                        best-kept
+                        secrets.<br>
+
+                        In addition to our comprehensive guide, we introduced Spotted Memberships, granting
+                        exclusive access to curated
+                        experiences and discounts of up to 50% off. From VIP events to secret gatherings,
+                        our members enjoy unparalleled
+                        privileges across Stockholm.<br>
+
+                        Today, we are a passionate team of Stockholm enthusiasts dedicated to crafting
+                        accessible and actionable content. Our
+                        goal is simple: to inspire people to embrace the vibrant spirit of Stockholm and
+                        create unforgettable memories in the
+                        city we love.<br>
+
+                        <h6>Get in Touch with Spotted!</h6>
+
+                        <p class="about-text"> Have a favorite spot you want us to feature or feedback to share? Reach
+                            out to us at
+                            Editor@SpottedStockholm.com. For
+                            advertising opportunities, contact Advertising@SpottedStockholm.com. Interested in
+                            partnering with us to offer unique
+                            experiences to our members? Email Partnerships@SpottedStockholm.com.<br>
+
+                            For assistance or inquiries from our valued members, contact
+                            Members@SpottedStockholm.com. And if you want to connect
+                            with our founder & CEO, Anna Lundgren, email Anna@SpottedStockholm.com.</p>
+
+                        <p class="about-text"> Send us your letters, poems, or delightful surprises at:<br>
+
+                            Spotted Stockholm<br>
+                            Drottninggatan 20<br>
+                            111 51 Stockholm<br>
+                            Sweden<br></p>
+
+
+                        <p><strong>Thank you for being part of the Spotted community!</strong></p>
+
+                        <span>The Spotted Team</span>
                 </div>
-                <div class="row d-flex justify-content-center align-items-center">
-                    <div class="col-md-12">
-                        <div class="row mx-1">
-                            <div class="col-md-6 pr-lg-4">
-                                <h2 class="post-heading">{{ post.heading }}</h2>
-                                <h1 class="post-title">{{ post.title }}</h1>
-                                <div class="post-content">
-                                    {{ post.content | safe }}
-                                </div>
-                            </div>
-                            <div class="col-md-6 pl-lg-4 mt-5">
-                                <hr class="hr-thick">
-                                <p>Social media icons</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-md-4 pr-lg-4">
+                    </p>
+                    <hr class="hr-thick">
+                    <p></p>
+
                 </div>
             </div>
         </div>
-
-        {% endif %}
-        {% endblock %}
+    </div>
+</div>
+{% endblock %}

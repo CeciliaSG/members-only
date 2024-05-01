@@ -177,4 +177,12 @@ def like_post(request, post_id):
         message = "You liked the post!"
 
     return JsonResponse({'message': message, 'color': 'red'})
+
+
+def about_page(request):
+
+    """
+    Render about page.
+    """
+    return render(request, 'content_management/footer/about.html')
         

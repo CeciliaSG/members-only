@@ -19,8 +19,14 @@
                         </p>
                     </div>
                     <div class="col-md-6">
-                        <button class=" info-button btn mt-3">Try Spotted for free</button>
+                        <form action="{% url 'registration' %}" method="get">
+                            <button type="submit" class="btn info-button mt-3">Try Spotted for free</button>
+                        </form>
                         <p> or learn more here (link)</p>
+
+
+
+
                     </div>
                 </div>
             </div>
