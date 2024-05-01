@@ -272,27 +272,27 @@ In this section, you should go over the different parts of your project, and des
 | ----------- | ----------- |  ----------- |
 | SignUpForm <br> (inludes user and profile forms)| The user can fill in the form, chosing a username and password and then clicking the signup button. | User info. and details are saved to the database. | Both the email and usermail needs to be unique<br> and trying  to use the same email and user mail <br> and email will return the form with an error message. |
 
-| Form | Description | Testing  |
-| ----------- | ----------- |  ----------- |
-| SignIn Form| The user can fill in their email and password to sign in. <br> There is also an option to click remember me. | When the user fills in their login info correctly <br> and clicks the button <br> they are logged in and authorised access the whole site. |
+| Form | Description | Testing  | Comment | Result |
+| ----------- | ----------- |  ----------- |  ----------- |  ----------- |
+| SignIn/Login Form| The user can fill in their email and password to sign in. <br> There is also an option to click remember me. | When the user fills in their login info correctly <br> and clicks the button <br> they are logged in and authorised access the whole site. <br> They will then be taken directly to the landing page for logged in users. | | OK|
 
 
 | Form| Description | Testing  | Comment | Result |
 | ----------- | ----------- |  ----------- | ----------- | ----------- |
-| UpdateUserProfileForm | The user can update their profile <br> by chaning and confirming <br> email and user name | The user can also change <br> their neighbourhood and interest choices. <br> The membership is only available in Stockholm, <br>otherwise they would also be able to choose another city. <br> The email, username and passwords have to match <br> otherwise the form want sign the user up but will return the <br> form to correct the errors, that are marked. | OK |
+| UpdateUserProfileForm | The user can update their profile <br> by chaning and confirming <br> email and user name | The user can also change <br> their neighbourhood and interest choices. <br> The membership is only available in Stockholm, <br>otherwise they would also be able to choose another city. <br> The email, username and passwords have to match <br> otherwise the form want sign the user up but will return the <br> form to correct the errors, that are marked. | | OK |
 
-| Form | Description | Testing |
-| ----------- | ----------- | ----------- |
+| Form | Description | Testing | Comment | Result |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
 | RSVP-form| The user can chose yes or no  <br> and the number of guests <br> and then click the RSVP button | The user can change thir response  <br> by changing their answer and number of guests  <br> and submit again | The users response gets sent  <br> to the database and appears in the admin panel|
 
-| Form | Description |   |
-| ----------- | ----------- |  ----------- |
+| Form | Description |   | | |
+| ----------- | ----------- |  ----------- | ----------- | ----------- |
 | Change email|  |  |
 | | |   |
 |  | | |
 
-| Form | Description |   |
-| ----------- | ----------- |  ----------- |
+| Form | Description |   | | |
+| ----------- | ----------- |  ----------- | ----------- | ----------- |
 | Change password|  |  |
 | | |   |
 |  | | |
@@ -332,13 +332,6 @@ In this section, you should go over the different parts of your project, and des
 
 ## Lighthouse
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your project’s features and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 ### Further Testing
 
@@ -358,6 +351,9 @@ If this section grows too long, you may want to split it off into a separate fil
 ### Unfixed Bugs
 
 You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed. 
+
+Summernote
+Cloudinary
 
 ## Deployment
 
