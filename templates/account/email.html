@@ -37,13 +37,12 @@
           {% endfor %}
 
           <div class="buttonHolder">
-            <button class="secondaryAction btn mt-3" type="submit" name="action_primary"
-              class="btn">{% trans 'Make Primary' %}</button>
+            <button class="secondaryAction btn mt-3" type="submit"
+              name="action_primary">{% trans 'Make Primary' %}</button>
             <button class="secondaryAction btn mt-3" type="submit"
               name="action_send">{% trans 'Re-send Verification' %}</button>
             <button class="primaryAction btn mt-3" type="submit" name="action_remove">{% trans 'Remove' %}</button>
           </div>
-
         </fieldset>
       </form>
 
@@ -61,8 +60,6 @@
           aria-label="submit button for changing email">{% trans "Add Email" %}</button>
       </form>
     </div>
-  </div>
-  </div>
   </div>
 </section>
 {% endif %}

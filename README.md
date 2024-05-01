@@ -328,10 +328,9 @@ In this section, you should go over the different parts of your project, and des
 | Dropdowns | A above but for small screens |   | OK |
 
 
-
-
 ## Lighthouse
 
+- Results:
 
 ### Further Testing
 
@@ -346,6 +345,7 @@ In this section, you should go over the different parts of your project, and des
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator]()
 - CI Python Linter [(https://pep8ci.herokuapp.com/)]()
+- JS Hint [(https://jshint.com/)]
 
 
 ### Unfixed Bugs
@@ -374,9 +374,8 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 
 ### Content 
 
-- The content for the posts and pages were generated with the help of AI.
+- The text content for the posts and pages were generated with the help of AI.
 - The icons used in the project were taken from [Font Awesome](https://fontawesome.com/)
-
 
 - How to extend the Django user model:
 [https://simpleisbetterthancomplex.com](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)
