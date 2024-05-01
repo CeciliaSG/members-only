@@ -7,24 +7,24 @@
     <div class="full-width-container image-container-list-top">
         <img src="{% static 'images/restaurant_1_unsplash.webp' %}" alt="Restaurant Image" class="w-100">
     </div>
-
-    <section class="container-fluid d-flex justify-content-center bg-white container-post-row">
+    <section class="container-fluid d-flex justify-content-center bg-white the-latest container-post-row">
         <div class="container">
+            <h2 class="h1 parent-heading mt-4">Restaurants in Stockholm</h2>
+            <div class="divider">
+                <hr class="section-divider">
+            </div>
+            <h2 class="h4 section-heading mt-4">Restaurants</h2>
             <div class="row post-row">
-                <h1 class="parent-heading mt-4">Restaurants & Bars in Stockholm</h1>
-                <div class="divider">
-                    <hr class="section-divider">
-                </div>
-                <h2 class="h4 section-heading mt-4">Restaurants</h2>
                 {% for post in posts %}
                 <div class="col-md-4 post-col">
                     {% if user.is_authenticated %}
-                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link"
+                        aria-label=" Click link to read full post">
                         {% endif %}
                         <div class="card h-100">
                             {% if post.featured_image.url %}
                             <div class="card-image-container">
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                                <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
                             </div>
                             {% endif %}
                             <div class="card-body">
@@ -33,50 +33,49 @@
                                     <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                                 </div>
                                 <h2 class="h5 card-title">{{ post.title }}</h2>
-                                <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article>
-                            </div>
-                            {% if user.is_authenticated %}
-                    </a>
-                    <div class="post-actions">
-                        <button class="btn-post btn-like" data-post-id="{{ post.id }}" aria-label="button like post"><a
-                                href="{% url 'like_post' post.id %}" class="like-post"><i
-                                    class="fa-solid fa-heart"></i></a></button>
-
-                        <button class="btn-post btn-save-post" data-post-id="{{ post.id }}"
-                            aria-label="button save post"><a href="{% url 'save_post' post.id %}" class="save-post"><i
-                                    class="fa-solid fa-bookmark"></i></a></button>
-                    </div>
-                    {% else %}
-                    <div class="post-symbols">
-                        <i class="fa-solid fa-heart"></i>
-                        <i class="fa-solid fa-bookmark"></i>
-                    </div>
-                    {% endif %}
+                                <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article></a>
                 </div>
                 {% if user.is_authenticated %}
-
+                <div class="post-actions">
+                    <button class="btn-post btn-like" data-post-id="{{ post.id }}" aria-label="button like post">
+                        <a href="{% url 'like_post' post.id %}" aria-label="Click the icon to like the post"
+                            class="like-post"><i class="fa-solid fa-heart"></i></a>
+                    </button>
+                    <button class="btn-post btn-save-post" data-post-id="{{ post.id }}" aria-label="button save post">
+                        <a href="{% url 'save_post' post.id %}" aria-label="Click the icon to bookmark the post"
+                            class="save-post"><i class="fa-solid fa-bookmark"></i></a>
+                    </button>
+                </div>
+                {% else %}
+                <div class="post-symbols">
+                    <i class="fa-solid fa-heart like-post"></i>
+                    <i class="fa-solid fa-bookmark save-post"></i>
+                </div>
                 {% endif %}
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
 </div>
 </div>
 </section>
 
-<section class="container-fluid d-flex justify-content-center bg-whitesmoke container-post-row">
+<section class="container-fluid d-flex justify-content-center bg-white the-latest container-post-row">
     <div class="container">
+        <div class="divider">
+            <hr class="section-divider">
+        </div>
+        <h2 class="h4 section-heading mt-4">Bars</h2>
         <div class="row post-row">
-            <h2 class="h4 section-heading mt-4">Bars</h2>
             {% for post in posts %}
-            {% if post.heading.name == 'Bars' or post.heading.name == 'Perks' %}
             <div class="col-md-4 post-col">
                 {% if user.is_authenticated %}
-                <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                <a href="{% url 'post_detail' post.slug %}" class="post-link"
+                    aria-label=" Click link to read full post">
                     {% endif %}
                     <div class="card h-100">
                         {% if post.featured_image.url %}
                         <div class="card-image-container">
-                            <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                            <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
                         </div>
                         {% endif %}
                         <div class="card-body">
@@ -85,34 +84,30 @@
                                 <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                             </div>
                             <h2 class="h5 card-title">{{ post.title }}</h2>
-                            <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article>
-                        </div>
-                        {% if user.is_authenticated %}
-                </a>
-                <div class="post-actions">
-                    <button class="btn-post btn-like" data-post-id="{{ post.id }}" aria-label="button like post"><a
-                            href="{% url 'like_post' post.id %}" class="like-post"><i
-                                class="fa-solid fa-heart"></i></a></button>
-
-                    <button class="btn-post btn-save-post" data-post-id="{{ post.id }}" aria-label="button save post"><a
-                            href="{% url 'save_post' post.id %}" class="save-post"><i
-                                class="fa-solid fa-bookmark"></i></a></button>
-                </div>
-                {% else %}
-                <div class="post-symbols">
-                    <i class="fa-solid fa-heart"></i>
-                    <i class="fa-solid fa-bookmark"></i>
-                </div>
-                {% endif %}
+                            <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article></a>
             </div>
             {% if user.is_authenticated %}
-
+            <div class="post-actions">
+                <button class="btn-post btn-like" data-post-id="{{ post.id }}" aria-label="button like post">
+                    <a href="{% url 'like_post' post.id %}" aria-label="Click the icon to like the post"
+                        class="like-post"><i class="fa-solid fa-heart"></i></a>
+                </button>
+                <button class="btn-post btn-save-post" data-post-id="{{ post.id }}" aria-label="button save post">
+                    <a href="{% url 'save_post' post.id %}" aria-label="Click the icon to bookmark the post"
+                        class="save-post"><i class="fa-solid fa-bookmark"></i></a>
+                </button>
+            </div>
+            {% else %}
+            <div class="post-symbols">
+                <i class="fa-solid fa-heart like-post"></i>
+                <i class="fa-solid fa-bookmark save-post"></i>
+            </div>
             {% endif %}
         </div>
-        {% endif %}
-        {% endfor %}
+    </div>
+    {% endfor %}
     </div>
     </div>
 </section>
-</div>
+
 {% endblock %}
