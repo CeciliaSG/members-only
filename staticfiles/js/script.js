@@ -1,11 +1,11 @@
-let likeButton = document.getElementsByClassName('btn-like');
-for (let i = 0; i < likeButton.length; i++) {
-    likeButton[i].addEventListener('click', function (event) {
+let likeButtons = document.getElementsByClassName('btn-like');
+
+Array.from(likeButtons).forEach(likeButton => {
+    likeButton.addEventListener('click', function (event) {
         event.preventDefault();
         let postId = this.getAttribute('data-post-id');
         let button = this;
         let icon = button.querySelector('i');
-
 
         $.ajax({
             url: '/like_post/' + postId + '/',
@@ -24,11 +24,12 @@ for (let i = 0; i < likeButton.length; i++) {
             }
         });
     });
-}
+});
 
-let saveButton = document.getElementsByClassName('btn-save-post');
-for (let i = 0; i < saveButton.length; i++) {
-    saveButton[i].addEventListener('click', function (event) {
+let saveButtons = document.getElementsByClassName('btn-save-post');
+
+Array.from(saveButtons).forEach(saveButton => {
+    saveButton.addEventListener('click', function (event) {
         event.preventDefault();
         let postId = this.getAttribute('data-post-id');
         $.ajax({
@@ -41,4 +42,4 @@ for (let i = 0; i < saveButton.length; i++) {
             }
         });
     });
-}
+});

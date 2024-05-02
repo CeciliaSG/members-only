@@ -41,17 +41,15 @@ body,
     color: black;
 }
 
-
 .container {
     margin-top: 15px;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
 }
 
 .container-fluid {
     margin: 0;
     padding: 0;
-    padding-bottom: 20px;
-
+    /* padding-bottom: 20px;*/
 }
 
 .drop-down-right {
@@ -62,20 +60,13 @@ body,
 /* Navbar styling */
 
 .first-nav {
-    /*max-height: 300px;*/
     background-color: black;
     color: #333;
+    height: 82px;
 }
-
 
 .dropdown-account {
     position: relative;
-}
-
-.searchForm {
-    border: none;
-    outline: none;
-    border-radius: 0;
 }
 
 .logo {
@@ -88,8 +79,14 @@ body,
 
 .logo-img {
     width: auto;
-    height: 90px;
-    padding-bottom: 12px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.logo-container {
+    max-height: 110px;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .nav-link {
@@ -99,7 +96,7 @@ body,
 
 .navbar-nav .nav-link {
     color: black;
-    font-family: poppins;
+    font-family: poppins, sans-serif;
 }
 
 .nav-link:hover {
@@ -124,6 +121,11 @@ body,
     background-color: black;
 }
 
+.mobile-dropdown-login {
+    position: relative;
+    z-index: 9999;
+}
+
 .dropdown-menu {
     border-radius: 0;
     outline: none;
@@ -144,14 +146,11 @@ body,
     padding-bottom: 15px;
 }
 
-
 .form-control-sm {
     height: 30px;
 }
 
-.search-form {
-    flex: 1;
-}
+
 
 .form-links {
     text-decoration: underline;
@@ -164,7 +163,7 @@ body,
 .post-heading,
 .event-heading,
 .post-neighbourhood {
-    font-family: poppins;
+    font-family: poppins, sans-serif;
     text-transform: uppercase;
     font-size: 14px;
     letter-spacing: 2px;
@@ -197,6 +196,10 @@ body,
     object-fit: cover;
 }
 
+.post-symbols {
+    margin-bottom: 15px;
+    margin-top: 0;
+}
 
 
 /* Button and link styling */
@@ -220,6 +223,12 @@ body,
     cursor: pointer;
     color: inherit;
     font: inherit;
+}
+
+.info-button {
+    font-size: 90%;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .post-actions,
@@ -266,7 +275,15 @@ a:hover {
     text-decoration: none;
 }
 
+.container {
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
+.container-nav-user {
+    margin: 0;
+    padding: 0;
+}
 
 /*Page and section styling */
 
@@ -281,6 +298,10 @@ a:hover {
 .section-divider {
     border-top: 0.5px solid #333;
 
+}
+
+.container-post-row {
+    padding-bottom: 20px;
 }
 
 .image-container {
@@ -306,18 +327,23 @@ a:hover {
 .image-container-list-top img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center bottom;
 }
 
+
 .info-non-logged-in-users {
-    height: 300px;
+    height: auto;
     width: 100%;
     background-color: black;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-size: 90%;
 }
 
 
@@ -326,15 +352,16 @@ a:hover {
     margin-right: 20px;
 }
 
+
 .some-icons-row {
     justify-content: space-between;
 }
 
 
 .hr {
-    border: 25;
+    border: 25px;
     height: 15px;
-    background-color: black;
+    /*background-color: black;*/
 }
 
 
@@ -342,6 +369,9 @@ a:hover {
     padding: 2em;
 }
 
+.about-text {
+    font-size: 14px;
+}
 
 
 /* Styling user profile */
@@ -368,7 +398,6 @@ a:hover {
     margin-top: 20px;
 }
 
-
 .post-heading {
     font-size: 14px;
 }
@@ -393,7 +422,7 @@ a:hover {
     height: 100%;
     overflow: hidden;
     border-radius: 0;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .card-title {
@@ -452,8 +481,9 @@ footer {
     content: '';
     display: block;
     width: 100%;
-    border-bottom: 1px solid white;
-    padding: 15 15px;
+    border-bottom: 0.5px solid white;
+    padding-top: 5px;
+
 }
 
 .some-icons-row,
@@ -463,13 +493,14 @@ footer {
     text-align: center;
 }
 
+.dropdown {
+    padding-top: 4px;
+}
+
+
 /* Media queries */
 
 @media screen and (max-width: 768px) {
-
-    .first-nav {
-        height: auto;
-    }
 
     .dropdown {
         padding-top: 4px;
@@ -489,34 +520,12 @@ footer {
         margin-bottom: 0;
     }
 
-    .search_field {
-        display: none;
-    }
-
-    .container {
-        overflow: auto;
-    }
 
     .logo-container {
         max-height: 90px;
         padding-bottom: 0;
         margin-bottom: 0;
-
     }
-
-    .logo {
-        position: absolute;
-        top: 21px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 999;
-    }
-
-    .logo-img {
-        width: auto;
-        height: 60px;
-    }
-
 
     .footer .footer-list,
     .footer-container {
@@ -536,37 +545,57 @@ footer {
         flex-direction: column;
     }
 
-    .info-non-logged-in-users {
-        height: auto;
-        width: 100%;
-        background-color: black;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 0;
-        padding-bottom: 15px;
-        padding-top: 15px;
-        font-size: 90%;
-    }
-
     .mobile-dropdown-login {
         position: relative;
         z-index: 9999;
-    }
-
-    .info-button {
-        font-size: 90%;
-        font-weight: bold;
-        margin-bottom: 20px;
     }
 
 }
 
 @media screen and (min-width: 768px) {
 
+    .container {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .navbar-toggler-login {
+        margin-right: 40px;
+        margin-top: 15px;
+    }
+
+    .mobile-dropdown-login {
+        font-size: 20px;
+    }
+
+    .second-navbar {
+        margin-left: 30px;
+    }
+
     .post-link {
         margin-bottom: 10px;
+    }
+
+    .info-non-logged-in-users {
+        height: 300px;
+        width: 100%;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo-img {
+        width: auto;
+        height: 90px;
+        padding-bottom: 12px;
+    }
+
+    .logo-container {
+        max-height: 200px;
+        /*padding-bottom: 1px;*/
+        /* margin-bottom: 17px;*/
     }
 
     /* Footer styling */
@@ -587,6 +616,12 @@ footer {
 
 @media (min-width: 960px) {
 
+    .info-button {
+        font-size: 100%;
+        font-weight: lighter;
+        margin-bottom: 0px;
+    }
+
     .post-link {
         margin-bottom: 0px;
     }
@@ -602,12 +637,17 @@ footer {
 
     .mobile-dropdown-login {
         margin-right: 20px;
+        margin-bottom: 15px;
     }
 
     .account-dropdown {
         padding-right: 40px;
         margin-right: 40px;
         margin-bottom: 0;
+    }
+
+    .mobile-dropdown-login {
+        font-size: 14px;
     }
 
 
