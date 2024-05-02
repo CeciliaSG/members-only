@@ -8,10 +8,11 @@ class HeadingAdmin(admin.ModelAdmin):
     list_display = ['name', 'created_at']
     search_fields = ['name']
 
+
 def create_posts_for_events(modeladmin, request, queryset):
     for event in queryset:
 
-         Post.objects.create(
+        Post.objects.create(
             title=event.title,
             heading=event.heading,
             content=event.description,
@@ -24,14 +25,19 @@ def create_posts_for_events(modeladmin, request, queryset):
             end_date=event.end_date
         )
 
+
 class HeadingAdmin(admin.ModelAdmin):
     list_display = ['name', 'created_at']
     summernote_fields = ('heading')
 
+
 class EventAdmin(SummernoteModelAdmin):
-    list_display = ['title','heading', 'excerpt', 'tag', 'status', 'start_date', 'end_date']
+    list_display = [
+        'title', 'heading', 'excerpt', 'tag', 'status',
+        'start_date', 'end_date']
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('description',)
+
 
 # Register your models here.
 admin.site.register(Heading, HeadingAdmin)

@@ -11,12 +11,6 @@ This is a memberships site with the purpose of prividing members - people living
 
 ## User Experience (UX)
 
- ### User stories
-
- - Kanban Board: <img src="resources_readme/Skärmavbild 2024-05-02 kl. 15.21.49.png">
-
- ### Testing User Stories from User Experience (UX) Section
-
 #### First Time Visitor Goals
 
     1. As a First Time Visitor (non-logged-in), I want to easily understand the main purpose of the site and learn more about the benefits.
@@ -194,6 +188,96 @@ This is a memberships site with the purpose of prividing members - people living
 -   Responsive on all device sizes
 
 -   Interactive elements
+
+### User stories
+User stories are evaluated against test below.
+
+ - Kanban Board: <img src="resources_readme/Skärmavbild 2024-05-02 kl. 15.21.49.png">
+
+**USER STORY: Create and Manage content on the site**
+As a site administrator I can create, update and delete content so that I can manage the site.
+
+AC1 As a logged in user, they can create content.
+AC2 As a logged in user, they can read content.
+AC3 As a logged in user, they can update content.
+AC4 As a logged in user, they can delete content.
+
+**The requirements are met**
+
+**USER STORY: Account registration and user authentication**
+
+As a user I want to be able register for an account so that I access the members only content.
+
+AC1 A user can easily register an account and fill in their account information.
+AC2 When the user is logged-in they can access the members-only content.
+
+**The requirements are met**
+
+**USER STORY: Login, logout**
+AC1 As a logged-in user, I want to easily be able to log out of my account when I'm finished.
+AC2 As a user/member I can easily and securely logg-in.
+
+**The requirements are met**
+
+**USER STORY: Send email to users**
+
+AC1 When they sign-up, update and when they forgotten their password
+
+**The requirements are met** but isn't connected and can only be accessed in the terminal.
+
+**USER STORY: Home page access**
+As a home page visitor I can want to access the home page so that I can learn about the site.
+
+AC1 As a first time visitor I want to be able to understand what the site is about and what benefits
+AC2 As a logged-in user I want to be able to access members-only information relevant to my profile.
+
+**The requirements are met**
+
+**USER STORY: Opening and reading posts**
+
+AC1 As a logged in user/member I want to be able to open and read posts about restaurants, bars, events etc.
+
+**The requirements are met**
+
+**USER STORY: Reading and updating**
+
+AC1 As a logged-in user I want to easily be able to update my account information.
+
+**The requirements are met**
+
+**USER STORY: Saving posts and showing them in the user account**
+
+**The requirements are met**
+
+**Events, access and RSVP**
+
+AC1 As a logged in user I want to be able to access the events page and RSVP to events.
+AC2 As an admin I want to be able to create events and display them on the events page.
+AC2 As an admin I want to be able to administer rsvps.
+AC4 As an admin I want to be able to respond to users who have rsvp:ed to events.
+
+**All the requirements have been met apart from the last one which as not been implemented yet**
+
+**Deleting account and account information**
+AC1 As a logged-in user I want to easily be able to delete my account information, and my account.
+
+**The requirements are met**
+
+**USER STORY: Liking posts and showing the likes in when the user is logged in (change colour of like icon)**
+
+AC1 As a logged-in user I want to easily be able to delete my account information, and my account.
+
+**The requirements are met**
+
+**USER STORY: Liking posts and showing the likes in when the user is logged in (change colour of like icon)**
+
+AC1 As a logged in user I want to be able to like posts about restaurants, bars etc and se my liked posts/articles.
+AC2 As a logged in user I want to be able to like and unlike posts.
+AC3 As a logged in user I want to save posts to my profile so I can locate them later.
+
+**Not all of the rquirements ahve been met. Posts can be liked/un-liked saved/un-saved and the colour of the heart icon changes but isn't saved.**
+
+ ### Testing User Stories from User Experience (UX) Section
 
 ### Existing Features, Testing & unit testing
 
@@ -423,22 +507,30 @@ Steps to follow for deployment to Heroku:
 [https://simpleisbetterthancomplex.com](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)
 -  Creating a like function:
 [StackOverflow](https://stackoverflow.com/search?q=creating+a+like+function+in+Django)
--- Liking/unliking posts without refreshing the page
-[StackOverflow](https://stackoverflow.com/questions/63081738/like-unlike-a-post-without-refreshing-the-page)
+- Liking/un-liking posts, saving/un-saving posts:
+(https://stackoverflow.com/questions/14007453/my-own-like-button-django-ajax-how)
+- [StackOverflow](https://stackoverflow.com/questions/14007453/my-own-like-button-django-ajax-how)
+- [StackOverflow](https://stackoverflow.com/questions/63081738/like-unlike-a-post-without-refreshing-the-page)
 
 - Using Ajax with Django:
 [StackOverflow](https://stackoverflow.com/questions/20306981/how-do-i-integrate-ajax-with-django-applications/20307569#20307569)
 - Prevent default event:
 [StackOverflow](https://stackoverflow.com/questions/7056669/how-to-prevent-default-event-handling-in-an-onclick-method)
 - Let user delete their account:
-[StackOverflow](https://stackoverflow.com/questions/54864355/django-user-account-delete-and-then-return-redirect-and-render)
+- [StackOverflow](https://stackoverflow.com/questions/54864355/django-user-account-delete-and-then-return-redirect-and-render)
 (https://stackoverflow.com/questions/65510305/django-how-to-enable-users-to-delete-their-account)
 (https://stackoverflow.com/questions/38047408/how-to-allow-user-to-delete-account-in-django-allauth)
 - Overlay for frontpage:
  [Overlay](https://www.w3schools.com/howto/howto_css_overlay.asp)
 
+Exists/ Doesnotexist:
+- [StackOverflow](https://stackoverflow.com/questions/40910149/django-exists-versus-doesnotexist)
+
  - Setting up email allAuth:
  [https://florianbgt.com/](https://florianbgt.com/posts/django_allauth_email_login)
+
+ - Filter if tag:
+- [StackOverflow](https://stackoverflow.com/questions/5923676/template-filter-if-tag)
 
 
 ### Content 

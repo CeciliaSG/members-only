@@ -33,13 +33,17 @@ class CustomUserForm(UserCreationForm):
         if username and confirm_username and username != confirm_username:
             raise forms.ValidationError("Usernames do not match.")
 
-class UserProfileForm(forms.ModelForm):  
-    interests = forms.MultipleChoiceField(choices=UserProfile.INTEREST_CHOICES, required=False, widget=forms.CheckboxSelectMultiple)
-      
+
+class UserProfileForm(forms.ModelForm):
+    interests = forms.MultipleChoiceField(choices=UserProfile.INTEREST_CHOICES,
+                                          required=False, widget=forms.
+                                          CheckboxSelectMultiple)
+
     class Meta:
         model = UserProfile
         fields = ['city', 'neighbourhood', 'interests']
-    
+
+
 # Update user form
 class UpdateUserProfile(forms.ModelForm):
     """
@@ -48,20 +52,24 @@ class UpdateUserProfile(forms.ModelForm):
 
     city = forms.CharField(max_length=100)
     neighbourhood = forms.CharField(max_length=100)
-    interests = forms.MultipleChoiceField(choices=UserProfile.INTEREST_CHOICES, required=False, widget=forms.CheckboxSelectMultiple)
+    interests = forms.MultipleChoiceField(choices=UserProfile.INTEREST_CHOICES,
+                                          required=False, widget=forms.
+                                          CheckboxSelectMultiple)
 
     class Meta:
-            model = UserProfile
-            fields = ['city', 'neighbourhood', 'interests']
+        model = UserProfile
+        fields = ['city', 'neighbourhood', 'interests']
 
     def __init__(self, *args, **kwargs):
         instance = kwargs.pop('instance', None)
         super(UpdateUserProfile, self).__init__(*args, **kwargs)
 
         if instance and instance.user:
-                self.fields['email'] = forms.EmailField(initial=instance.user.email, required=True)
-                self.fields['username'] = forms.CharField(initial=instance.user.username, max_length=30)
-        
+            self.fields['email'] = forms.EmailField(initial=instance.user.
+                                                    email, required=True)
+            self.fields['username'] = forms.CharField(initial=instance.user.
+                                                      username, max_length=30)
+
 
 class UpdateUserForm(forms.ModelForm):
 
@@ -91,10 +99,9 @@ class UpdateUserForm(forms.ModelForm):
 
 
 class DeleteAccountForm(forms.Form):
-        """
-        Form class for users to delete their account and all associated information
-        """
+    """
+    Form class for users to delete their account and all associated information
+    """
 
-        confirm_delete = forms.BooleanField(required=True, label='Confirm Account Deletion')
-
-
+    confirm_delete = forms.BooleanField(required=True,
+                                        label='Confirm Account Deletion')

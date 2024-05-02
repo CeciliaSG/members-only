@@ -3,8 +3,8 @@ from .views import edit_user_profile, register, delete_account
 
 
 urlpatterns = [
-path('core/', register, name='registration'),
-path('account/', edit_user_profile, name='profile'),
-path('delete-account/', delete_account, name='delete_account'),
+    path('core/', register, name='registration'),
+    path('account/', edit_user_profile, name='profile'),
+    path('delete-account/', delete_account, name='delete_account'),
 
 ]

@@ -4,13 +4,11 @@ from event_management.models import Event
 from cloudinary.models import CloudinaryField
 
 
-# Create your models here.
-
 class Heading(models.Model):
     name = models.CharField(max_length=100)
     parent_heading = models.ForeignKey('self',
-    on_delete=models.SET_NULL, blank=True,
-    null=True, related_name='children')
+                                       on_delete=models.SET_NULL, blank=True,
+                                       null=True, related_name='children')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -52,7 +50,7 @@ class SavedPost(models.Model):
     """
 
     user = models.ForeignKey(User, on_delete=models.CASCADE,
-        related_name='saved_posts')
+                             related_name='saved_posts')
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -69,7 +67,7 @@ class LikedPost(models.Model):
     Saves a single like for a post entry related to :models:`User and Post`.
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE,
-        related_name='liked_posts')
+                             related_name='liked_posts')
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     button_color = models.CharField(max_length=30, blank=True, null=True)

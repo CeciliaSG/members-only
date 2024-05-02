@@ -28,32 +28,37 @@ class UserProfile(models.Model):
         ('restaurants', 'Restaurants'),
         ('bars', 'Bars'),
         ('events', 'Events'),
-         ('whats on', 'Whats On'),
+        ('whats on', 'Whats On'),
      ]
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     city = models.CharField(max_length=100, choices=CITY_CHOICES)
-    neighbourhood = models.CharField(max_length=100, choices=NEIGHBOURHOOD_CHOICES)
-    interests = ArrayField(models.CharField(max_length=100, choices=INTEREST_CHOICES), blank=True)
+    neighbourhood = models.CharField(max_length=100,
+                                     choices=NEIGHBOURHOOD_CHOICES)
+    interests = ArrayField(models.CharField(max_length=100,
+                                            choices=INTEREST_CHOICES),
+                           blank=True)
 
 
 def __str__(self):
-        return self.user.username
+
+    return self.user.username
+
 
 def edit_user_profile(request):
     """
     Updates a single user profile for a user related to :models:`UserProfile`.
     """
-    
+
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=request.user.userprofile)
         if form.is_valid():
-                form.save()
-                return redirect('profile')
+            form.save()
+            return redirect('profile')
     else:
-            form = UserProfileForm(instance=request.user.userprofile)
-    return render(request, 'profile.html', {'form': form}) 
-
+        form = UserProfileForm(instance=request.user.userprofile)
+    return render(request, 'profile.html', {'form': form})
+    
 
           
 

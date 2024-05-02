@@ -22,19 +22,20 @@ from django.conf.urls.static import static
 
 
 
+
 urlpatterns = [
 
     #Django admin
-     path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
 
-    # Allauth url
-    path("accounts/", include("allauth.urls")),  
-   
+    #Allauth url
+    path("accounts/", include("allauth.urls")),
 
-    # Custom Urls
+
+    #Custom Urls
     path('', include('content_management.urls')),
     path('summernote/', include('django_summernote.urls')),
-    path('event_management/', include('event_management.urls')), 
+    path('event_management/', include('event_management.urls')),
     path('core/', include('core.urls')),
     path('rsvp/', include('rsvp.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

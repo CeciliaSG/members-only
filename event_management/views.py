@@ -6,7 +6,7 @@ from .models import Event, Heading
 
 def event_list(request):
     """
-    Gets list of event posts/objects 
+    Gets list of event posts/objects
     and displays to event_list.html.
     """
     print("Event list view accessed")
@@ -20,16 +20,14 @@ def event_list(request):
         tags_filter = request.GET.getlist('tags')
         events = events.filter(tag__in=tags_filter)
 
-    return render(request, 'events/event_list.html', {'events': events, 'tags': tags})
-
+    return render(request, 'events/event_list.html', {
+            'events': events, 'tags': tags})
 
 
 def event_detail(request, event_id):
     """
-    Gets individual event post/object 
+    Gets individual event post/object
     and displays to event_detail.html.
     """
     event = get_object_or_404(Event, id=event_id)
     return render(request, 'events/event_detail.html', {'event': event})
-
-

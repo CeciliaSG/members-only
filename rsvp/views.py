@@ -27,4 +27,5 @@ def rsvp_event(request, event_id):
     else:
         form = RsvpForm(initial={'event_id': event_id})
 
-    return render(request, 'events/event_detail.html', {'form': form, 'event': event})
+    return render(request, 'events/event_detail.html', {
+        'form': form, 'event': event})
