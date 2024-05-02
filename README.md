@@ -2,14 +2,32 @@
 
 [View the live project here.](https://)
 
-<h2 align="center"><img src="images/SpottedJournal_Logo3.webp"></h2>
+<h2 align="center"><img src="https://"></h2>
+
+
+![Logo]<img src="static/images/SpottedJournal_Logo3.webp">
+
 
 # Spotted members city guide
 
 An insider membership guide to Stockholm.
 This is a memberships site with the purpose of prividing members - people living in Stockholm - with a comprehensive guide of everything going on in the city as well as some perks for members making it good value for money. The site intends to includs everything from bars and restaurants, to things tod do, events, musical festivals etc.
 
+
+
+![Responsice Mockup](https://github.com/lucyrush/readme-template/blob/master/media/love_running_mockup.png)
+
+
 ## User Experience (UX)
+
+ ### User stories
+
+ - **Kanban Board**
+ <img src="resources_readme/Skärmavbild 2024-05-02 kl. 15.21.49.png">
+
+ 
+
+ ### Testing User Stories from User Experience (UX) Section
 
 #### First Time Visitor Goals
 
@@ -19,7 +37,7 @@ This is a memberships site with the purpose of prividing members - people living
         2. A non logged-in user can have a look around, see the posts with the excerpts, click the nav-links to the other pages, but not click the post links. The non-logged in user has the option to sign-up or read more about the membership.
         3. There is also a seperate navbar for logging in and signing up. This navbar dropsdown on smaller screens.
 
-    2. As a First Time Visitor and returning visitor (logge-in), I want to be able to easily be able to navigate throughout the site to find content and administrating my account.
+    2. As a First Time Visitor and returning visitor (logged-in), I want to be able to easily be able to navigate throughout the site to find content and administrating my account.
 
         1. The site has been designed to be fluid and has a content navbar at the top of every page, to never to entrap the user. At the top of each page there is a clean navigation bar with links to each content page, the links are cleary and simly described so uers know whre it will take them.
         2. On the Contact Us Page, after a form response is submitted, the page refreshes and the user is brought to the top of the page where the navigation bar is.
@@ -66,7 +84,7 @@ This is a memberships site with the purpose of prividing members - people living
         -   The Playfair Display font is the main font, together with Poppins used throughout the whole website with Serif and Sans Serif as the fallback fonts in case for any reason the font isn't being imported into the site correctly. 
 
     -   #### Imagery
-        -   Imagery is important. The large, top image is designed to be striking and catch the user's attention. The post and events images are choosen to give the site a vibrant, fun and energetic feeling.
+        -   Imagery makes an internet site more interesting. The large, top image is designed to be striking and catch the user's attention. The post and events images are choosen to give the site a vibrant, fun and energetic feeling.
 
 *   ### Wireframes
 
@@ -145,6 +163,7 @@ This is a memberships site with the purpose of prividing members - people living
 | | City | Charfield  |
 
 
+
 ## Technologies Used
 
 ### Languages Used
@@ -189,102 +208,13 @@ This is a memberships site with the purpose of prividing members - people living
 
 -   Interactive elements
 
-### User stories
-User stories are evaluated against test below.
-
- - Kanban Board: <img src="resources_readme/Skärmavbild 2024-05-02 kl. 15.21.49.png">
-
-**USER STORY: Create and Manage content on the site**
-As a site administrator I can create, update and delete content so that I can manage the site.
-
-AC1 As a logged in user, they can create content.
-AC2 As a logged in user, they can read content.
-AC3 As a logged in user, they can update content.
-AC4 As a logged in user, they can delete content.
-
-**The requirements are met**
-
-**USER STORY: Account registration and user authentication**
-
-As a user I want to be able register for an account so that I access the members only content.
-
-AC1 A user can easily register an account and fill in their account information.
-AC2 When the user is logged-in they can access the members-only content.
-
-**The requirements are met**
-
-**USER STORY: Login, logout**
-AC1 As a logged-in user, I want to easily be able to log out of my account when I'm finished.
-AC2 As a user/member I can easily and securely logg-in.
-
-**The requirements are met**
-
-**USER STORY: Send email to users**
-
-AC1 When they sign-up, update and when they forgotten their password
-
-**The requirements are met** but isn't connected and can only be accessed in the terminal.
-
-**USER STORY: Home page access**
-As a home page visitor I can want to access the home page so that I can learn about the site.
-
-AC1 As a first time visitor I want to be able to understand what the site is about and what benefits
-AC2 As a logged-in user I want to be able to access members-only information relevant to my profile.
-
-**The requirements are met**
-
-**USER STORY: Opening and reading posts**
-
-AC1 As a logged in user/member I want to be able to open and read posts about restaurants, bars, events etc.
-
-**The requirements are met**
-
-**USER STORY: Reading and updating**
-
-AC1 As a logged-in user I want to easily be able to update my account information.
-
-**The requirements are met**
-
-**USER STORY: Saving posts and showing them in the user account**
-
-**The requirements are met**
-
-**Events, access and RSVP**
-
-AC1 As a logged in user I want to be able to access the events page and RSVP to events.
-AC2 As an admin I want to be able to create events and display them on the events page.
-AC2 As an admin I want to be able to administer rsvps.
-AC4 As an admin I want to be able to respond to users who have rsvp:ed to events.
-
-**All the requirements have been met apart from the last one which as not been implemented yet**
-
-**Deleting account and account information**
-AC1 As a logged-in user I want to easily be able to delete my account information, and my account.
-
-**The requirements are met**
-
-**USER STORY: Liking posts and showing the likes in when the user is logged in (change colour of like icon)**
-
-AC1 As a logged-in user I want to easily be able to delete my account information, and my account.
-
-**The requirements are met**
-
-**USER STORY: Liking posts and showing the likes in when the user is logged in (change colour of like icon)**
-
-AC1 As a logged in user I want to be able to like posts about restaurants, bars etc and se my liked posts/articles.
-AC2 As a logged in user I want to be able to like and unlike posts.
-AC3 As a logged in user I want to save posts to my profile so I can locate them later.
-
-**Not all of the rquirements ahve been met. Posts can be liked/un-liked saved/un-saved and the colour of the heart icon changes but isn't saved.**
-
- ### Testing User Stories from User Experience (UX) Section
-
-### Existing Features, Testing & unit testing
+### Existing Features
 
 - __Navigation Bar__
 
   - Featured on all pages, the full responsive navigation bar includes links to the Logo (which is also a linked to the home-page), Restaurants & Bars, Things To Do, What's On, Events, Neighbourhoods, Perks and Sign and Sign Up (when logged out) and a dropdown with profile, logout, change password and change email when logged in. The navbar page and is identical on each page to allow for easy navigation.
   - This section will allow the user (logged in and non-autenticated) to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button. 
+  - The logo works as the link to the home/landing page.
 
 ![Nav Bar](https://)
 
@@ -331,9 +261,10 @@ AC3 As a logged in user I want to save posts to my profile so I can locate them 
 
   - The footer section includes links to the relevant social media sites for Spotted. The links will open to a new tab to allow easy navigation for the user. 
   - the footer also inclued links to About (inkl. contactinfo), Become a member and
- Partnerships pages.  
+ Partnerships pages.  The membership and parternship pages aren't finished and don't at this time have any links.
 
-![Footer](https://)
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.12.29.png">
+
 
 
 - __The Sign Up Page__
@@ -416,6 +347,7 @@ AC3 As a logged in user I want to save posts to my profile so I can locate them 
 - Navigation directly between events without having to back out to the event_list.
 - At the moment the email feature only runs in the terminal, and email verification isn't required to sign up. Connecting the email and sending actual emails, and email verficatiosn is a feature that should be implemented.
 - More filtering functions, and more tags.
+
 
 
 ## Testing other Features
@@ -507,30 +439,22 @@ Steps to follow for deployment to Heroku:
 [https://simpleisbetterthancomplex.com](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)
 -  Creating a like function:
 [StackOverflow](https://stackoverflow.com/search?q=creating+a+like+function+in+Django)
-- Liking/un-liking posts, saving/un-saving posts:
-(https://stackoverflow.com/questions/14007453/my-own-like-button-django-ajax-how)
-- [StackOverflow](https://stackoverflow.com/questions/14007453/my-own-like-button-django-ajax-how)
-- [StackOverflow](https://stackoverflow.com/questions/63081738/like-unlike-a-post-without-refreshing-the-page)
+-- Liking/unliking posts without refreshing the page
+[StackOverflow](https://stackoverflow.com/questions/63081738/like-unlike-a-post-without-refreshing-the-page)
 
 - Using Ajax with Django:
 [StackOverflow](https://stackoverflow.com/questions/20306981/how-do-i-integrate-ajax-with-django-applications/20307569#20307569)
 - Prevent default event:
 [StackOverflow](https://stackoverflow.com/questions/7056669/how-to-prevent-default-event-handling-in-an-onclick-method)
 - Let user delete their account:
-- [StackOverflow](https://stackoverflow.com/questions/54864355/django-user-account-delete-and-then-return-redirect-and-render)
+[StackOverflow](https://stackoverflow.com/questions/54864355/django-user-account-delete-and-then-return-redirect-and-render)
 (https://stackoverflow.com/questions/65510305/django-how-to-enable-users-to-delete-their-account)
 (https://stackoverflow.com/questions/38047408/how-to-allow-user-to-delete-account-in-django-allauth)
 - Overlay for frontpage:
  [Overlay](https://www.w3schools.com/howto/howto_css_overlay.asp)
 
-Exists/ Doesnotexist:
-- [StackOverflow](https://stackoverflow.com/questions/40910149/django-exists-versus-doesnotexist)
-
  - Setting up email allAuth:
  [https://florianbgt.com/](https://florianbgt.com/posts/django_allauth_email_login)
-
- - Filter if tag:
-- [StackOverflow](https://stackoverflow.com/questions/5923676/template-filter-if-tag)
 
 
 ### Content 

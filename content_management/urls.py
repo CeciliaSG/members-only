@@ -1,5 +1,7 @@
 from django.urls import path
-from .views import post_detail, tag_filter, PostListView, save_post, like_post, PostListByHeadingView, about_page
+from .views import (post_detail, tag_filter, 
+PostListView, save_post, like_post, PostListByHeadingView, 
+about_page)
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static

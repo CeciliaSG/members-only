@@ -4,7 +4,7 @@
 
 <div class="body things-to-do-page">
     <div class="full-width-container image-container-list-top">
-        <img src="{% static 'images/8.webp' %}" alt="Restaurant Image" class="w-100">
+        <img src="{% static 'images/8.webp' %}" alt="Bar Image" class="w-100">
     </div>
 
     <section class="container-fluid d-flex justify-content-center bg-whitesmoke container-post-row">
@@ -64,7 +64,7 @@
             <h2 class="h1 parent-heading mt-4">Things to do & Perks</h2>
             <div class="row post-row">
                 {% for post in posts %}
-                {% if post.heading.name == "" or post.heading.name == 'Perks' %}
+                {% if post.heading.name == "Things to do" or post.heading.name == 'Perks' %}
                 <div class="col-md-4 post-col">
                     <div class="card h-100">
                         {% if user.is_authenticated %}

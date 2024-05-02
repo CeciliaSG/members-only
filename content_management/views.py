@@ -1,6 +1,7 @@
 from django.http import HttpResponse, JsonResponse
 from django.db.models import Q
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import (render, 
+redirect, get_object_or_404)
 from django.views import generic
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -166,7 +167,8 @@ def like_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
 
     try:
-        liked_post = LikedPost.objects.get(user=request.user, post=post, post_id=post_id)
+        liked_post = LikedPost.objects.get(user=request.user, 
+        post=post, post_id=post_id)
         liked_post.delete()
         message = "You unliked the post!"
 
