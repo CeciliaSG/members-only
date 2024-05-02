@@ -51,7 +51,7 @@
             <div class="container-fluid d-flex align-items-center logo-container mb-2">
                 <a class="navbar-logo me-auto" href="{% url 'post_list' %}">
                     <span class="logo"><img src="{% static 'images/SpottedJournal_Logo3.webp' %}" class="logo-img"
-                            alt="Logo" max-width="300" height="60"></span>
+                            alt="Logo"></span>
                 </a>
                 {% if user.is_authenticated %}
                 <div class="container d-flex justify-content-end ml-auto container-nav-user">
@@ -71,7 +71,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
-                                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Signout</a>
                                 </li>
                                 <li><a class="dropdown-item" href="{% url 'account_change_password' %}">Change
                                         password</a></li>

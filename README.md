@@ -2,13 +2,18 @@
 
 [View the live project here.](https://)
 
-<h2 align="center"><img src="https://"></h2>
+<h2 align="center"><img src="images/SpottedJournal_Logo3.webp"></h2>
+
+# Spotted members city guide
+
+An insider membership guide to Stockholm.
+This is a memberships site with the purpose of prividing members - people living in Stockholm - with a comprehensive guide of everything going on in the city as well as some perks for members making it good value for money. The site intends to includs everything from bars and restaurants, to things tod do, events, musical festivals etc.
 
 ## User Experience (UX)
 
  ### User stories
 
- - Kanban Board
+ - Kanban Board: <img src="resources_readme/Skärmavbild 2024-05-02 kl. 15.21.49.png">
 
  ### Testing User Stories from User Experience (UX) Section
 
@@ -146,9 +151,6 @@
 | | City | Charfield  |
 
 
-
-
-
 ## Technologies Used
 
 ### Languages Used
@@ -187,24 +189,13 @@
 
 
 
-![Logo](https://)
-
-# Spotted members city guide
-
-An insider membership guide to Stockholm.
-This is a memberships site with the purpose of prividing members - people living in Stockholm - with a comprehensive guide of everything going on in the city as well as some perks for members making it good value for money. The site intends to includs everything from bars and restaurants, to things tod do, events, musical festivals etc.
-
-
-
-![Responsice Mockup](https://github.com/lucyrush/readme-template/blob/master/media/love_running_mockup.png)
-
 ## Features 
 
 -   Responsive on all device sizes
 
 -   Interactive elements
 
-### Existing Features
+### Existing Features, Testing & unit testing
 
 - __Navigation Bar__
 
@@ -224,6 +215,10 @@ This is a memberships site with the purpose of prividing members - people living
 
   - The Events page give the user an overview of the events available will allow the user to see the benefits of signing up as a member.
   - The listed events are cklickable and takes the user to a details page with more information about the eve, it also includes a function for the member to RSVP to events and let the arrangers know how many gusets they will be bringing.
+
+| Form | Description | Testing | Comment | Result |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| **RSVP-form**, App: rsvp, Template: event_detail.html| Gives the uer the ability to RSVP for psoted events. <br> The RSVP-form is part of the event_detail page. The user can chose yes or no <br> and the number of guests <br> and then click the RSVP button. | The user can change their response <br> by changing their answer and number of guests <br> and submiting again. | The user's response gets sent  <br> to the database and is also whown in the admin panel| OK |
  
 ![Events Page](https://)
 ![Events Detail Page](https://)
@@ -261,18 +256,30 @@ This is a memberships site with the purpose of prividing members - people living
 
   - This page allows users to get signed up to the membersite. The user will also be able specify their interest and let the site know which neighbourhood they live in. The user will be asked to submit their full name, a username, email address choose a password.
 
+| Form | Description | Testing |
+| ----------- | ----------- |  ----------- |
+| **SignUpForm**, App: Core, Template: register.html <br> (inludes user and profile form)| Gives the user the ability signup to the site. The user can fill in the form, chosing a username and password and then clicking the signup button. | User info. and details are saved to the database. | Both the email and usermail needs to be unique<br> and trying  to use the same email and user mail <br> and email will return the form with an error message. |
+
 ![Sign Up](https://)
 
 
 - __The Profile Page__
 
   - This page allows users to see their personal info. and profile choices, as well as their saved posts.
+| Form| Description | Testing  | Comment | Result |
+| ----------- | ----------- |  ----------- | ----------- | ----------- |
+| **UpdateUserProfileForm**, App: Core, Template: profile.html | Gives user the ability to change their details and preferences. <br>The user can update their profile <br> by changing and confirming <br> email and user name. The form is pre-populated <br> with existing details. | The user can also change <br> their neighbourhood and interest choices. <br> The membership is only available in Stockholm, <br>otherwise they would also be able to choose another city. <br> The email, username and passwords have to match <br> otherwise the form want sign the user up but will return the <br> form to correct the errors, that are marked. | | OK |
 
 ![Profile](https://)
 
-- __The Login Page__
+
+- __The Signin Page__
 
   - Registered users can login.
+
+| Form | Description | Testing  | Comment | Result |
+| ----------- | ----------- |  ----------- |  ----------- |  ----------- |
+| **SignIn**, Form App: Core, Template: login.html | Gives the user the ability to signin with their email and password. The user can fill in their email and password to sign in. <br> There is also an option to click remember me. | When the user fills in their login info correctly <br> and clicks the button <br> they are logged in and authorised access the whole site. <br> They will then be taken directly to the landing page for logged in users. | | OK|
 
 ![Log In](https://)
 
@@ -287,91 +294,68 @@ This is a memberships site with the purpose of prividing members - people living
 
   - Registered users can change/update their email.
 
+| Form | Description | Testing   | Comment |Result |
+| ----------- | ----------- |  ----------- | ----------- | ----------- |
+| **Change email**, AllAuth, email.html|  |  |
+| | |   |
+
 ![Change email](https://)
+
 
 - __The Change Password__
 
-  - Registered users can change their password.
+  - Gives the user the ability to change their password. Registered users can change their password.
+
+| Form | Description | Testing  | Comment | Result |
+| ----------- | ----------- |  ----------- | ----------- | ----------- |
+| **Change password**, AllAuth, password_change.html|  |  |
+| | |   |
+
 
 ![Change password](https://)
 
 
 - __The Delete Account Page__
 
-  - Registered users/members can delete their account and all associated information.
+  - Gives the user the ability to easily delete their account. Registered users/members can delete their account and all associated information.
+
+| Form | Description | Testing  |Comment | Result|
+| ----------- | ----------- |  ----------- | ----------- | ----------- |
+| **DeleteAccountForm**, App: Core, delete_account.html | The user gets to the Delete account page by clicking the link in the frist/dropdown navbar. Here the user can delete their account. <br> Confirming by checking the box <br> and then clicking delete account. | The user, user info and any profile information <br> related to the user is deleted from the admin panel and the database. |  OK |
 
 ![Delete](https://)
 
 
 ### Features Left to Implement
 
-- Navigation directly between posts without having to back out to the post_list
-- Navigation directly between events without having to back out to the event_list
-
-# Testing 
-
-## Unit testing 
-
-### Testing Forms
-
-| Form | Description | Testing |
-| ----------- | ----------- |  ----------- |
-| SignUpForm <br> (inludes user and profile forms)| The user can fill in the form, chosing a username and password and then clicking the signup button. | User info. and details are saved to the database. | Both the email and usermail needs to be unique<br> and trying  to use the same email and user mail <br> and email will return the form with an error message. |
-
-| Form | Description | Testing  | Comment | Result |
-| ----------- | ----------- |  ----------- |  ----------- |  ----------- |
-| SignIn/Login Form| The user can fill in their email and password to sign in. <br> There is also an option to click remember me. | When the user fills in their login info correctly <br> and clicks the button <br> they are logged in and authorised access the whole site. <br> They will then be taken directly to the landing page for logged in users. | | OK|
-
-
-| Form| Description | Testing  | Comment | Result |
-| ----------- | ----------- |  ----------- | ----------- | ----------- |
-| UpdateUserProfileForm | The user can update their profile <br> by chaning and confirming <br> email and user name | The user can also change <br> their neighbourhood and interest choices. <br> The membership is only available in Stockholm, <br>otherwise they would also be able to choose another city. <br> The email, username and passwords have to match <br> otherwise the form want sign the user up but will return the <br> form to correct the errors, that are marked. | | OK |
-
-| Form | Description | Testing | Comment | Result |
-| ----------- | ----------- | ----------- | ----------- | ----------- |
-| RSVP-form| The user can chose yes or no  <br> and the number of guests <br> and then click the RSVP button | The user can change thir response  <br> by changing their answer and number of guests  <br> and submit again | The users response gets sent  <br> to the database and appears in the admin panel|
-
-| Form | Description |   | | |
-| ----------- | ----------- |  ----------- | ----------- | ----------- |
-| Change email|  |  |
-| | |   |
-|  | | |
-
-| Form | Description |   | | |
-| ----------- | ----------- |  ----------- | ----------- | ----------- |
-| Change password|  |  |
-| | |   |
-|  | | |
-
-| Form | Description |   |
-| ----------- | ----------- |  ----------- |
-| DeleteAccountForm | Here the user can delte their account. <br> Confirming by checking the box <br> and clicking delete account. | The user, user info and any profile information <br> related to the user is deleted. |
+- Navigation directly between posts without having to back out to the post_list.
+- Navigation directly between events without having to back out to the event_list.
+- At the moment the email feature only runs in the terminal, and email verification isn't required to sign up. Connecting the email and sending actual emails, and email verficatiosn is a feature that should be implemented.
+- More filtering functions, and more tags.
 
 
 ## Testing other Features
 
 ### Logout
-|  | Description |   |
+| Function | Description | Result   |
 | ----------- | ----------- |  ----------- |
-| Signout|  |  |
-| Signout button | |   |
-|  | | |
+| **Signout**, App: Core, Template: login.html | When the Signout link in the first navbar (dropdown) is clicked <br> it takes the user to the signout page.<br> Where they can click the signout button <br> that signs them out and returns them to <br> the logged out version of the index page.| ok |
 
-### Buttons ### (not part of any form)
 
 | Feature| Description | Testing | Comment | Result|
 | ----------- | ----------- | ----------- | ----------- | ----------- |
-| Like-button | Icon/button for liking and unliking posts | Likes or unlikes the post <br> when clicked and returns a Json response  <br>in the form of an alert | Saves the instance of the post-like to the database | OK |
-| Save-button | Icon/button for saving and unsaving posts | Saves or unsaves the post <br> to the profile and returns a Json response <br> in the form of an alert  | Saves the instance of the post to the database | OK |
+| **Like-icon**, App: content_management, Template: all templates displaying post lists. | Icon/button for liking and unliking posts | Likes or unlikes the post <br> when clicked and returns a Json response  <br>in the form of an alert | Saves the instance of the post-like to the database, so that when it is ckicked again there is a Json response telling the uer that tey have already liked it and it is now unliked. | OK |
+| **Save-icon**, App: content_management, Template: all templates displaying post lists. | Icon for saving and unsaving posts. | Saves or unsaves the post <br> to the database. Saved posts are shown in the user profile. It returns a Json response telling the user they have saved the post. When they click the save icon again thre is a message telling users they have now unsaved he post. <br> Message in the form of an alert.  | Saves the instance of the post to the database. | OK |
 
 
+### Buttons ### (not part of any form)
 
 ### Navbar & dropdowns
 | Feature | Description | Testing | Comment | Result|
 | ----------- | ----------- | ----------- | ----------- | ----------- |
-| First navbar| Links to all signup and profile <br> related functions and pages  | All page links were tested and worked | OK |
+| First navbar| Links to all signup and profile <br> related functions and pages.  | All page links were tested and worked. | OK |
 | Second navbar| Links to all content pages | All page links were tested and worked.  | OK |
-| Dropdowns | A above but for small screens |   | OK |
+| Dropdowns | As above but for small screens | All links ere tesed and worked.  | OK |
 
 
 ## Lighthouse
@@ -387,18 +371,19 @@ This is a memberships site with the purpose of prividing members - people living
 ### Validator Testing 
 
 - HTML
-  - Stray end tags were flagged for when checking code when non.logged in, this is because the some links are only available to authorized users, which means the link isn't visible when logged out. The link wraps a card so the end tag is visible to the browser. When checking the same html when logged in it passes validation. No other errors were returned when passing through the official [W3C validator]()
-- CSS
-  - No errors were found when passing through the official [(Jigsaw) validator]()
+  - Stray end tags were flagged for when checking code when non.logged in, this is because the some links are only available to authorized users, which means the link isn't visible when logged out. The link wraps a card so the end tag is visible to the browser. When checking the same html when logged in it passes validation. 
+ -  Summernote is causing issues by rendering code inte white spaces on the details_templates. This throw error when validating the HTML for these pages.
+-  No other errors were returned when passing through the official [W3C validator]()
+
+- No errors were found when passing through the official [(Jigsaw) validator]()
 - CI Python Linter [(https://pep8ci.herokuapp.com/)]()
-- JS Hint [(https://jshint.com/)]
+- JS Hint [(https://jshint.com/)] No error were found when passing the code through JSHint.
 
 
 ### Unfixed Bugs
 
 You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed. 
 
-Summernote
 Cloudinary
 
 ## Deployment
@@ -434,12 +419,6 @@ Steps to follow for deployment to Heroku:
 
 - I used the I Think Therefore I Blog walkthrough as a guide to get my project set up and get me started. And I refered back to it throughout the project.
 
-
-### Content 
-
-- The text content for the posts and pages were generated with the help of AI.
-- The icons used in the project were taken from [Font Awesome](https://fontawesome.com/)
-
 - How to extend the Django user model:
 [https://simpleisbetterthancomplex.com](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)
 -  Creating a like function:
@@ -461,36 +440,17 @@ Steps to follow for deployment to Heroku:
  - Setting up email allAuth:
  [https://florianbgt.com/](https://florianbgt.com/posts/django_allauth_email_login)
 
+
+### Content 
+
+- The text content for the posts and pages were generated with the help of AI.
+- The icons used in the project were taken from [Font Awesome](https://fontawesome.com/)
+
 ### Media
 
 - The logo and favicon was created by my husband.
 
-- The images for posts, events and pages were downloaded from free imgaes on [Unsplash](https://unsplash.com/)
+- The images for posts, events and pages were downloaded from free images on [Unsplash](https://unsplash.com/)
 
-## Other General Project Advice
 
-Below you will find a couple of extra tips that may be helpful when completing your project. Remember that each of these projects will become part of your final portfolio so it’s important to allow enough time to showcase your best work! 
-
-- One of the most basic elements of keeping a healthy commit history is with the commit message. When getting started with your project, read through [this article](https://chris.beams.io/posts/git-commit/) by Chris Beams on How to Write  a Git Commit Message 
-  - Make sure to keep the messages in the imperative mood 
-
-- When naming the files in your project directory, make sure to consider meaningful naming of files, point to specific names and sections of content.
-  - For example, instead of naming an image used ‘image1.png’ consider naming it ‘landing_page_img.png’. This will ensure that there are clear file paths kept. 
-
-- Do some extra research on good and bad coding practices, there are a handful of useful articles to read, consider reviewing the following list when getting started:
-  - [Writing Your Best Code](https://learn.shayhowe.com/html-css/writing-your-best-code/)
-  - [HTML & CSS Coding Best Practices](https://medium.com/@inceptiondj.info/html-css-coding-best-practice-fadb9870a00f)
-  - [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html#General)
-
-Getting started with your Portfolio Projects can be daunting, planning your project can make it a lot easier to tackle, take small steps to reach the final outcome and enjoy the process! 
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
