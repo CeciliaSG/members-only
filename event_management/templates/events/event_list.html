@@ -25,13 +25,13 @@
                                 {% endif %}
                                 {% if event.featured_image.url %}
                                 <div class="card-image-container">
-                                    <img class="card-img-top" src=" {{ post.featured_image.url }}"
+                                    <img class="card-img-top" src=" {{ event.featured_image.url }}"
                                         alt="{{ post.image }}">
                                 </div>
                                 {% endif %}
                                 <div class="card-body">
                                     <div class="d-flex">
-                                        <h2 class="post-heading">{{ evebt.heading }} |&nbsp;</h2>
+                                        <h2 class="post-heading">{{ event.heading }} |&nbsp;</h2>
                                         <h2 class="post-neighbourhood">{{ event.neighbourhood }}</h2>
                                     </div>
                                     <h2 class="h5 card-title">{{ event.title }}</h2>
