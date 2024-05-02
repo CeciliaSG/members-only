@@ -387,7 +387,7 @@ This is a memberships site with the purpose of prividing members - people living
 ### Validator Testing 
 
 - HTML
-  - No errors were returned when passing through the official [W3C validator]()
+  - Stray end tags were flagged for when checking code when non.logged in, this is because the some links are only available to authorized users, which means the link isn't visible when logged out. The link wraps a card so the end tag is visible to the browser. When checking the same html when logged in it passes validation. No other errors were returned when passing through the official [W3C validator]()
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator]()
 - CI Python Linter [(https://pep8ci.herokuapp.com/)]()
