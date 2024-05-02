@@ -48,8 +48,7 @@
             <div class="container-fluid d-flex align-items-center logo-container mb-2">
                 <a class="navbar-logo me-auto" href="{% url 'post_list' %}">
                     <span class="logo"><img src="{% static 'images/SpottedJournal_Logo3.webp' %}" class="logo-img"
-                            alt="Logo"></span>
-                </a>
+                            alt="Logo"></span></a>
                 {% if user.is_authenticated %}
                 <div class="container d-flex justify-content-end ml-auto container-nav-user">
                     <button class="navbar-toggler account-btn" type="button" data-bs-toggle="collapse"
