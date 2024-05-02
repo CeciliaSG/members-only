@@ -59,14 +59,13 @@
                     </div>
                     {% if user.is_authenticated %}
                     <div class="post-actions">
-                        <button class="btn-post btn-like" data-post-id="{{ post.id }}" aria-label="button like post"><a
-                                href="{% url 'like_post' post.id %}" class="like-post" aria-label="Click the icon to
-                            like the post"><i class="fa-solid fa-heart"></i></a></button>
+                        <a href="{% url 'like_post' post.id %}" class="like-post" aria-label="Click the icon to
+                            like the post"><button class="btn-post btn-like" data-post-id="{{ post.id }}"
+                                aria-label="button like post"><i class="fa-solid fa-heart"></i></button></a>
 
-                        <button class="btn-post btn-save-post" data-post-id="{{ post.id }}"
-                            aria-label="button save post"><a href="{% url 'save_post' post.id %}" class="save-post"
-                                aria-label="Click the icon to
-                            bookmark the post"><i class="fa-solid fa-bookmark"></i></a></button>
+                        <a href="{% url 'save_post' post.id %}" class="save-post" aria-label="Click the icon to
+                            bookmark the post"> <button class="btn-post btn-save-post" data-post-id="{{ post.id }}"
+                                aria-label="button save post"><i class="fa-solid fa-bookmark"></i></button></a>
                     </div>
                     {% else %}
                     <div class="post-symbols">
