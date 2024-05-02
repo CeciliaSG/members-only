@@ -16,7 +16,6 @@
             <h2 class="h4 section-heading mt-4">Weekend ideas</h2>
             <div class="row post-row">
                 {% for post in posts %}
-                {% if post.heading.name == "Bars" or post.heading.name == 'Perks' %}
                 <div class="col-md-4 post-col">
                     <div class="card h-100">
                         {% if user.is_authenticated %}
@@ -24,7 +23,7 @@
                             {% endif %}
                             {% if post.featured_image.url %}
                             <div class="card-image-container">
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.image }}">
                             </div>
                             {% endif %}
                             <div class="card-body">
@@ -36,6 +35,7 @@
                                 <div class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</div>
                             </div>
                         </a>
+
                         {% if user.is_authenticated %}
                         <div class="post-actions">
                             <div class="btn-post btn-like" data-post-id="{{ post.id }}"><a
@@ -54,7 +54,6 @@
                         {% endif %}
                     </div>
                 </div>
-                {% endif %}
                 {% endfor %}
             </div>
         </div>
@@ -62,10 +61,10 @@
 
     <section class="container-fluid d-flex justify-content-center bg-whitesmoke container-post-row">
         <div class="container">
-            <h2 class="h1 parent-heading mt-4">Bars</h2>
+            <h2 class="h1 parent-heading mt-4">Things to do & Perks</h2>
             <div class="row post-row">
                 {% for post in posts %}
-                {% if post.heading.name == "Bars" or post.heading.name == 'Perks' %}
+                {% if post.heading.name == "" or post.heading.name == 'Perks' %}
                 <div class="col-md-4 post-col">
                     <div class="card h-100">
                         {% if user.is_authenticated %}
