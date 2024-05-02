@@ -4,45 +4,42 @@
 
 
 <div class="body">
-    <div class="events">
-        <div class="full-width-container image-container-list-top">
-            <img src="{% static 'images/pablo-heimplatz-ZODcBkEohk8-unsplash 2.webp' %}" alt="Restaurant Image"
-                class="w-100">
-        </div>
-        <section class="container-fluid d-flex justify-content-center bg-whitesmoke container-post-row">
-            <div class="container">
-                <h2 class="h1 parent-heading mt-4">Events in Stockholm</h2>
-                <div class="divider">
-                    <hr class="section-divider">
-                </div>
-                <h2 class="h4 section-heading mt-4">Festivals</h2>
-                <div class="row post-row">
-                    {% for event in events %}
-                    <div class="col-md-4 post-col">
-                        <div class="card h-100">
-                            {% if user.is_authenticated %}
-                            <a href="{% url 'event_detail' event.id %}" class="post-link">
-                                {% endif %}
-                                {% if event.featured_image.url %}
-                                <div class="card-image-container">
-                                    <img class="card-img-top" src=" {{ event.featured_image.url }}"
-                                        alt="{{ post.image }}">
-                                </div>
-                                {% endif %}
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <h2 class="post-heading">{{ event.heading }} |&nbsp;</h2>
-                                        <h2 class="post-neighbourhood">{{ event.neighbourhood }}</h2>
-                                    </div>
-                                    <h2 class="h5 card-title">{{ event.title }}</h2>
-                                    <div class="card-excerpt">{{ event.excerpt|safe|truncatewords:10 }}</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
+    <div class="full-width-container image-container-list-top">
+        <img src="{% static 'images/pablo-heimplatz-ZODcBkEohk8-unsplash 2.webp' %}" alt="Restaurant Image"
+            class="w-100">
     </div>
-    {% endblock %}
+    <section class="container-fluid d-flex justify-content-center bg-whitesmoke container-post-row">
+        <div class="container">
+            <h2 class="h1 parent-heading mt-4">Events in Stockholm</h2>
+            <div class="divider">
+                <hr class="section-divider">
+            </div>
+            <h2 class="h4 section-heading mt-4">Festivals</h2>
+            <div class="row post-row">
+                {% for event in events %}
+                <div class="col-md-4 post-col">
+                    <div class="card h-100">
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'event_detail' event.id %}" class="post-link">
+                            {% endif %}
+                            {% if event.featured_image.url %}
+                            <div class="card-image-container">
+                                <img class="card-img-top" src=" {{ event.featured_image.url }}" alt="{{ post.image }}">
+                            </div>
+                            {% endif %}
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <h2 class="post-heading">{{ event.heading }} |&nbsp;</h2>
+                                </div>
+                                <h2 class="h5 card-title">{{ event.title }}</h2>
+                                <div class="card-excerpt">{{ event.excerpt|safe|truncatewords:10 }}</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
