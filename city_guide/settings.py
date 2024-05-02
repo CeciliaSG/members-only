@@ -1,3 +1,5 @@
+import cloudinary
+
 """
 Django settings for city_guide project.
 
@@ -30,7 +32,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['8000-ceciliasg-membersonly-vpjme6sjhrb.ws-eu110.gitpod.io', '.herokuapp.com']
@@ -63,6 +65,10 @@ INSTALLED_APPS = [
     'django_summernote',
     'cloudinary',
 ]
+
+cloudinary.config (
+    secure = True,
+)
 
 SOCIALACCOUNT_PROVIDERS = {
    "google": {
