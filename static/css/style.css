@@ -483,7 +483,7 @@ footer {
     background-color: black;
     font-size: 1em;
     color: white;
-    max-height: auto;
+    height: auto;
     position: fixed;
 }
 
