@@ -9,10 +9,9 @@
             <img src="{% static 'images/pablo-heimplatz-ZODcBkEohk8-unsplash 2.webp' %}" alt="Restaurant Image"
                 class="w-100">
         </div>
-
-        <section class="container-fluid d-flex justify-content-center bg-white the-latest">
+        <section class="container-fluid d-flex justify-content-center bg-whitesmoke container-post-row">
             <div class="container">
-                <h1 class="parent-heading mt-4">Events in Stockholm</h1>
+                <h2 class="h1 parent-heading mt-4">Events in Stockholm</h2>
                 <div class="divider">
                     <hr class="section-divider">
                 </div>
@@ -20,65 +19,30 @@
                 <div class="row post-row">
                     {% for event in events %}
                     <div class="col-md-4 post-col">
-                        {% if user.is_authenticated %}
-                        <a href="{% url 'event_detail' event.id %}" class="post-link"
-                            aria-label=" Click link to read full post">
-                            {% endif %}
-                            <div class="card h-100">
+                        <div class="card h-100">
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'event_detail' event.id %}" class="post-link">
+                                {% endif %}
                                 {% if event.featured_image.url %}
                                 <div class="card-image-container">
-                                    <img class="card-img-top" src="{{ event.featured_image.url }}"
-                                        alt="{{ event.title }}">
+                                    <img class="card-img-top" src=" {{ post.featured_image.url }}"
+                                        alt="{{ post.image }}">
                                 </div>
                                 {% endif %}
                                 <div class="card-body">
                                     <div class="d-flex">
-                                        <h2 class="post-heading">{{ event.heading }} |&nbsp;</h2>
+                                        <h2 class="post-heading">{{ evebt.heading }} |&nbsp;</h2>
                                         <h2 class="post-neighbourhood">{{ event.neighbourhood }}</h2>
                                     </div>
                                     <h2 class="h5 card-title">{{ event.title }}</h2>
-                                    <article class="card-excerpt">{{ event.excerpt|safe|truncatewords:10 }}</article>
-                        </a>
+                                    <div class="card-excerpt">{{ event.excerpt|safe|truncatewords:10 }}</div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-
+                    {% endfor %}
                 </div>
             </div>
-            {% endfor %}
+        </section>
     </div>
-</div>
-</section>
-
-<section class="container-fluid d-flex justify-content-center bg-white the-latest">
-    <div class="container">
-        <h2 class="h4 section-heading mt-4">Things to do</h2>
-        <div class="row post-row pb-4">
-            {% for event in events %}
-            <div class="col-md-4 post-col">
-                {% if user.is_authenticated %}
-                <a href="{% url 'event_detail' event.id %}" class="post-link"
-                    aria-label=" Click link to read full post">
-                    {% endif %}
-                    <div class="card h-100">
-                        {% if event.featured_image.url %}
-                        <div class="card-image-container">
-                            <img class="card-img-top" src="{{ event.featured_image.url }}" alt="{{ event.title }}">
-                        </div>
-                        {% endif %}
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <h2 class="post-heading">{{ event.heading }} |&nbsp;</h2>
-                                <h2 class="post-neighbourhood">{{ event.neighbourhood }}</h2>
-                            </div>
-                            <h2 class="h5 card-title">{{ event.title }}</h2>
-                            <article class="card-excerpt">{{ event.excerpt|safe|truncatewords:10 }}</article>
-                </a>
-            </div>
-
-        </div>
-    </div>
-    {% endfor %}
-    </div>
-    </div>
-</section>
-</div>
-{% endblock %}
+    {% endblock %}
