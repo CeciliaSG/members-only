@@ -7,26 +7,24 @@
         <img src="{% static 'images/louis-hansel-yLUvnCFI500-unsplash.webp' %}" alt="Restaurant Image" class="w-100">
     </div>
 
-    <section class="container-fluid d-flex justify-content-center bg-white container-post-row">
+    <section class="container-fluid d-flex justify-content-center bg-whitesmoke container-post-row">
         <div class="container">
-            <h1 class="parent-heading mt-4">
-                Things to do in Stockholm</h1>
+            <h2 class="h1 parent-heading mt-4">Bars</h2>
             <div class="divider">
                 <hr class="section-divider">
             </div>
-            <h2 class="h4 section-heading mt-4">Bars</h2>
+            <h2 class="h4 section-heading mt-4">Weekend ideas</h2>
             <div class="row post-row">
                 {% for post in posts %}
                 {% if post.heading.name == "Bars" or post.heading.name == 'Perks' %}
                 <div class="col-md-4 post-col">
-                    {% if user.is_authenticated %}
-                    <a href="{% url 'post_detail' post.slug %}" class="post-link"
-                        aria-label=" Click link to read full post">
-                        {% endif %}
-                        <div class="card h-100">
+                    <div class="card h-100">
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                            {% endif %}
                             {% if post.featured_image.url %}
                             <div class="card-image-container">
-                                <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
                             </div>
                             {% endif %}
                             <div class="card-body">
@@ -35,79 +33,80 @@
                                     <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
                                 </div>
                                 <h2 class="h5 card-title">{{ post.title }}</h2>
-                                <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article>
-                    </a>
-                </div>
-                {% if user.is_authenticated %}
-                <div class="post-actions">
-                    <button class="btn-post btn-like" data-post-id="{{ post.id }}" aria-label="button like post">
-                        <a href="{% url 'like_post' post.id %}" aria-label="Click the icon to like the post"
-                            class="like-post"><i class="fa-solid fa-heart"></i></a>
-                    </button>
-                    <button class="btn-post btn-save-post" data-post-id="{{ post.id }}" aria-label="button save post">
-                        <a href="{% url 'save_post' post.id %}" aria-label="Click the icon to bookmark the post"
-                            class="save-post"><i class="fa-solid fa-bookmark"></i></a>
-                    </button>
-                </div>
-                {% else %}
-                <div class="post-symbols">
-                    <i class="fa-solid fa-heart like-post"></i>
-                    <i class="fa-solid fa-bookmark save-post"></i>
-                </div>
-                {% endif %}
-            </div>
-        </div>
-        {% endif %}
-        {% endfor %}
-</div>
-</div>
-</section>
+                                <div class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</div>
+                            </div>
+                        </a>
+                        {% if user.is_authenticated %}
+                        <div class="post-actions">
+                            <div class="btn-post btn-like" data-post-id="{{ post.id }}"><a
+                                    href="{% url 'like_post' post.id %}" class="like-post" aria-label="link">
+                                    <i class="fa-solid fa-heart"></i></a></div>
 
-<section class="container-fluid d-flex justify-content-center bg-whitesmoke container-post-row">
-    <div class="container">
-        <h2 class="h4 section-heading mt-4">What's On</h2>
-        <div class="row post-row">
-            {% for post in posts %}
-            {% if post.heading.name == "What's on" or post.heading.name == 'Perks' %}
-            <div class="col-md-4 post-col">
-                {% if user.is_authenticated %}
-                <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                    {% endif %}
-                    <div class="card h-100">
-                        {% if post.featured_image.url %}
-                        <div class="card-image-container">
-                            <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                            <div class="btn-post btn-save-post" data-post-id="{{ post.id }}">
+                                <a href="{% url 'save_post' post.id %}" class="save-post" aria-label="link">
+                                    <i class="fa-solid fa-bookmark"></i></a></div>
+                        </div>
+                        {% else %}
+                        <div class="post-symbols">
+                            <i class="fa-solid fa-heart"></i>
+                            <i class="fa-solid fa-bookmark"></i>
                         </div>
                         {% endif %}
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <h2 class="post-heading">{{ post.heading }} |&nbsp;</h2>
-                                <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
-                            </div>
-                            <h2 class="h5 card-title">{{ post.title }}</h2>
-                            <article class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</article></a>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
             </div>
-            {% if user.is_authenticated %}
-            <div class="post-actions">
-                <button class="btn-post btn-like" data-post-id="{{ post.id }}" aria-label="button like post"><a
-                        href="{% url 'like_post' post.id %}" class="like-post" aria-label="Click the icon to
-                            like the post"><i class="fa-solid fa-heart"></i></a></button>
-
-                <button class="btn-post btn-save-post" data-post-id="{{ post.id }}" aria-label="button save post"><a
-                        href="{% url 'save_post' post.id %}" class="save-post" aria-label="Click the icon to
-                            bookmark the post"><i class="fa-solid fa-bookmark"></i></a></button>
-            </div>
-            {% else %}
-            <div class="post-symbols">
-                <i class="fa-solid fa-heart"></i>
-                <i class="fa-solid fa-bookmark"></i>
-            </div>
-            {% endif %}
         </div>
-    </div>
-    {% endif %}
-    {% endfor %}
-    </div>
-</section>
+    </section>
+
+    <section class="container-fluid d-flex justify-content-center bg-whitesmoke container-post-row">
+        <div class="container">
+            <h2 class="h1 parent-heading mt-4">Bars</h2>
+            <div class="row post-row">
+                {% for post in posts %}
+                {% if post.heading.name == "Bars" or post.heading.name == 'Perks' %}
+                <div class="col-md-4 post-col">
+                    <div class="card h-100">
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                            {% endif %}
+                            {% if post.featured_image.url %}
+                            <div class="card-image-container">
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                            </div>
+                            {% endif %}
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <h2 class="post-heading">{{ post.heading }} |&nbsp;</h2>
+                                    <h2 class="post-neighbourhood">{{ post.neighbourhood }}</h2>
+                                </div>
+                                <h2 class="h5 card-title">{{ post.title }}</h2>
+                                <div class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</div>
+                            </div>
+                        </a>
+                        {% if user.is_authenticated %}
+                        <div class="post-actions">
+                            <div class="btn-post btn-like" data-post-id="{{ post.id }}"><a
+                                    href="{% url 'like_post' post.id %}" class="like-post" aria-label="link">
+                                    <i class="fa-solid fa-heart"></i></a></div>
+
+                            <div class="btn-post btn-save-post" data-post-id="{{ post.id }}">
+                                <a href="{% url 'save_post' post.id %}" class="save-post" aria-label="link">
+                                    <i class="fa-solid fa-bookmark"></i></a></div>
+                        </div>
+                        {% else %}
+                        <div class="post-symbols">
+                            <i class="fa-solid fa-heart"></i>
+                            <i class="fa-solid fa-bookmark"></i>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 </div>
 {% endblock %}
