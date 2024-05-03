@@ -121,24 +121,23 @@
                             & Bars</a>
                     </li>
                     <li class="nav-list-item {% if '/things_to_do/' in request.path %}active"
-                        aria-current="page{% endif %} mt-2">
+                        aria-current="page{% endif %}">
                         <a class="nav-link" href="{% url 'things_to_do' tags='things_to_do,whats_on,perks' %}">Things to
                             do</a>
                     </li>
                     <li class="nav-list-item
-                    {% if request.path == '/event_management/events/' %}active" aria-current="page{% endif %} mt-2"><a
+                    {% if request.path == '/event_management/events/' %}active" aria-current="page{% endif %}"><a
                             class="nav-link" href="{% url 'event_list' %}">Events</a>
                     </li>
                     <li class="nav-list-item
-                    {% if request.path == '/neighbourhoods/' %}active" aria-current="page{% endif %} mt-2">
+                    {% if request.path == '/neighbourhoods/' %}active" aria-current="page{% endif %}">
                         <a class="nav-link" href="{% url 'neighbourhoods' %}">Neighbourhoods</a>
                     </li>
                     <li class="nav-list-item {% if '/whats_on/' in request.path %}active"
-                        aria-current="page{% endif %} mt-2">
+                        aria-current="page{% endif %}">
                         <a class="nav-link" href="{% url 'whats_on' tags='whats_on' %}">What's On</a>
                     </li>
-                    <li class="nav-list-item {% if '/perks/' in request.path %}active"
-                        aria-current="page{% endif %} mt-2">
+                    <li class="nav-list-item {% if '/perks/' in request.path %}active" aria-current="page{% endif %}">
                         <a class="nav-link" href="{% url 'perks' tags='perks,whats_on, restaurants, bars' %}">Perks</a>
                     </li>
                 </ul>
