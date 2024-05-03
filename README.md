@@ -307,11 +307,11 @@ This is a memberships site with the purpose of prividing members - people living
 
 | Form | Description | Testing  | Comment | Result |
 | ----------- | ----------- |  ----------- | ----------- | ----------- |
-| **Change password**, AllAuth, password_change.html|  |  |
-| | |   |
+| **Change password**, AllAuth, password_change.html| Form for changing user password | The user can enter their current password and then <br>chose a new one and confirm before clicking change password. <br>The user can also request a link by licking Forgot password? if they have forgotten their current password. <br> This will send them an email with a link to restore <br> their password (currently only runs in the terminal, but works.)   | The password is changed and works when logging out, <br> and then loggin in woth the new password. | OK|
 
+<br>
 
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.12.29.png">
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.11.35.png">
 
 
 - __The Delete Account Page__
@@ -381,6 +381,7 @@ This is a memberships site with the purpose of prividing members - people living
 - Implementing a map pinpointing all recommendations, events, what's on etc.
 - A search field in the navbar.
 - Read more for the sections as the number of of posts and events will grow.
+- Add more confirmation messages to make the user experience better i.e. after registering, signout, password change etc.
 
 
 ### Unfixed Bugs
