@@ -199,7 +199,10 @@ This is a memberships site with the purpose of prividing members - people living
   - This section will allow the user (logged in and non-autenticated) to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button. 
   - The logo works as the link to the home/landing page.
 
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.12.29.png">
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.38.png">
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.27.21.png">
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.27.07.png">
+
 
 - __The landing page image__
 
@@ -224,7 +227,7 @@ This is a memberships site with the purpose of prividing members - people living
 
 **Post List detail page:**<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.54.png">
 
-**RSVP Form:**<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.54.png">
+**RSVP Form:**<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.59.png">
 
 - __Restaurants & Bars, What's On, & Things to do page__
 
@@ -232,11 +235,11 @@ This is a memberships site with the purpose of prividing members - people living
 <br>
 
 ## Post pages: ##
-**Post List detail page:**
+**Post List page:**
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.18.png">
 <br>
 
-**Post List detail page:**<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.54.png">
+**Post details page:**<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.54.png">
 
 
 - __Neighbourhoods Page__
@@ -312,8 +315,7 @@ This is a memberships site with the purpose of prividing members - people living
 
 | Form | Description | Testing   | Comment |Result |
 | ----------- | ----------- |  ----------- | ----------- | ----------- |
-| **Change email**, AllAuth, email.html|  |  |
-| | |   |
+| **Change email**, AllAuth, email.html| The user can change or add and email. | The user can enter an emial in the field and click add email. The email can also be removed. | The email will be added to the account. More than one email can be associated with an account. Getting a verification only works in development environment, i.e. - only runs in the terminal at the moment, and is not yet set up for the deployed site.|
 
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.11.51.png">
 
@@ -325,7 +327,7 @@ This is a memberships site with the purpose of prividing members - people living
 
 | Form | Description | Testing  | Comment | Result |
 | ----------- | ----------- |  ----------- | ----------- | ----------- |
-| **Change password**, AllAuth, password_change.html| Form for changing user password | The user can enter their current password and then <br>chose a new one and confirm before clicking change password. <br>The user can also request a link by licking Forgot password? if they have forgotten their current password. <br> This will send them an email with a link to restore <br> their password (currently only runs in the terminal, but works.)   | The password is changed and works when logging out, <br> and then loggin in woth the new password. | OK|
+| **Change password**, AllAuth, password_change.html| Form for changing user password | The user can enter their current password and then <br>chose a new one and confirm before clicking change password. <br>The user can also request a link by licking Forgot password? if they have forgotten their current password. <br> This will send them an email with a link to restore <br> their password (currently only runs in the terminal and in development environement. Yet to be implemented for the deployed site.)  | The password is changed and works when logging out, <br> and then loggin in with the new password. | OK|
 
 <br>
 
@@ -437,13 +439,21 @@ Steps to follow for deployment to Heroku:
 
 - I used the I Think Therefore I Blog walkthrough as a guide to get my project set up and get me started. And I refered back to it throughout the project.
 
+- I've used Django documentation extensively to help me build models, views and forms.
+
+- I've extensively searched StackOverflow for how to and solutions to things I've wante to do in this project.
+
 - How to extend the Django user model:
 [https://simpleisbetterthancomplex.com](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)
 -  Creating a like function:
 [StackOverflow](https://stackoverflow.com/search?q=creating+a+like+function+in+Django)
 -- Liking/unliking posts without refreshing the page
 [StackOverflow](https://stackoverflow.com/questions/63081738/like-unlike-a-post-without-refreshing-the-page)
+- [StackOverflow](https://stackoverflow.com/questions/73250735/- 
+- [StackOverflow]why-does-my-like-button-return-a-json-object-liked-true-but-doesnt-work-wi)
 
+- [Django](https://forum.djangoproject.com/t/multiple-choice-with-checkbox/14907)
+https://stackoverflow.com/questions/62296423/how-to-use-q-to-filter-using-string
 - Using Ajax with Django:
 [StackOverflow](https://stackoverflow.com/questions/20306981/how-do-i-integrate-ajax-with-django-applications/20307569#20307569)
 - Prevent default event:
@@ -452,9 +462,12 @@ Steps to follow for deployment to Heroku:
 [StackOverflow](https://stackoverflow.com/questions/54864355/django-user-account-delete-and-then-return-redirect-and-render)
 (https://stackoverflow.com/questions/65510305/django-how-to-enable-users-to-delete-their-account)
 (https://stackoverflow.com/questions/38047408/how-to-allow-user-to-delete-account-in-django-allauth)
-- Overlay for frontpage:
- [Overlay](https://www.w3schools.com/howto/howto_css_overlay.asp)
 
+https://stackoverflow.com/questions/56792640/how-to-display-all-titles-of-posts-related-to-a-post-using-tags
+https://stackoverflow.com/questions/13076822/django-dynamically-filtering-with-q-objects
+
+- (https://stackoverflow.com/questions/62853713/how-filter-objects-in-django-views)
+- [StackOverflow](https://stackoverflow.com/questions/16011434/using-foreach-method-in-javascript)
  - Setting up email allAuth:
  [https://florianbgt.com/](https://florianbgt.com/posts/django_allauth_email_login)
 
