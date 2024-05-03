@@ -9,9 +9,21 @@ from .forms import RsvpForm
 # Create your views here.
 @login_required
 def rsvp_event(request, event_id):
+
     """
-    Lets users RSVP for events.
+    Renders the form event rsvp in :model:`.rsvp`,
+    and lets uers rsvp.
+
+    **Context**
+
+    ``queryset``
+        An instance of :form `rsvp`
+        
+    **Template:**
+
+    :template:`events/event_detail.html`
     """
+
     event = Event.objects.get(pk=event_id)
     rsvp, created = Rsvp.objects.get_or_create(user=request.user, event=event)
 

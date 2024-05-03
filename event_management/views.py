@@ -5,11 +5,19 @@ from .models import Event, Heading
 # Create your views here
 
 def event_list(request):
+
     """
-    Gets list of event posts/objects
-    and displays to event_list.html.
+    Returns all instances of events/objects and displays
+    as list :model:`event_management.Event`.
+
+    **Context**
+    ``event``
+        The most recent instance of :model:`event_management.Event`.
+
+    **Template**
+    :template:`events/event_detail.html`
+
     """
-    print("Event list view accessed")
 
     events = Event.objects.all()
 
@@ -26,8 +34,16 @@ def event_list(request):
 
 def event_detail(request, event_id):
     """
-    Gets individual event post/object
-    and displays to event_detail.html.
+    Returns and individual instance of event and displays
+     :model:`event_management.Event`.
+
+    **Context**
+    ``event``
+        The most recent instance of :model:`event_management.Event`.
+    ``form rsvp``
+
+    **Template**
+    :template:`events/event_list.html`
     """
     event = get_object_or_404(Event, id=event_id)
     return render(request, 'events/event_detail.html', {'event': event})

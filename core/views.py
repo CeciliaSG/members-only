@@ -19,16 +19,17 @@ from content_management.models import SavedPost
 # Create your views here.
 
 # Sign-up/register view
+# Sign-up/register view
 @transaction.atomic
 def register(request):
     """
-    Display the signup form :model:`UserProfile and User Model`.
+    Display the signup form :model:`core.UserProfile and User (AllAuth)`.
 
     **Context**
 
     ``post``
-        An instance of :model:`UserProfile and UserCreation Model`.
-    
+        An instance of :model:`core.UserProfile and core.UserCreation Model`.
+
     ``CustomUserForm and UpdateuserProfileForm ``
         An instance of :forms:``
 
@@ -45,46 +46,65 @@ def register(request):
             username = user_form.cleaned_data.get('username')
 
             if User.objects.filter(email=email).exists():
-                user_form.add_error('email', 
-                'This email is already registered. Please use a different one.')
+                user_form.add_error('email',
+                                    'This email is already registered.'
+                                    'Please use a different one.')
 
             elif User.objects.filter(username=username).exists():
-                user_form.add_error('username', 
-                'This username is already taken. Please choose a different one.')
+                user_form.add_error('username',
+                                    'This username is already taken.'
+                                    'Please choose a different one.')
 
             else:
                 user = user_form.save()
                 profile = profile_form.save(commit=False)
                 profile.user = user
                 profile.save()
-                messages.success(request, 
-                'Yeah you are all signed up. Log in and have a look around.')
+                messages.success(request,
+                                 'Yeah you are all signed up.'
+                                 'Log in and have a look around.')
                 auth_login(request, user)
                 return redirect('post_list')
         else:
-            messages.error(request, 'Please correct the errors below.')
+            messages.error(request,
+                           'Please correct the errors below.')
     else:
         user_form = CustomUserForm()
         profile_form = UserProfileForm()
-    return render(request, 'core/registration.html', 
-    {'user_form': user_form, 'profile_form': profile_form})
+    return render(request, 'core/registration.html',
+                  {'user_form': user_form, 'profile_form': profile_form})
 
 
 # Login view
 def custom_login(request):
+    """
+    Display the login form.
+
+    **Context**
+
+    ``login form``
+        Form for login`.
+
+
+    **Template:**
+
+    :template:`accounts/login.html`
+    """
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(request,
+                            username=username, password=password)
         if user is not None:
             login(request, user)
             return redirect('home')
         else:
-            messages.error(request, 
-            'Invalid username or password.', extra_tags='profile_login')
-            profile_messages = [message for message in 
-            messages.get_messages(request) 
-            if 'profile_login' in message.tags]
+            messages.error(request,
+                           'Invalid username or password.',
+                           extra_tags='profile_login')
+            profile_messages = [message for message in
+                                messages.get_messages(request)
+                                if 'profile_login' in message.tags]
 
     return render(request, 'accounts/login.html')
 
@@ -94,59 +114,89 @@ def custom_login(request):
 def logout(request):
 
     """
-    Logs the user i an gives them authorisation to read everything on the site.
+    Display the login form.
+
+    **Context**
+
+    ``logout form``
+        Form for logout`.
+
+
+    **Template:**
+
+    :template:`accounts/logout.html`
     """
     logout(request)
-    return redirect('home')  
+    return redirect('home')
 
-         
+
 # Account view
 @login_required
 def edit_user_profile(request):
 
     """
-    Get userformupdate and profileform, prepopulates the forms, 
-    saves edited form to db. 
-    Get and display the users displayed posts.
+    Displays UpdateUserProfile form,
+    prepopulates the form and saves
+    the updates to the database. Also renders the
+    users saved/bookmarked posts.
+
+    **Context**
+
+    ``UpdateUserProfile form``
+        An instance of :form:`core.UpdateUserProfile`
+
+     **Template:**
+
+    :template:`core/profile.html`
+
     """
     try:
         user_instance = request.user
         profile_instance = request.user.userprofile
     except UserProfile.DoesNotExist:
-        messages.warning(request, "You are a user but don't have a profile.")
+        messages.warning(request,
+                         "You are a user but don't have a profile.")
         return redirect('registration')
 
     user_form_update = UpdateUserForm(instance=request.user)
     profile_form = UserProfileForm(instance=request.user.userprofile)
-   
+
     saved_posts = SavedPost.objects.filter(user=request.user)
 
     if request.method == 'POST':
-            user_form_update = UpdateUserForm(request.POST, instance=request.user)
-            profile_form = UserProfileForm(request.POST, instance=request.user.userprofile)
+        user_form_update = UpdateUserForm(
+                request.POST, instance=request.user)
+        profile_form = UserProfileForm(
+                request.POST, instance=request.user.userprofile)
 
     if user_form_update.is_valid() and profile_form.is_valid():
-            user_form_update.save()
-            profile_form.save()
-            messages.success(request, 
-            "You've successfully updated your profile", extra_tags='profile_update')
-            return redirect('profile')
+        user_form_update.save()
+        profile_form.save()
+        messages.success(request,
+                         "You've successfully updated"
+                         "your profile", extra_tags='profile_update')
+        return redirect('profile')
 
-    profile_messages = [message for message in messages.get_messages(request) 
-    if 'profile_update' in message.tags]
+    profile_messages = [message for message
+                        in messages.get_messages(request)
+                        if 'profile_update' in message.tags]
 
-    return render(request, 'core/profile.html', 
-    {'user_form_update': user_form_update, 'profile_form': profile_form, 
-    'saved_posts': saved_posts, 'profile_messages': profile_messages})
+    return render(request, 'core/profile.html',
+                  {'user_form_update': user_form_update,
+                   'profile_form': profile_form,
+                   'saved_posts': saved_posts,
+                   'profile_messages': profile_messages})
+
 
 @login_required
 def delete_account(request):
     if request.method == 'POST':
-        form = DeleteAccountForm(request.POST) 
+        form = DeleteAccountForm(request.POST)
         if form.is_valid() and form.cleaned_data['confirm_delete']:
             request.user.delete()
             message = 'Your account has been deleted.'
             return redirect('post_list')
     else:
         form = DeleteAccountForm()
-        return render(request, 'core/delete_account.html', {'form': form})
+        return render(request,
+                      'core/delete_account.html', {'form': form})
