@@ -8,8 +8,23 @@ from django.contrib.auth.decorators import login_required
 from .models import Post, SavedPost, LikedPost, Heading
 
 
-# Create your views here
 class PostListView(generic.ListView):
+
+    """
+    Returns all published posts in :model:
+    `content_management.Post`
+    and displays them on the page in sections of
+    as many post as their are for the filter.
+
+    **Context**
+
+    ``queryset``
+        All published instances of :model:`Post`
+
+    **Template:**
+
+    :template:`content_management/index.html`
+    """
     template_name = "content_management/index.html"
     posts = Post.objects.filter(status=1)
     context_object_name = 'posts'
@@ -22,8 +37,20 @@ class PostListView(generic.ListView):
 def post_detail(request, slug):
 
     """
-    Filter for status and slug,
-    and display on post_detail template.
+    Returns one published post in :model:
+    `content_management.Post`
+    and display on a details page.
+    **Context**
+
+    ``queryset``
+        One published instance of :model:
+        `content_management.Post`
+        Filter for status and slug.
+
+    **Template:**
+
+    :template:`content_management/post_detail.html`
+
     """
     posts = Post.objects.filter(status=1)
     post = get_object_or_404(Post, slug=slug)
@@ -37,7 +64,20 @@ def post_detail(request, slug):
 
 class PostListByHeadingView(generic.ListView):
     """
-    Filter for headings and parent-headings and display on templates.
+    Returns a heading id and parent-heading :model:
+    `content_management.Heading`
+    for filtering purposes
+    **Context**
+
+    ``queryset``
+        Heading and parent heading :model:
+        `content_management.Heading`
+        For filtering and display purposes.
+
+    **Template:**
+
+    :template:`no specific template`
+
     """
     template_name = "content_management/index.html"
     context_object_name = 'posts'
@@ -62,7 +102,20 @@ class PostListByHeadingView(generic.ListView):
 def tag_filter(request, template_name, tags):
 
     """
-    Filter for multiple tags and display on templates.
+    Returns one published post in :model:
+    `content_management.Post`
+    and display on a details page.
+    **Context**
+
+    ``queryset``
+        Filters for multiple tags :model:
+        `content_management.Post`
+        Filter for status and slug.
+
+    **Template:**
+
+    :template:`multiple templates`
+
     """
 
     query = Q()
@@ -118,7 +171,26 @@ def neighbourhoods_list_view(request):
 def post_tag_detail(request, tag):
 
     """
-    Filter for status and tag, and display on post_detail template.
+    Returns one published post in :model:
+    `content_management.Post`
+    and display on a details page.
+
+    **Context**
+
+    ``queryset``
+       Tad and status :model:`content_management.Post`
+
+    **Context**
+
+    ``queryset``
+        tag, status :model:`content_management.Post`
+        For filtering and display purposes.
+
+    **Template:**
+
+    :template:`content_management/post_detail.html`
+
+
     """
     posts = Post.objects.filter(tag=tag, status=1)
     post = posts.first()
@@ -134,8 +206,21 @@ def post_tag_detail(request, tag):
 def save_post(request, post_id):
 
     """
+    Returns one published post in database :model:
+    `content_management.SavedPost`
     Checks if the post is already saved,
     un-save if saved, if not saved save to the database.
+
+    **Context**
+
+    ``queryset``
+        One published instance of a post
+        :model:`SavedPost`
+
+    **Template:**
+
+    :template:`multiple templates`
+
     """
 
     post = get_object_or_404(Post, id=post_id)
@@ -159,16 +244,27 @@ def save_post(request, post_id):
 def like_post(request, post_id):
 
     """
-    Check if the post has already been liked,
-    delete like if already liked,
-    if not save like and like-colour to the database.
+    Returns one published post in database :model:
+    `content_management.LikedPost`
+    Checks if the post is already liked,
+    un-like if liked, if not saved the to the database.
+
+    **Context**
+
+    ``queryset``
+        One published instance of a post (post_id) :model:`LikedPost`
+
+    **Template:**
+
+    :template:`multiple templates`
+
     """
 
     post = get_object_or_404(Post, id=post_id)
 
     try:
-        liked_post = LikedPost.objects.get(user=request.user, 
-        post=post, post_id=post_id)
+        liked_post = LikedPost.objects.get(user=request.user,
+                                           post=post, post_id=post_id)
         liked_post.delete()
         message = "You unliked the post!"
 
@@ -184,7 +280,11 @@ def like_post(request, post_id):
 def about_page(request):
 
     """
-    Render about page.
+    Returns/renders the static about.html.
+
+    **Template:**
+
+    :template:`about.html`
+
     """
-    return render(request, 'content_management/footer/about.html')
-        
+    return render(request, 'content_management/footer/about.html')      
