@@ -222,12 +222,23 @@ This is a memberships site with the purpose of prividing members - people living
  
 ## Event pages: ##
 **Post List detail page:**
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.18.png">
 <br>
 
-**Post List detail page:**<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.54.png">
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.18.png">
 
-**RSVP Form:**<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.59.png">
+<br>
+
+**Event detail page:**<br>
+
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.54.png">
+
+<br>
+
+**RSVP Form:**<br>
+
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.59.png">
+
+<br>
 
 - __Restaurants & Bars, What's On, & Things to do page__
 
@@ -236,10 +247,14 @@ This is a memberships site with the purpose of prividing members - people living
 
 ## Post pages: ##
 **Post List page:**
+<br>
+
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.18.png">
 <br>
 
-**Post details page:**<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.54.png">
+**Post details page:**
+<br>
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.54.png">
 
 
 - __Neighbourhoods Page__
@@ -259,8 +274,12 @@ This is a memberships site with the purpose of prividing members - people living
   - the footer also inclued links to About (inkl. contactinfo), Become a member and
  Partnerships pages.  The membership and parternship pages aren't finished and don't at this time have any links.
 
+<br>
+
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.12.29.png">
 </br>
+
+<br>
 
 - __The Sign Up Page__
 
@@ -357,6 +376,12 @@ This is a memberships site with the purpose of prividing members - people living
 
 
 ### Buttons ### (not part of any form)
+<br>
+Button on landing page linking to sign-up form.
+
+<br>
+
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 11.01.39.png">
 
 ### Navbar & dropdowns
 | Feature | Description | Testing | Comment | Result|
@@ -368,11 +393,34 @@ This is a memberships site with the purpose of prividing members - people living
 
 ## Lighthouse
 
-- Results:
+- ##Results:#
+<br>
+
+Mobile, logged-out users:
+
+<br>
+ <img src="resources_readme/Skärmavbild 2024-05-03 kl. 10.49.52.png">
+ <br>
+
+Desktop, logged-out users:
+<br>
+
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 10.50.24.png">
+
+
+Mobile, logged-in users:<br>
+
+ <img src="resources_readme/Skärmavbild 2024-05-03 kl. 10.51.36.png">
+ <br>
+
+Desktop, logged-in users:<br>
+
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 10.52.01.png">
+
 
 ### Further Testing
 
--   The Website was tested on Google Chrome, Internet Explorer, Safari browsers.
+-   The Website was tested on Google Chrome.
 -   The website was viewed on a variety of devices such as Desktop, Laptop and iPhone
 -   A large amount of testing was done to ensure that all pages were linking correctly.
 
@@ -380,10 +428,16 @@ This is a memberships site with the purpose of prividing members - people living
 
 - HTML
   - Stray end tags were flagged for when checking code when non.logged in, this is because the some links are only available to authorized users, which means the link isn't visible when logged out. The link wraps a card so the end tag is visible to the browser. When checking the same html when logged in it passes validation. 
- -  Summernote is causing issues by rendering code inte white spaces on the details_templates (event_detail and post_detail). This throws errors when validating the HTML for these pages.
+
+ -  Summernote is causing issues by rendering code inte white spaces on the details_templates (event_detail and post_detail). This throws errors when validating the HTML for these pages. The form on the event_details page also seems to be adding an end p end-tag which I can't find anywhere to remove. It seems to ahve to do with the Summernote content/description field. Unfortunately I've been unable to resolve the issue within the time frame of the project.
+
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 10.31.35.png">
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 10.31.27.png">
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 10.31.15.png">
+
 -  No other errors were returned when passing through the official [W3C validator](https://validator.w3.org/)
 
-- No errors were found when passing through the official [(Jigsaw) validator]
+- No errors were found when passing through the official (Jigsaw) validator [https://jigsaw.w3.org/]
 - CI Python Linter [(https://pep8ci.herokuapp.com/)]
 - JS Hint [(https://jshint.com/)] No error were found when passing the code through JSHint.
 
@@ -398,15 +452,61 @@ This is a memberships site with the purpose of prividing members - people living
 - A search field in the navbar.
 - Read more for the sections as the number of of posts and events will grow.
 - Add more confirmation messages to make the user experience better i.e. after registering, signout, password change etc.
+- More javascript should be used to give the site a smother experience.
+- 
 
 
 ### Unfixed Bugs
 
-You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed. 
-
-Cloudinary
+See above for issues with Summernote.
 
 ## Deployment
+
+### GitHub Pages
+
+The project was deployed to GitHub Pages using the following steps...
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
+    - Alternatively Click [Here](https://raw.githubusercontent.com/) for a GIF demonstrating the process starting from Step 2.
+3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
+4. Under "Source", click the dropdown called "None" and select "Master Branch".
+5. The page will automatically refresh.
+6. Scroll back down through the page to locate the now published site [link](https://github.com) in the "GitHub Pages" section.
+
+### Forking the GitHub Repository
+
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+
+```
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+
+7. Press Enter. Your local clone will be created.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `CI-Clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
+
+Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
 
 ## Creating the Heroku app, deploying to Heroku
 
