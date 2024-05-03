@@ -17,7 +17,8 @@ This is a memberships site with the purpose of prividing members - people living
 
  - **Kanban Board**
  <img src="resources_readme/Skärmavbild 2024-05-02 kl. 15.21.49.png">
-!See testing against user stories below under features.
+
+See testing against user stories further down under features!
 
  ### Testing User Stories from User Experience (UX) Section
 
@@ -27,7 +28,7 @@ This is a memberships site with the purpose of prividing members - people living
 
         1. Upon entering the site, users are greeted with a clean and easily readable navigation bar and a section briefly explaining what the site is about and the possibility of trying a membership for for free by clicking the button, or follow a link to read more.
         2. A non logged-in user can have a look around, see the posts with the excerpts, click the nav-links to the other pages, but not click the post links. The non-logged in user has the option to sign-up or read more about the membership.
-        3. There is also a seperate navbar for logging in and signing up. This navbar dropsdown on smaller screens.
+        3. There is also a seperate navbar for logging in and signing up. This navbar drops down on smaller screens.
 
     2. As a First Time Visitor and returning visitor (logged-in), I want to be able to easily be able to navigate throughout the site to find content and administrating my account.
 
@@ -96,6 +97,8 @@ This is a memberships site with the purpose of prividing members - people living
 | | end date|  |
 | | Neighbourhood| TextField  |
 
+<br>
+
 #### ERD Event model
 | FK | Heading | Heading Model|
 | ----------- | ----------- | ----------- |
@@ -109,11 +112,15 @@ This is a memberships site with the purpose of prividing members - people living
 | | start date |  |
 | | end date|  |
 
+<br>
+
 #### ERD Saved Post Model
 | FK | User| User Model|
 | ----------- | ----------- | ----------- |
 |FK | Post | Post Model |
 | | created_at |  |
+
+<br>
 
 #### ERD Liked Post Model
 | FK | User| User Model|
@@ -122,6 +129,7 @@ This is a memberships site with the purpose of prividing members - people living
 | | created_at |  |
 | | button-colour | charField  |
 
+<br>
 
 #### ERD RSVP Model
 | FK | Event | Event Model|
@@ -130,6 +138,7 @@ This is a memberships site with the purpose of prividing members - people living
 | | Response  |CharField |
 | | num_guests |Charfield |
 
+<br>
 
 #### ERD UserProfile Model
 | FK | User | User Model| OntoOneField |
@@ -137,6 +146,8 @@ This is a memberships site with the purpose of prividing members - people living
 | | Neighbourhood | CharField |
 | | Interests |ArrayField |
 | | City | Charfield  |
+
+<br>
 
 #### ERD Heading model (both event and post) ####
 | FK | parent-heading | User Model|
@@ -199,9 +210,15 @@ This is a memberships site with the purpose of prividing members - people living
   - The logo works as the link to the home/landing page.
 
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.38.png">
+<br>
+
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.27.21.png">
+
+<br>
+
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.27.07.png">
 
+<br>
 
 - __The landing page image__
 
@@ -210,17 +227,25 @@ This is a memberships site with the purpose of prividing members - people living
 
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.26.27.png">
 
+<br>
+
 - __The Events page__
 
   - The Events page give the user an overview of the events available will allow the user to see the benefits of signing up as a member.
   - The listed events are cklickable and takes the user to a details page with more information about the eve, it also includes a function for the member to RSVP to events and let the arrangers know how many gusets they will be bringing.
 
+  <br>
+
+
 | Form | Description | Testing | Comment | Result |
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | **RSVP-form**, App: rsvp, Template: event_detail.html| Gives the uer the ability to RSVP for posted events. <br> The RSVP-form is part of the event_detail page. The user can chose yes or no <br> and the number of guests <br> and then click the RSVP button. | The user can change their response <br> by changing their answer and number of guests <br> and submiting again. | The user's response gets sent  <br> to the database and is also whown in the admin panel| OK |
+
+<br>
+
  
 ## Event pages: ##
-**Post List detail page:**
+**Event post page:**
 <br>
 
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.18.png">
@@ -242,24 +267,31 @@ This is a memberships site with the purpose of prividing members - people living
 - __Restaurants & Bars, What's On, & Things to do page__
 
   - These apges displays posts for the relevant subjects and allows the uer to brows restaurants, bars, things to do, things that are happening in the city. Posts are added daily to give the members/users value and and incentive to keep being members.
+
 <br>
 
 ## Post pages: ##
 **Post List page:**
+
 <br>
 
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.18.png">
+
 <br>
 
-**Post details page:**
+**details page:**
+
 <br>
+
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.54.png">
 
+<br>
 
 - __Neighbourhoods Page__
 
   - The Neighbourhoods page displays by neighbourhood, to make it easier for users to find what is going on around where they live or work.
 
+<br>
 
 - __Perks Page__
 
@@ -284,31 +316,46 @@ This is a memberships site with the purpose of prividing members - people living
 
   - This page allows users to get signed up to the membersite. The user will also be able specify their interest and let the site know which neighbourhood they live in. The user will be asked to submit their full name, a username, email address choose a password.
 
+  <br>
+
 | Form | Description | Testing |
 | ----------- | ----------- |  ----------- |
 | **SignUpForm**, App: Core, Template: register.html <br> (inludes user and profile form)| Gives the user the ability signup to the site. The user can fill in the form, chosing a username and password and then clicking the signup button. | User info. and details are saved to the database. | Both the email and usermail needs to be unique<br> and trying  to use the same email and user mail <br> and email will return the form with an error message. |
 
+<br>
+
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 09.31.41.png">
+
+<br>
 
 
 - __The Profile Page__
 
   - This page allows users to see their personal info. and profile choices, as well as their saved posts.
 
+<br>
+
 | Form | Description | Testing  | Comment | Result |
 | ----------- | ----------- |  ----------- | ----------- | ----------- |
 | **UpdateUserProfileForm**, App: Core, Template: profile.html | Gives user the ability to change their details and preferences. <br>The user can update their profile <br> by changing and confirming <br> email and user name. The form is pre-populated <br> with existing details. | The user can also change <br> their neighbourhood and interest choices. <br> The membership is only available in Stockholm, <br>otherwise they would also be able to choose another city. <br> The email, username and passwords have to match <br> otherwise the form want sign the user up but will return the <br> form to correct the errors, that are marked. | | OK |
 
+<br>
+
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.11.18.png">
 
+<br>
 
 - __The Signin Page__
 
   - Registered users can login.
+  
+  <br>
 
 | Form | Description | Testing  | Comment | Result |
 | ----------- | ----------- |  ----------- |  ----------- |  ----------- |
 | **SignIn**, Form App: Core, Template: login.html | Gives the user the ability to signin with their email and password. The user can fill in their email and password to sign in. <br> There is also an option to click remember me. | When the user fills in their login info correctly <br> and clicks the button <br> they are logged in and authorised access the whole site. <br> They will then be taken directly to the landing page for logged in users. | | OK|
+
+<br>
 
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 09.29.11.png">
 
@@ -331,9 +378,13 @@ This is a memberships site with the purpose of prividing members - people living
 
   - Registered users can change/update their email.
 
+  <br>
+
 | Form | Description | Testing   | Comment |Result |
 | ----------- | ----------- |  ----------- | ----------- | ----------- |
 | **Change email**, AllAuth, email.html| The user can change or add and email. | The user can enter an emial in the field and click add email. The email can also be removed. | The email will be added to the account. More than one email can be associated with an account. Getting a verification only works in development environment, i.e. - only runs in the terminal at the moment, and is not yet set up for the deployed site.|
+
+<br>
 
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.11.51.png">
 
@@ -342,6 +393,8 @@ This is a memberships site with the purpose of prividing members - people living
 - __The Change Password__
 
   - Gives the user the ability to change their password. Registered users can change their password.
+
+ <br> 
 
 | Form | Description | Testing  | Comment | Result |
 | ----------- | ----------- |  ----------- | ----------- | ----------- |
@@ -357,6 +410,8 @@ This is a memberships site with the purpose of prividing members - people living
 
   - Gives the user the ability to easily delete their account. Registered users/members can delete their account and all associated information.
 
+<br>  
+
 | Form | Description | Testing  |Comment | Result|
 | ----------- | ----------- |  ----------- | ----------- | ----------- |
 | **DeleteAccountForm**, App: Core, delete_account.html | The user gets to the Delete account page by clicking the link in the frist/dropdown navbar. Here the user can delete their account. <br> Confirming by checking the box <br> and then clicking delete account. | The user, user info and any profile information <br> related to the user is deleted from the admin panel and the database. |  OK |
@@ -367,12 +422,15 @@ This is a memberships site with the purpose of prividing members - people living
 
 ## Testing other Features
 
+<br>
+
 ### Post icons for liking and saving/bookmarking
 | Feature| Description | Testing | Comment | Result|
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | **Like-icon**, App: content_management, Template: all templates displaying post lists. | Icon/button for liking and unliking posts | Likes or unlikes the post <br> when clicked and returns a Json response  <br>in the form of an alert | Saves the instance of the post-like to the database, so that when it is ckicked again there is a Json response telling the uer that tey have already liked it and it is now unliked. | OK |
 | **Save-icon**, App: content_management, Template: all templates displaying post lists. | Icon for saving and unsaving posts. | Saves or unsaves the post <br> to the database. Saved posts are shown in the user profile. It returns a Json response telling the user they have saved the post. When they click the save icon again thre is a message telling users they have now unsaved he post. <br> Message in the form of an alert.  | Saves the instance of the post to the database. | OK |
 
+<br>
 
 ### Buttons ### (not part of any form)
 <br>
@@ -382,6 +440,8 @@ Button on landing page linking to sign-up form.
 
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 11.01.39.png">
 
+<br>
+
 ### Navbar & dropdowns
 | Feature | Description | Testing | Comment | Result|
 | ----------- | ----------- | ----------- | ----------- | ----------- |
@@ -389,30 +449,39 @@ Button on landing page linking to sign-up form.
 | Second navbar| Links to all content pages | All page links were tested and worked.  | OK |
 | Dropdowns | As above but for small screens | All links ere tesed and worked.  | OK |
 
+<br>
 
 ## Lighthouse
 
 - ##Results:#
+
 <br>
 
 Mobile, logged-out users:
 
 <br>
+
  <img src="resources_readme/Skärmavbild 2024-05-03 kl. 10.49.52.png">
  <br>
 
 Desktop, logged-out users:
+
 <br>
 
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 10.50.24.png">
 
 
-Mobile, logged-in users:<br>
+Mobile, logged-in users:
+
+<br>
 
  <img src="resources_readme/Skärmavbild 2024-05-03 kl. 10.51.36.png">
+
  <br>
 
-Desktop, logged-in users:<br>
+Desktop, logged-in users:
+
+<br>
 
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 10.52.01.png">
 
@@ -430,16 +499,22 @@ Desktop, logged-in users:<br>
 
  -  Summernote is causing issues by rendering code inte white spaces on the details_templates (event_detail and post_detail). This throws errors when validating the HTML for these pages. The form on the event_details page also seems to be adding an end p end-tag which I can't find anywhere to remove. It seems to ahve to do with the Summernote content/description field. Unfortunately I've been unable to resolve the issue within the time frame of the project.
 
+ <br>
+
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 10.31.35.png">
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 10.31.27.png">
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 10.31.15.png">
 
+<br>
+
 -  No other errors were returned when passing through the official [W3C validator](https://validator.w3.org/)
+
 
 - No errors were found when passing through the official (Jigsaw) validator [https://jigsaw.w3.org/]
 - CI Python Linter [(https://pep8ci.herokuapp.com/)]
 - JS Hint [(https://jshint.com/)] No error were found when passing the code through JSHint.
 
+<br>
 
 ### Features Left to Implement
 
@@ -453,11 +528,14 @@ Desktop, logged-in users:<br>
 - Add more confirmation messages to make the user experience better i.e. after registering, signout, password change etc.
 - More javascript should be used to give the site a smother experience.
 
+<br>
 
 ### Unfixed Bugs
 
 - See above for issues with Summernote.
 - Not a bug as such, but images need better handling. Better handling hasn't been possible due to lack of knowledge and time. So this is something I would like to look into.
+
+<br>
 
 ## Deployment
 
@@ -536,6 +614,8 @@ Steps to follow for deployment to Heroku:
 
 ## Credits 
 
+- A great big thank you to my mentor and tutor support!
+
 - I used the I Think Therefore I Blog walkthrough as a guide to get my project set up and get me started. And I refered back to it throughout the project.
 
 - My mentor has also helped point me in the right direction when I've been lost, or had specific functions for the site in mind.
@@ -545,6 +625,7 @@ Steps to follow for deployment to Heroku:
 - I've extensively searched [StackOverflow](https://stackoverflow.com/) for how to and solutions to things I've wanted to do in this project.
 
 (https://stackoverflow.com/questions/739776/how-do-i-do-an-or-filter-in-a-django-query/739799#739799)
+
 Class based views: https://ccbv.co.uk/
 - How to extend the Django user model (and in general tips for Django):
 [https://simpleisbetterthancomplex.com](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)
@@ -554,12 +635,12 @@ Class based views: https://ccbv.co.uk/
 [StackOverflow](https://stackoverflow.com/questions/63081738/like-unlike-a-post-without-refreshing-the-page)
 - [StackOverflow](https://stackoverflow.com/questions/73250735/- why-does-my-like-button-return-a-json-object-liked-true-but-doesnt-work-wi)
 
-- [StackOverflow](https://stackoverflow.com/questions/38370908/how-to-check-if-a-user-already-likes-a-blog-post-or-not-in-django)
-https://stackoverflow.com/questions/26230632/working-with-forms-in-django
-https://stackoverflow.com/questions/66320330/django-how-to-pass-only-selected-arguments-through-url
-https://stackoverflow.com/questions/42730992/django-queryset-filter-by-post-variable
-https://stackoverflow.com/questions/56792640/how-to-display-all-titles-of-posts-related-to-a-post-using-tags
-https://stackoverflow.com/questions/13076822/django-dynamically-filtering-with-q-objects
+- [StackOverflow](https://stackoverflow.com/questions/38370908/)(how-to-check-if-a-user-already-likes-a-blog-post-or-not-in-django)
+(https://stackoverflow.com/questions/26230632/working-with-forms-in-django)
+(https://stackoverflow.com/questions/66320330/)(django-how-to-pass-only-selected-arguments-through-url)
+(https://stackoverflow.com/questions/42730992/django-queryset-filter-by-post-variable)
+(https://stackoverflow.com/questions/56792640/)(how-to-display-all-titles-of-posts-related-to-a-post-using-tags)
+(https://stackoverflow.com/questions/13076822/django-dynamically-filtering-with-q-objects)
 
 - [Django](https://forum.djangoproject.com/t/multiple-choice-with-checkbox/14907)
 https://stackoverflow.com/questions/62296423/how-to-use-q-to-filter-using-string
