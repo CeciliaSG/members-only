@@ -552,10 +552,9 @@ Class based views: https://ccbv.co.uk/
 [StackOverflow](https://stackoverflow.com/search?q=creating+a+like+function+in+Django)
 -- Liking/unliking posts without refreshing the page
 [StackOverflow](https://stackoverflow.com/questions/63081738/like-unlike-a-post-without-refreshing-the-page)
-- [StackOverflow](https://stackoverflow.com/questions/73250735/- 
-- [StackOverflow]why-does-my-like-button-return-a-json-object-liked-true-but-doesnt-work-wi)
-- [StackOverflow]:
-(https://stackoverflow.com/questions/38370908/how-to-check-if-a-user-already-likes-a-blog-post-or-not-in-django)
+- [StackOverflow](https://stackoverflow.com/questions/73250735/- why-does-my-like-button-return-a-json-object-liked-true-but-doesnt-work-wi)
+
+- [StackOverflow](https://stackoverflow.com/questions/38370908/how-to-check-if-a-user-already-likes-a-blog-post-or-not-in-django)
 https://stackoverflow.com/questions/26230632/working-with-forms-in-django
 https://stackoverflow.com/questions/66320330/django-how-to-pass-only-selected-arguments-through-url
 https://stackoverflow.com/questions/42730992/django-queryset-filter-by-post-variable
