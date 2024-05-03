@@ -206,7 +206,7 @@ This is a memberships site with the purpose of prividing members - people living
   - The landing page for non logged in users give the users an overview of the site but the posts are unclickable as they are only for logged in users. 
   - The Latest section show the uers the latest from all categories/pages: restaurants & bars, things to do, what's on etc.
 
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.12.29.png">
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.26.27.png">
 
 - __The Events page__
 
@@ -217,28 +217,37 @@ This is a memberships site with the purpose of prividing members - people living
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | **RSVP-form**, App: rsvp, Template: event_detail.html| Gives the uer the ability to RSVP for posted events. <br> The RSVP-form is part of the event_detail page. The user can chose yes or no <br> and the number of guests <br> and then click the RSVP button. | The user can change their response <br> by changing their answer and number of guests <br> and submiting again. | The user's response gets sent  <br> to the database and is also whown in the admin panel| OK |
  
-![Events Page](https://)
-![Events Detail Page](https://)
+## Event pages: ##
+**Post List detail page:**
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.18.png">
+<br>
+
+**Post List detail page:**<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.54.png">
+
+**RSVP Form:**<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.54.png">
 
 - __Restaurants & Bars, What's On, & Things to do page__
 
   - These apges displays posts for the relevant subjects and allows the uer to brows restaurants, bars, things to do, things that are happening in the city. Posts are added daily to give the members/users value and and incentive to keep being members.
+<br>
 
-![Post List page](https://)
-![Post Detail page](https://)
+## Post pages: ##
+**Post List detail page:**
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.18.png">
+<br>
+
+**Post List detail page:**<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.54.png">
 
 
 - __Neighbourhoods Page__
 
   - The Neighbourhoods page displays by neighbourhood, to make it easier for users to find what is going on around where they live or work.
 
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.12.29.png">
 
 - __Perks Page__
 
   - This displays a post list of the perks available to members.
 
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.12.29.png">
 </br>
 
 - __The Footer__ 
@@ -258,7 +267,7 @@ This is a memberships site with the purpose of prividing members - people living
 | ----------- | ----------- |  ----------- |
 | **SignUpForm**, App: Core, Template: register.html <br> (inludes user and profile form)| Gives the user the ability signup to the site. The user can fill in the form, chosing a username and password and then clicking the signup button. | User info. and details are saved to the database. | Both the email and usermail needs to be unique<br> and trying  to use the same email and user mail <br> and email will return the form with an error message. |
 
-<img src="">
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 09.31.41.png">
 
 
 - __The Profile Page__
@@ -269,7 +278,7 @@ This is a memberships site with the purpose of prividing members - people living
 | ----------- | ----------- |  ----------- | ----------- | ----------- |
 | **UpdateUserProfileForm**, App: Core, Template: profile.html | Gives user the ability to change their details and preferences. <br>The user can update their profile <br> by changing and confirming <br> email and user name. The form is pre-populated <br> with existing details. | The user can also change <br> their neighbourhood and interest choices. <br> The membership is only available in Stockholm, <br>otherwise they would also be able to choose another city. <br> The email, username and passwords have to match <br> otherwise the form want sign the user up but will return the <br> form to correct the errors, that are marked. | | OK |
 
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.12.29.png">
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.11.18.png">
 
 
 - __The Signin Page__
@@ -280,14 +289,22 @@ This is a memberships site with the purpose of prividing members - people living
 | ----------- | ----------- |  ----------- |  ----------- |  ----------- |
 | **SignIn**, Form App: Core, Template: login.html | Gives the user the ability to signin with their email and password. The user can fill in their email and password to sign in. <br> There is also an option to click remember me. | When the user fills in their login info correctly <br> and clicks the button <br> they are logged in and authorised access the whole site. <br> They will then be taken directly to the landing page for logged in users. | | OK|
 
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.12.29.png">
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 09.29.11.png">
+
+<br>
 
 - __The Logout Page__
 
-  - Users can logout
+ ### Logout
+| Function | Description | Result   |
+| ----------- | ----------- |  ----------- |
+| **Signout**, App: Core, Template: login.html | When the Signout link in the first navbar (dropdown) is clicked <br> it takes the user to the signout page.<br> Where they can click the signout button <br> that signs them out and returns them to <br> the logged out version of the index page.| ok |
 
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.12.29.png">
+<br>
 
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.11.25.png">
+
+<br>
 
 - __The Change Email__
 
@@ -298,8 +315,9 @@ This is a memberships site with the purpose of prividing members - people living
 | **Change email**, AllAuth, email.html|  |  |
 | | |   |
 
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.12.29.png">
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.11.51.png">
 
+<br>
 
 - __The Change Password__
 
@@ -313,6 +331,7 @@ This is a memberships site with the purpose of prividing members - people living
 
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.11.35.png">
 
+<br>
 
 - __The Delete Account Page__
 
@@ -322,16 +341,11 @@ This is a memberships site with the purpose of prividing members - people living
 | ----------- | ----------- |  ----------- | ----------- | ----------- |
 | **DeleteAccountForm**, App: Core, delete_account.html | The user gets to the Delete account page by clicking the link in the frist/dropdown navbar. Here the user can delete their account. <br> Confirming by checking the box <br> and then clicking delete account. | The user, user info and any profile information <br> related to the user is deleted from the admin panel and the database. |  OK |
 
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.12.29.png">
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.12.05.png">
 
-
+<br>
 
 ## Testing other Features
-
-### Logout
-| Function | Description | Result   |
-| ----------- | ----------- |  ----------- |
-| **Signout**, App: Core, Template: login.html | When the Signout link in the first navbar (dropdown) is clicked <br> it takes the user to the signout page.<br> Where they can click the signout button <br> that signs them out and returns them to <br> the logged out version of the index page.| ok |
 
 ### Post icons for liking and saving/bookmarking
 | Feature| Description | Testing | Comment | Result|
