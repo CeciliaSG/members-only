@@ -2,14 +2,13 @@
 
 [View the live project here.](https://members-only-city-guide-cbef1c818fc1.herokuapp.com/)
 
-<h2 align="center"><img src="resources_readme/Skärmavbild 2024-05-03 kl. 07.01.25.png"></h2>
+<h2 align="center"><img src="resources_readme/Skärmavbild 2024-05-03 kl. 11.53.17.png"></h2>
 
 
 # Spotted members city guide
 
 An insider membership guide to Stockholm.
 This is a memberships site with the purpose of prividing members - people living in Stockholm - with a comprehensive guide of everything going on in the city as well as some perks for members making it good value for money. The site intends to includs everything from bars and restaurants, to things tod do, events, musical festivals etc.
-
 
 
 ## User Experience (UX)
@@ -154,9 +153,9 @@ This is a memberships site with the purpose of prividing members - people living
 
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
--   [Bootstrap]
--   [Django]
--   [Javascript]
+-   [Bootstrap](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
+-   [Django](https://en.wikipedia.org/wiki/Django)
+-   [Javascript](https://en.wikipedia.org/wiki/JavaScript)
 
 
 ### Frameworks, Libraries & Programs Used
@@ -453,12 +452,12 @@ Desktop, logged-in users:<br>
 - Read more for the sections as the number of of posts and events will grow.
 - Add more confirmation messages to make the user experience better i.e. after registering, signout, password change etc.
 - More javascript should be used to give the site a smother experience.
-- 
 
 
 ### Unfixed Bugs
 
-See above for issues with Summernote.
+- See above for issues with Summernote.
+- Not a bug as such, but images need better handling. Better handling hasn't been possible due to lack of knowledge and time. So this is something I would like to look into.
 
 ## Deployment
 
@@ -539,11 +538,15 @@ Steps to follow for deployment to Heroku:
 
 - I used the I Think Therefore I Blog walkthrough as a guide to get my project set up and get me started. And I refered back to it throughout the project.
 
-- I've used Django documentation extensively to help me build models, views and forms.
+- My mentor has also helped point me in the right direction when I've been lost, or had specific functions for the site in mind.
 
-- I've extensively searched StackOverflow for how to and solutions to things I've wante to do in this project.
+- I've used [Django](https://www.djangoproject.com/) documentation extensively to help me build models, views and forms etc.
 
-- How to extend the Django user model:
+- I've extensively searched [StackOverflow](https://stackoverflow.com/) for how to and solutions to things I've wanted to do in this project.
+
+(https://stackoverflow.com/questions/739776/how-do-i-do-an-or-filter-in-a-django-query/739799#739799)
+Class based views: https://ccbv.co.uk/
+- How to extend the Django user model (and in general tips for Django):
 [https://simpleisbetterthancomplex.com](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)
 -  Creating a like function:
 [StackOverflow](https://stackoverflow.com/search?q=creating+a+like+function+in+Django)
@@ -551,6 +554,13 @@ Steps to follow for deployment to Heroku:
 [StackOverflow](https://stackoverflow.com/questions/63081738/like-unlike-a-post-without-refreshing-the-page)
 - [StackOverflow](https://stackoverflow.com/questions/73250735/- 
 - [StackOverflow]why-does-my-like-button-return-a-json-object-liked-true-but-doesnt-work-wi)
+- [StackOverflow]:
+(https://stackoverflow.com/questions/38370908/how-to-check-if-a-user-already-likes-a-blog-post-or-not-in-django)
+https://stackoverflow.com/questions/26230632/working-with-forms-in-django
+https://stackoverflow.com/questions/66320330/django-how-to-pass-only-selected-arguments-through-url
+https://stackoverflow.com/questions/42730992/django-queryset-filter-by-post-variable
+https://stackoverflow.com/questions/56792640/how-to-display-all-titles-of-posts-related-to-a-post-using-tags
+https://stackoverflow.com/questions/13076822/django-dynamically-filtering-with-q-objects
 
 - [Django](https://forum.djangoproject.com/t/multiple-choice-with-checkbox/14907)
 https://stackoverflow.com/questions/62296423/how-to-use-q-to-filter-using-string
@@ -562,9 +572,6 @@ https://stackoverflow.com/questions/62296423/how-to-use-q-to-filter-using-string
 [StackOverflow](https://stackoverflow.com/questions/54864355/django-user-account-delete-and-then-return-redirect-and-render)
 (https://stackoverflow.com/questions/65510305/django-how-to-enable-users-to-delete-their-account)
 (https://stackoverflow.com/questions/38047408/how-to-allow-user-to-delete-account-in-django-allauth)
-
-https://stackoverflow.com/questions/56792640/how-to-display-all-titles-of-posts-related-to-a-post-using-tags
-https://stackoverflow.com/questions/13076822/django-dynamically-filtering-with-q-objects
 
 - (https://stackoverflow.com/questions/62853713/how-filter-objects-in-django-views)
 - [StackOverflow](https://stackoverflow.com/questions/16011434/using-foreach-method-in-javascript)
@@ -582,6 +589,3 @@ https://stackoverflow.com/questions/13076822/django-dynamically-filtering-with-q
 - The logo and favicon was created by my husband.
 
 - The images for posts, events and pages were downloaded from free images on [Unsplash](https://unsplash.com/)
-
-
-
