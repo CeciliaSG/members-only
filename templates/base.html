@@ -159,17 +159,33 @@
             <ul class="list-unstyled footer-list mt-3 mb-3 d-flex flex-wrap">
                 <li class="footer-link-item"><a href="{% url 'about' %}" class="about text-decoration-none">About</a>
                 </li>
-                <li class="footer-link-item"><a href="#" class="text-decoration-none">Become a member</a></li>
-                <li class="footer-link-item"><a href="#" class="text-decoration-none">Partnernships</a></li>
+                <li class="footer-link-item"><a href="{% url 'membership' %}" class="text-decoration-none">Become a
+                        member</a></li>
+                <li class="footer-link-item"><a href="{% url 'partnerships' %}"
+                        class="text-decoration-none">Partnernships</a></li>
             </ul>
         </div>
         <div class="container footer-container">
             <div class="col-md-12">
                 <div class="row some-row footer-row-2">
                     <div class=" d-flex justify-content-center some-icons-row">
-                        <p><i class="fa-brands fa-facebook some-footer some-icons"></i></p>
-                        <p><i class="fa-brands fa-instagram some-footer some-icons"></i></p>
-                        <p><i class="fa-brands fa-pinterest some-footer some-icons"></i></p>
+                        <p>
+                            <a href="https://www.facebook.com/profile.php?id=61561777450239" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fa-brands fa-facebook some-footer some-icons"></i>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://www.instagram.com/spotted_city_guide/" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fa-brands fa-instagram some-footer some-icons"></i>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://se.pinterest.com" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-pinterest some-footer some-icons"></i>
+                            </a>
+                        </p>
                         <div class="copyright-section">
                             <p class="copyright">{% block copyright %}© Spotted Media
                                 2024{% endblock copyright %}</p>
@@ -183,8 +199,6 @@
     <!-- Bootstrap JS script -->
     <!-- Bootstrap JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js">
     </script>
     <script src="{% static 'js/script.js' %}"></script>

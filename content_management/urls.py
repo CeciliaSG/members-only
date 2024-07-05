@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import (post_detail, tag_filter, 
 PostListView, save_post, like_post, PostListByHeadingView, 
-about_page)
+about_page, membership_page, partnerships_page)
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -11,6 +11,8 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('', PostListView.as_view(), name='post_list'),
     path('about_page/', views.about_page, name='about'),
+    path('membership_page/', views.membership_page, name='membership'),
+    path('partnerships_page/', views.partnerships_page, name='partnerships'),
     path('neighbourhoods/', views.neighbourhoods_list_view,
          name='neighbourhoods'),
     path('<slug:slug>/', views.post_detail, name='post_detail'),

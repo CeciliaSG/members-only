@@ -288,3 +288,29 @@ def about_page(request):
 
     """
     return render(request, 'content_management/footer/about.html')      
+
+
+def membership_page(request):
+
+    """
+    Returns/renders the static membership.html.
+
+    **Template:**
+
+    :template:`membership.html`
+
+    """
+    return render(request, 'content_management/footer/membership.html')   
+
+
+def partnerships_page(request):
+
+    """
+    Returns/renders the static partnership.html.
+
+    **Template:**
+
+    :template:`partnerships.html`
+
+    """
+    return render(request, 'content_management/footer/partnerships.html')   
