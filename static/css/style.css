@@ -452,7 +452,6 @@ a:hover {
 }
 
 
-
 /*Footer styling */
 
 .hover:hover {
@@ -544,6 +543,11 @@ footer {
     .footer .footer-list,
     .footer-container {
         flex-direction: row;
+    }
+
+    .some-row,
+    .text-decoration-none {
+        margin-bottom: 20px;
     }
 
 
