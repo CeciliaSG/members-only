@@ -37,7 +37,4 @@ urlpatterns = [
     path('core/', include('core.urls')),
     path('rsvp/', include('rsvp.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-#404
 handler404 = 'city_guide.views.handler404'
