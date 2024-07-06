@@ -19,8 +19,7 @@ from django.urls import path, include
 from core.views import register
 from django.conf import settings
 from django.conf.urls.static import static
-
-
+from .views import handler404
 
 
 urlpatterns = [
@@ -31,7 +30,6 @@ urlpatterns = [
     #Allauth url
     path("accounts/", include("allauth.urls")),
 
-
     #Custom Urls
     path('', include('content_management.urls')),
     path('summernote/', include('django_summernote.urls')),
@@ -39,3 +37,7 @@ urlpatterns = [
     path('core/', include('core.urls')),
     path('rsvp/', include('rsvp.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+#404
+handler404 = 'city_guide.views.handler404'
