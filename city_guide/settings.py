@@ -30,9 +30,16 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
+#DEBUG = os.getenv('DEBUG')
+DEBUG = False
 
-ALLOWED_HOSTS = ['8000-ceciliasg-membersonly-mhv5bzz8v6s.ws-eu115.gitpod.io', '.herokuapp.com']
+ALLOWED_HOSTS = [
+    '8000-ceciliasg-membersonly-mhv5bzz8v6s.ws-eu115.gitpod.io',
+    'members-only-city-guide-cbef1c818fc1.herokuapp.com',
+    '.herokuapp.com',
+    'localhost',
+    '127.0.0.1',
+]
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-ceciliasg-membersonly-vpjme6sjhrb.ws-eu112.gitpod.io', "https://*.herokuapp.com", "https://*.gitpod.io"
 ]
