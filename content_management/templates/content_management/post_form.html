@@ -4,7 +4,7 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<div class="body d-flex flex-column h-100 main-bg add-post">
+<div class="body d-flex flex-column h-100 main-bg add-post mx-5 my-5">
     <div class="container-fluid mb-5 mt-5">
         <div class="row justify-content-center">
             <form method="post" enctype="multipart/form-data">
@@ -16,5 +16,49 @@
         </div>
     </div>
 </div>
+<div class="row justify-content-center mx-4 my-5">
+    <h2>All Posts</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        {% for post in posts %}
+        <tr>
+            <td style="font-size: 14px;">{{ post.title }}</td>
+            <td>{{ post.get_status_display }}</td>
+            <td>
+                <a href="{% url 'edit_post' slug=post.slug %}">Edit</a> |
+                <!--<a href="{% url 'delete_post' slug=post.slug %}" class="btn-delete">Delete</a>-->
+                <button class="btn btn-delete" data-post-slug="{{ post.slug }}">Delete</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</div>
+</div>
 {% endif %}
+<!-- Delete Modal -->
+<div class="modal fade" id="deletePostModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deletePostModalLabel">Delete comment?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete your comment?
+                This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a id="deletePostConfirm" href="#" class="btn
+          btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

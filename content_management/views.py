@@ -3,6 +3,7 @@ from django.db.models import Q
 from django.shortcuts import (render, 
 redirect, get_object_or_404, reverse)
 from django.views import generic
+from django.urls import reverse_lazy
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
@@ -393,5 +394,25 @@ def add_post(request):
             return redirect('post_detail', slug=post.slug)
     else:
         form = PostForm()
+    posts = Post.objects.all()
     
-    return render(request, 'content_management/post_form.html', {'form': form})
+    return render(request, 'content_management/post_form.html', {'form': form, 'posts': posts})
+
+class PostUpdateView(generic.UpdateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'content_management/post_form.html'
+    success_url = reverse_lazy('post_list')
+
+    def get_object(self):
+        return get_object_or_404(Post, slug=self.kwargs['slug'])
+
+
+class PostDeleteView(generic.DeleteView):
+    model = Post
+    template_name = 'content_management/post_form.html'
+    success_url = reverse_lazy('post_list')
+
+    def get_object(self):
+        return get_object_or_404(Post, slug=self.kwargs['slug'])
+

@@ -70,13 +70,13 @@ for (let button of editButtons) {
     });
 }
 
-const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
+const deleteModal = new bootstrap.Modal(document.getElementById("deleteCommentsModal"));
 const deleteButtons = document.getElementsByClassName("btn-delete");
-const deleteConfirm = document.getElementById("deleteConfirm");
+const deleteConfirm = document.getElementById("deleteCommentConfirm");
 
 /**
  * From Blog walkthrough.
- * Initializes deletion functionality for the provided delete buttons.
+ * Initialises deletion functionality for the provided delete buttons.
  * 
  * For each button in the `deleteButtons` collection:
  * - Retrieves the associated comment's ID upon click.
@@ -85,6 +85,7 @@ const deleteConfirm = document.getElementById("deleteConfirm");
  * - Displays a confirmation modal (`deleteModal`) to prompt 
  * the user for confirmation before deletion.
  */
+
 for (let button of deleteButtons) {
     button.addEventListener("click", (e) => {
         let commentId = e.target.getAttribute("comment_id");
