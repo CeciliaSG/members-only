@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Heading, Post
+from .models import Heading, Post, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Post)
@@ -20,3 +20,4 @@ class HeadingAdmin(SummernoteModelAdmin):
 
 #Register your models here.
 admin.site.register(Heading, HeadingAdmin)
+admin.site.register(Comment)
