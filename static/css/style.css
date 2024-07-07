@@ -147,6 +147,14 @@ body,
     padding-bottom: 15px;
 }
 
+.faded {
+    opacity: 0.6;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
 .form-control-sm {
     height: 30px;
 }

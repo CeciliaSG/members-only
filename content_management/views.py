@@ -1,11 +1,14 @@
 from django.http import HttpResponse, JsonResponse
 from django.db.models import Q
 from django.shortcuts import (render, 
-redirect, get_object_or_404)
+redirect, get_object_or_404, reverse)
 from django.views import generic
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from .models import Post, SavedPost, LikedPost, Heading
+from .models import (Post, SavedPost,
+LikedPost, Heading, Comment)
+from .forms import CommentForm
 
 
 class PostListView(generic.ListView):
@@ -37,6 +40,8 @@ class PostListView(generic.ListView):
 def post_detail(request, slug):
 
     """
+    From Blog walkthrough.
+
     Returns one published post in :model:
     `content_management.Post`
     and display on a details page.
@@ -58,13 +63,53 @@ def post_detail(request, slug):
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
 
+    if request.method == "POST":
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.author = request.user
+            comment.post = post
+            comment.save()
+
+            messages.add_message(
+            request, messages.SUCCESS,
+            'Comment submitted and awaiting approval'
+        )
+        return redirect('post_detail', slug=slug)
+    else:
+        comment_form = CommentForm()
+
     return render(
         request,
         "content_management/post_detail.html",
         {"post": post,
         "comments": comments,
-        "comment_count": comment_count,},
+        "comment_count": comment_count,
+        "comment_form": comment_form,
+        },
     )
+
+def comment_edit(request, slug, comment_id):
+    """
+    view to edit comments
+    """
+    if request.method == "POST":
+
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        comment = get_object_or_404(Comment, pk=comment_id)
+        comment_form = CommentForm(data=request.POST, instance=comment)
+
+        if comment_form.is_valid() and comment.author == request.user:
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.approved = False
+            comment.save()
+            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+
+    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
 class PostListByHeadingView(generic.ListView):

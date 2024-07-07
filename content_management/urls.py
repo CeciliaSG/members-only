@@ -18,6 +18,8 @@ urlpatterns = [
     path('<slug:slug>/', views.post_detail, name='post_detail'),
     path('post_tag_detail/<str:tag>/', views.post_tag_detail,
          name='post_tag_detail'),
+    path('<slug:slug>/edit_comment/<int:comment_id>',
+         views.comment_edit, name='comment_edit'),
     path('save_post/<int:post_id>/', views.save_post, name='save_post'),
     path('like_post/<int:post_id>/', views.like_post, name='like_post'),
     path('heading/<str:heading_name>/', PostListByHeadingView.as_view(),
