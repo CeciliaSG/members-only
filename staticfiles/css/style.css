@@ -147,6 +147,14 @@ body,
     padding-bottom: 15px;
 }
 
+.faded {
+    opacity: 0.6;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
 .form-control-sm {
     height: 30px;
 }
@@ -353,24 +361,24 @@ a:hover {
     font-size: 90%;
 }
 
-
 .some-icons {
     font-size: 25px;
     margin-right: 20px;
     color: white;
 }
 
+.some-icons:hover {
+    color: #119822;
+}
 
 .some-icons-row {
     justify-content: space-between;
 }
 
-
 .hr {
     border: 25px;
     height: 15px;
 }
-
 
 .event-details {
     padding: 2em;
@@ -452,7 +460,6 @@ a:hover {
 }
 
 
-
 /*Footer styling */
 
 .hover:hover {
@@ -468,15 +475,12 @@ footer {
     position: fixed;
 }
 
-.some-row {
-    margin: 0;
-}
-
 .some-row,
 .text-decoration-none {
     color: white;
     font-size: 14px;
     text-transform: capitalize;
+    margin-bottom: 60px;
 }
 
 .text-decoration-none:hover {
@@ -547,6 +551,11 @@ footer {
     .footer .footer-list,
     .footer-container {
         flex-direction: row;
+    }
+
+    .some-row,
+    .text-decoration-none {
+        margin-bottom: 20px;
     }
 
 
