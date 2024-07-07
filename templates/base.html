@@ -76,8 +76,10 @@
                                 <li><a class="dropdown-item" href="{% url 'delete_account' %}">Delete
                                         Account</a>
                                 </li>
+                                {% if user.is_authenticated and user.is_staff %}
                                 <li><a class="dropdown-item" href="{% url 'add_post' %}">Add post</a>
                                 </li>
+                                {% endif %}
                             </ul>
                         </li>
                     </ul>
