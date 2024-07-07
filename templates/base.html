@@ -77,7 +77,7 @@
                                         Account</a>
                                 </li>
                                 {% if user.is_authenticated and user.is_staff %}
-                                <li><a class="dropdown-item" href="{% url 'add_post' %}">Add post</a>
+                                <li><a class="dropdown-item" href="{% url 'add_post' %}">Manage posts</a>
                                 </li>
                                 {% endif %}
                             </ul>
