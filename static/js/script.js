@@ -92,3 +92,17 @@ for (let button of deleteButtons) {
         deleteModal.show();
     });
 }
+
+/** initialising summernote */
+$(document).ready(function () {
+    $('#id_content').summernote({
+        height: 300,
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview']],
+        ]
+    });
+});

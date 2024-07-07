@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import (post_detail, tag_filter, 
 PostListView, save_post, like_post, PostListByHeadingView, 
-about_page, membership_page, partnerships_page)
+about_page, membership_page, partnerships_page, add_post)
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -15,6 +15,7 @@ urlpatterns = [
     path('partnerships_page/', views.partnerships_page, name='partnerships'),
     path('neighbourhoods/', views.neighbourhoods_list_view,
          name='neighbourhoods'),
+    path('add/', add_post, name='add_post'),
     path('<slug:slug>/', views.post_detail, name='post_detail'),
     path('post_tag_detail/<str:tag>/', views.post_tag_detail,
          name='post_tag_detail'),

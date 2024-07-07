@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .models import (Post, SavedPost,
 LikedPost, Heading, Comment)
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 
 
 class PostListView(generic.ListView):
@@ -380,3 +380,18 @@ def partnerships_page(request):
 
     """
     return render(request, 'content_management/footer/partnerships.html')   
+
+
+@login_required
+def add_post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
+            return redirect('post_detail', slug=post.slug)
+    else:
+        form = PostForm()
+    
+    return render(request, 'content_management/post_form.html', {'form': form})
