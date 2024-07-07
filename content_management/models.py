@@ -35,6 +35,10 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     status = models.SmallIntegerField(choices=STATUS, default=0)
     neighbourhood = models.CharField(max_length=100, blank=True)
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="posts", default=34
+    )
+
 
     class Meta:
         ordering = ["-created_at"]
