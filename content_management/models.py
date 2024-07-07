@@ -78,3 +78,17 @@ class LikedPost(models.Model):
 
     class Meta:
         unique_together = ('user', 'post')
+
+
+class Comment(models.Model):
+    """
+    From "I Think therfore I blog". 
+    Lets logged-in users comment posts
+    """
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="commenter")
+    body = models.TextField()
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
