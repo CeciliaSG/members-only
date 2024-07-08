@@ -151,6 +151,16 @@
         </div>
     </nav>
 
+    {% if messages %}
+    <div id="messages" class="d-flex justify-content-center align-items-center">
+        {% for message in messages %}
+        <div class=" messages alert alert-{{ message.tags }} text-center">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
     <!-- Main Content -->
     <main style="margin: 0;">
         <div class="content" style="margin: 0;">

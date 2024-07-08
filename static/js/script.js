@@ -118,3 +118,19 @@ for (let button of deletePostButtons) {
         deletePostModal.show();
     });
 }
+
+// Messages
+document.addEventListener("DOMContentLoaded", function () {
+    const messages = document.querySelectorAll('#messages .alert');
+    messages.forEach(message => {
+        setTimeout(() => {
+            message.style.opacity = 1;
+        }, 100);
+        setTimeout(() => {
+            message.style.opacity = 0;
+            setTimeout(() => {
+                message.remove();
+            }, 500);
+        }, 5000);
+    });
+});
