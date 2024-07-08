@@ -72,14 +72,14 @@
                                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">Signout</a>
                                 </li>
                                 <li><a class="dropdown-item" href="{% url 'account_change_password' %}">Change
-                                        password</a></li>
+                                        Password</a></li>
                                 <li><a class="dropdown-item" href="{% url 'account_email' %}">Change
-                                        email</a></li>
+                                        Email</a></li>
                                 <li><a class="dropdown-item" href="{% url 'delete_account' %}">Delete
                                         Account</a>
                                 </li>
                                 {% if user.is_authenticated and user.is_staff %}
-                                <li><a class="dropdown-item" href="{% url 'add_post' %}">Manage posts</a>
+                                <li><a class="dropdown-item" href="{% url 'add_post' %}">Manage Posts</a>
                                 </li>
                                 {% endif %}
                             </ul>
