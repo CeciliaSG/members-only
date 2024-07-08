@@ -69,3 +69,61 @@ for (let button of editButtons) {
         commentForm.setAttribute("action", `edit_comment/${commentId}`);
     });
 }
+
+/** Delete comments */
+const deleteModal = new bootstrap.Modal(document.getElementById("deleteCommentsModal"));
+const deleteButtons = document.getElementsByClassName("btn-delete");
+const deleteConfirm = document.getElementById("deleteCommentConfirm");
+
+/**
+ * From Blog walkthrough.
+ * Initialises deletion functionality for the provided delete buttons.
+ * 
+ * For each button in the `deleteButtons` collection:
+ * - Retrieves the associated comment's ID upon click.
+ * - Updates the `deleteConfirm` link's href to point to the 
+ * deletion endpoint for the specific comment.
+ * - Displays a confirmation modal (`deleteModal`) to prompt 
+ * the user for confirmation before deletion.
+ */
+
+for (let button of deleteButtons) {
+    button.addEventListener("click", (e) => {
+        let commentId = e.target.getAttribute("comment_id");
+        deleteConfirm.href = `delete_comment/${commentId}`;
+        deleteModal.show();
+    });
+}
+
+/** Delete posts */
+const deletePostModal = new bootstrap.Modal(document.getElementById("deletePostModal"));
+const deletePostButtons = document.getElementsByClassName("btn-delete-post");
+const deletePostConfirm = document.getElementById("deletePostConfirm");
+
+/**
+ * Initialises deletion functionality for the provided delete buttons.
+ * 
+ * For each button in the `deletePostButtons` collection:
+ * - Retrieves the associated post's ID upon click.
+ * - Updates the `deletePostConfirm` link's href to point to the 
+ * deletion endpoint for the specific post.
+ * - Displays a confirmation modal (`deletePostModal`) to prompt 
+ * the user for confirmation before deletion.
+ */
+
+for (let button of deletePostButtons) {
+    button.addEventListener("click", (e) => {
+        let postId = e.target.getAttribute("post_id");
+        deletePostConfirm.href = `/posts/${postId}/delete/`;
+        deletePostModal.show();
+    });
+}
+
+$(document).ready(function () {
+    $('.summernote').summernote({
+        height: 300,
+        minHeight: null,
+        maxHeight: null,
+        focus: true
+    });
+});

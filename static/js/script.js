@@ -70,6 +70,7 @@ for (let button of editButtons) {
     });
 }
 
+/** Delete comments */
 const deleteModal = new bootstrap.Modal(document.getElementById("deleteCommentsModal"));
 const deleteButtons = document.getElementsByClassName("btn-delete");
 const deleteConfirm = document.getElementById("deleteCommentConfirm");
@@ -94,16 +95,26 @@ for (let button of deleteButtons) {
     });
 }
 
-/** initialising summernote */
-$(document).ready(function () {
-    $('#id_content').summernote({
-        height: 300,
-        toolbar: [
-            ['style', ['bold', 'italic', 'underline', 'clear']],
-            ['font', ['strikethrough', 'superscript', 'subscript']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['insert', ['link', 'picture', 'video']],
-            ['view', ['fullscreen', 'codeview']],
-        ]
+/** Delete posts */
+const deletePostModal = new bootstrap.Modal(document.getElementById("deletePostModal"));
+const deletePostButtons = document.getElementsByClassName("btn-delete-post");
+const deletePostConfirm = document.getElementById("deletePostConfirm");
+
+/**
+ * Initialises deletion functionality for the provided delete buttons.
+ * 
+ * For each button in the `deletePostButtons` collection:
+ * - Retrieves the associated post's ID upon click.
+ * - Updates the `deletePostConfirm` link's href to point to the 
+ * deletion endpoint for the specific post.
+ * - Displays a confirmation modal (`deletePostModal`) to prompt 
+ * the user for confirmation before deletion.
+ */
+
+for (let button of deletePostButtons) {
+    button.addEventListener("click", (e) => {
+        let postId = e.target.getAttribute("post_id");
+        deletePostConfirm.href = `/posts/${postId}/delete/`;
+        deletePostModal.show();
     });
-});
+}
