@@ -657,6 +657,8 @@ https://stackoverflow.com/questions/62296423/how-to-use-q-to-filter-using-string
 - [StackOverflow](https://stackoverflow.com/questions/16011434/using-foreach-method-in-javascript)
  - Setting up email allAuth:
  [https://florianbgt.com/](https://florianbgt.com/posts/django_allauth_email_login)
+ - Summernote for frontend: 
+ [StackOverflow](https://stackoverflow.com/questions/60688640/summernote-using-django-forms-displaying-with-html-tags)
 
 
 ### Content 

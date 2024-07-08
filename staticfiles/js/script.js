@@ -119,11 +119,18 @@ for (let button of deletePostButtons) {
     });
 }
 
-$(document).ready(function () {
-    $('.summernote').summernote({
-        height: 300,
-        minHeight: null,
-        maxHeight: null,
-        focus: true
+// Messages
+document.addEventListener("DOMContentLoaded", function () {
+    const messages = document.querySelectorAll('#messages .alert');
+
+    messages.forEach(message => {
+        message.style.transition = 'opacity 0.5s ease';
+        message.style.opacity = 1;
+        setTimeout(() => {
+            message.style.opacity = 0;
+            setTimeout(() => {
+                message.remove();
+            }, 500);
+        }, 5000);
     });
 });

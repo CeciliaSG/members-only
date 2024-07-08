@@ -44,6 +44,22 @@ Array.from(saveButtons).forEach(saveButton => {
     });
 });
 
+
+// Messages
+document.addEventListener("DOMContentLoaded", function () {
+    const messages = document.querySelectorAll('#messages .messages');
+    messages.forEach(message => {
+        message.style.opacity = 1;
+        setTimeout(() => {
+            message.style.opacity = 0;
+            setTimeout(() => {
+                message.remove();
+            }, 500);
+        }, 4000);
+    });
+});
+
+
 const editButtons = document.getElementsByClassName("btn-edit");
 const commentText = document.getElementById("id_body");
 const commentForm = document.getElementById("commentForm");
@@ -94,43 +110,3 @@ for (let button of deleteButtons) {
         deleteModal.show();
     });
 }
-
-/** Delete posts */
-const deletePostModal = new bootstrap.Modal(document.getElementById("deletePostModal"));
-const deletePostButtons = document.getElementsByClassName("btn-delete-post");
-const deletePostConfirm = document.getElementById("deletePostConfirm");
-
-/**
- * Initialises deletion functionality for the provided delete buttons.
- * 
- * For each button in the `deletePostButtons` collection:
- * - Retrieves the associated post's ID upon click.
- * - Updates the `deletePostConfirm` link's href to point to the 
- * deletion endpoint for the specific post.
- * - Displays a confirmation modal (`deletePostModal`) to prompt 
- * the user for confirmation before deletion.
- */
-
-for (let button of deletePostButtons) {
-    button.addEventListener("click", (e) => {
-        let postId = e.target.getAttribute("post_id");
-        deletePostConfirm.href = `/posts/${postId}/delete/`;
-        deletePostModal.show();
-    });
-}
-
-// Messages
-document.addEventListener("DOMContentLoaded", function () {
-    const messages = document.querySelectorAll('#messages .alert');
-    messages.forEach(message => {
-        setTimeout(() => {
-            message.style.opacity = 1;
-        }, 100);
-        setTimeout(() => {
-            message.style.opacity = 0;
-            setTimeout(() => {
-                message.remove();
-            }, 500);
-        }, 5000);
-    });
-});

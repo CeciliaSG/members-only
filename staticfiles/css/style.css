@@ -34,6 +34,8 @@ body,
 .messages {
     list-style: none;
     padding: 1em;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .btn:hover {
@@ -158,7 +160,6 @@ body,
 .form-control-sm {
     height: 30px;
 }
-
 
 .form-links {
     text-decoration: underline;
