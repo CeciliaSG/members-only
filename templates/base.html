@@ -53,8 +53,8 @@
                             alt="Logo"></span></a>
                 {% if user.is_authenticated %}
                 <div class="container d-flex justify-content-end ml-auto container-nav-user">
-                    <button class="navbar-toggler account-btn" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarText1" aria-controls="navbarText1" aria-expanded="false"
+                    <button class="navbar-toggler account-btn" type="button" data-toggle="collapse"
+                        data-target="#navbarText1" aria-controls="navbarText1" aria-expanded="false"
                         aria-label="Toggle navigation">
                         <span><i class="fa-regular fa-user"></i></span>
                     </button>
@@ -63,8 +63,7 @@
                         id="navbarText1" style="z-index: 9999;">
                         <li class="nav-item nav-item-account dropdown">
                             <a class="nav-link dropdown-toggle btn-dropdown nav-link-account ml-5 mt-3"
-                                id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                                id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
                                 Account
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" aria-label="User Menu">
@@ -90,8 +89,8 @@
             </div>
 
             {% if not user.is_authenticated %}
-            <button class="navbar-toggler navbar-toggler-login ml-3" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarText3 " aria-controls="navbarText3" aria-expanded="false"
+            <button class="navbar-toggler navbar-toggler-login ml-3" type="button" data-toggle="collapse"
+                data-target="#navbarText3 " aria-controls="navbarText3" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span><i class="fa-solid fa-bars"></i></span>
             </button>
@@ -113,7 +112,7 @@
     <!-- Second Navbar -->
     <nav class="navbar navbar-expand-lg bg-white second-navbar">
         <div class="container-fluid pb-2">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText2"
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText2"
                 aria-controls="navbarText2" aria-expanded="false" aria-label="Toggle navigation">
                 <span><i class="fa-solid fa-bars"></i></span>
             </button>
@@ -216,13 +215,14 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Bootstrap Bundle (with Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Summernote JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-bs4.min.js"></script>
 
-
-    <!-- Your Custom JavaScript -->
+    <!-- Custom JavaScript -->
     <script src="{% static 'js/script.js' %}"></script>
 
 </body>

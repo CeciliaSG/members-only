@@ -66,7 +66,7 @@
                                     {% endif %}
                                     {% if user.is_authenticated and comment.author == user %}
                                     <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
-                                    <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
+                                    <button class="btn btn-delete" data-comment_id="{{ comment.id }}">Delete</button>
                                     {% endif %}
                                 </div>
                                 {% endfor %}
@@ -96,7 +96,7 @@
 {% endif %}
 
 <!-- Delete confirmation modal From Blog walkthrough. -->
-<div class="modal fade" id="deleteCommentsModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -109,8 +109,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a id="deleteCommentConfirm" href="#" class="btn
-          btn-danger">Delete</a>
+                <a id="deleteConfirm" href="#" class="btn">Delete</a>
             </div>
         </div>
     </div>
