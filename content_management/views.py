@@ -403,7 +403,7 @@ class PostUpdateView(generic.UpdateView):
     model = Post
     form_class = PostForm
     template_name = 'content_management/post_form.html'
-    success_url = reverse_lazy('post_list')
+    success_url = reverse_lazy('add_post')
 
     def get_object(self):
         return get_object_or_404(Post, slug=self.kwargs['slug'])
@@ -413,7 +413,6 @@ class PostDeleteView(View):
     """
     View to delete a Post.
     """
-
     def get(self, request, slug, post_id):
         post = get_object_or_404(Post, slug=slug, id=post_id)
         if post.author == request.user or request.user.is_staff:
@@ -421,7 +420,7 @@ class PostDeleteView(View):
             messages.success(request, 'Post deleted successfully!')
         else:
             messages.error(request, 'You are not authorized to delete this post!')
-        return HttpResponseRedirect(reverse('post_list'))
+        return HttpResponseRedirect(reverse('add_post'))
 
 
 

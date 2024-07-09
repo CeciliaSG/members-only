@@ -6,12 +6,12 @@
 
 <div class="body">
     <div class="container-fluid d-flex justify-content-center container-post-row my-5">
-        <div class="container container-post-detail">
+        <div class="container container-post-detail my-5">
             <div class="image-container d-flex justify-content-center align-items-center post-detail-img">
                 <img src="{{ post.featured_image.url }}" alt="Post Image">
             </div>
             <div class="row mx-0">
-                <div class="col-md-6 pr-lg-4 post-detai-content">
+                <div class="col-md-6 pr-lg-4 post-detail-content">
                     <div class="post-content text-left">
                         <div class="d-flex">
                             <h1 class="h2 post-heading">{{ post.heading }} |&nbsp;</h1>
@@ -26,9 +26,23 @@
                 <div class="col-md-6 pl-lg-5 mt-5">
                     <hr class="hr-thick">
                     <div class="d-flex justify-content-center some-icons-row mt-4">
-                        <p><i class="fa-brands fa-facebook some-footer some-icons"></i></p>
-                        <p><i class="fa-brands fa-instagram some-footer some-icons"></i></p>
-                        <p><i class="fa-brands fa-pinterest some-footer some-icons"></i></p>
+                        <p>
+                            <a href="https://www.facebook.com/profile.php?id=61561777450239" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fa-brands fa-facebook some-icons-pages"></i>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://www.instagram.com/spotted_city_guide/" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fa-brands fa-instagram some-icons-pages"></i>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://se.pinterest.com" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-pinterest some-icons-pages"></i>
+                            </a>
+                        </p>
                     </div>
                     <!-- Displaying count of comments. From Blog Walkthrough. -->
                     <div class="row">

@@ -223,7 +223,6 @@ body,
     min-height: 200px;
 }
 
-
 .post-detail-img {
     min-width: 200px;
     min-height: 200px;
@@ -385,6 +384,15 @@ a:hover {
 }
 
 .some-icons:hover {
+    color: #119822;
+}
+
+.some-icons-pages {
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.some-icons-pages:hover {
     color: #119822;
 }
 
