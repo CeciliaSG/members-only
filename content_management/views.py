@@ -7,6 +7,7 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from django.views import View
 from .models import (Post, SavedPost,
 LikedPost, Heading, Comment)
 from .forms import CommentForm, PostForm
@@ -408,11 +409,20 @@ class PostUpdateView(generic.UpdateView):
         return get_object_or_404(Post, slug=self.kwargs['slug'])
 
 
-class PostDeleteView(generic.DeleteView):
-    model = Post
-    template_name = 'content_management/post_form.html'
-    success_url = reverse_lazy('post_list')
+class PostDeleteView(View):
+    """
+    View to delete a Post.
+    """
 
-    def get_object(self):
-        return get_object_or_404(Post, slug=self.kwargs['slug'])
+    def get(self, request, slug, post_id):
+        post = get_object_or_404(Post, slug=slug, id=post_id)
+        if post.author == request.user or request.user.is_staff:
+            post.delete()
+            messages.success(request, 'Post deleted successfully!')
+        else:
+            messages.error(request, 'You are not authorized to delete this post!')
+        return HttpResponseRedirect(reverse('post_list'))
+
+
+
 

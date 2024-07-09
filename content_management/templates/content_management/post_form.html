@@ -32,10 +32,8 @@
                     <td>{{ post.get_status_display }}</td>
                     <td>
                         <a href="{% url 'edit_post' slug=post.slug %}">Edit</a> |
-                        <a href="{% url 'delete_post' slug=post.slug %}" class="btn-delete">Delete</a>
-                        <!--<button type="button" class="btn btn-delete-post" post_id="{{ post.slug }}">Delete
-                    Post</button>-->
-                        <!--<button class="btn btn-delete" data-post-slug="{{ post.slug }}">Delete</button>-->
+                        <a href="#" class="btn-post-delete" post_id="{{ post.id }}"
+                            post_slug="{{ post.slug }}">Delete</a>
                     </td>
                 </tr>
                 {% endfor %}
@@ -46,5 +44,23 @@
 </div>
 </div>
 {% endif %}
+<!-- Delete Post Modal -->
+<div class="modal fade" id="deletePostModal" tabindex="-1" aria-labelledby="deletePostModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deletePostModalLabel">Delete post?</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this post? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">Close</button>
+                <a id="deletePostConfirm" href="#" class="btn">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

@@ -85,9 +85,6 @@ for (let button of editButtons) {
     });
 }
 
-const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
-const deleteButtons = document.getElementsByClassName("btn-delete");
-const deleteConfirm = document.getElementById("deleteConfirm");
 
 /*
  * Initializes deletion functionality for the provided delete buttons.
@@ -106,9 +103,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (let button of deleteButtons) {
         button.addEventListener("click", (e) => {
-            let commentId = e.target.getAttribute("data-comment_id");
+            let commentId = e.target.getAttribute("comment_id");
             deleteConfirm.href = `delete_comment/${commentId}`;
             deleteModal.show();
+        });
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const deletePostModal = new bootstrap.Modal(document.getElementById("deletePostModal"));
+    const deletePostButtons = document.getElementsByClassName("btn-post-delete");
+    const deletePostConfirm = document.getElementById("deletePostConfirm");
+
+    for (let button of deletePostButtons) {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            let postId = e.target.getAttribute("post_id");
+            let postSlug = e.target.getAttribute("post_slug");
+            deletePostConfirm.href = `/posts/${postSlug}/delete/${postId}/`;
+            deletePostModal.show();
         });
     }
 });
