@@ -71,7 +71,7 @@ def register(request):
     else:
         user_form = CustomUserForm()
         profile_form = UserProfileForm()
-    return render(request, 'core/registration.html',
+    return render(request, 'account/signup.html',
                   {'user_form': user_form, 'profile_form': profile_form})
 
 

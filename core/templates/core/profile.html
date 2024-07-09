@@ -4,7 +4,7 @@
 {% if user.is_authenticated %}
 
 <div class="body d-flex flex-column h-100 main-bg body-user-profile">
-    <div class="container-fluid">
+    <div class="container-fluid d-flex justify-content-center">
         <div class="container mb-5">
             <div class="row justify-content-center">
                 <div class="text-wrap col-md-12 ml-2 width: 80%">
@@ -58,8 +58,8 @@
 
                     <div>
                         <ul class="list-unstyled">
-                            <li><a class="saved-post-link" href="{% url 'post_detail' saved_post.post.slug %}">{{
-                                    saved_post.post.title|truncatewords:5 }}
+                            <li><a class="saved-post-link" href="{% url 'post_detail' saved_post.post.slug %}">
+                                    {{ saved_post.post.title|truncatewords:5 }}
                                     <article class="saved-post-excerpt">
                                         {{ saved_post.post.excerpt|truncatewords:10 }}</article>
                                 </a>
