@@ -15,6 +15,11 @@ from .forms import (CustomUserForm, UserProfileForm,
 DeleteAccountForm, UpdateUserProfile, UpdateUserForm)
 from .models import UserProfile
 from content_management.models import SavedPost
+from django.db import transaction
+from allauth.account.utils import complete_signup
+from allauth.account import app_settings
+from allauth.account.models import EmailAddress
+from allauth.account.views import SignupView
 
 # Create your views here.
 
@@ -56,10 +61,13 @@ def register(request):
                                     'Please choose a different one.')
 
             else:
-                user = user_form.save()
+                user = user_form.save(request)
                 profile = profile_form.save(commit=False)
                 profile.user = user
                 profile.save()
+
+                complete_signup(request, user, app_settings.EMAIL_VERIFICATION, 'post_list')
+
                 messages.success(request,
                                  'Yeah you are all signed up.'
                                  'Log in and have a look around.')
@@ -71,7 +79,7 @@ def register(request):
     else:
         user_form = CustomUserForm()
         profile_form = UserProfileForm()
-    return render(request, 'account/signup.html',
+    return render(request, 'core/registration.html',
                   {'user_form': user_form, 'profile_form': profile_form})
 
 
