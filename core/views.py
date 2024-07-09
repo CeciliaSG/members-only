@@ -1,3 +1,4 @@
+# Django imports
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
@@ -8,18 +9,20 @@ from django.contrib import messages
 from django.db import transaction
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from allauth.account.forms import LoginForm
-from allauth.account.utils import complete_signup
 from django.views.generic import UpdateView
-from .forms import (CustomUserForm, UserProfileForm, 
-DeleteAccountForm, UpdateUserProfile, UpdateUserForm)
-from .models import UserProfile
-from content_management.models import SavedPost
-from django.db import transaction
+
+# Third-party imports
+from allauth.account.forms import LoginForm
 from allauth.account.utils import complete_signup
 from allauth.account import app_settings
 from allauth.account.models import EmailAddress
 from allauth.account.views import SignupView
+
+# Local application imports
+from .forms import (CustomUserForm, UserProfileForm, DeleteAccountForm, UpdateUserProfile, UpdateUserForm)
+from .models import UserProfile
+from content_management.models import SavedPost
+
 
 # Create your views here.
 

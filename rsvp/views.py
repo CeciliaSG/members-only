@@ -1,12 +1,32 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
+from django.conf import settings
 from .models import Event, Rsvp
 from .forms import RsvpForm
 
 
-
 # Create your views here.
+
+def send_confirmation_email(user, event, rsvp):
+    subject = f"RSVP Confirmation for {event.title}"
+    message = (
+        f"Dear {user.first_name},\n\n"
+        f"Thank you for RSVPing to {event.title}.\n"
+        f"Your response: {rsvp.response}\n"
+        f"Number of guests: {rsvp.num_guests}\n\n"
+        f"We look forward to seeing you there!\n\n"
+        f"Best regards,\n"
+        f"The Spotted Team"
+    )
+    from_email = settings.DEFAULT_FROM_EMAIL
+    recipient_list = [user.email]
+
+    send_mail(subject, message, from_email, recipient_list)
+
+
+
 @login_required
 def rsvp_event(request, event_id):
 
@@ -33,6 +53,8 @@ def rsvp_event(request, event_id):
             rsvp.response = form.cleaned_data['response']
             rsvp.num_guests = form.cleaned_data['num_guests']
             rsvp.save()
+            send_confirmation_email(request.user, event, rsvp)
+
             message = "Thank you for RSVPing to the event!"
             messages.success(request, message)
             return redirect('event_detail', event_id=event_id)
