@@ -32,10 +32,26 @@ body,
 }
 
 .messages {
-    list-style: none;
-    padding: 1em;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    padding: 1em;
+    transition: opacity 0.5s ease-in-out;
+    background-color: #119822;
+    color: #fff;
+    margin: 1em;
+}
+
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
 }
 
 .btn:hover {
@@ -153,6 +169,11 @@ body,
     opacity: 0.6;
 }
 
+/* Forms */
+.note-editor {
+    width: 80% !important;
+}
+
 .form-control {
     border-radius: 0;
 }
@@ -206,7 +227,6 @@ body,
     min-width: 200px;
     min-height: 200px;
 }
-
 
 .post-detail-img {
     min-width: 200px;
@@ -369,6 +389,15 @@ a:hover {
 }
 
 .some-icons:hover {
+    color: #119822;
+}
+
+.some-icons-pages {
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.some-icons-pages:hover {
     color: #119822;
 }
 

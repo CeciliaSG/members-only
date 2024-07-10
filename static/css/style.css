@@ -169,6 +169,16 @@ body,
     opacity: 0.6;
 }
 
+/* Forms */
+
+.custom-form {
+    width: 80% !important;
+}
+
+.summernote .note-editor {
+    width: 350px;
+}
+
 .form-control {
     border-radius: 0;
 }
