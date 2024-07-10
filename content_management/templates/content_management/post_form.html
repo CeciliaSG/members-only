@@ -5,7 +5,7 @@
 {% block content %}
 {% if user.is_authenticated %}
 <div class="body d-flex flex-column h-100 main-bg add-post">
-    <div class="container mb-5 mx-auto">
+    <div class="container mb-5">
         <div class="row content justify-content-center">
             <div class="col-md-8">
                 <form method="post" enctype="multipart/form-data" class="custom-form" style="width: 80%;">
@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <div class="row mx-5 my-5 justify-content-center">
+    <div class="row mx-3 my-5 justify-content-center">
         <div class="col-md-10">
             <h2 class="text-center">All Posts</h2>
             <table class="table table-bordered">
