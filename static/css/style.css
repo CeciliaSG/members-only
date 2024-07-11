@@ -171,18 +171,6 @@ body,
 
 /* Forms */
 
-.summernote-div {
-    display: inline-block;
-    position: relative;
-}
-
-form .summernote-div .dropdown-menu {
-    margin-left: 60px !important;
-}
-
-#summernote .note-editor.note-frame {
-    width: 350px !important;
-}
 
 .form-control {
     border-radius: 0;

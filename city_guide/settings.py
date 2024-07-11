@@ -72,6 +72,12 @@ cloudinary.config (
     secure = True,
 )
 
+SUMMERNOTE_CONFIG = {
+    'summernote': {
+        'width': '100%',
+    },
+}
+
 SOCIALACCOUNT_PROVIDERS = {
    "google": {
        "SCOPE": [
