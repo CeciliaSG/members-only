@@ -8,6 +8,7 @@
     <div class="container mb-5">
         <div class="row content justify-content-center">
             <div class="col-md-8">
+                <h1 class="h4 form-heading my-5">Post Management</h1>
                 <form method="post" enctype="multipart/form-data" class="custom-form" style="width: 100%;">
                     {% csrf_token %}
                     {{ form.media }}
@@ -19,7 +20,7 @@
     </div>
     <div class="row mx-3 my-5 justify-content-center">
         <div class="col-md-10">
-            <h2 class="text-center">All Posts</h2>
+            <h2 class=" h4 form-heading mb-5">All Posts</h2>
             <table class="table table-bordered">
                 <tr>
                     <th>Title</th>

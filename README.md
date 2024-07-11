@@ -412,7 +412,8 @@ https://stackoverflow.com/questions/62296423/how-to-use-q-to-filter-using-string
  - Setting up email allAuth:
  [https://florianbgt.com/](https://florianbgt.com/posts/django_allauth_email_login)
  - Summernote for frontend: 
- [StackOverflow](https://stackoverflow.com/questions/60688640/summernote-using-django-forms-displaying-with-html-tags)
+ [StackOverflow - Summernote](https://stackoverflow.com/questions/60688640/summernote-using-django-forms-displaying-with-html-tags)
+ [StackOverflow - Summernote](https://stackoverflow.com/questions/61657061/how-do-i-resize-the-width-of-summernote)
 
 
 ### Content 
