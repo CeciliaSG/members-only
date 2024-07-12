@@ -64,7 +64,7 @@ def register(request):
                                     'Please choose a different one.')
 
             else:
-                user = user_form.save(request)
+                user = user_form.save()
                 profile = profile_form.save(commit=False)
                 profile.user = user
                 profile.save()
@@ -74,7 +74,8 @@ def register(request):
                 messages.success(request,
                                  'Yeah you are all signed up.'
                                  'Log in and have a look around.')
-                auth_login(request, user)
+                #auth_login(request, user)
+                #return redirect('post_list')
                 return redirect('post_list')
         else:
             messages.error(request,
