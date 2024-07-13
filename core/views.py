@@ -19,14 +19,14 @@ from allauth.account.models import EmailAddress
 from allauth.account.views import SignupView
 
 # Local application imports
-from .forms import (CustomUserForm, UserProfileForm, DeleteAccountForm, UpdateUserProfile, UpdateUserForm)
+from .forms import (CustomUserForm, UserProfileForm,
+DeleteAccountForm, UpdateUserProfile, UpdateUserForm)
 from .models import UserProfile
 from content_management.models import SavedPost
 
 
 # Create your views here.
 
-# Sign-up/register view
 # Sign-up/register view
 @transaction.atomic
 def register(request):
@@ -74,8 +74,6 @@ def register(request):
                 messages.success(request,
                                  'Yeah you are all signed up.'
                                  'Log in and have a look around.')
-                #auth_login(request, user)
-                #return redirect('post_list')
                 return redirect('post_list')
         else:
             messages.error(request,

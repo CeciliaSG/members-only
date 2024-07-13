@@ -399,6 +399,7 @@ def add_post(request):
     
     return render(request, 'content_management/post_form.html', {'form': form, 'posts': posts})
 
+
 class PostUpdateView(generic.UpdateView):
     model = Post
     form_class = PostForm
