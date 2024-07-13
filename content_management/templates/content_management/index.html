@@ -63,7 +63,8 @@
 
                             <div class="btn-post btn-save-post" data-post-id="{{ post.id }}">
                                 <a href="{% url 'save_post' post.id %}" class="save-post" aria-label="link">
-                                    <i class="fa-solid fa-bookmark"></i></a></div>
+                                    <i class="fa-solid fa-bookmark"></i></a>
+                            </div>
                         </div>
                         {% else %}
                         <div class="post-symbols">
@@ -111,7 +112,8 @@
 
                             <div class="btn-post btn-save-post" data-post-id="{{ post.id }}">
                                 <a href="{% url 'save_post' post.id %}" class="save-post" aria-label="link">
-                                    <i class="fa-solid fa-bookmark"></i></a></div>
+                                    <i class="fa-solid fa-bookmark"></i></a>
+                            </div>
                         </div>
                         {% else %}
                         <div class="post-symbols">
@@ -127,4 +129,28 @@
         </div>
     </section>
 </div>
+<!-- Modal for log-in and registering info -->
+{% if not user.is_authenticated %}
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Access More Content</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Please log in or register to access more content.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="{% url 'account_login' %}" class="btn btn-primary">Log In</a>
+                <a href="{% url 'registration' %}" class="btn btn-secondary">Register</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
 {% endblock %}

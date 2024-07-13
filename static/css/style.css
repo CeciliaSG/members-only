@@ -54,6 +54,10 @@ body,
     border-color: #c3e6cb;
 }
 
+.modal-content {
+    border-radius: 0;
+}
+
 .btn:hover {
     background-color: #119822;
     color: black;
