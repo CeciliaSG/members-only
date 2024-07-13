@@ -454,6 +454,11 @@ a:hover {
     color: white;
 }
 
+.post-edit-link {
+    color: #1E441E;
+}
+
+
 .card-excerpt {
     font-size: 16px;
     text-decoration: none;
@@ -572,10 +577,6 @@ footer {
 
     .post-link a {
         margin-bottom: 0;
-    }
-
-    .post-edit-link {
-        color: #1E441E;
     }
 
 
