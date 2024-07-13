@@ -29,7 +29,10 @@
                 </tr>
                 {% for post in posts %}
                 <tr>
-                    <td style="font-size: 14px;">{{ post.title }}</td>
+                    <td style="font-size: 14px;"><a class="post-edit-link"
+                            href="{% url 'post_detail' slug=post.slug %}">
+                            <strong> {{ post.title }}</strong>
+                        </a></td>
                     <td>{{ post.get_status_display }}</td>
                     <td>
                         <a href="{% url 'edit_post' slug=post.slug %}">Edit</a> |
@@ -46,7 +49,8 @@
 </div>
 {% endif %}
 <!-- Delete Post Modal -->
-<div class="modal fade" id="deletePostModal" tabindex="-1" aria-labelledby="deletePostModalLabel" aria-hidden="true">
+<div class="modal fade custom-modal" id="deletePostModal" tabindex="-1" aria-labelledby="deletePostModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

@@ -38,6 +38,7 @@ body,
     background-color: #119822;
     color: #fff;
     margin: 1em;
+    border-radius: 0;
 }
 
 .alert {
@@ -45,7 +46,7 @@ body,
     padding: .75rem 1.25rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
-    border-radius: .25rem;
+    border-radius: 0;
 }
 
 .alert-success {
@@ -571,6 +572,10 @@ footer {
 
     .post-link a {
         margin-bottom: 0;
+    }
+
+    .post-edit-link {
+        color: #1E441E;
     }
 
 
