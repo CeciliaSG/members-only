@@ -201,13 +201,19 @@ See testing against user stories further down under features!
 
 -   Interactive elements
 
+## TESTING
+
+### 1. manual Testing
+
+### 2. Testing site responsivenes
+
+
 ### Existing Features and Testing against user stories
 
 
+### 3. Lighthouse
 
-## Lighthouse
-
-- ##Results:#
+### Results:
 
 <br>
 
@@ -240,13 +246,7 @@ Desktop, logged-in users:
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 10.52.01.png">
 
 
-### Further Testing
-
--   The Website was tested on Google Chrome.
--   The website was viewed on a variety of devices such as Desktop, Laptop and iPhone
--   A large amount of testing was done to ensure that all pages were linking correctly.
-
-### Validator Testing 
+### 4. Validator Testing. code validation testing css, html and JS
 
 - HTML
   - Stray end tags were flagged for when checking code when non.logged in, this is because the some links are only available to authorized users, which means the link isn't visible when logged out. The link wraps a card so the end tag is visible to the browser. When checking the same html when logged in it passes validation. 
@@ -263,10 +263,17 @@ Desktop, logged-in users:
 
 -  No other errors were returned when passing through the official [W3C validator](https://validator.w3.org/)
 
-
 - No errors were found when passing through the official (Jigsaw) validator [https://jigsaw.w3.org/]
 - CI Python Linter [(https://pep8ci.herokuapp.com/)]
 - JS Hint [(https://jshint.com/)] No error were found when passing the code through JSHint.
+
+<br>
+
+### Further Testing
+
+-   The Website was tested on Google Chrome.
+-   The website was viewed on a variety of devices such as Desktop, Laptop and iPhone
+-   A large amount of testing was done to ensure that all pages were linking correctly.
 
 <br>
 
