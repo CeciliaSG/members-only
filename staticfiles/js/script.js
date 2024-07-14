@@ -136,3 +136,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+
+
+$(document).ready(function () {
+    $('#loginModal').modal('show');
+});

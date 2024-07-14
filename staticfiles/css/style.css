@@ -38,6 +38,7 @@ body,
     background-color: #119822;
     color: #fff;
     margin: 1em;
+    border-radius: 0;
 }
 
 .alert {
@@ -45,13 +46,17 @@ body,
     padding: .75rem 1.25rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
-    border-radius: .25rem;
+    border-radius: 0;
 }
 
 .alert-success {
     color: #155724;
     background-color: #d4edda;
     border-color: #c3e6cb;
+}
+
+.modal.custom-modal .modal-dialog .modal-content {
+    border-radius: 0px !important;
 }
 
 .btn:hover {
@@ -448,6 +453,11 @@ a:hover {
 .post-title .post-content {
     color: white;
 }
+
+.post-edit-link {
+    color: #1E441E;
+}
+
 
 .card-excerpt {
     font-size: 16px;
