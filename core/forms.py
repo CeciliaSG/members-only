@@ -116,10 +116,10 @@ class UpdateUserForm(forms.ModelForm):
         if username and confirm_username and username != confirm_username:
             self.add_error('confirm_username', "Usernames do not match.")
 
-        if email and User.objects.filter(email=email).exclude(pk=self.user.pk).exists():
+        if email and User.objects.filter(email=email).exclude(pk=self.instance.pk).exists():
             self.add_error('email', "This email is already in use.")
 
-        if username and User.objects.filter(username=username).exclude(pk=self.user.pk).exists():
+        if username and User.objects.filter(username=username).exclude(pk=self.instance.pk).exists():
             self.add_error('username', "This username is already taken.")
 
         return cleaned_data
