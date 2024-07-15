@@ -72,8 +72,6 @@
                                 </li>
                                 <li><a class="dropdown-item" href="{% url 'account_change_password' %}">Change
                                         Password</a></li>
-                                <li><a class="dropdown-item" href="{% url 'account_email' %}">Change
-                                        Email</a></li>
                                 <li><a class="dropdown-item" href="{% url 'delete_account' %}">Delete
                                         Account</a>
                                 </li>
@@ -81,6 +79,8 @@
                                 <li><a class="dropdown-item" href="{% url 'add_post' %}">Manage Posts</a>
                                 </li>
                                 {% endif %}
+                                <li><a class="dropdown-item" href="{% url 'account_email' %}">Change
+                                        Email</a></li>
                             </ul>
                         </li>
                     </ul>
