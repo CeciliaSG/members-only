@@ -83,6 +83,10 @@ body,
     padding: 0;
 }
 
+.dark-green {
+    color: #155724;
+}
+
 /* Navbar styling */
 
 .first-nav {
