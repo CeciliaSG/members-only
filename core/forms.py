@@ -96,17 +96,33 @@ class UpdateUserForm(forms.ModelForm):
         model = User
         fields = ['email', 'username']
 
+    def __init__(self, *args, **kwargs):
+        instance = kwargs.get('instance', None)
+        super(UpdateUserForm, self).__init__(*args, **kwargs)
+        if instance:
+            self.fields['email'].initial = instance.email
+            self.fields['username'].initial = instance.username
+
     def clean(self):
         cleaned_data = super().clean()
         email = cleaned_data.get("email")
         confirm_email = cleaned_data.get("confirm_email")
+        username = cleaned_data.get("username")
+        confirm_username = cleaned_data.get("confirm_username")
+
         if email and confirm_email and email != confirm_email:
             self.add_error('confirm_email', "Emails do not match.")
 
-        username = cleaned_data.get("username")
-        confirm_username = cleaned_data.get("confirm_username")
         if username and confirm_username and username != confirm_username:
             self.add_error('confirm_username', "Usernames do not match.")
+
+        if email and User.objects.filter(email=email).exclude(pk=self.user.pk).exists():
+            self.add_error('email', "This email is already in use.")
+
+        if username and User.objects.filter(username=username).exclude(pk=self.user.pk).exists():
+            self.add_error('username', "This username is already taken.")
+
+        return cleaned_data
 
 
 class DeleteAccountForm(forms.Form):
