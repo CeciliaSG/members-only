@@ -57,15 +57,11 @@ body,
 
 .modal.custom-modal .modal-dialog .modal-content {
     border-radius: 0px !important;
-    margin-top: 150px !important;
+    margin-top: 200px !important;
 }
 
 .modal-open .modal {
     padding-right: 10px !important;
-}
-
-.modal.custom-modal {
-    margin-top: 60px !important;
 }
 
 .btn:hover {
@@ -75,13 +71,11 @@ body,
 
 .container {
     margin-top: 15px;
-    /*margin-bottom: 20px;*/
 }
 
 .container-fluid {
     margin: 0;
     padding: 0;
-    /* padding-bottom: 20px;*/
 }
 
 .drop-down-right {

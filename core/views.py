@@ -70,11 +70,6 @@ def register(request):
                 profile.save()
 
                 complete_signup(request, user, app_settings.EMAIL_VERIFICATION, 'post_list')
-
-                messages.success(request,
-                                 'Yeah you are all signed up.'
-                                 'Log in and have a look around.')
-                return redirect('post_list')
         else:
             messages.error(request,
                            'Please correct the errors below.')
