@@ -57,6 +57,15 @@ body,
 
 .modal.custom-modal .modal-dialog .modal-content {
     border-radius: 0px !important;
+    margin-top: 150px !important;
+}
+
+.modal-open .modal {
+    padding-right: 10px !important;
+}
+
+.modal.custom-modal {
+    margin-top: 60px !important;
 }
 
 .btn:hover {
