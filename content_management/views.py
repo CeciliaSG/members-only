@@ -5,12 +5,14 @@ redirect, get_object_or_404, reverse)
 from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.db import IntegrityError
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.views import View
 from .models import (Post, SavedPost,
 LikedPost, Heading, Comment)
 from .forms import CommentForm, PostForm
+from django.utils.text import slugify
 
 
 class PostListView(generic.ListView):
@@ -391,8 +393,11 @@ def add_post(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.save()
-            return redirect('post_detail', slug=post.slug)
+            try:
+                post.save()
+                return redirect('post_detail', slug=post.slug)
+            except IntegrityError:
+                messages.error(request, "A post with this slug already exists. Please try a different title.")
     else:
         form = PostForm()
     posts = Post.objects.all()
@@ -408,6 +413,20 @@ class PostUpdateView(generic.UpdateView):
 
     def get_object(self):
         return get_object_or_404(Post, slug=self.kwargs['slug'])
+
+    def form_valid(self, form):
+        post = form.save(commit=False)
+        if not post.slug or post.slug != slugify(post.title):
+            post.slug = slugify(post.title)
+
+        try:
+                post.save()
+                messages.success(self.request, "Post updated successfully.")
+                return super().form_valid(form)
+
+        except IntegrityError:
+                messages.error(self.request, "A post with this slug already exists. Please try a different title.")
+                return self.form_invalid(form)
 
 
 class PostDeleteView(View):
