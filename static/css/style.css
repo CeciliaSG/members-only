@@ -57,8 +57,12 @@ body,
 
 .modal.custom-modal .modal-dialog .modal-content {
     border-radius: 0px !important;
-    margin-top: 200px !important;
+    margin-top: 300px !important;
 }
+
+/*.modal.custom-modal {
+    margin-top: 30px;
+}*/
 
 .modal-open .modal {
     padding-right: 10px !important;

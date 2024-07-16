@@ -10,6 +10,22 @@
 An insider membership guide to Stockholm.
 This is a memberships site with the purpose of prividing members - people living in Stockholm - with a comprehensive guide of everything going on in the city as well as some perks for members making it good value for money. The site intends to includs everything from bars and restaurants, to things to do, events, musical festivals etc.
 
+- __The Change Email__
+
+  - Link visible in the Account dropdown menu when user is logged in. Registered users can change/update their email.
+
+  <br>
+
+| Form | Description | Expected | Testing | Result |
+| ----------- | ----------- |  ----------- | ----------- | ----------- |
+| **Change email**, AllAuth, email.html| The user can add an email and therefore technically changing it. They can also mark an email ass primary as well as removing it. Users can also request a reverification if their email isn’t verified. More than one email can be associated with an account. | When a user enters an email in the field and clicks add email it should be added to the account. A verification email should be sent. By clicking the verification link in the email the email should be verified. When the user clicks remove email, it should be removed from the account. When the user clicks the radio-buttons next to the email address and then clicks make primary the email should be marked as primary for the account. A resend verification mail should only be sent if the one of the emails for the account isn’t verified. | When a user enters an email and clicks add email it is added to the account. A verification email is sent to the added email. When the verification link in the email is clicked the email displays as verified. The user can choose an email with the radio-buttons and then click make primary and it is made the primary email for the account. If the user clicks re-send verification for an unverified email an email is sent (doesn’t happen for already verified email addresses). When a user chooses an email with the radio-buttons and clicks remove the email is removed from the account.
+
+<br>
+
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.11.51.png">
+
+<br>
+
 
 
 
