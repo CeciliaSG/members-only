@@ -16,6 +16,7 @@ from allauth.account.forms import LoginForm
 from allauth.account.utils import complete_signup
 from allauth.account import app_settings
 from allauth.account.models import EmailAddress
+from allauth.account.utils import send_email_confirmation
 from allauth.account.views import SignupView
 
 # Local application imports
@@ -206,3 +207,25 @@ def delete_account(request):
         form = DeleteAccountForm()
         return render(request,
                       'core/delete_account.html', {'form': form})
+
+
+def resend_verification_email(request):
+    if request.method == "POST":
+        email = request.POST.get('email')
+        if email:
+            try:
+                user = User.objects.get(email=email)
+                email_address = EmailAddress.objects.get(user=user, email=email)
+                if not email_address.verified:
+                    send_email_confirmation(request, user)
+                    messages.success(request, "Verification email sent.")
+                else:
+                    messages.info(request, "This email is already verified.")
+            except User.DoesNotExist:
+                messages.error(request, "No user found with this email address.")
+            except EmailAddress.DoesNotExist:
+                messages.error(request, "Email address not found or already verified.")
+        else:
+            messages.error(request, "Please enter an email address.")
+        return redirect('resend_verification_email')
+    return render(request, 'core/resend_verification.html')
