@@ -538,8 +538,18 @@ See testing against user stories further down under features!
 
 Note! The comment form is visible on drafts. Comments can be added to drafts, but not deleted from the frontend.
 
+### Testing 404
 
-### 2. Testing site responsivenes
+**Expected:** When a page is not found the custom 404 page should display.
+
+**Testing:** Tested by entering a url that doesn't exist
+
+**Result:** When knowingly entering a url taht doesn't exist on the site it returns the custom url.
+
+<img src="resources_readme/404.png">
+
+
+## 2. Testing site responsivenes
 
 
 ### Testing against user stories
