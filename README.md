@@ -99,6 +99,16 @@ See testing against user stories further down under features!
 
 <br>
 
+#### ERD Comment model
+| FK | post | Post Model|
+| ----------- | ----------- | ----------- |
+| | author | FK | 
+| | body | TextField |
+| | approved | BooleanField  |
+| | created_on| DateTiemField |
+
+<br>
+
 #### ERD Event model
 | FK | Heading | Heading Model|
 | ----------- | ----------- | ----------- |
@@ -511,14 +521,14 @@ See testing against user stories further down under features!
 | ----------- | ----------- |  ----------- | ----------- | ----------- |
 | **DeleteAccountForm**, App: Core, delete_account.html | Lets user delete their account and all associated information. <br> | When the link in the dropdown menu is clicked the user should be redirected to the delete account page. When thy check confirm account deletion and click delete account the account should be deleted and they should be logged out and redirected to the home page for logged out users. | The link in the dropdown was clicked. The confirm delete checkbox was checked and the delete button clicked. The feature was tested without checking the delete account confirm box. | The menu link takes the user to the delete account page. When the user checks the checkbox and clicks delete the account is deleted and the user is signed-out and returned to the home page for logged out users. All user info and any profile information <br> related to the user is deleted from the admin panel and the database. When the delete account confirm wasn’t checked the deletion isn’t possible – the user is then prompted to check the box if they want to continue. |
 
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.12.05.png">
+<img src="resources_readme/delete_account.png">
 
 <br>
 
 
-- __Manage Posts__
+### Testing Manage Posts
 
-  - Gives authorised users/staff the ability to add, edit and delete posts from the frontend.
+  - Visible in Account dropdown for auth. users. Gives authorised users/staff the ability to add, edit and delete posts from the frontend.
 
  <br> 
 
@@ -532,7 +542,7 @@ Note! The comment form is visible on drafts. Comments can be added to drafts, bu
 ### 2. Testing site responsivenes
 
 
-### Existing Features and Testing against user stories
+### Testing against user stories
 
 
 ### 3. Lighthouse
