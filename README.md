@@ -385,7 +385,7 @@ See testing against user stories further down under features!
 
 <br>
 
-#### Testing the comments function:
+### Testing the comments function:
 **Expected:** When a user comments the comment should be shown as awaiting approval. The buttons edit and delete underneath the comment should be clickable to let the user use these functions. The comment should be visible in the comments section in the admin so it can be approved. When approved the buttons should turn green. Users should be able to see other users’ approved comments, but only be able to edit and delete their own. The comments count function displays the number of comments for the post. After editing the comment needs new approval. When delete is clicked a modal should appear asking the user if they are sure they want to delete the comment. When the delete button in the modal is clicked the comment should be removed and no longer be visible.
 
 **Testing:** A comment was created, submitted and then approved from the admin. The user logged out and another user logged in to see the approved comment. The edit function was tested by clicking the button, editing the comment and clicking update. The delete function was tested by clicking delete.
@@ -431,7 +431,10 @@ See testing against user stories further down under features!
 
 <br>
 
+### Testing features reachable by link from sign-in page
 
+**Link: Didn't receive your verification email? Resend it here.**
+**Link: Forgot Password?**
 
 | Form | Description | Expected | Testing | Result |
 | ----------- | ----------- |  ----------- |  ----------- |  ----------- |
@@ -440,8 +443,7 @@ See testing against user stories further down under features!
 
 | Form | Description | Expected | Testing | Result |
 | ----------- | ----------- |  ----------- |  ----------- |  ----------- |
-| **Password Reset**, Form App: AllAuth, Template: allauth/password reset | Lets the user reset their password. | When the user enters a registered password an email with a password reset link should be sent. When the link in the email is clicked, they should be redirected to the change password page. When a new password is entered (twice) and the change password button clicked the password should be reset, and the user redirected to a page informing them of the change. If a user enters a non-registered email an email is sent informing the user that their email isn’t in the database. In both cases the user should be directed to a page informing them an email was sent. | A registered and an unregistered email was entered and the reset my password button clicked. The link in the sent email was clicked and the change password form tested by providing a new password and clicking change password. The new password was tested by login in after the password change. | When a registered email is entered an email with reset link is sent and the user is directed to a page informing them of this. When the link is clicked it takes the user to the reset page, where the user can choose a new password and when they click “reset the password” ii is reset. When the user tries to login with their new password is logs them in. If the user enters an email not in the database, they are redirected to the page informing them an email has been sent. The email informs the user their email is not registered. |
-
+| **Forgot Password/Password Reset**, Form App: AllAuth, Template: allauth/password reset | Lets the user reset their password. | When the user enters a registered password and email with a password reset link should be sent. When the link in the email is clicked, they should be redirected to the change password page. When a new password is entered (twice) and the change password button clicked the password should be reset, and the user redirected to a page informing them of the change. If a user enters a non-registered email an email is sent informing the user that their email isn’t in the database. In both cases the user should be directed to a page informing them an email was sent. | A registered and an unregistered email was entered and the reset my password button clicked. The link in the sent email was clicked and the change password form tested by providing a new password and clicking change password. The new password was tested by login in after the password change. | When a registered email is entered an email with reset link is sent and the user is directed to a page informing them of this. When the link is clicked it takes the user to the reset page, where the user can choose a new password and when they click “reset the password” ii is reset. When the user tries to login with their new password is logs them in. If the user enters an email not in the database, they are redirected to the page informing them an email has been sent. The email informs the user their email is not registered. |
 
 
 ### Testing the Profile Page
@@ -461,10 +463,9 @@ See testing against user stories further down under features!
 <br>
 
 
-
 ### Testing Signout function
 
- ***Signout link visible in the Account dropdown menu when signed in**
+ **Signout link visible in the Account dropdown menu when signed in**
 
 | Function | Description | Expected | Testing | Result | 
 | ----------- | ----------- |  ----------- | ----------- | ----------- |
@@ -494,8 +495,7 @@ See testing against user stories further down under features!
 <br>
 
 
-
-### Testing the Change Password finction
+### Testing the Change Password function
 
   **Visible in the Account dropdown when user is logged in. Gives the user the ability to change their password. Registered users can change their password.**
 
