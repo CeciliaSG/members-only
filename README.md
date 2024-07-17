@@ -219,16 +219,18 @@ See testing against user stories further down under features!
 
 **Testing:** Tested the links by clicking them.
 
-Result: The links link to the correct pages/endpoints when clicked. The logo works as a link back to the home-page.
+**Result:** The links link to the correct pages/endpoints when clicked. The logo works as a link back to the home-page.
 
-Testing first navbar for logged-out users. Links to sign-in and sing-up:
-Expected: The links are expected to take the user to the declared page/feature when the user clicks the link.
+### Testing first navbar for logged-out users. Links to sign-in and sign-up:
+**Expected:** The links are expected to take the user to the declared page/feature when the user clicks the link.
 
-Testing: Tested the links by clicking them.
+**Testing:** Tested the links by clicking them.
 
-Result: The links link to the correct pages/endpoints when clicked.
+**Result:** The links link to the correct pages/endpoints when clicked.
 
-Testing second navbar/Account for logged-in users. Links to profile, sign-out, change password, change email, delete account, manage posts (only visible to staff-authenticated users):
+<img src="resources_readme/Login_signup.png">
+
+### Testing second navbar/Account for logged-in users. Links to profile, sign-out, change password, change email, delete account, manage posts (only visible to staff-authenticated users):
 
 **Expected:**
 
@@ -254,7 +256,7 @@ Testing second navbar/Account for logged-in users. Links to profile, sign-out, c
 <br>
 
 
-- __The Footer__ 
+### Testing the Footer
 
 -	Featured on all pages and visible for both logged-out and logged in users.
 -	Includes links to pages: About, Become a member and Partnerships.
@@ -273,69 +275,72 @@ Testing second navbar/Account for logged-in users. Links to profile, sign-out, c
 
 
 ## Pages including all features, links etc. in these.
+
 ### Landing page (index.html)
-- __The landing page image__
 
   - The landing page give the users an overview of the site. Posts are only clickable for logged in users. 
 
   - “The Latest” section show the users the latest from all categories/pages: restaurants & bars, things to do, what's on etc.
 
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.26.27.png">
-
 <br>
 
--	For logged-out users/non-members:
+-	#### For logged-out users/non-members:
 
 -	When a non-logged in user first enter the site, a modal is shown prompting them to login or sign-up (if they are not already members) to get access to all content. 
 
-Testing Modal:
--	Expected: The modal loads when the page is reloaded.
+**Testing Modal:**
+-	**Expected:** The modal loads when the page is reloaded.
 
--	Testing: Tested by reloading the page in logged-out mode (and logged in mode). The buttons in the modal were clicked. 
+-	**Testing:** Tested by reloading the page in logged-out mode (and logged in mode). The buttons in the modal were clicked. 
 
--	Result: The modal shows for non-logged in users, with two clickable buttons. The buttons take the user to sign-in and sign-up pages/forms.
+-	**Result:** The modal shows for non-logged in users, with two clickable buttons. The buttons take the user to sign-in and sign-up pages/forms.
 -	Posts are visible to non-logged in users but can’t be clicked.
 
 -	Top banner with brief explanation of sites purpose, includes button to sign-up page. Only visible in logged out mode.
 
-Testing Try Spotted for free button:
+**Testing Try Spotted for free button:**
 -	Expected: The button takes the user to the sign-up page.
 
 -	Testing: Tested the button by clicking it.
 
 -	Result: The button takes the user to the sign-up page/form.
 
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.26.27.png">
 
-For logged-in users/non-members:
+
+**For logged-in users/non-members:**
 
 -	The page displays a hero image for logged in users. All content is accessible. Logged in users can also save posts to their profile by clicking the save post symbol, so that they can come back to them later. There is also a feature to like the post for logged in users.
 
-Testing post-links, save post feature and liking feature:
--	Expected: 
+**Testing post-links, save post feature and liking feature:**
+- **Expected:**
 - The links take the users to the correct post-details page.
 - By clicking the save post symbol the post gets saved and shows in the user’s profile. The user is informed that the post has been saved through an alert message. The reverse is true for un-saving the post.
 - By clicking the heart beneath the post, the user likes the post, and this information is stored. The user is informed that they’ve liked the post via an alert message. The heart turns read to indicate that the post has been liked (at the moment the colour is only saved in the session and disappears if the page is reloaded and is not visible when the user comes back to the page. If the user likes a post that they have already liked the alert message shows and informs them of this. Posts can be unliked by clicking the heart again.
 
 
--	Testing: 
+- **Testing:**
 - Post-links were clicked.
 - Save symbol was clicked to save and clicked again to un-save.
 - The heart symbol was clicked to like and clicked again to un-like the post.
 
--	Result: 
--	The links take the user to the correct post-details page.
--	Posts are saved to the profile and the alert appears. Posts are unsaved when clicked a second time. The user is informed through the alert message. The post is removed from the profile.
--	The heart symbol turns red when a user likes a post. The alert message appears informing them they’ve liked the post. When symbol is clicked again the colour reverts to green and a message appear informing the user they’ve unliked the post. The red colour of the heart is only saved in the session.
+- **Result:**
+- The links take the user to the correct post-details page.
+- Posts are saved to the profile and the alert appears. Posts are unsaved when clicked a second time. The user is informed through the alert message. The post is removed from the profile.
+- The heart symbol turns red when a user likes a post. The alert message appears informing them they’ve liked the post. When symbol is clicked again the colour reverts to green and a message appear informing the user they’ve unliked the post. The red colour of the heart is only saved in the session.
 
+<img src="resources_readme/Index_page_1.png">
+<img src="resources_readme/Index_page_2.png">
+<br>
 
-- __Post-pages: Restaurants & Bars, What's On, & Things to do etc.__
+### Testing post pages: Restaurants & Bars, What's On, & Things to do etc.__
 
   - These pages have the same layout, structure and function - they display posts for the relevant subjects and allow user to brows restaurants, bars, things to do essentially things that are happening in the city. Posts are added daily to give the members/users value and incentive to keep being members.
 
 <br>
 
 ## Post pages: ##
-**Post List page:**
+### Post List page
 
 <br>
 
@@ -356,22 +361,19 @@ Testing post-links, save post feature and liking feature:
 </br>
 
 
-- __The Post details page__
+### The Post details page
 - Includes an informative text, clickable SOME-symbols and a comments feature to comment the post.
 
-Testing SOME-symbols on details page:
-Expected: The SOME-symbols are clickable and take the user to the correct some endpoint.
-Testing: The SOME-symbols were clicked.
-Result: The user is taken to correct endpoints when SOME-symbols are clicked.
-
-**Details page:**
+**Testing SOME-symbols on details page:**
+**Expected:** The SOME-symbols are clickable and take the user to the correct some endpoint.
+**Testing:** The SOME-symbols were clicked.
+**Result:** The user is taken to correct endpoints when SOME-symbols are clicked.
 
 <br>
 
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.54.png">
+<img src="resources_readme/post_details_page_2.png">
 
 <br>
-
 
 #### Testing the comments function:
 **Expected:** When a user comments the comment should be shown as awaiting approval. The buttons edit and delete underneath the comment should be clickable to let the user use these functions. The comment should be visible in the comments section in the admin so it can be approved. When approved the buttons should turn green. Users should be able to see other users’ approved comments, but only be able to edit and delete their own. The comments count function displays the number of comments for the post. After editing the comment needs new approval. When delete is clicked a modal should appear asking the user if they are sure they want to delete the comment. When the delete button in the modal is clicked the comment should be removed and no longer be visible.
@@ -380,13 +382,13 @@ Result: The user is taken to correct endpoints when SOME-symbols are clicked.
 
 **Result:** The user’s comment was created, shown and the lit up when approved. The user can see, edit and delete their own comments. Other users’ comments are also visible to them. The comment count function displays the number of comments for the post. When edit is clicked the comment appears back in the comments function and can be edited and then needs new approval from the admin. When delete was clicked the modal appears and gives the user the choice to delete or close the modal. The close button closes the modal. When the modal delete-button is clicked the comment is removed and is no longer visible. The comment count is updated accordingly.
 
+<img src="resources_readme/comments.png">
 
-- __The Events page__
+
+### Testing the Events page
 
   - The Events page give the user an overview of the events available and will allow the user to see the benefits of signing up as a member.
   - The listed events are clickable only for logged-in users (logged-out users can only see the post-list but the links are not available) and takes the user to a details page with more information about the event. 
-
-##### Testing the events page:
 
 -	**Expected:** The post-link takes the users to the correct events detail page.
 
@@ -394,8 +396,10 @@ Result: The user is taken to correct endpoints when SOME-symbols are clicked.
 
 -	**Result:** The links take the user to the expected events details page.
 
+<img src="resources_readme/Events_page.png">
 
-- __The Events Detail page__
+
+### Testing the Events Detail page
 
 - The events details page includes more detailed information about the event and includes a feature for members (logged-in users) to RSVP to events and let the arrangers know how many guests they will be bringing.
 
@@ -407,27 +411,15 @@ Result: The user is taken to correct endpoints when SOME-symbols are clicked.
 
 <br>
 
-## Event pages: ##
-**Event post page:**
-<br>
+<img src="resources_readme/events_details_page.png">
 
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.18.png">
 
-<br>
-
-**Event details page:**<br>
-
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.54.png">
-
-<br>
 
 **RSVP Form:**<br>
 
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.59.png">
 
 <br>
-
-
 
 
 
@@ -442,7 +434,7 @@ Result: The user is taken to correct endpoints when SOME-symbols are clicked.
 
 
 
-- __The Profile Page__
+### Testing the Profile Page
 
   - This page allows users to see their personal info. and profile choices, as well as their saved posts. It also allows them to update their information. The form is pre-populated the username, user email and their choice of city, neighbourhood, interests. The membership is presently only available in Stockholm, <br>why there is only one choice for city.
 
@@ -460,9 +452,9 @@ Result: The user is taken to correct endpoints when SOME-symbols are clicked.
 
 
 
-- __The Signout Page__
+### Testing Signout function
 
- ### Signout link visible in the Account dropdown menu when signed in
+ ***Signout link visible in the Account dropdown menu when signed in**
 
 | Function | Description | Expected | Testing | Result | 
 | ----------- | ----------- |  ----------- | ----------- | ----------- |
@@ -475,7 +467,7 @@ Result: The user is taken to correct endpoints when SOME-symbols are clicked.
 <br>
 
 
-- __The Change Email__
+### Testing the Change Email function
 
   - Link visible in the Account dropdown menu when user is logged in. Registered users can change/update their email.
 
@@ -493,9 +485,9 @@ Result: The user is taken to correct endpoints when SOME-symbols are clicked.
 
 
 
-- __The Change Password__
+### Testing the Change Password finction
 
-  - Gives the user the ability to change their password. Registered users can change their password.
+  **Visible in the Account dropdown when user is logged in. Gives the user the ability to change their password. Registered users can change their password.**
 
  <br> 
 
@@ -509,9 +501,9 @@ Result: The user is taken to correct endpoints when SOME-symbols are clicked.
 
 <br>
 
-- __The Delete Account Page__
+### Testing the Delete Account function
 
-  - Gives the user the ability to easily delete their account. Registered users/members can delete their account and all associated information. Accessible from the Account dropdown menu.
+  **Reachable from the Account drpdown when user is loggein. Gives the user the ability to easily delete their account. Registered users/members can delete their account and all associated information. Accessible from the Account dropdown menu.**
 
 <br>  
 
