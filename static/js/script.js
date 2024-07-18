@@ -1,3 +1,5 @@
+"use strict";
+
 let likeButtons = document.getElementsByClassName('btn-like');
 
 Array.from(likeButtons).forEach(likeButton => {
