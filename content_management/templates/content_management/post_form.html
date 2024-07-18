@@ -4,12 +4,12 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<div class="body d-flex flex-column h-100 main-bg add-post">
-    <div class="container mb-5">
+<div class="body d-flex flex-column h-100 main-bg">
+    <div class="container add-post mb-5">
         <div class="row content justify-content-center">
             <div class="col-md-8">
                 <h1 class="h4 form-heading my-5">Post Management</h1>
-                <form method="post" enctype="multipart/form-data" class="custom-form" style="width: 100%;">
+                <form method="post" enctype="multipart/form-data" class="custom-form">
                     {% csrf_token %}
                     {{ form.media }}
                     {{ form | crispy }}
@@ -29,23 +29,20 @@
                 </tr>
                 {% for post in posts %}
                 <tr>
-                    <td style="font-size: 14px;"><a class="post-edit-link"
-                            href="{% url 'post_detail' slug=post.slug %}">
+                    <td><a class="post-edit-link" href="{% url 'post_detail' slug=post.slug %}">
                             <strong> {{ post.title }}</strong>
                         </a></td>
                     <td>{{ post.get_status_display }}</td>
                     <td>
                         <a href="{% url 'edit_post' slug=post.slug %}">Edit</a> |
-                        <a href="#" class="btn-post-delete" post_id="{{ post.id }}"
-                            post_slug="{{ post.slug }}">Delete</a>
+                        <a href="#" class="btn-post-delete" data-post_id="{{ post.id }}"
+                            data-post_slug="{{ post.slug }}">Delete</a>
                     </td>
                 </tr>
                 {% endfor %}
             </table>
         </div>
     </div>
-</div>
-</div>
 </div>
 {% endif %}
 <!-- Delete Post Modal. From Blog Walkthrough -->
@@ -67,5 +64,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}

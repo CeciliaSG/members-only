@@ -78,6 +78,10 @@ body,
     padding: 0;
 }
 
+.add-post {
+    width: 100%;
+}
+
 .drop-down-right {
     margin: 0;
     padding: 0;
@@ -195,6 +199,10 @@ body,
 .form-links {
     text-decoration: underline;
     font-size: 12px;
+}
+
+form .custom_form {
+    width: 100%;
 }
 
 
