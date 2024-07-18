@@ -16,58 +16,51 @@ This is a memberships site with the purpose of prividing members - people living
  ### User stories
 
  - **Kanban Board**
- <img src="resources_readme/Skärmavbild 2024-05-02 kl. 15.21.49.png">
+ <img src="">
 
-See testing against user stories further down under features!
 
  ### Testing User Stories from User Experience (UX) Section
 
-#### First Time Visitor Goals
+    1. As a user (non-logged-in), I want to easily understand the main purpose of the site and learn more about the benefits. USER STORY: make visitors aware of joining, EPIC: Content Management
 
-    1. As a First Time Visitor (non-logged-in), I want to easily understand the main purpose of the site and learn more about the benefits.
+        1. Upon entering the site, users are greeted with a clean and easily readable navigation bar and a section briefly explaining what the site is about and the possibility of trying a membership for for free by clicking the button, or follow a link to read more. A modal also appears prompting them to log-in, or register if they aren't already members.
+        2. A non logged-in user can have a look around, see the posts with the excerpts, click the nav-links to the other pages, but not click the post links. The non-logged in user has the option to sign-up or read more about the membership by using the links in the navbar visible on all pages of the site and for both authorized and unathorized users.
+        3. There is also a seperate navbar for logging-in and signing up. This navbar drops down on smaller screens.
 
-        1. Upon entering the site, users are greeted with a clean and easily readable navigation bar and a section briefly explaining what the site is about and the possibility of trying a membership for for free by clicking the button, or follow a link to read more.
-        2. A non logged-in user can have a look around, see the posts with the excerpts, click the nav-links to the other pages, but not click the post links. The non-logged in user has the option to sign-up or read more about the membership.
-        3. There is also a seperate navbar for logging in and signing up. This navbar drops down on smaller screens.
+    2. As a user, I want to be able to easily be able to register, login, navigate throughout the site to find content and administrating my account. USER STORY: View site content, Authorisation and sign-up EPIC: Authorisation and Content Management
 
-    2. As a First Time Visitor and returning visitor (logged-in), I want to be able to easily be able to navigate throughout the site to find content and administrating my account.
+        1. The user can register and log-in. After registering the user receives an email to confirm their registration.
+        2. The site has been designed to be fluid and has a content navbar at the top of every page, to never to entrap the user. 
+        At the top of each page there is a clean navigation bar with links to each content page, the links are cleary and simly described so users know where it will take them.
+        3. A user can access the post details page and comment, edit and delte their own comments.
+        4. Logged in user can access the first navbar - a dropdown where they can access their profile. Via this dropdown-navbar users can also access the pages for changing their email, updating their password, logout and delete their account. If a user is logged in as a staff they can also manage post from the frontend and access it from here.
+        5. As a Returning Visitor I want to see what new posts and events have been added to the site. The lastest post can be found in the first section on the index-page in the section The Latest. The Latest section is clearly visible on the first page.
+        6. Logged out user can recover their password by using the recover password link on the sign-in page
 
-        1. The site has been designed to be fluid and has a content navbar at the top of every page, to never to entrap the user. At the top of each page there is a clean navigation bar with links to each content page, the links are cleary and simly described so uers know whre it will take them.
-        2. On the Contact Us Page, after a form response is submitted, the page refreshes and the user is brought to the top of the page where the navigation bar is.
-        3. As a logged in user I can access the first navbar, a dropdown here I can access my profile (where I also find my saved post). Via this dropdown-navbar I can also access the pages for changing my email, password, logout and deleting my account.
-
-   
--   #### Returning Visitor Goals
-
-    1. As a Returning Visitor I want to see what new posts and events have been added to the site.
-        1. These can be found in the first section on the index-page in the section The Latest.
-        2. The Latest section is clearly visible on the first page.
-
-    2. As a First time and Returning Visitor, I want to find out more about which events are coming-up and I want to be able to RSVP to the event.
+    2. As a user, I want to find out more about which events are coming-up and I want to be able to RSVP to the event and receive the RSVP info via mail. USER STORY: View and RSVP to events EPIC: Content Management
 
         1. The events link is crealy visible in the navbar.
-        2. On the event-detail page the uer can read more about the event and when and where it is taking place.
+        2. On the event-detail page the user can read more about the event and when and where it is taking place.
         3. The event-detail page also includes a form to let the user RSVP to the event.
+        4. After RSVPeing the user receives an email with the RSVP details
 
-    3. As a Returning Visitor, I want to find the links to the site social pages so that I can join and get the latest updates.
+    3. As a user, I want to find the links to the site social pages so that I can join and get the latest updates.
+    USER STORY: Follow and keep up to date with spotted, EPIC: Content Management
         1. The Some me pages can be found in the footer (visible on every page), as well as in the right hand column on the details pages.
      
 
--   #### Frequent User Goals
-
     1. As a Frequent User, I want to se what is going on in the city, maybee make plans for the weekend.
 
-        1. The user would already be comfortable with the website layout and can easily click the banner message.
+        1. The user would already be comfortable with the website layout and know where to find the latest posts.
 
     2. As a Frequent User, I want to check to see if there are any new posts for restauarants, bars etc.
 
         1. The user, who is a member will now know where to find everything and can easily navigate the site.
-        1. At the bottom of every page their is a footer which is the same on every page, just as the navigation.
 
 
 -   ### Design
     -   #### Colour Scheme
-        -   The three main colours used are black, white and green.
+        -   The three main colours used are black, white and different shades of green.
 
     -   #### Typography
         -   The Playfair Display font is the main font, together with Poppins used throughout the whole website with Serif and Sans Serif as the fallback fonts in case for any reason the font isn't being imported into the site correctly. 
@@ -207,9 +200,9 @@ See testing against user stories further down under features!
 
 ## Features 
 
--   Responsive on all device sizes
+-   Responsive on all device sizes.
 
--   Interactive elements
+-   Interactive elements.
 
 ## TESTING
 
@@ -422,7 +415,6 @@ See testing against user stories further down under features!
 <br>
 
 <img src="resources_readme/events_details_page.png">
-
 
 
 **RSVP Form:**<br>
