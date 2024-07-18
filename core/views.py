@@ -21,7 +21,7 @@ from allauth.account.views import SignupView
 
 # Local application imports
 from .forms import (CustomUserForm, UserProfileForm,
-DeleteAccountForm, UpdateUserProfile, UpdateUserForm)
+                    DeleteAccountForm, UpdateUserProfile, UpdateUserForm)
 from .models import UserProfile
 from content_management.models import SavedPost
 
@@ -32,12 +32,14 @@ from content_management.models import SavedPost
 @transaction.atomic
 def register(request):
     """
-    Display the signup form :model:`core.UserProfile and User (AllAuth)`.
+    Display the signup form:
+    model:`core.UserProfile and User (AllAuth)`.
 
     **Context**
 
     ``post``
-        An instance of :model:`core.UserProfile and core.UserCreation Model`.
+        An instance of:
+        model:`core.UserProfile and core.UserCreation Model`.
 
     ``CustomUserForm and UpdateuserProfileForm ``
         An instance of :forms:``
@@ -70,7 +72,8 @@ def register(request):
                 profile.user = user
                 profile.save()
 
-                complete_signup(request, user, app_settings.EMAIL_VERIFICATION, 'post_list')
+                complete_signup(request, user,
+                                app_settings.EMAIL_VERIFICATION, 'post_list')
                 return redirect('account_email_verification_sent')
         else:
             messages.error(request,
@@ -197,6 +200,38 @@ def edit_user_profile(request):
 
 @login_required
 def delete_account(request):
+    """
+    View to delete the authenticated user's account.
+
+    Requires the user to be logged in.
+    Displays a form to confirm account deletion.
+    On POST request:
+    - Validates the form data.
+    - Deletes the user account if the form is valid
+    and confirmation checkbox is checked.
+    - Redirects to 'post_list' upon successful
+    account deletion.
+    - Displays a success message confirming
+    account deletion.
+
+    On GET request:
+    - Initializes a DeleteAccountForm instance for
+    rendering the delete account form.
+
+    Parameters:
+    - request (HttpRequest): The HTTP request object
+    containing metadata about the request.
+
+    Returns:
+    - HttpResponse: Renders 'core/delete_account.html'
+    template with the delete account form.
+                   Redirects to 'post_list' upon successful
+                   account deletion.
+
+    Usage:
+    - Use this view to allow authenticated users to
+    delete their own accounts.
+    """
     if request.method == 'POST':
         form = DeleteAccountForm(request.POST)
         if form.is_valid() and form.cleaned_data['confirm_delete']:
@@ -210,22 +245,68 @@ def delete_account(request):
 
 
 def resend_verification_email(request):
+    """
+    View to resend email verification for a user.
+
+    Allows users to request a resend of the verification
+    email if they haven't
+    verified their email address yet.
+
+    On POST request:
+    - Retrieves the email address from the form data.
+    - Checks if a user exists with the provided email
+    address.
+    - Checks if the email address is associated with
+    an unverified email address.
+    - Sends a verification email to the user if
+    conditions are met.
+    - Displays success or informational messages based
+    on the email verification status.
+
+    On GET request:
+    - Renders the 'core/resend_verification.html' template
+    for the user to enter their email address.
+
+    Parameters:
+    - request (HttpRequest): The HTTP request object containing
+    metadata about the request.
+
+    Returns:
+    - HttpResponse: Redirects to 'resend_verification_email' on
+    POST request after processing the form data.
+                   Renders 'core/resend_verification.html'
+                   template on GET request.
+
+    Usage:
+    - Use this view to allow users to request a resend of
+    the verification email for their account.
+
+    Note:
+    - Requires proper integration with a user authentication
+    and email confirmation system.
+    - Displays appropriate error messages if the provided
+    email address is not found or is already verified.
+    """
     if request.method == "POST":
         email = request.POST.get('email')
         if email:
             try:
                 user = User.objects.get(email=email)
-                email_address = EmailAddress.objects.get(user=user, email=email)
+                email_address = EmailAddress.objects.get(user=user,
+                                                         email=email)
                 if not email_address.verified:
                     send_email_confirmation(request, user)
                     messages.success(request, "Verification email sent.")
                 else:
                     messages.info(request, "This email is already verified.")
             except User.DoesNotExist:
-                messages.error(request, "No user found with this email address.")
+                messages.error(request,
+                               "No user found with this email address.")
             except EmailAddress.DoesNotExist:
-                messages.error(request, "Email address not found or already verified.")
+                messages.error(request,
+                               "Email address not found or already verified.")
         else:
             messages.error(request, "Please enter an email address.")
+
         return redirect('resend_verification_email')
     return render(request, 'core/resend_verification.html')

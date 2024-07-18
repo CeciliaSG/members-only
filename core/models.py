@@ -5,6 +5,7 @@ from django.contrib.postgres.fields import ArrayField
 
 # Create your models here.
 
+
 class UserProfile(models.Model):
 
     """
@@ -58,8 +59,3 @@ def edit_user_profile(request):
     else:
         form = UserProfileForm(instance=request.user.userprofile)
     return render(request, 'profile.html', {'form': form})
-    
-
-          
-
-
