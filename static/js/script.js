@@ -129,8 +129,8 @@ document.addEventListener("DOMContentLoaded", () => {
             for (let button of deletePostButtons) {
                 button.addEventListener("click", (e) => {
                     e.preventDefault();
-                    let postId = e.target.getAttribute("post_id");
-                    let postSlug = e.target.getAttribute("post_slug");
+                    let postId = e.target.getAttribute("data_post_id");
+                    let postSlug = e.target.getAttribute("data_post_slug");
                     deletePostConfirm.href = `/posts/${postSlug}/delete/${postId}/`;
                     deletePostModalInstance.show();
                 });

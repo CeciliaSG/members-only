@@ -35,8 +35,8 @@
                     <td>{{ post.get_status_display }}</td>
                     <td>
                         <a href="{% url 'edit_post' slug=post.slug %}">Edit</a> |
-                        <a href="#" class="btn-post-delete" data-post_id="{{ post.id }}"
-                            data-post_slug="{{ post.slug }}">Delete</a>
+                        <a href="#" class="btn-post-delete" data_post_id="{{ post.id }}"
+                            data_post_slug="{{ post.slug }}">Delete</a>
                     </td>
                 </tr>
                 {% endfor %}
