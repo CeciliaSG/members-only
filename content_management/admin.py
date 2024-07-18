@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Heading, Post, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
+
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
 
@@ -18,6 +19,7 @@ class HeadingAdmin(SummernoteModelAdmin):
     search_fields = ['name']
 
 
-#Register your models here.
+# Register your models here.
 admin.site.register(Heading, HeadingAdmin)
 admin.site.register(Comment)
+

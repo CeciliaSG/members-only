@@ -1,18 +1,14 @@
-from django.http import HttpResponse, JsonResponse
-from django.db.models import Q
-from django.shortcuts import (render, 
-redirect, get_object_or_404, reverse)
-from django.views import generic
-from django.urls import reverse_lazy
 from django.contrib import messages
-from django.db import IntegrityError
-from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from django.views import View
-from .models import (Post, SavedPost,
-LikedPost, Heading, Comment)
-from .forms import CommentForm, PostForm
+from django.db import IntegrityError
+from django.db.models import Q
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.urls import reverse_lazy
 from django.utils.text import slugify
+from django.views import generic, View
+from .models import Post, SavedPost, LikedPost, Heading, Comment
+from .forms import CommentForm, PostForm
 
 
 class PostListView(generic.ListView):
@@ -76,9 +72,8 @@ def post_detail(request, slug):
             comment.save()
 
             messages.add_message(
-            request, messages.SUCCESS,
-            'Comment submitted and awaiting approval'
-        )
+                request, messages.SUCCESS,
+                'Comment submitted and awaiting approval')
         return redirect('post_detail', slug=slug)
     else:
         comment_form = CommentForm()
@@ -87,11 +82,11 @@ def post_detail(request, slug):
         request,
         "content_management/post_detail.html",
         {"post": post,
-        "comments": comments,
-        "comment_count": comment_count,
-        "comment_form": comment_form,
-        },
+            "comments": comments,
+            "comment_count": comment_count,
+            "comment_form": comment_form, },
     )
+
 
 def comment_edit(request, slug, comment_id):
     """
@@ -111,9 +106,11 @@ def comment_edit(request, slug, comment_id):
             comment.save()
             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+            messages.add_message(request, messages.ERROR,
+                                 'Error updating comment!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
 
 def comment_delete(request, slug, comment_id):
     """
@@ -127,7 +124,8 @@ def comment_delete(request, slug, comment_id):
         comment.delete()
         messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+        messages.add_message(request, messages.ERROR,
+                             'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
@@ -357,7 +355,7 @@ def about_page(request):
     :template:`about.html`
 
     """
-    return render(request, 'content_management/footer/about.html')      
+    return render(request, 'content_management/footer/about.html')
 
 
 def membership_page(request):
@@ -370,7 +368,7 @@ def membership_page(request):
     :template:`membership.html`
 
     """
-    return render(request, 'content_management/footer/membership.html')   
+    return render(request, 'content_management/footer/membership.html')
 
 
 def partnerships_page(request):
@@ -383,11 +381,33 @@ def partnerships_page(request):
     :template:`partnerships.html`
 
     """
-    return render(request, 'content_management/footer/partnerships.html')   
+    return render(request, 'content_management/footer/partnerships.html')
 
 
 @login_required
 def add_post(request):
+    """
+    View for adding a new Post object.
+
+    On POST request:
+    - Validates the form data submitted.
+    - Saves the new post with the current authenticated user as the author.
+    - Redirects to the detailed view of the newly created post upon successful save.
+    - Displays an error message if a post with the same slug already exists.
+
+    On GET request:
+    - Initializes an empty form for creating a new post.
+
+    Retrieves all existing posts and renders 'content_management/post_form.html'
+    template with the form and posts context.
+
+    Parameters:
+    - request: HttpRequest object containing metadata about the request.
+    
+    Returns:
+    - HttpResponse object rendering 'content_management/post_form.html' template
+      with form and posts context.
+    """
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
@@ -397,15 +417,23 @@ def add_post(request):
                 post.save()
                 return redirect('post_detail', slug=post.slug)
             except IntegrityError:
-                messages.error(request, "A post with this slug already exists. Please try a different title.")
+                messages.error(request, "A post with this slug already exists."
+                               "Please try a different tit.")
     else:
         form = PostForm()
     posts = Post.objects.all()
-    
-    return render(request, 'content_management/post_form.html', {'form': form, 'posts': posts})
+
+    return render(request, 'content_management/post_form.html',
+                  {'form': form, 'posts': posts})
 
 
 class PostUpdateView(generic.UpdateView):
+    """
+    View for updating a Post object. Uses PostForm for data input and 
+    renders 'content_management/post_form.html' template. Handles form 
+    validation, slug generation, and displays success or error messages 
+    accordingly. Redirects to 'add_post' upon successful update.
+    """
     model = Post
     form_class = PostForm
     template_name = 'content_management/post_form.html'
@@ -420,18 +448,35 @@ class PostUpdateView(generic.UpdateView):
             post.slug = slugify(post.title)
 
         try:
-                post.save()
-                messages.success(self.request, "Post updated successfully.")
-                return super().form_valid(form)
+            post.save()
+            messages.success(self.request, "Post updated successfully.")
+            return super().form_valid(form)
 
         except IntegrityError:
-                messages.error(self.request, "A post with this slug already exists. Please try a different title.")
-                return self.form_invalid(form)
+            messages.error(self.request,
+                           "A post with this slug already exists."
+                           "Please try a different title.")
+            return self.form_invalid(form)
 
 
 class PostDeleteView(View):
     """
     View to delete a Post.
+
+    Allows authorized users (post author or staff) to delete a specific Post object.
+    If the user is not authorized, an error message is displayed.
+    Redirects to the 'add_post' page after deletion.
+
+    Methods:
+        get(self, request, slug, post_id):
+            Handles GET requests to delete a Post.
+            Retrieves the Post object based on slug and post_id.
+            Deletes the Post if the requesting user is the author or staff.
+            Displays success message upon successful deletion.
+            Redirects to 'add_post' view after deletion.
+
+    Usage:
+        This view should be used to handle deletion of Post objects by authorized users.
     """
     def get(self, request, slug, post_id):
         post = get_object_or_404(Post, slug=slug, id=post_id)
@@ -439,9 +484,7 @@ class PostDeleteView(View):
             post.delete()
             messages.success(request, 'Post deleted successfully!')
         else:
-            messages.error(request, 'You are not authorized to delete this post!')
+            messages.error(request,
+                           'You are not authorized to delete this post!')
         return HttpResponseRedirect(reverse('add_post'))
-
-
-
 

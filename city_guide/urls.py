@@ -23,14 +23,8 @@ from .views import handler404
 
 
 urlpatterns = [
-
-    #Django admin
     path('admin/', admin.site.urls),
-
-    #Allauth url
     path("accounts/", include("allauth.urls")),
-
-    #Custom Urls
     path('', include('content_management.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('event_management/', include('event_management.urls')),
@@ -38,3 +32,4 @@ urlpatterns = [
     path('rsvp/', include('rsvp.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 handler404 = 'city_guide.views.handler404'
+
