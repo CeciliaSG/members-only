@@ -26,10 +26,8 @@ def send_confirmation_email(user, event, rsvp):
     send_mail(subject, message, from_email, recipient_list)
 
 
-
 @login_required
 def rsvp_event(request, event_id):
-
     """
     Renders the form event rsvp in :model:`.rsvp`,
     and lets uers rsvp.
@@ -38,7 +36,7 @@ def rsvp_event(request, event_id):
 
     ``queryset``
         An instance of :form `rsvp`
-        
+
     **Template:**
 
     :template:`events/event_detail.html`

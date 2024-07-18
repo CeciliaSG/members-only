@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 
+
 class RsvpForm(forms.Form):
     event_id = forms.IntegerField(widget=forms.HiddenInput())
     response = forms.ChoiceField(choices=[(

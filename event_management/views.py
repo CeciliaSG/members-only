@@ -4,6 +4,7 @@ from .models import Event, Heading
 
 # Create your views here
 
+
 def event_list(request):
 
     """

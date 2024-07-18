@@ -3,6 +3,7 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
+
 class Heading(models.Model):
     name = models.CharField(max_length=100)
     parent_heading = models.ForeignKey('self', on_delete=models.SET_NULL,
@@ -35,6 +36,3 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
-        
-
-

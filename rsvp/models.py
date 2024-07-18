@@ -4,6 +4,7 @@ from event_management.models import Event
 
 # Create your models here.
 
+
 class Rsvp(models.Model):
     """
     Saves a single RSVP for an event post/
