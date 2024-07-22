@@ -1,3 +1,5 @@
+/* global bootstrap */
+
 (function () {
     "use strict";
 
