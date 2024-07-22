@@ -245,9 +245,6 @@ This is a memberships site with the purpose of prividing members - people living
 
 **Result:** The links link to the correct pages/endpoints when clicked. The link in to manage posts in the accounts navbar is only visible when a logged in user is authenticated as staff.
 
-<img src=" ">
-<img src=" ">
-
 <br>
 <img src="resources_readme/navbar_1.png">
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.27.21.png">
@@ -321,7 +318,6 @@ This is a memberships site with the purpose of prividing members - people living
 - By clicking the save post symbol the post gets saved and shows in the user’s profile. The user is informed that the post has been saved through an alert message. The reverse is true for un-saving the post.
 - By clicking the heart beneath the post, the user likes the post, and this information is stored. The user is informed that they’ve liked the post via an alert message. The heart turns read to indicate that the post has been liked (at the moment the colour is only saved in the session and disappears if the page is reloaded and is not visible when the user comes back to the page. If the user likes a post that they have already liked the alert message shows and informs them of this. Posts can be unliked by clicking the heart again.
 
-
 - **Testing:**
 - Post-links were clicked.
 - Save symbol was clicked to save and clicked again to un-save.
@@ -339,11 +335,6 @@ This is a memberships site with the purpose of prividing members - people living
 ### Testing post pages: Restaurants & Bars, What's On, & Things to do etc.__
 
   - These pages have the same layout, structure and function - they display posts for the relevant subjects and allow user to brows restaurants, bars, things to do essentially things that are happening in the city. Posts are added daily to give the members/users value and incentive to keep being members.
-
-<br>
-
-## Post pages: ##
-### Post List page
 
 <br>
 
@@ -368,9 +359,14 @@ This is a memberships site with the purpose of prividing members - people living
 - Includes an informative text, clickable SOME-symbols and a comments feature to comment the post.
 
 **Testing SOME-symbols on details page:**
-**Expected:** The SOME-symbols are clickable and take the user to the correct some endpoint.
-**Testing:** The SOME-symbols were clicked.
-**Result:** The user is taken to correct endpoints when SOME-symbols are clicked.
+**Expected:**  
+- The SOME-symbols are clickable and take the user to the correct some endpoint.
+- The Back to Post Form link is visible only to authorised staff, clickable and takes the user to the post_form.html
+**Testing:** The SOME-symbols were clicked. The back to post form link was clicked.
+**Result:** 
+- The user is taken to correct endpoints when SOME-symbols are clicked.
+- The user is taken to the post Form when the link is clicked.
+
 
 <br>
 
@@ -536,7 +532,7 @@ Note! The comment form is visible on drafts. Comments can be added to drafts, bu
 
 **Testing:** Tested by entering a url that doesn't exist
 
-**Result:** When knowingly entering a url taht doesn't exist on the site it returns the custom url.
+**Result:** When knowingly entering a url that doesn't exist on the site it returns the custom url.
 
 <img src="resources_readme/404.png">
 
@@ -584,8 +580,8 @@ Desktop, logged-in users:
 
 ### 4. Validator Testing. code validation testing css, html and JS
 
-- HTML
-  - Stray end tags were flagged for when checking code when non.logged in, this is because the some links are only available to authorized users, which means the link isn't visible when logged out. The link wraps a card so the end tag is visible to the browser. When checking the same html when logged in it passes validation. 
+**HTML**
+  - Stray end tags were flagged for when checking code when non-logged in, this is because the some links are only available to authorised users, which means the link isn't visible when logged out. The link wraps a card so the end tag is visible to the browser. When checking the same html when logged in it passes validation. 
 
  -  Summernote is causing issues by rendering code inte white spaces on the details_templates (event_detail and post_detail). This throws errors when validating the HTML for these pages. The form on the event_details page also seems to be adding an end p end-tag which I can't find anywhere to remove. It seems to ahve to do with the Summernote content/description field. Unfortunately I've been unable to resolve the issue within the time frame of the project.
 
@@ -598,11 +594,18 @@ Desktop, logged-in users:
 <br>
 
 -  No other errors were returned when passing through the official [W3C validator](https://validator.w3.org/)
+<br>
 
+**CSS**
 - No errors were found when passing through the official (Jigsaw) validator [https://jigsaw.w3.org/]
-- CI Python Linter [(https://pep8ci.herokuapp.com/)]
-- JS Hint [(https://jshint.com/)] No error were found when passing the code through JSHint.
+<br>
 
+**Python**
+- CI Python Linter [(https://pep8ci.herokuapp.com/)]
+<br>
+
+**Javascript**
+- JS Hint [(https://jshint.com/)] No error were found when passing the code through JSHint.
 <br>
 
 ### Further Testing
@@ -617,7 +620,6 @@ Desktop, logged-in users:
 
 - Navigation directly between posts without having to back out to the post_list.
 - Navigation directly between events without having to back out to the event_list.
-- At the moment the email feature only runs in the terminal, and email verification isn't required to sign up. Connecting the email and sending actual emails, and email verficatiosn is a feature that should be implemented.
 - More filtering functions, and more tags. The content now added to the site is sample content and I would have wante to add more if time had allowed.
 - Implementing a map pinpointing all recommendations, events, what's on etc.
 - A search field in the navbar.
