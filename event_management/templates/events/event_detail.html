@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
-{% block content %}
+{% load crispy_forms_tags %}
 {% load static %}
 
-
+{% block content %}
 <div class="body">
     <div class="container-fluid d-flex justify-content-center pb-5">
         <div class="container container-post-detail mr-2 ml-2">
@@ -28,7 +28,7 @@
                                 <div class="container rsvp">
                                     <form method="post" action="{% url 'event_detail' event.id %}">
                                         {% csrf_token %}
-                                        {{ form.as_p }}
+                                        {{ form | crispy }}
                                         <button type="submit" class="btn"
                                             aria-label="submit rsvp to event">RSVP</button>
                                     </form>
