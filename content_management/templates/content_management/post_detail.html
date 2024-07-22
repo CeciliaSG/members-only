@@ -22,6 +22,12 @@
                             {{ post.content | safe }}
                         </div>
                     </div>
+                    {% if user.is_staff %}
+                    <div class="d-flex my-5">
+                        <a href="{% url 'add_post' %}" class="dark-green">Back to Post Form <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    {% endif %}
                 </div>
                 <div class="col-md-6 pl-lg-5 mt-5">
                     <hr class="hr-thick">
@@ -130,5 +136,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}
