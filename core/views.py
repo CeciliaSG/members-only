@@ -236,7 +236,7 @@ def delete_account(request):
         form = DeleteAccountForm(request.POST)
         if form.is_valid() and form.cleaned_data['confirm_delete']:
             request.user.delete()
-            message = 'Your account has been deleted.'
+            messages.success(request, 'Your account has been deleted.')
             return redirect('post_list')
     else:
         form = DeleteAccountForm()
