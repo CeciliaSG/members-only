@@ -34,8 +34,9 @@
                                 <h2 class="h5 card-title">{{ post.title }}</h2>
                                 <div class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</div>
                             </div>
+                            {% if user.is_authenticated %}
                         </a>
-
+                        {% endif %}
                         {% if user.is_authenticated %}
                         <div class="post-actions">
                             <div class="btn-post btn-like" data-post-id="{{ post.id }}"><a
@@ -84,7 +85,9 @@
                                 <h2 class="h5 card-title">{{ post.title }}</h2>
                                 <div class="card-excerpt">{{ post.excerpt|safe|truncatewords:10 }}</div>
                             </div>
+                            {% if user.is_authenticated %}
                         </a>
+                        {% endif %}
                         {% if user.is_authenticated %}
                         <div class="post-actions">
                             <div class="btn-post btn-like" data-post-id="{{ post.id }}"><a

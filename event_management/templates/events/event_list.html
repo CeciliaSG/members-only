@@ -33,7 +33,9 @@
                                 <h2 class="h5 card-title">{{ event.title }}</h2>
                                 <div class="card-excerpt">{{ event.excerpt|safe|truncatewords:10 }}</div>
                             </div>
-                        </a>
+                    {% if user.is_authenticated %}
+                    </a>
+                    {% endif %}
                     </div>
                 </div>
                 {% endfor %}
