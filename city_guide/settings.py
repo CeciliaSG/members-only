@@ -44,24 +44,26 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-ceciliasg-membersonly-vpjme6sjhrb.ws-eu112.gitpod.io', "https://*.herokuapp.com", "https://*.gitpod.io"
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-ceciliasg-membersonly-vpjme6sjhrb.ws-eu112.gitpod.io',
+"https://*.herokuapp.com", "https://*.gitpod.io"
 ]
 
 # Application definition
 
 INSTALLED_APPS = [
+    # Django built-in apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary_storage',
-    'core',
-    'content_management',
-    'event_management',
-    'rsvp',
     'django.contrib.sites',
+    
+    # Third-party apps
+    'cloudinary_storage',
+    'whitenoise.runserver_nostatic',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -70,10 +72,15 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'django_summernote',
     'cloudinary',
-    'whitenoise.runserver_nostatic',
+    
+    # Your apps
+    'core',
+    'content_management',
+    'event_management',
+    'rsvp',
 ]
 
-cloudinary.config (
+cloudinary.config(
     secure = True,
 )
 
@@ -105,7 +112,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 AUTHENTICATION_BACKENDS = [
-   
+
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 LOGIN_REDIRECT_URL = '/'
@@ -153,12 +160,12 @@ WSGI_APPLICATION = 'city_guide.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-#DATABASES = {
+# DATABASES = {
  #   'default': {
   #      'ENGINE': 'django.db.backends.sqlite3',
    #     'NAME': BASE_DIR / 'db.sqlite3',
-    #}
-#}
+    # }
+# }
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
@@ -232,4 +239,3 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-
