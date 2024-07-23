@@ -418,7 +418,7 @@ def add_post(request):
                 return redirect('post_detail', slug=post.slug)
             except IntegrityError:
                 messages.error(request, "A post with this slug already exists."
-                               "Please try a different tit.")
+                               " Please try a different title.")
     else:
         form = PostForm()
     posts = Post.objects.all()
