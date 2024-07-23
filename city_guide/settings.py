@@ -46,7 +46,7 @@ ALLOWED_HOSTS = [
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-ceciliasg-membersonly-vpjme6sjhrb.ws-eu112.gitpod.io',
-"https://*.herokuapp.com", "https://*.gitpod.io"
+"https://*.herokuapp.com", "https://*.gitpod.io",
 ]
 
 # Application definition
@@ -135,6 +135,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'city_guide.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -152,7 +153,7 @@ TEMPLATES = [
         },
     },
 ]
-   
+
 
 WSGI_APPLICATION = 'city_guide.wsgi.application'
 
@@ -160,16 +161,10 @@ WSGI_APPLICATION = 'city_guide.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
- #   'default': {
-  #      'ENGINE': 'django.db.backends.sqlite3',
-   #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
-# }
-
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -188,8 +183,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-#ACCOUNT_EMAIL_VERIFICATION = 'optional'
 
 
 # Internationalization
