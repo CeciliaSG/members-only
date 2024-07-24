@@ -643,7 +643,7 @@ No errors were found when passing the code through JSHint.
 
 ### Further Testing
 
--   The Website was tested on Google Chrome.
+-   The Website was tested on Google Chrome and Safari.
 -   The website was viewed on a variety of devices such as Desktop, Laptop and iPhone
 -   A large amount of testing was done to ensure that all pages were linking correctly.
 
