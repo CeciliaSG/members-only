@@ -191,11 +191,11 @@ This is a memberships site with the purpose of prividing members - people living
 7. [Canva:](https://canva.com/)
     - Canva was used to create the [wireframes](https://github.com/) during the design process and [ERD-Tables](https://github.com/)
 9. [Tiny PNG](https://tinypng.com/)
-- Tiny PNG was used to compress the images
-10. [cloudconvert][https://cloudconvert.com/jpg-to-webp]
-- Cloudconvert was used to convert the images to webp.
-11. [cloudinary]
-- Cloudinary was used to serve the event and post images uploaded via the admin panel.
+    - Tiny PNG was used to compress the images
+10. [Cloudconvert](https://cloudconvert.com/jpg-to-webp)
+    - Cloudconvert was used to convert the images to webp.
+11. [Cloudinary](https://cloudinary.com/)
+    - Cloudinary was used to serve the event and post images uploaded via the admin panel.
 
 
 ## Features 
@@ -246,9 +246,8 @@ This is a memberships site with the purpose of prividing members - people living
 **Result:** The links link to the correct pages/endpoints when clicked. The link in to manage posts in the accounts navbar is only visible when a logged in user is authenticated as staff.
 
 <br>
-<img src="resources_readme/navbar_1.png">
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.27.21.png">
-
+<img src="resources_readme/navbar_1.png">
 <br>
 
 <img src="resources_readme/dropdown_navbar_2.png">
@@ -271,7 +270,7 @@ This is a memberships site with the purpose of prividing members - people living
 **Result:** The links link to the correct pages/endpoints/SOME-pages when clicked.
 
 <img src="resources_readme/footer.png">
-</br>
+<br>
 
 
 ## Pages including all features, links etc. in these.
@@ -282,11 +281,15 @@ This is a memberships site with the purpose of prividing members - people living
 
   - “The Latest” section show the users the latest from all categories/pages: restaurants & bars, things to do, what's on etc.
 
-<br>
+<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.26.27.png">
 
--	#### For logged-out users/non-members:
+### For logged-out users/non-members:
 
 -	When a non-logged in user first enter the site, a modal is shown prompting them to login or sign-up (if they are not already members) to get access to all content. 
+
+<img src="resources_readme/login_register_modal.png">
+
+<br>
 
 **Testing Modal:**
 -	**Expected:** The modal loads when the page is reloaded.
@@ -299,16 +302,14 @@ This is a memberships site with the purpose of prividing members - people living
 -	Top banner with brief explanation of sites purpose, includes button to sign-up page. Only visible in logged out mode.
 
 **Testing Try Spotted for free button:**
--	Expected: The button takes the user to the sign-up page.
+  -	**Expected:** The button takes the user to the sign-up page.
 
--	Testing: Tested the button by clicking it.
+  -	**Testing:** Tested the button by clicking it.
 
--	Result: The button takes the user to the sign-up page/form.
-
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.26.27.png">
+  -	**Result:** The button takes the user to the sign-up page/form.
 
 
-**For logged-in users/non-members:**
+### For logged-in users/members:
 
 -	The page displays a hero image for logged in users. All content is accessible. Logged in users can also save posts to their profile by clicking the save post symbol, so that they can come back to them later. There is also a feature to like the post for logged in users.
 
@@ -332,7 +333,7 @@ This is a memberships site with the purpose of prividing members - people living
 <img src="resources_readme/Index_page_2.png">
 <br>
 
-### Testing post pages: Restaurants & Bars, What's On, & Things to do etc.__
+### Testing post pages: Restaurants & Bars, What's On, & Things to do etc.
 
   - These pages have the same layout, structure and function - they display posts for the relevant subjects and allow user to brows restaurants, bars, things to do essentially things that are happening in the city. Posts are added daily to give the members/users value and incentive to keep being members.
 
@@ -448,12 +449,12 @@ Features visible to logged-out users:
 
 <br>
 
-<img src="resources_readme/events_details_page.png">
+<img src="resources_readme/events_detail.png">
 
 
 **RSVP Form:**<br>
 
-<img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.10.59.png">
+<img src="resources_readme/rsvp_event.png">
 
 <br>
 
