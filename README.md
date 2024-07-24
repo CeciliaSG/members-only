@@ -15,8 +15,8 @@ This is a memberships site with the purpose of prividing members - people living
 
  ### User stories
 
- - **Kanban Board**
- <img src="">
+ #### Kanban Board
+ <img src="resources_readme/Kanban.png">
 
 
  ### Testing User Stories from User Experience (UX) Section
@@ -58,7 +58,7 @@ This is a memberships site with the purpose of prividing members - people living
         1. The user, who is a member will now know where to find everything and can easily navigate the site.
 
 
--   ### Design
+### Design
     -   #### Colour Scheme
         -   The three main colours used are black, white and different shades of green.
 
@@ -68,15 +68,16 @@ This is a memberships site with the purpose of prividing members - people living
     -   #### Imagery
         -   Imagery makes an internet site more interesting. The large, top images on every page for logged in users are chosen designed to add a vibrant feeling to the page. The post and events images are also choosen to give the site a vibrant, fun and energetic feeling.
 
-*   ### Wireframes
+### Wireframes
 
-    -   Page Wireframe - [View](resources_readme/1.jpg)
-                       - [View](resources_readme/2.jpg)
-                       - [View](resources_readme/3.jpg)
+<img src="resources_readme/1.jpg">
+<img src="resources_readme/2.jpg">
+<img src="resources_readme/3.jpg">
 
-*   ### ERDS for models
 
-#### ERD Post model
+### ERDS for models
+
+#### ERD Post model:
 | FK | Heading | Heading Model|
 | ----------- | ----------- | ----------- |
 | | title | charfield |
@@ -92,7 +93,7 @@ This is a memberships site with the purpose of prividing members - people living
 
 <br>
 
-#### ERD Comment model
+#### ERD Comment model:
 | FK | post | Post Model|
 | ----------- | ----------- | ----------- |
 | | author | FK | 
@@ -102,7 +103,7 @@ This is a memberships site with the purpose of prividing members - people living
 
 <br>
 
-#### ERD Event model
+#### ERD Event model:
 | FK | Heading | Heading Model|
 | ----------- | ----------- | ----------- |
 | | title | charfield |
@@ -117,7 +118,7 @@ This is a memberships site with the purpose of prividing members - people living
 
 <br>
 
-#### ERD Saved Post Model
+#### ERD Saved Post Model:
 | FK | User| User Model|
 | ----------- | ----------- | ----------- |
 |FK | Post | Post Model |
@@ -125,7 +126,7 @@ This is a memberships site with the purpose of prividing members - people living
 
 <br>
 
-#### ERD Liked Post Model
+#### ERD Liked Post Model:
 | FK | User| User Model|
 | ----------- | ----------- | ----------- |
 |FK | Post | Post Model |
@@ -134,7 +135,7 @@ This is a memberships site with the purpose of prividing members - people living
 
 <br>
 
-#### ERD RSVP Model
+#### ERD RSVP Model:
 | FK | Event | Event Model|
 | ----------- | ----------- | ----------- |
 | FK | User| User Model|
@@ -143,7 +144,7 @@ This is a memberships site with the purpose of prividing members - people living
 
 <br>
 
-#### ERD UserProfile Model
+#### ERD UserProfile Model:
 | FK | User | User Model| OntoOneField |
 | ----------- | ----------- | ----------- | ----------- | 
 | | Neighbourhood | CharField |
@@ -152,7 +153,7 @@ This is a memberships site with the purpose of prividing members - people living
 
 <br>
 
-#### ERD Heading model (both event and post) ####
+#### ERD Heading model (both event and post):
 | FK | parent-heading | User Model|
 | ----------- | ----------- | ----------- | 
 | | Name | CharField |
@@ -160,6 +161,8 @@ This is a memberships site with the purpose of prividing members - people living
 | | updated_at |   |
 
 *Note! This model hasn't been used as extensively as intedend when created and should be implemented and developed further.
+
+<br>
 
 ## Technologies Used
 
@@ -308,6 +311,9 @@ This is a memberships site with the purpose of prividing members - people living
 
   -	**Result:** The button takes the user to the sign-up page/form.
 
+<img src="resources_readme/spotted_for_free_button_2.png">
+
+<br>
 
 ### For logged-in users/members:
 
