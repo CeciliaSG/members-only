@@ -277,7 +277,8 @@ def save_post(request, post_id):
     Returns one published post in database :model:
     `content_management.SavedPost`
     Checks if the post is already saved,
-    un-save if saved, if not saved save to the database.
+    un-save if saved, if not saved save to
+    the database.
 
     **Context**
 
@@ -391,22 +392,25 @@ def add_post(request):
 
     On POST request:
     - Validates the form data submitted.
-    - Saves the new post with the current authenticated user as the author.
-    - Redirects to the detailed view of the newly created post upon successful save.
-    - Displays an error message if a post with the same slug already exists.
+    - Saves the new post with the current authenticated user as
+    the author.
+    - Redirects to the detailed view of the newly created post upon
+    successful save.
+    - Displays an error message if a post with the same slug already
+    exists.
 
     On GET request:
     - Initializes an empty form for creating a new post.
 
-    Retrieves all existing posts and renders 'content_management/post_form.html'
-    template with the form and posts context.
+    Retrieves all existing posts and renders 'content_management/
+    post_form.html' template with the form and posts context.
 
     Parameters:
     - request: HttpRequest object containing metadata about the request.
-    
+
     Returns:
-    - HttpResponse object rendering 'content_management/post_form.html' template
-      with form and posts context.
+    - HttpResponse object rendering 'content_management/post_form.html'
+    template with form and posts context.
     """
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
@@ -429,9 +433,9 @@ def add_post(request):
 
 class PostUpdateView(generic.UpdateView):
     """
-    View for updating a Post object. Uses PostForm for data input and 
-    renders 'content_management/post_form.html' template. Handles form 
-    validation, slug generation, and displays success or error messages 
+    View for updating a Post object. Uses PostForm for data input and
+    renders 'content_management/post_form.html' template. Handles form
+    validation, slug generation, and displays success or error messages
     accordingly. Redirects to 'add_post' upon successful update.
     """
     model = Post
@@ -463,20 +467,22 @@ class PostDeleteView(View):
     """
     View to delete a Post.
 
-    Allows authorized users (post author or staff) to delete a specific Post object.
-    If the user is not authorized, an error message is displayed.
-    Redirects to the 'add_post' page after deletion.
+    Allows authorized users (post author or staff) to delete
+    a specific Post object. If the user is not authorized,
+    an error message is displayed. Redirects to the 'add_post'
+    page after deletion.
 
     Methods:
         get(self, request, slug, post_id):
             Handles GET requests to delete a Post.
             Retrieves the Post object based on slug and post_id.
-            Deletes the Post if the requesting user is the author or staff.
-            Displays success message upon successful deletion.
+            Deletes the Post if the requesting user is the author
+            or staff. Displays success message upon successful deletion.
             Redirects to 'add_post' view after deletion.
 
     Usage:
-        This view should be used to handle deletion of Post objects by authorized users.
+        This view should be used to handle deletion of Post objects
+        by authorized users.
     """
     def get(self, request, slug, post_id):
         post = get_object_or_404(Post, slug=slug, id=post_id)
@@ -487,4 +493,3 @@ class PostDeleteView(View):
             messages.error(request,
                            'You are not authorized to delete this post!')
         return HttpResponseRedirect(reverse('add_post'))
-

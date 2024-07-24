@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.text import slugify 
+from django.utils.text import slugify
 from django.contrib.auth.models import User
 from event_management.models import Event
 from cloudinary.models import CloudinaryField
@@ -87,7 +87,7 @@ class LikedPost(models.Model):
 
 class Comment(models.Model):
     """
-    From "I Think therfore I blog". 
+    From "I Think therfore I blog".
     Lets logged-in users comment posts
     """
     post = models.ForeignKey(

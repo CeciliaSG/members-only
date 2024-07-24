@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import (post_detail, tag_filter, 
-PostListView, save_post, like_post, PostListByHeadingView, 
-about_page, membership_page, partnerships_page, add_post,
-PostUpdateView, PostDeleteView)
+from .views import (post_detail, tag_filter,
+                    PostListView, save_post, like_post, PostListByHeadingView,
+                    about_page, membership_page, partnerships_page, add_post,
+                    PostUpdateView, PostDeleteView)
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -19,7 +19,8 @@ urlpatterns = [
     path('posts/<slug:slug>/delete/<int:post_id>/', PostDeleteView.as_view(),
          name='delete_post'),
     path('add/', add_post, name='add_post'),
-    path('posts/<slug:slug>/edit/', PostUpdateView.as_view(), name='edit_post'),
+    path('posts/<slug:slug>/edit/', PostUpdateView.as_view(),
+         name='edit_post'),
     path('<slug:slug>/', views.post_detail, name='post_detail'),
     path('post_tag_detail/<str:tag>/', views.post_tag_detail,
          name='post_tag_detail'),
