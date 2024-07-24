@@ -461,12 +461,19 @@ Features visible to logged-out users:
 ### Testing features reachable by link from sign-in page
 
 **Link: Didn't receive your verification email? Resend it here.**
-**Link: Forgot Password?**
+
 
 | Form | Description | Expected | Testing | Result |
 | ----------- | ----------- |  ----------- |  ----------- |  ----------- |
 | **Resend Verification**, Form App: Core, Template: resend_verfication.html | Lets the user request a new verification link sent to their email. Note! New verifications can be sent more than once but straight after each other. It seems there is a limit on how many emails can be sent to the same email address with a certain time span. | When an email is filled in and the re-send verification button is clicked an email should be sent with a new link. A message letting them know the email has been sent should be shown. If the email exists but is already registered a message should be shown informing the user of this. If the email doesn’t exist in the database a message should be shown informing the user of this. | An incorrect and a correct email were entered and the re-send verification button clicked. | When an email existing in the database was entered an email with a new verification link was sent. When the link in the email was clicked the email was verified and the user asked to login. When an already verified email was entered a message was displayed informing the user. When an email that doesn’t exist in the database a message is displayed informing the user of this.  |
 
+<br>
+
+<img src="resources_readme/signin_page.png">
+
+<br>
+
+**Link: Forgot Password?**
 
 | Form | Description | Expected | Testing | Result |
 | ----------- | ----------- |  ----------- |  ----------- |  ----------- |
@@ -563,6 +570,16 @@ Features visible to logged-out users:
 | **Manage Posts**, App: Content Management, post_form.html | Page and form for adding, editing and deleting posts from the frontend. | When the users fill in content, adds an image and clicks save the post should be saved. When the user clicks edit the post should appear in the form so that it can be edited and saved with any changes. When the user clicks delete a modal should appear asking the user “Are you sure you want to delete this post? This action cannot be undone.” If the user clicks delete in the modal the post should be deleted. | The add feature was tested by adding text content and an image and clicking save. The edit feature was tested by clicking edit next to a post, editing in the post form and clicking save. The delete function was tested by clicking delete next to a post and then clicking the delete button in the modal. | When content, image and unique title was added to the post form and saved the post was visible in the post list and could be viewed by clicking the link. But the image was only added randomly. When an attempt was made to save a post with an already existing title, there was an error due to the slug not being unique. When the user changes the title/slug and saves again the image isn't auomatically added, but needs to be added back. When the edit link was clicked the post appeared in the form. The post was edited and saved successfully, including changing the image. When clicking the delete link the modal appears querying if the user wants to delete the post. When the delete button in the modal was clicked the post was deleted. | The post_add view was updated to handle the integrity error when a user tries to add a post with the same title as an existing post/slug. The view was also modified to guarantee that the image is added. |
 
 Note! The comment form is visible on drafts. Comments can be added to drafts, but not deleted from the frontend.
+
+<br>
+
+<img src="resources_readme/manage_posts_1.png">
+
+<br>
+
+<img src="resources_readme/manage_posts_2.png">
+
+<br>
 
 ### Testing 404
 
