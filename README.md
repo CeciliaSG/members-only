@@ -255,11 +255,11 @@ This is a memberships site with the purpose of prividing members - people living
 
 <br>
 
-
 ### Testing the Footer
 
 -	Featured on all pages and visible for both logged-out and logged in users.
 -	Includes links to pages: About, Become a member and Partnerships.
+- the pages include information about spotted, why you should become a meber or partner with spotted. Any addresses or emailaddresses mentioned in the text are not reigesterd and only there fore not be used.
 -	Includes SOME-links to FB, LinkedIn and Pinterest.
 
 <br>
@@ -374,6 +374,44 @@ This is a memberships site with the purpose of prividing members - people living
 
 <br>
 
+### Features reachable from second navbar:
+
+Features visible to logged-out users:
+
+- __The Sign-Up Page/form__
+
+  - This page allows users to get signed up to the member site. The user will also be able specify their interest and let the site know which neighbourhood they live in. The user will be asked to submit their first and last name, a username, email address choose a password.
+
+  <br>
+
+| Form | Description | Expected |Testing | Result | Fix |
+| ----------- | ----------- |  ----------- | ----------- | ----------- | ----------- |
+| **SignUpForm**, App: Core, Template: register.html <br> (inludes user- and userprofile form) | Gives the user the ability signup to the site. The user can fill in the form, choosing a username and password and then clicking the signup button. | The user fills in first and last name, email and choses a username and password. The form expects the username, email and password to be confirmed in separate fields before the user can submit. The form checks the username and email against the database as the username and emails are only allowed to be unique. If the user tries to use an already existing username or email the form returns an error an asks user to correct the marked fields. The user is also required to choose a city and neighbourhood. It is optional to choose an interest. When the user clicks sign-up, a message should display letting them know they are signed-up and that a confirmation email has been sent to the email they registered. The user should receive a confirmation email in their inbox. When the link is clicked, the user should be directed to a page asking them to confirm their email. When the conf. button is clicked the user should be redirected to login. If the conf. link expires (10 days) a new link can only be sent if the user tries to login. | Correct and incorrect information was filled in to test the form.  The link in the conf. email was tested by clicking it and the email was confirmed by clicking the confirm button on the confirm email page. The user is redirected to the sing-in page and filled in log-in details and cklicked login. | The form can be filled in and the singUp button clicked. When correct information was filled in the form was submitted. The user info. and details are saved to the database and the user is sent a conf. email with a functioning link. The email and username need to be unique<br> and trying to use the same email and user mail <br> and email returns the form with an error message.  When the conf. email is clicked the user is redirected to the sing-in page and can sing-in. If for some reason they don't receive the email, or the link has expired - they can request a new link either on the page they are redirected to if the link is expired or via the link on the sign-up page. | To solve the issue with the user getting access to a new conf. link a custom view, url and template was created. And a link to access the resend_email_conf. was added to the sing-in template as well as to the allauth verification template. |
+
+<br>
+
+<img src="resources_readme/singup_form_1.png">
+<img src="resources_readme/signup_form_2.png">
+
+<br>
+
+- __The Sign-in Page__
+
+  - Registered/signed-up users can login. The page also contains a link to the sign-up form and a link to issue a new confirmation email, as well as a link to reset their password.
+  
+  <br>
+
+| Form | Description | Expected | Testing | Result |
+| ----------- | ----------- |  ----------- |  ----------- |  ----------- |
+| **SignIn**, Form App: Core, Template: login.html | Gives the user the ability to signin with their email and password. | The user should be able to fill in their email and password to sign in and be redirected to the home page for logged in users. <br> There is also an option to click remember me. The user should also be able to click the links to reset password, request a new email verification link and click the link to the sign-up page. Errors should be raised if incorrect information is filled in. | The form was tested by filling in login info correctly and incorrectly <br> and clicking the sign-in button. <br> The links were clicked. (The endpoint features were tested separately.) | When a registered user email and correct password is filled in, the sign-in button clicked the user is logged in and gains access the whole site (some features are restricted depending on auth. Level). <br> After signing-in users are directed to the home page for logged in users. If incorrect info is filled in, or the user email doesn’t exist an error is raised alerting the user. | 
+
+<br>
+
+<img src="resources_readme/singin_form.png">
+
+<br>
+
+
 ### Testing the comments function:
 **Expected:** When a user comments the comment should be shown as awaiting approval. The buttons edit and delete underneath the comment should be clickable to let the user use these functions. The comment should be visible in the comments section in the admin so it can be approved. When approved the buttons should turn green. Users should be able to see other users’ approved comments, but only be able to edit and delete their own. The comments count function displays the number of comments for the post. After editing the comment needs new approval. When delete is clicked a modal should appear asking the user if they are sure they want to delete the comment. When the delete button in the modal is clicked the comment should be removed and no longer be visible.
 
@@ -450,14 +488,13 @@ This is a memberships site with the purpose of prividing members - people living
 
 <br>
 
-
 ### Testing Signout function
 
  **Signout link visible in the Account dropdown menu when signed in**
 
 | Function | Description | Expected | Testing | Result | 
 | ----------- | ----------- |  ----------- | ----------- | ----------- |
-| **Signout**, App: Core, Template: logout.html | When the Signout link in the first/account navbar (dropdown) is clicked <br> it takes the user to the sign-out page. <br> | When the user clicks the sign-out button they should be signed out, a message should display informing them they’ve signed-out and redirected to the home page for non-logged in users. the <br> | Clicking the link in the navbar takes the user to the sign-out page where they are given the option to sign-out. When the sign-out button is clicked the user is signed out, as message is displayed, and they are redirected to the home page for non-logged in users. |
+| **Signout**, App: Core, Template: logout.html | When the Signout link in the first/account navbar (dropdown) is clicked <br> it takes the user to the sign-out page. <br> | When the user clicks the sign-out button they should be signed out, a message should display informing them they’ve signed-out and redirected to the home page for non-logged in users.<br> | Clicking the link in the navbar takes the user to the sign-out page where they are given the option to sign-out. When the sign-out button is clicked the user is signed out, as message is displayed, and they are redirected to the home page for non-logged in users. |
 
 <br>
 
@@ -535,12 +572,6 @@ Note! The comment form is visible on drafts. Comments can be added to drafts, bu
 **Result:** When knowingly entering a url that doesn't exist on the site it returns the custom url.
 
 <img src="resources_readme/404.png">
-
-
-## 2. Testing site responsivenes
-
-
-### Testing against user stories
 
 
 ### 3. Lighthouse
