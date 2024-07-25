@@ -53,8 +53,8 @@ def rsvp_event(request, event_id):
             rsvp.save()
             send_confirmation_email(request.user, event, rsvp)
 
-            message = "Thank you for RSVPing to the event!"
-            " You will find an email in your inbox with the details."
+            message = ("Thank you for RSVPing to the event!"
+            " You will find an email in your inbox with the details.")
             messages.success(request, message)
             return redirect('event_detail', event_id=event_id)
     else:
