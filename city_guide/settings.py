@@ -1,5 +1,4 @@
 
-
 """
 Django settings for city_guide project.
 
@@ -107,7 +106,7 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 10
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED  = False
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-LOGIN_REDIRECT_URL = 'home'
+# LOGIN_REDIRECT_URL = 'home'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
