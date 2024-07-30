@@ -14,13 +14,17 @@
         <h5>{{ request.user.username }}</h5>
         <h6>{{ request.user.email }}</h6>
       </article>
-      <form class="mb-2" method="post" action="{% url 'account_logout' %}">
-        {% csrf_token %}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
-        <button class="btn mb-4 btn-signout mt-3" type="submit">{% trans 'Sign Out' %}</button>
-      </form>
+      <div class="d-flex justify-content-center">
+        <form class="mb-2" method="post" action="{% url 'account_logout' %}">
+          {% csrf_token %}
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          <button class="btn mb-4 btn-signout mt-3" type="submit">{% trans 'Sign Out' %}</button>
+        </form>
+        <a href="{% url 'post_list' %}" class="btn mb-5 mt-3" style="margin-left: 10px;">
+          {% trans 'Back to Home Page'%}</a>
+      </div>
     </div>
   </div>
 </div>

@@ -74,7 +74,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'cloudinary',
     
-    # Your apps
+    # Apps
     'core',
     'content_management',
     'event_management',

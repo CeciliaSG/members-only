@@ -27,10 +27,6 @@ body,
     flex-direction: column;
 }
 
-.btn {
-    background-color: #2A7221;
-}
-
 .messages {
     opacity: 0;
     padding: 1em;
@@ -62,11 +58,6 @@ body,
 
 .modal-open .modal {
     padding-right: 10px !important;
-}
-
-.btn:hover {
-    background-color: #119822;
-    color: black;
 }
 
 .container {
@@ -268,6 +259,11 @@ form .custom_form {
     background-color: #2A7221;
     border-radius: 0;
     outline: none;
+}
+
+.btn:hover {
+    background-color: #119822;
+    color: black;
 }
 
 .btn:active {
