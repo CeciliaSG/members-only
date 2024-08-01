@@ -1,5 +1,20 @@
 /* global bootstrap */
 
+
+// Like Buttons
+/**
+ * Handles the like and save post interactions.
+ *
+ * This script:
+ * 
+ * 1. Attaches click event listeners to 'like' buttons, sending an AJAX request to like or unlike a post.
+ *    - Updates the button's appearance and displays a message based on the response.
+ * 
+ * 2. Attaches click event listeners to 'save post' buttons, sending an AJAX request to save a post.
+ *    - Displays a message based on the response.
+ */
+
+
 (function () {
     "use strict";
 
@@ -51,6 +66,15 @@
 
 
     // Messages
+    /**
+     * Handles message display and comment editing interactions.
+     *
+     * This script runs when the DOM content is fully loaded and:
+     *
+     * 1. Fades out and removes messages after a few seconds.
+     * 2. Prepares elements for comment editing and submission.
+     */
+
     document.addEventListener("DOMContentLoaded", function () {
         const messages = document.querySelectorAll('#messages .messages');
         messages.forEach(message => {
@@ -91,7 +115,7 @@
     }
 
     /*
-     * Initializes deletion functionality for the provided delete buttons.
+     * Initialises deletion functionality for the provided delete buttons.
      * 
      * For each button in the `deleteButtons` collection:
      * - Retrieves the associated comment's ID upon click.
