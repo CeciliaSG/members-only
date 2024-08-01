@@ -27,10 +27,6 @@ body,
     flex-direction: column;
 }
 
-.btn {
-    background-color: #2A7221;
-}
-
 .messages {
     opacity: 0;
     padding: 1em;
@@ -62,11 +58,6 @@ body,
 
 .modal-open .modal {
     padding-right: 10px !important;
-}
-
-.btn:hover {
-    background-color: #119822;
-    color: black;
 }
 
 .container {
@@ -270,6 +261,11 @@ form .custom_form {
     outline: none;
 }
 
+.btn:hover {
+    background-color: #119822;
+    color: black;
+}
+
 .btn:active {
     border-radius: 0;
     outline: none;
@@ -384,7 +380,6 @@ a:hover {
     object-fit: contain;
     object-position: center bottom;
 }
-
 
 .info-non-logged-in-users {
     height: auto;
@@ -622,9 +617,9 @@ footer {
         font-size: 20px;
     }
 
-    .second-navbar {
+    /* .second-navbar {
         margin-left: 30px;
-    }
+    }*/
 
     .post-link {
         margin-bottom: 10px;
