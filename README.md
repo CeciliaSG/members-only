@@ -694,7 +694,7 @@ Desktop, logged-in users:
 - Implementing a map pinpointing all recommendations, events, what's on etc.
 - A search field in the navbar.
 - Read more for the sections as the number of posts and events will grow.
-- Add more confirmation messages to make the user experience better i.e., after registering, sign-out, password change etc.
+- Make the second-bar sticky
 - More JavaScript should be used to give the site a smother experience.
 
 <br>
