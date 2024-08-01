@@ -1,4 +1,4 @@
-/* global bootstrap */
+/* global bootstrap, $ */
 
 
 // Like Buttons
