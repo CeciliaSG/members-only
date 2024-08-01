@@ -4,12 +4,9 @@
 
 <h2 align="center"><img src="resources_readme/Skärmavbild 2024-05-03 kl. 11.53.17.png"></h2>
 
+# Spotted members city guide – An insiders membership guide to Stockholm.
 
-# Spotted members city guide
-
-An insider membership guide to Stockholm.
-This is a memberships site with the purpose of prividing members - people living in Stockholm - with a comprehensive guide of everything going on in the city as well as some perks for members making it good value for money. The site intends to includs everything from bars and restaurants, to things to do, events, musical festivals etc.
-
+This is a memberships site with the purpose of providing members - people living in Stockholm - with a comprehensive guide of everything going on in the city, as well as some perks for members making it good value for money. The site intends to include bars and restaurants, to things to do, events, musical festivals etc.
 
 ## User Experience (UX)
 
@@ -27,7 +24,7 @@ This is a memberships site with the purpose of prividing members - people living
 
 - Milestone 1: two weeks
 - Milestone 2: three weeks
-- Milestone 3: 1 week
+- Milestone 3: one week
 
 **The lables used:**
 
@@ -35,6 +32,7 @@ This is a memberships site with the purpose of prividing members - people living
 - Should-have
 - Could-have
 - Won't-have
+
 - Enhancement
 
 (Some issues have multiple labels)
@@ -45,10 +43,7 @@ This is a memberships site with the purpose of prividing members - people living
 - Todo
 - In Progress
 - Done
-- won't have now
-
-
-
+- Won't have now
 
  <img src="resources_readme/Kanban_1.png">
  <img src="resources_readme/kanban_2.png">
@@ -57,45 +52,43 @@ This is a memberships site with the purpose of prividing members - people living
  <img src="resources_readme/kanban_5.png">
  <img src="resources_readme/kanban_6.png">
 
-
- ### Testing User Stories against kandban
+ ### Testing User Stories against Kanban
 
     1. As a user (non-logged-in), I want to easily understand the main purpose of the site and learn more about the benefits. USER STORY: make visitors aware of joining, EPIC: Content Management
 
-        1. Upon entering the site, users are greeted with a clean and easily readable navigation bar and a section briefly explaining what the site is about and the possibility of trying a membership for for free by clicking the button, or follow a link to read more. A modal also appears prompting them to log-in, or register if they aren't already members.
-        2. A non logged-in user can have a look around, see the posts with the excerpts, click the nav-links to the other pages, but not click the post links. The non-logged in user has the option to sign-up or read more about the membership by using the links in the navbar visible on all pages of the site and for both authorized and unathorized users.
-        3. There is also a seperate navbar for logging-in and signing up. This navbar drops down on smaller screens.
+        1. Upon entering the site, users are greeted with a clean and easily readable navigation bar and a section briefly explaining what the site is about and the possibility of trying a membership for free by clicking the button or follow a link to read more. A modal also appears prompting them to log-in or register if they aren't already members.
+        2. A non-logged-in user can have a look around, see the posts with the excerpts, click the nav-links to the other pages, but not click the post links. The non-logged in user has the option to sign-up or read more about the membership by using the links in the navbar visible on all pages of the site and for both authorized and unathorised users.
+        3. There is also a separate navbar for logging-in and signing up. This navbar drops down on smaller screens.
 
     2. As a user, I want to be able to easily be able to register, login, navigate throughout the site to find content and administrating my account. USER STORY: View site content, Authorisation and sign-up EPIC: Authorisation and Content Management
 
         1. The user can register and log-in. After registering the user receives an email to confirm their registration.
         2. The site has been designed to be fluid and has a content navbar at the top of every page, to never to entrap the user. 
-        At the top of each page there is a clean navigation bar with links to each content page, the links are cleary and simly described so users know where it will take them.
-        3. A user can access the post details page and comment, edit and delte their own comments.
-        4. Logged in user can access the first navbar - a dropdown where they can access their profile. Via this dropdown-navbar users can also access the pages for changing their email, updating their password, logout and delete their account. If a user is logged in as a staff they can also manage post from the frontend and access it from here.
-        5. As a Returning Visitor I want to see what new posts and events have been added to the site. The lastest post can be found in the first section on the index-page in the section The Latest. The Latest section is clearly visible on the first page.
+        At the top of each page there is a clean navigation bar with links to each content page, the links are clearly and simply described so users know where it will take them.
+        3. A user can access the post details page and comment, edit and delete their own comments.
+        4. Logged in user can access the first navbar - a dropdown where they can access their profile. Via this dropdown-navbar users can also access the pages for changing their email, updating their password, logout and delete their account. If a user is logged in as a staff, they can also manage post from the frontend and access it from here.
+        5. As a Returning Visitor I want to see what new posts and events have been added to the site. The latest post can be found in the first section on the index-page in the section The Latest. The Latest section is clearly visible on the first page.
         6. Logged out user can recover their password by using the recover password link on the sign-in page
 
     2. As a user, I want to find out more about which events are coming-up and I want to be able to RSVP to the event and receive the RSVP info via mail. USER STORY: View and RSVP to events EPIC: Content Management
 
-        1. The events link is crealy visible in the navbar.
+        1. The events link is clearly visible in the navbar.
         2. On the event-detail page the user can read more about the event and when and where it is taking place.
         3. The event-detail page also includes a form to let the user RSVP to the event.
         4. After RSVPeing the user receives an email with the RSVP details
 
     3. As a user, I want to find the links to the site social pages so that I can join and get the latest updates.
     USER STORY: Follow and keep up to date with spotted, EPIC: Content Management
-        1. The Some me pages can be found in the footer (visible on every page), as well as in the right hand column on the details pages.
+        1. The Some me pages can be found in the footer (visible on every page), as well as in the right-hand column on the details pages.
      
 
-    1. As a Frequent User, I want to se what is going on in the city, maybee make plans for the weekend.
+    1. As a Frequent User, I want to see what is going on in the city, maybe make plans for the weekend.
 
         1. The user would already be comfortable with the website layout and know where to find the latest posts.
 
-    2. As a Frequent User, I want to check to see if there are any new posts for restauarants, bars etc.
+    2. As a Frequent User, I want to check to see if there are any new posts for restaurants, bars etc.
 
         1. The user, who is a member will now know where to find everything and can easily navigate the site.
-
 
 ### Design
     -   #### Colour Scheme
@@ -105,14 +98,13 @@ This is a memberships site with the purpose of prividing members - people living
         -   The Playfair Display font is the main font, together with Poppins used throughout the whole website with Serif and Sans Serif as the fallback fonts in case for any reason the font isn't being imported into the site correctly. 
 
     -   #### Imagery
-        -   Imagery makes an internet site more interesting. The large, top images on every page for logged in users are chosen designed to add a vibrant feeling to the page. The post and events images are also choosen to give the site a vibrant, fun and energetic feeling.
+        -   Imagery makes an internet site more interesting. The large, top images on every page for logged in users are chosen designed to add a vibrant feeling to the page. The post and events images are also chosen to give the site a vibrant, fun and energetic feeling.
 
 ### Wireframes
 
 <img src="resources_readme/1.jpg">
 <img src="resources_readme/2.jpg">
 <img src="resources_readme/3.jpg">
-
 
 ### ERDS for models
 
@@ -184,7 +176,7 @@ This is a memberships site with the purpose of prividing members - people living
 <br>
 
 #### ERD UserProfile Model:
-| FK | User | User Model| OntoOneField |
+| FK | User | User Model| OnetoOneField |
 | ----------- | ----------- | ----------- | ----------- | 
 | | Neighbourhood | CharField |
 | | Interests |ArrayField |
@@ -199,7 +191,7 @@ This is a memberships site with the purpose of prividing members - people living
 | | created_at ||
 | | updated_at |   |
 
-*Note! This model hasn't been used as extensively as intedend when created and should be implemented and developed further.
+*Note! This model hasn't been used as extensively as intended when created and should be implemented and developed further.
 
 <br>
 
@@ -212,7 +204,6 @@ This is a memberships site with the purpose of prividing members - people living
 -   [Bootstrap](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
 -   [Django](https://en.wikipedia.org/wiki/Django)
 -   [Javascript](https://en.wikipedia.org/wiki/JavaScript)
-
 
 ### Frameworks, Libraries & Programs Used
 
@@ -239,7 +230,6 @@ This is a memberships site with the purpose of prividing members - people living
 11. [Cloudinary](https://cloudinary.com/)
     - Cloudinary was used to serve the event and post images uploaded via the admin panel.
 
-
 ## Features 
 
 -   Responsive on all device sizes.
@@ -264,7 +254,7 @@ This is a memberships site with the purpose of prividing members - people living
 
 **Testing:** Tested the links by clicking them.
 
-**Result:** The links link to the correct pages/endpoints when clicked. The logo works as a link back to the home-page.
+**Result:** The links link to the correct pages/endpoints when clicked. The logo works as a link back to the homepage.
 
 ### Testing first navbar for logged-out users. Links to sign-in and sign-up:
 **Expected:** The links are expected to take the user to the declared page/feature when the user clicks the link.
@@ -298,10 +288,10 @@ This is a memberships site with the purpose of prividing members - people living
 
 ### Testing the Footer
 
--	Featured on all pages and visible for both logged-out and logged in users.
--	Includes links to pages: About, Become a member and Partnerships.
-- the pages include information about spotted, why you should become a meber or partner with spotted. Any addresses or emailaddresses mentioned in the text are not reigesterd and only there fore not be used.
--	Includes SOME-links to FB, LinkedIn and Pinterest.
+- Featured on all pages and visible for both logged-out and logged in users.
+- Includes links to pages: About, Become a member and Partnerships.
+- the pages include information about spotted, why you should become a member or partner with spotted. Any addresses or email addresses mentioned in the text are not registered and only therefore not be used.
+- Includes SOME-links to FB, LinkedIn and Pinterest.
 
 <br>
 
@@ -313,7 +303,6 @@ This is a memberships site with the purpose of prividing members - people living
 
 <img src="resources_readme/footer.png">
 <br>
-
 
 ## Pages including all features, links etc. in these.
 
@@ -327,28 +316,28 @@ This is a memberships site with the purpose of prividing members - people living
 
 ### For logged-out users/non-members:
 
--	When a non-logged in user first enter the site, a modal is shown prompting them to login or sign-up (if they are not already members) to get access to all content. 
+- When a non-logged in user first enter the site, a modal is shown prompting them to login or sign-up (if they are not already members) to get access to all content. 
 
 <img src="resources_readme/login_register_modal.png">
 
 <br>
 
 **Testing Modal:**
--	**Expected:** The modal loads when the page is reloaded.
+- **Expected:** The modal loads when the page is reloaded.
 
--	**Testing:** Tested by reloading the page in logged-out mode (and logged in mode). The buttons in the modal were clicked. 
+- **Testing:** Tested by reloading the page in logged-out mode (and logged in mode). The buttons in the modal were clicked. 
 
--	**Result:** The modal shows for non-logged in users, with two clickable buttons. The buttons take the user to sign-in and sign-up pages/forms.
--	Posts are visible to non-logged in users but can’t be clicked.
+- **Result:** The modal shows for non-logged in users, with two clickable buttons. The buttons take the user to sign-in and sign-up pages/forms.
+- Posts are visible to non-logged in users but can’t be clicked.
 
--	Top banner with brief explanation of sites purpose, includes button to sign-up page. Only visible in logged out mode.
+- Top banner with brief explanation of sites purpose, includes button to sign-up page. Only visible in logged out mode.
 
 **Testing Try Spotted for free button:**
-  -	**Expected:** The button takes the user to the sign-up page.
+  - **Expected:** The button takes the user to the sign-up page.
 
-  -	**Testing:** Tested the button by clicking it.
+  - **Testing:** Tested the button by clicking it.
 
-  -	**Result:** The button takes the user to the sign-up page/form.
+  - **Result:** The button takes the user to the sign-up page/form.
 
 <img src="resources_readme/spotted_for_free_button_2.png">
 
@@ -356,7 +345,7 @@ This is a memberships site with the purpose of prividing members - people living
 
 ### For logged-in users/members:
 
--	The page displays a hero image for logged in users. All content is accessible. Logged in users can also save posts to their profile by clicking the save post symbol, so that they can come back to them later. There is also a feature to like the post for logged in users.
+- The page displays a hero image for logged in users. All content is accessible. Logged in users can also save posts to their profile by clicking the save post symbol, so that they can come back to them later. There is also a feature to like the post for logged in users.
 
 **Testing post-links, save post feature and liking feature:**
 - **Expected:**
@@ -400,7 +389,6 @@ This is a memberships site with the purpose of prividing members - people living
 
 </br>
 
-
 ### The Post details page
 - Includes an informative text, clickable SOME-symbols and a comments feature to comment the post.
 
@@ -412,7 +400,6 @@ This is a memberships site with the purpose of prividing members - people living
 **Result:** 
 - The user is taken to correct endpoints when SOME-symbols are clicked.
 - The user is taken to the post Form when the link is clicked.
-
 
 <br>
 
@@ -432,7 +419,7 @@ Features visible to logged-out users:
 
 | Form | Description | Expected |Testing | Result | Fix |
 | ----------- | ----------- |  ----------- | ----------- | ----------- | ----------- |
-| **SignUpForm**, App: Core, Template: register.html <br> (inludes user- and userprofile form) | Gives the user the ability signup to the site. The user can fill in the form, choosing a username and password and then clicking the signup button. | The user fills in first and last name, email and choses a username and password. The form expects the username, email and password to be confirmed in separate fields before the user can submit. The form checks the username and email against the database as the username and emails are only allowed to be unique. If the user tries to use an already existing username or email the form returns an error an asks user to correct the marked fields. The user is also required to choose a city and neighbourhood. It is optional to choose an interest. When the user clicks sign-up, a message should display letting them know they are signed-up and that a confirmation email has been sent to the email they registered. The user should receive a confirmation email in their inbox. When the link is clicked, the user should be directed to a page asking them to confirm their email. When the conf. button is clicked the user should be redirected to login. If the conf. link expires (10 days) a new link can only be sent if the user tries to login. | Correct and incorrect information was filled in to test the form.  The link in the conf. email was tested by clicking it and the email was confirmed by clicking the confirm button on the confirm email page. The user is redirected to the sing-in page and filled in log-in details and cklicked login. | The form can be filled in and the singUp button clicked. When correct information was filled in the form was submitted. The user info. and details are saved to the database and the user is sent a conf. email with a functioning link. The email and username need to be unique<br> and trying to use the same email and user mail <br> and email returns the form with an error message.  When the conf. email is clicked the user is redirected to the sing-in page and can sing-in. If for some reason they don't receive the email, or the link has expired - they can request a new link either on the page they are redirected to if the link is expired or via the link on the sign-up page. | To solve the issue with the user getting access to a new conf. link a custom view, url and template was created. And a link to access the resend_email_conf. was added to the sing-in template as well as to the allauth verification template. |
+| **SignUpForm**, App: Core, Template: register.html <br> (includes user- and userprofile form) | Gives the user the ability signup to the site. The user can fill in the form, choosing a username and password and then clicking the signup button. | The user fills in first and last name, email and choses a username and password. The form expects the username, email and password to be confirmed in separate fields before the user can submit. The form checks the username and email against the database as the username and emails are only allowed to be unique. If the user tries to use an already existing username or email the form returns an error an asks user to correct the marked fields. The user is also required to choose a city and neighbourhood. It is optional to choose an interest. When the user clicks sign-up, a message should display letting them know they are signed-up and that a confirmation email has been sent to the email they registered. The user should receive a confirmation email in their inbox. When the link is clicked, the user should be directed to a page asking them to confirm their email. When the conf. button is clicked the user should be redirected to login. If the conf. link expires (10 days) a new link can only be sent if the user tries to login. | Correct and incorrect information was filled in to test the form.  The link in the conf. email was tested by clicking it and the email was confirmed by clicking the confirm button on the confirm email page. The user is redirected to the sing-in page and filled in log-in details and clicked login. | The form can be filled in and the singUp button clicked. When correct information was filled in the form was submitted. The user info. and details are saved to the database and the user is sent a conf. email with a functioning link. The email and username need to be unique<br> and trying to use the same email and user mail <br> and email returns the form with an error message.  When the conf. email is clicked, the user is redirected to the sing-in page and can sing-in. If for some reason they don't receive the email, or the link has expired - they can request a new link either on the page they are redirected to if the link is expired or via the link on the sign-up page. | To solve the issue with the user getting access to a new conf. link a custom view, url and template was created. And a link to access the resend_email_conf. was added to the sing-in template as well as to the allauth verification template. |
 
 <br>
 
@@ -457,7 +444,6 @@ Features visible to logged-out users:
 
 <br>
 
-
 ### Testing the comments function:
 **Expected:** When a user comments the comment should be shown as awaiting approval. The buttons edit and delete underneath the comment should be clickable to let the user use these functions. The comment should be visible in the comments section in the admin so it can be approved. When approved the buttons should turn green. Users should be able to see other users’ approved comments, but only be able to edit and delete their own. The comments count function displays the number of comments for the post. After editing the comment needs new approval. When delete is clicked a modal should appear asking the user if they are sure they want to delete the comment. When the delete button in the modal is clicked the comment should be removed and no longer be visible.
 
@@ -467,20 +453,18 @@ Features visible to logged-out users:
 
 <img src="resources_readme/comments.png">
 
-
 ### Testing the Events page
 
   - The Events page give the user an overview of the events available and will allow the user to see the benefits of signing up as a member.
   - The listed events are clickable only for logged-in users (logged-out users can only see the post-list but the links are not available) and takes the user to a details page with more information about the event. 
 
--	**Expected:** The post-link takes the users to the correct events detail page.
+- **Expected:** The post-link takes the users to the correct events detail page.
 
--	**Testing:** Tested by clicking the links.
+- **Testing:** Tested by clicking the links.
 
--	**Result:** The links take the user to the expected events details page.
+- **Result:** The links take the user to the expected events details page.
 
 <img src="resources_readme/Events_page.png">
-
 
 ### Testing the Events Detail page
 
@@ -496,7 +480,6 @@ Features visible to logged-out users:
 
 <img src="resources_readme/events_detail.png">
 
-
 **RSVP Form:**<br>
 
 <img src="resources_readme/rsvp_event.png">
@@ -506,7 +489,6 @@ Features visible to logged-out users:
 ### Testing features reachable by link from sign-in page
 
 **Link: Didn't receive your verification email? Resend it here.**
-
 
 | Form | Description | Expected | Testing | Result |
 | ----------- | ----------- |  ----------- |  ----------- |  ----------- |
@@ -523,7 +505,6 @@ Features visible to logged-out users:
 | Form | Description | Expected | Testing | Result |
 | ----------- | ----------- |  ----------- |  ----------- |  ----------- |
 | **Forgot Password/Password Reset**, Form App: AllAuth, Template: allauth/password reset | Lets the user reset their password. | When the user enters a registered password and email with a password reset link should be sent. When the link in the email is clicked, they should be redirected to the change password page. When a new password is entered (twice) and the change password button clicked the password should be reset, and the user redirected to a page informing them of the change. If a user enters a non-registered email an email is sent informing the user that their email isn’t in the database. In both cases the user should be directed to a page informing them an email was sent. | A registered and an unregistered email was entered and the reset my password button clicked. The link in the sent email was clicked and the change password form tested by providing a new password and clicking change password. The new password was tested by login in after the password change. | When a registered email is entered an email with reset link is sent and the user is directed to a page informing them of this. When the link is clicked it takes the user to the reset page, where the user can choose a new password and when they click “reset the password” ii is reset. When the user tries to login with their new password is logs them in. If the user enters an email not in the database, they are redirected to the page informing them an email has been sent. The email informs the user their email is not registered. |
-
 
 ### Testing the Profile Page
 
@@ -555,7 +536,6 @@ Features visible to logged-out users:
 
 <br>
 
-
 ### Testing the Change Email function
 
   - Link visible in the Account dropdown menu when user is logged in. Registered users can change/update their email.
@@ -564,14 +544,13 @@ Features visible to logged-out users:
 
 | Form | Description | Expected | Testing | Result |
 | ----------- | ----------- |  ----------- | ----------- | ----------- |
-| **Change email**, AllAuth, email.html| The user can add an email and therefore technically changing it. They can also mark an email as primary as well as removing it. Users can also request a reverification if their email isn’t verified. More than one email can be associated with an account. | When a user enters an email in the field and clicks add email it should be added to the account. A verification email should be sent. By clicking the verification link in the email the email should be verified. When the user clicks remove email, it should be removed from the account. When the user clicks the radio-buttons next to the email address and then clicks make primary the email should be marked as primary for the account. A resend verification mail should only be sent if the one of the emails for the account isn’t verified. | When a user enters an email and clicks add email it is added to the account. A verification email is sent to the added email. When the verification link in the email is clicked the email displays as verified. The user can choose an email with the radio-buttons and then click make primary and it is made the primary email for the account. If the user clicks re-send verification for an unverified email an email is sent (doesn’t happen for already verified email addresses). When a user chooses an email with the radio-buttons and clicks remove the email is removed from the account.
+| **Change email**, AllAuth, email.html| The user can add an email and therefore technically changing it. They can also mark an email as primary as well as removing it. Users can also request a reverification if their email isn’t verified. More than one email can be associated with an account. | When a user enters an email in the field and clicks add email it should be added to the account. A verification email should be sent. By clicking the verification link in the email, the email should be verified. When the user clicks remove email, it should be removed from the account. When the user clicks the radio-buttons next to the email address and then clicks make primary the email should be marked as primary for the account. A resend verification mail should only be sent if the one of the emails for the account isn’t verified. | When a user enters an email and clicks add email it is added to the account. A verification email is sent to the added email. When the verification link in the email is clicked the email displays as verified. The user can choose an email with the radio-buttons and then click make primary and it is made the primary email for the account. If the user clicks re-send verification for an unverified email an email is sent (doesn’t happen for already verified email addresses). When a user chooses an email with the radio-buttons and clicks remove the email is removed from the account.
 
 <br>
 
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 00.11.51.png">
 
 <br>
-
 
 ### Testing the Change Password function
 
@@ -591,18 +570,17 @@ Features visible to logged-out users:
 
 ### Testing the Delete Account function
 
-  **Reachable from the Account drpdown when user is loggein. Gives the user the ability to easily delete their account. Registered users/members can delete their account and all associated information. Accessible from the Account dropdown menu.**
+  **Reachable from the Account dropdown when user is log-in. Gives the user the ability to easily delete their account. Registered users/members can delete their account and all associated information. Accessible from the Account dropdown menu.**
 
 <br>  
 
 | Form | Description | Expected | Testing | Result|
 | ----------- | ----------- |  ----------- | ----------- | ----------- |
-| **DeleteAccountForm**, App: Core, delete_account.html | Lets user delete their account and all associated information. <br> | When the link in the dropdown menu is clicked the user should be redirected to the delete account page. When thy check confirm account deletion and click delete account the account should be deleted and they should be logged out and redirected to the home page for logged out users. | The link in the dropdown was clicked. The confirm delete checkbox was checked and the delete button clicked. The feature was tested without checking the delete account confirm box. | The menu link takes the user to the delete account page. When the user checks the checkbox and clicks delete the account is deleted and the user is signed-out and returned to the home page for logged out users. All user info and any profile information <br> related to the user is deleted from the admin panel and the database. When the delete account confirm wasn’t checked the deletion isn’t possible – the user is then prompted to check the box if they want to continue. |
+| **DeleteAccountForm**, App: Core, delete_account.html | Lets user delete their account and all associated information. <br> | When the link in the dropdown menu is clicked the user should be redirected to the delete account page. When thy check confirms account deletion and click delete account the account should be deleted, and they should be logged out and redirected to the home page for logged out users. | The link in the dropdown was clicked. The confirm delete checkbox was checked and the delete button clicked. The feature was tested without checking the delete account confirm box. | The menu link takes the user to the delete account page. When the user checks the checkbox and clicks delete the account is deleted and the user is signed-out and returned to the home page for logged out users. All user info and any profile information <br> related to the user is deleted from the admin panel and the database. When the delete account confirm wasn’t checked the deletion isn’t possible – the user is then prompted to check the box if they want to continue. |
 
 <img src="resources_readme/delete_account.png">
 
 <br>
-
 
 ### Testing Manage Posts
 
@@ -612,7 +590,7 @@ Features visible to logged-out users:
 
 | Form | Description | Expected | Testing | Result | Fix |
 | ----------- | ----------- |  ----------- | ----------- | ----------- | ----------- |
-| **Manage Posts**, App: Content Management, post_form.html | Page and form for adding, editing and deleting posts from the frontend. | When the users fill in content, adds an image and clicks save the post should be saved. When the user clicks edit the post should appear in the form so that it can be edited and saved with any changes. When the user clicks delete a modal should appear asking the user “Are you sure you want to delete this post? This action cannot be undone.” If the user clicks delete in the modal the post should be deleted. | The add feature was tested by adding text content and an image and clicking save. The edit feature was tested by clicking edit next to a post, editing in the post form and clicking save. The delete function was tested by clicking delete next to a post and then clicking the delete button in the modal. | When content, image and unique title was added to the post form and saved the post was visible in the post list and could be viewed by clicking the link. But the image was only added randomly. When an attempt was made to save a post with an already existing title, there was an error due to the slug not being unique. When the user changes the title/slug and saves again the image isn't auomatically added, but needs to be added back. When the edit link was clicked the post appeared in the form. The post was edited and saved successfully, including changing the image. When clicking the delete link the modal appears querying if the user wants to delete the post. When the delete button in the modal was clicked the post was deleted. | The post_add view was updated to handle the integrity error when a user tries to add a post with the same title as an existing post/slug. The view was also modified to guarantee that the image is added. |
+| **Manage Posts**, App: Content Management, post_form.html | Page and form for adding, editing and deleting posts from the frontend. | When the users fill in content, adds an image and clicks save the post should be saved. When the user clicks edit the post should appear in the form so that it can be edited and saved with any changes. When the user clicks delete a modal should appear asking the user “Are you sure you want to delete this post? This action cannot be undone.” If the user clicks delete in the modal the post should be deleted. | The add feature was tested by adding text content and an image and clicking save. The edit feature was tested by clicking edit next to a post, editing in the post form and clicking save. The delete function was tested by clicking delete next to a post and then clicking the delete button in the modal. | When content, image and unique title was added to the post form and saved the post was visible in the post list and could be viewed by clicking the link. But the image was only added randomly. When an attempt was made to save a post with an already existing title, there was an error due to the slug not being unique. When the user changes the title/slug and saves again the image isn't automatically added but needs to be added back. When the edit link was clicked the post appeared in the form. The post was edited and saved successfully, including changing the image. When clicking the delete link the modal appears querying if the user wants to delete the post. When the delete button in the modal was clicked the post was deleted. | The post_add view was updated to handle the integrity error when a user tries to add a post with the same title as an existing post/slug. The view was also modified to guarantee that the image is added. |
 
 Note! The comment form is visible on drafts. Comments can be added to drafts, but not deleted from the frontend.
 
@@ -636,7 +614,6 @@ Note! The comment form is visible on drafts. Comments can be added to drafts, bu
 
 <img src="resources_readme/404.png">
 
-
 ### 3. Lighthouse
 
 #### Results:
@@ -656,7 +633,6 @@ Desktop, logged-out users:
 
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 10.50.24.png">
 
-
 Mobile, logged-in users:
 
 <br>
@@ -671,8 +647,7 @@ Desktop, logged-in users:
 
 <img src="resources_readme/Skärmavbild 2024-05-03 kl. 10.52.01.png">
 
-
-### 4. Validator Testing. Code validation testing css, html and JS
+### 4. Validator Testing. Code validation testing CSS, html and JS
 
 **HTML**
 
@@ -715,19 +690,19 @@ Desktop, logged-in users:
 
 - Navigation directly between posts without having to back out to the post_list.
 - Navigation directly between events without having to back out to the event_list.
-- More filtering functions, and more tags. The content now added to the site is sample content and I would have wante to add more if time had allowed.
+- More filtering functions, and more tags. The content now added to the site is sample content and I would have wanted to add more if time had allowed.
 - Implementing a map pinpointing all recommendations, events, what's on etc.
 - A search field in the navbar.
-- Read more for the sections as the number of of posts and events will grow.
-- Add more confirmation messages to make the user experience better i.e. after registering, signout, password change etc.
-- More javascript should be used to give the site a smother experience.
+- Read more for the sections as the number of posts and events will grow.
+- Add more confirmation messages to make the user experience better i.e., after registering, sign-out, password change etc.
+- More JavaScript should be used to give the site a smother experience.
 
 <br>
 
 ### Unfixed Bugs
 
 - See above for issues with Summernote.
-- Not a bug as such, but images need better handling. Better handling hasn't been possible due to lack of knowledge and time. So this is something I would like to look into.
+- Not a bug as such, but images need better handling. Better handling hasn't been possible due to lack of knowledge and time. So, this is something I would like to look into.
 
 <br>
 
@@ -747,7 +722,7 @@ The project was deployed to GitHub Pages using the following steps...
 
 ### Forking the GitHub Repository
 
-By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
 
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
@@ -788,31 +763,30 @@ Steps to follow for deployment to Heroku:
 
 ### In Heroku
 
-1.	Go to Heroku, create account, if you don't have one, and log in.
-2.	Go to the dashboard and click New after which you click Create new app
-3.	Choose name and region. Click Create app
-4.	Go to Settings, under the "Config Vars" set your Key/Value Pairs.
+1.  Go to Heroku, create account, if you don't have one, and log in.
+2.  Go to the dashboard and click New after which you click Create new app
+3.  Choose name and region. Click Create app.
+4.  Go to Settings, under the "Config Vars" set your Key/Value Pairs.
     You must then create a _Config Var_ called `PORT`. Set this to `8000`
     If you have credentials, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
     When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
     1. `heroku/python`
     2. `heroku/nodejs`
 
-5.	In the Buildpacks section, add buildpacks. Note order in which you add buildpacks: Python first and nodejs.
-6.	No go to Deployment. In deployment method click on "GitHub"(for repository)
-7.	The connect to GitHub, find your repository and click  connect.
-8.	Under connect to GitHub-section, you can either chose automatic deploys with Enable Automatic Deploys or Manual Deploy, to deploy manually.
+5.  In the Buildpacks section, add buildpacks. Note order in which you add buildpacks: Python first and nodejs.
+6.  No go to Deployment. In deployment method click on "GitHub"(for repository)
+7.  The connect to GitHub, find your repository and click  connect.
+8.  Under connect to GitHub-section, you can either chose automatic deploys with Enable Automatic Deploys or Manual Deploy, to deploy manually.
     
     **Now you can view the deployed app.**
-
 
 ## Credits 
 
 - A great big thank you to my mentor and tutor support!
 
-- I used the I Think Therefore I Blog walkthrough as a guide to get my project set up and get me started. And I refered back to it throughout the project.
+- I used the I Think Therefore I Blog walkthrough as a guide to get my project set up and get me started. And I referred to it throughout the project.
 
-- My mentor has also helped point me in the right direction when I've been lost, or had specific functions for the site in mind.
+- My mentor has also helped point me in the right direction when I've been lost or had specific functions for the site in mind.
 
 - I've used [Django](https://www.djangoproject.com/) documentation extensively to help me build models, views and forms etc.
 
@@ -855,7 +829,6 @@ https://stackoverflow.com/questions/62296423/how-to-use-q-to-filter-using-string
  [StackOverflow - Summernote](https://stackoverflow.com/questions/60688640/summernote-using-django-forms-displaying-with-html-tags)
  [StackOverflow - Summernote](https://stackoverflow.com/questions/61657061/how-do-i-resize-the-width-of-summernote)
 
-
 ### Content 
 
 - The text content for the posts and pages were generated with the help of AI.
@@ -863,6 +836,6 @@ https://stackoverflow.com/questions/62296423/how-to-use-q-to-filter-using-string
 
 ### Media
 
-- The logo and favicon was created by my husband.
+- The logo and favicon were created by my husband.
 
 - The images for posts, events and pages were downloaded from free images on [Unsplash](https://unsplash.com/)
