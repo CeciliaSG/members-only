@@ -1,7 +1,9 @@
 from django.db import models
-from content_management.models import Post
 from django.contrib.auth.models import User
 from django.contrib.postgres.fields import ArrayField
+
+from content_management.models import Post
+
 
 # Create your models here.
 

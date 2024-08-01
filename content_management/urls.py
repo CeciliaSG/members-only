@@ -1,12 +1,14 @@
 from django.urls import path
-from .views import (post_detail, tag_filter,
-                    PostListView, save_post, like_post, PostListByHeadingView,
-                    about_page, membership_page, partnerships_page, add_post,
-                    PostUpdateView, PostDeleteView)
-from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
+
+from .views import (
+    post_detail, tag_filter, PostListView, save_post, like_post,
+    PostListByHeadingView, about_page, membership_page,
+    partnerships_page, add_post, PostUpdateView, PostDeleteView
+)
+from . import views
 
 
 urlpatterns = [

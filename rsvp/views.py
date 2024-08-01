@@ -1,8 +1,9 @@
 from django.contrib import messages
-from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.conf import settings
+
 from .models import Event, Rsvp
 from .forms import RsvpForm
 

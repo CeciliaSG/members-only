@@ -1,8 +1,10 @@
 from django.urls import path
-from .views import event_list, event_detail
-from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+
+from .views import event_list, event_detail
+from . import views
+
 
 urlpatterns = [
     path('events/', event_list, name='event_list'),

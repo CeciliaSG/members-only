@@ -7,8 +7,10 @@ from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.urls import reverse_lazy
 from django.utils.text import slugify
 from django.views import generic, View
+
 from .models import Post, SavedPost, LikedPost, Heading, Comment
 from .forms import CommentForm, PostForm
+
 
 
 class PostListView(generic.ListView):
